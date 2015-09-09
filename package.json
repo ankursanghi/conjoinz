@@ -1,0 +1,31 @@
+{
+  "name": "valetbasket",
+  "version": "0.0.1",
+  "description": "Valet Basket website",
+  "main": "index.js",
+  "scripts": {
+    "test": "checkitout"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankursanghi/conjoinz.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Ankur Sanghi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankursanghi/conjoinz/issues"
+  },
+  "homepage": "https://github.com/ankursanghi/conjoinz#readme",
+  "dependencies": {
+    "async": "^1.4.2",
+    "connect-mongo": "^0.8.2",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.11.3",
+    "handlebars-layouts": "^3.1.2",
+    "util": "^0.10.3"
+  }
+}
