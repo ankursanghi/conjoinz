@@ -1,0 +1,39 @@
+/** MUSIC 
+	home-theme-education.html 
+ ********************************************* **/
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+.font-roboto {
+	font-family: "Roboto" !important;
+}
+
+
+/* header, menu & topbar background color */
+#header,
+#topMain.nav-pills>li,
+#topNav div.submenu-dark ul.dropdown-menu {
+	background-color:#253B80;
+}
+#topBar {
+	background-color:#179BD7 !important;
+}
+#topNav ul.dropdown-menu {
+	border-top-color:#179BD7 !important;
+}
+
+#topNav button.btn-mobile {
+	color:#fff;
+}
+
+/* menu & topbar links color */
+#topBar ul.top-links li.text-welcome,
+#topBar ul.top-links>li>a,
+#header li.search i.fa,
+#header ul.nav-second-main li>a,
+#topMain.nav-pills>li>a {
+	color:#eee !important;
+}
+#topBar ul.top-links>li.active>a,
+#topMain.nav-pills>li.active>a {
+	color:#fff !important;
+}
+

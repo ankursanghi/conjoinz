@@ -8,7 +8,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var layouts = require('handlebars-layouts');
 var async = require('async');
-var handlebars = hbs.create({ defaultLayout:'meetsites_new',
+var handlebars = hbs.create({ defaultLayout:'main',
 				helpers : {
 				}
 		  });
@@ -31,18 +31,20 @@ layouts.register(handlebars.handlebars);
 // ------------------------------------- loading partials end ------------------------------------
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set("views", __dirname);
+app.set("views", __dirname+'/views');
 app.use(express.static(__dirname + '/public'));
 
 //See the README about ordering of middleware
 //Load the routes ("controllers" -ish)
-app.use(require("app/site/router"));
-app.use("/api", require("app/customers/router"));
-app.use("/api", require("app/users/router"));
+app.use(require("./home/router.js"));
+//app.use(require("signup/router"));
+//app.use(require("login/router"));
+//app.use(require("order/router"));
+//app.use("/api/customer", require("api/customer/router"));
 // Repeat the above line for additional model areas ("deals", "vehicles", etc)
 
 //FINALLY, use any error handlers
-app.use(require("app/errors/notFound"));
+// app.use(require("app/errors/notFound"));
 
 // Export the app instance for unit testing via supertest
 module.exports = app;
