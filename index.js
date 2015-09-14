@@ -8,6 +8,21 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var layouts = require('handlebars-layouts');
 var async = require('async');
+var db = require('./models/db.js');
+var credentials = require('./models/credentials.js'); 
+// use cookie parser for cookie secret
+app.use(require('cookie-parser')(credentials.cookieSecret));
+// use the express session as the memory store. Using persistent db is a better way. This is just to learn the topic
+// app.use(require('express-session')());
+app.use(session({
+	            store: new MongoStore({ mongooseConnection: db.connection}),
+	            secret:credentials.cookieSecret,
+	            cookie: { maxAge: new Date(Date.now() + 360000)},
+	            resave:false,
+	            saveUninitialized:true
+
+}));
+
 var handlebars = hbs.create({ defaultLayout:'main',
 				helpers : {
 				}
@@ -37,7 +52,8 @@ app.use(express.static(__dirname + '/public'));
 //See the README about ordering of middleware
 //Load the routes ("controllers" -ish)
 app.use(require("./home/router.js"));
-//app.use(require("signup/router"));
+app.use(require("./signup/router"));
+app.use(require("./pwdreset/router"));
 //app.use(require("login/router"));
 //app.use(require("order/router"));
 //app.use("/api/customer", require("api/customer/router"));
