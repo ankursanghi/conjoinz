@@ -1,0 +1,89 @@
+{{#extend "mainLayoutPartial"}}
+{{#content "head" mode="append"}}
+<!-- SWIPER SLIDER -->
+<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
+{{/content}}
+{{#content "mainbody"}}
+<section style="background:url('assets/images/demo/wall2.jpg')">
+
+<div class="display-table">
+	<div class="display-table-cell vertical-align-middle">
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-xs-12 col-sm-5 col-md-5 col-lg-4 col-md-push-7 col-lg-push-8 col-sm-push-7">
+
+					<!-- ALERT -->
+					<!--
+					<div class="alert alert-mini alert-danger margin-bottom-30">
+						<strong>Oh snap!</strong> Login Incorrect!
+					</div>
+					-->
+					<!-- /ALERT -->
+
+					<!-- register form -->
+					<form class="nomargin sky-form boxed" method="POST">
+						<header>
+						<i class="fa fa-users"></i> Password Reset
+						</header>
+
+						<fieldset class="nomargin">					
+							<label class="input">
+								<i class="ico-append fa fa-envelope"></i>
+								<input type="text" id="user" name="user" placeholder="Email address">
+								<b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+							</label>
+
+						</fieldset>
+
+						<div class="row margin-bottom-20">
+							<div class="col-md-12">
+								<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Reset my password</button>
+							</div>
+						</div>
+
+					</form>
+					<!-- /register form -->
+
+				</div>
+
+				<div class="col-xs-12 col-md-7 col-sm-7 col-lg-8 col-lg-pull-4 col-md-pull-5 col-sm-pull-5">
+
+
+					<h2 class="size-20 text-center-xs">Why Smarty?</h2>
+
+					<p>Lorem ipsum dolor sit amet. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.Lorem ipsum dolor sit amet. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</p>
+
+					<ul class="list-unstyled login-features">
+						<li>
+						<i class="glyphicon glyphicon-road"></i> <strong>Lorem ipsum</strong> dolor sit amet.
+						</li>
+						<li>
+						<i class="glyphicon glyphicon-cog"></i> <strong>Sed ut perspiciatis</strong> unde omnis iste.
+						</li>
+						<li>
+						<i class="glyphicon glyphicon-tint"></i> <strong>Et harum quidem</strong> rerum facilis est et expedita distinctio. 
+						</li>
+						<li>
+						<i class="glyphicon glyphicon-screenshot"></i> <strong>Nam libero</strong> tempore, cum soluta nobis.
+						</li>
+						<li>
+						<i class="glyphicon glyphicon-fire"></i> <strong>Est eligendi</strong> voluptatem accusantium.
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+</section>
+
+{{/content}}
+{{/extend}}
