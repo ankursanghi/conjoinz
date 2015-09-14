@@ -5,3 +5,4 @@ products-WB02DSN1B/
 credentials.js
 ses_smtp_credentials.csv
 smtp-conjoinz-secret-access-key.csv
+smtp_credentials.js

@@ -8,10 +8,11 @@ var _ = require('lodash');
 var nodemailer = require('nodemailer');
 var sesTransport = require('nodemailer-ses-transport');
 var activator = require('activator');
+var smtp_creds = require('../smtp_credentials.js');
 // TBD move this access key id and secret access key to a separate file and require it in
 var transport = nodemailer.createTransport(sesTransport({
-	accessKeyId: "AKIAI5RLQ24VNM2ZQBMQ",
-        secretAccessKey: "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",
+	accessKeyId: smtp_creds.accessKeyId,
+        secretAccessKey: smtp_creds.secretAccessKey,
         rateLimit: 1 // do not send more than 1 messages in a second
 }));
 
