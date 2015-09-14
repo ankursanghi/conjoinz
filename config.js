@@ -12,7 +12,7 @@ config.mongodb = {
 };
 if (PRODUCTION) {
 	  //for example
-	  config.express.ip = "127.0.0.1";
+	  config.express.ip = "0.0.0.0";
 }
 //config.db same deal
 //config.email etc
