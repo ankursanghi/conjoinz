@@ -20,13 +20,13 @@ function createUser (req, res, next){
 	console.log('req.param email:'+req.param('email'));
 	crypto.randomBytes(16, function(err, bytes){
 		if (err) return next(err);
-		var user = {_id: req.body.email};
+		var user = {email: req.body.email};
 		user.name = {}; 
 		user.salt = bytes.toString('utf8');
 		user.hash = hash(req.body.pwd, user.salt);
 		user.name.first = req.body.firstName;
 		user.name.last = req.body.lastName;
-		User.findOne({_id: req.body.email}, function(err, foundUser){
+		User.findOne({email: req.body.email}, function(err, foundUser){
 			if (foundUser){
 				res.render("signup/signup", {layout: false, msg: "User already exists! Send an email to support@conjoinz.com"});
 			}else{
