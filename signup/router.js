@@ -16,7 +16,7 @@ function signup(req, res,next) {
 }
 
 function createUser (req, res, next){
-	console.log('req.body:'+req.body);
+	console.log('req.body:'+JSON.stringify(req.body));
 	console.log('req.param email:'+req.param('email'));
 	crypto.randomBytes(16, function(err, bytes){
 		if (err) return next(err);
@@ -24,8 +24,8 @@ function createUser (req, res, next){
 		user.name = {}; 
 		user.salt = bytes.toString('utf8');
 		user.hash = hash(req.body.pwd, user.salt);
-		user.name.first = req.body.firstName;
-		user.name.last = req.body.lastName;
+		user.name["first"] = req.body.firstname;
+		user.name["last"] = req.body.lastname;
 		User.findOne({email: req.body.email}, function(err, foundUser){
 			if (foundUser){
 				res.render("signup/signup", {layout: false, msg: "User already exists! Send an email to support@conjoinz.com"});
@@ -38,15 +38,14 @@ function createUser (req, res, next){
 						return next(err);
 					}   
 					console.log("new user added:"+JSON.stringify(newUser));
+					req.session.isLoggedIn = true;
+					req.session.user = req.body.email;
+					req.session.name = req.body.firstName+' '+req.body.lastName;
+					//res.render("orders/orderform", {layout: false});
+					res.redirect(301, '/order');
 				}); 
-				req.session.isLoggedIn = true;
-				req.session.user = req.body.email;
-				req.session.name = req.body.firstName+' '+req.body.lastName;
-				res.send('done creating user:'+req.body.email);
 			}
-		})
-		// do a redirect to an order page here
-//		res.writeHead(301, {Location: '/order'});
+		});
 	}); 
 }
 
