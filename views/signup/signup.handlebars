@@ -24,14 +24,14 @@
 					<!-- /ALERT -->
 
 					<!-- register form -->
-					<form class="nomargin sky-form boxed" method="POST">
+					<form id="myform" class="nomargin sky-form boxed" method="POST">
 						<header>
 						<i class="fa fa-users"></i> Register
 						</header>
 						{{#if msg}}
-							<div class="alert alert-danger margin-bottom-30"><!-- DANGER -->
-								{{msg}}
-							</div>
+						<div class="alert alert-danger margin-bottom-30"><!-- DANGER -->
+							{{msg}}
+						</div>
 						{{/if}}
 
 						<fieldset class="nomargin">					
@@ -43,13 +43,13 @@
 
 							<label class="input">
 								<i class="ico-append fa fa-lock"></i>
-								<input type="password" name="pwd" placeholder="Password">
+								<input type="password" name="pwd" id="password" placeholder="Password">
 								<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
 							</label>
 
 							<label class="input">
 								<i class="ico-append fa fa-lock"></i>
-								<input type="password" placeholder="Confirm password">
+								<input type="password" id="passwordagain" name="passwordagain" placeholder="Confirm password">
 								<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
 							</label>
 
@@ -133,5 +133,24 @@
 
 </section>
 
+{{/content}}
+{{#content "scripts" mode="append"}}
+<script type="text/javascript" src="assets/plugins/form.validate/jquery.form.min.js"></script>
+<script type="text/javascript" src="assets/plugins/form.validate/jquery.validation.min.js"></script>
+<script>
+	jQuery.validator.setDefaults({
+		debug: true,
+		success: "valid"
+	});
+	var validator = $( "#myform" ).validate({
+		rules: {
+			password: "required",
+			email: "required",
+			passwordagain: {
+				equalTo: "#password"
+			}
+		}
+	});
+</script>
 {{/content}}
 {{/extend}}

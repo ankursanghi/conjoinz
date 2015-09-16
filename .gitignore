@@ -6,3 +6,4 @@ credentials.js
 ses_smtp_credentials.csv
 smtp-conjoinz-secret-access-key.csv
 smtp_credentials.js
+all-logs.log

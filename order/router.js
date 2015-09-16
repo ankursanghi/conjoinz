@@ -9,7 +9,8 @@ var router = new express.Router();
 router.use(bodyParser());
 
 function showOrderForm(req, res,next) {
-	res.render("order/orderform", {layout: false});
+	console.log('show the order form...');
+	res.render("orders/orderform", {layout: false});
 }
 
 function placeOrder (req, res, next){
