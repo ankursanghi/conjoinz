@@ -54,8 +54,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(require("./home/router.js"));
 app.use(require("./signup/router"));
 app.use(require("./pwdreset/router"));
-//app.use(require("login/router"));
-//app.use(require("order/router"));
+app.use(require("./login/router"));
+app.use(require("./order/router"));
 //app.use("/api/customer", require("api/customer/router"));
 // Repeat the above line for additional model areas ("deals", "vehicles", etc)
 
