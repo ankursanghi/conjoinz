@@ -3,6 +3,26 @@
 <!-- SWIPER SLIDER -->
 <link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
 {{/content}}
+{{#content "loggedIn"}}
+{{#if name}}
+	<li class="text-welcome hidden-xs">Welcome to ValetBasket, <strong>{{name}}</strong></li>
+	<li>
+		<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i class="fa fa-user hidden-xs"></i> MY ACCOUNT</a>
+		<ul class="dropdown-menu pull-right">
+			<li><a tabindex="-1" href="#"><i class="fa fa-history"></i> ORDER HISTORY</a></li>
+			<li class="divider"></li>
+			<li><a tabindex="-1" href="#"><i class="fa fa-bookmark"></i> MY WISHLIST</a></li>
+			<li><a tabindex="-1" href="#"><i class="fa fa-edit"></i> MY REVIEWS</a></li>
+			<li><a tabindex="-1" href="#"><i class="fa fa-cog"></i> MY SETTINGS</a></li>
+			<li class="divider"></li>
+			<li><a tabindex="-1" href="#"><i class="glyphicon glyphicon-off"></i> LOGOUT</a></li>
+		</ul>
+	</li>
+{{else}}
+	<li class="hidden-xs"><a href="/login">LOGIN</a></li>
+	<li class="hidden-xs"><a href="/signup">REGISTER</a></li>
+{{/if}}
+{{/content}}
 {{#content "mainbody"}}
 <section style="background:url('assets/images/demo/wall2.jpg')">
 
@@ -139,7 +159,6 @@
 <script type="text/javascript" src="assets/plugins/form.validate/jquery.validation.min.js"></script>
 <script>
 	jQuery.validator.setDefaults({
-		debug: true,
 		success: "valid"
 	});
 	var validator = $( "#myform" ).validate({
