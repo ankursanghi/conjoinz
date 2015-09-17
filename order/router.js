@@ -10,7 +10,7 @@ router.use(bodyParser());
 
 function showOrderForm(req, res,next) {
 	console.log('show the order form...');
-	res.render("orders/orderform", {layout: false});
+	res.render("orders/orderform", {layout: false, name: req.session.name});
 }
 
 function placeOrder (req, res, next){

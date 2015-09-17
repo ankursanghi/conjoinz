@@ -17,17 +17,18 @@ function loginUser (req, res, next){
 	var passwd = req.body.password;
 	var salt;
 	var checkHash;
-	function invalid (){ 
-		res.render('login/login', {layout:false, invalid: true});
+	function invalid (msg){ 
+		res.render('login/login', {layout:false, invalid: true, message: msg});
 	}   
 	console.log("email:"+email);
 	if (!(email && passwd)) return invalid();
-	User.findOne({_id: email}, function(err, user){
+	User.findOne({email: email}, function(err, user){
 		if(err){
-			return invalid();
+			console.log('error in data retrieval:'+err);
+			return invalid(err);
 		}   
 		if(!user){
-			return invalid();
+			return invalid('Are you sure you have an id with us? Please make one through Register link');
 		}else{
 			salt=user.salt;
 			checkHash = hash(passwd, user.salt);
@@ -37,7 +38,7 @@ function loginUser (req, res, next){
 				req.session.isLoggedIn = true;
 				req.session.user = email;
 				req.session.name = user.name.first+' '+user.name.last;
-				res.writeHead(301, {Location: '/order'});
+				res.redirect(301, '/order');
 			}
 		}
 	});

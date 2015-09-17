@@ -64,11 +64,12 @@
 								
 							</form>
 							<!-- /login form -->
-
-							<!-- ALERT -->
-							<div class="alert alert-mini alert-danger margin-bottom-30">
-								<strong>Oh snap!</strong> Login Incorrect!
-							</div><!-- /ALERT -->
+							{{#if invalid}}
+								<!-- ALERT -->
+								<div class="alert alert-mini alert-danger margin-bottom-30">
+									<strong>Oh snap!</strong> {{message}}
+								</div><!-- /ALERT -->
+							{{/if}}
 
 						</div>
 						<!-- /LOGIN -->
