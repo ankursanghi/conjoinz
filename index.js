@@ -50,7 +50,7 @@ app.use(express.static(__dirname + '/public'));
 
 //See the README about ordering of middleware
 //Load the routes ("controllers" -ish)
-app.use(require("./home/router.js"));
+app.use(require("./home/router"));
 app.use(require("./signup/router"));
 app.use(require("./pwdreset/router"));
 app.use(require("./login/router"));
