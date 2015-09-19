@@ -3,6 +3,8 @@
 <!-- SWIPER SLIDER -->
 <link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/css/layout-datatable.css" rel="stylesheet" type="text/css" />
+
+<link href="https://code.jquery.com/ui/1.11.4/themes/ui-darkness/jquery-ui.css" rel="stylesheet" type="text/css" />
 {{/content}}
 {{#content "loggedIn"}}
 {{#if name}}
@@ -43,7 +45,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<input type="text" class="form-control input-small" id="item1" name="item1" placeholder="Eggs">
+							<input type="text" class="autoCompItem form-control input-small" id="item1" name="item1" placeholder="Eggs">
 						</td>
 						<td>
 							<input type="text" class="form-control input-small" id="quantity1" name="quantity1" placeholder="24">
@@ -57,7 +59,7 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="text" class="form-control input-small" id="item1" name="item1" placeholder="Eggs">
+							<input type="text" class="autoCompItem form-control input-small" id="item2" name="item2" placeholder="Eggs">
 						</td>
 						<td>
 							<input type="text" class="form-control input-small" id="quantity1" name="quantity1" placeholder="24">
@@ -71,7 +73,7 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="text" class="form-control input-small" id="item1" name="item1" placeholder="Eggs">
+							<input type="text" class="autoCompItem form-control input-small" id="item3" name="item3" placeholder="Eggs">
 						</td>
 						<td>
 							<input type="text" class="form-control input-small" id="quantity1" name="quantity1" placeholder="24">
@@ -85,7 +87,35 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="text" class="form-control input-small" id="item1" name="item1" placeholder="Eggs">
+							<input type="text" class="autoCompItem form-control input-small" id="item4" name="item4" placeholder="Eggs">
+						</td>
+						<td>
+							<input type="text" class="form-control input-small" id="quantity1" name="quantity1" placeholder="24">
+						</td>
+						<td>
+							<input type="text" class="form-control input-small" id="brand1" name="brand1" placeholder="Eggland">
+						</td>
+						<td>
+							<input type="text" class="form-control input-small" id="comment1" name="comment1" placeholder="Choose fresh">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" class="autoCompItem form-control input-small" id="item5" name="item5" placeholder="Eggs">
+						</td>
+						<td>
+							<input type="text" class="form-control input-small" id="quantity1" name="quantity1" placeholder="24">
+						</td>
+						<td>
+							<input type="text" class="form-control input-small" id="brand1" name="brand1" placeholder="Eggland">
+						</td>
+						<td>
+							<input type="text" class="form-control input-small" id="comment1" name="comment1" placeholder="Choose fresh">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" class="autoCompItem form-control input-small" id="item6" name="item6" placeholder="Eggs">
 						</td>
 						<td>
 							<input type="text" class="form-control input-small" id="quantity1" name="quantity1" placeholder="24">
@@ -114,5 +144,37 @@
 
 {{/content}}
 {{#content "scripts" mode="append"}}
+<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$(".autoCompItem").each(function(){
+			$(this).autocomplete({
+				source: function(request, response){
+					$.ajax({
+						url: '/api/autocomplete',
+						data: {'q': request.term},
+						dataType: "json",
+						success: function(data){
+							response(data);
+						}
+					});
+				},
+				focus: function(event, ui){
+					$(this).val(ui.item.name);
+					return false;
+				},
+				select: function(event, ui){
+					$(this).val(ui.item.name);
+					return false;
+				}
+			}).data("ui-autocomplete")._renderItem = function(ul, item) {
+			return $( "<li></li>" )
+			    .data( "ui-autocomplete-item", item )
+			    .append( "<a>" + item.name + "</a>" )
+			    .appendTo( ul );		    
+			};
+		});
+	});
+</script>
 {{/content}}
 {{/extend}}

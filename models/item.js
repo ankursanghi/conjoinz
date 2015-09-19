@@ -9,7 +9,6 @@ var itemSchema= mongoose.Schema({
     	category3: {type: String},
 });
 
-
-var Item = mongoose.model('Item', itemSchema);
-module.exports=Item;
+var ItemModel = mongoose.model('Item', itemSchema);
+module.exports=ItemModel;
 
