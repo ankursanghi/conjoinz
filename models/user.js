@@ -7,6 +7,7 @@ var userSchema = mongoose.Schema({
             hash: {type: String, required: true},
     	    sex: {type: String},
             email: {type: String},
+    	    delivery_addresses: [{type: mongoose.Schema.Types.ObjectId, ref: 'address'}],
     	   activation_code : {type: String},
 	   password_reset_code: {type: String},
 	   password_reset_time: {type: Number},

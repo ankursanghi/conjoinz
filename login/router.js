@@ -8,10 +8,24 @@ var router = new express.Router();
 
 router.use(bodyParser());
 
-function signup(req, res,next) {
-	res.render("login/login", {layout: false});
+function login(req, res,next) {
+	if (!(req.session.errmsg)){
+		res.render("login/login", {layout: false});
+	}else{
+		res.render("login/login", {layout: false, invalid: true, message: req.session.errmsg});
+	}
 }
 
+function logout(req, res, next){
+	delete req.session.user;
+	delete req.session.name;
+	req.session.isLoggedIn = false;
+	delete req.session.isLoggedIn;
+	delete req.session.errmsg;
+	req.session.destroy();
+	res.render('home/home', {layout:false});
+
+}
 function loginUser (req, res, next){
 	var email = req.body.email;
 	var passwd = req.body.password;
@@ -28,23 +42,24 @@ function loginUser (req, res, next){
 			return invalid(err);
 		}   
 		if(!user){
-			return invalid('Are you sure you have an id with us? Please make one through Register link');
+			return invalid('We are so happy to have you, but could not find a login! Please make one through Register link');
 		}else{
 			salt=user.salt;
 			checkHash = hash(passwd, user.salt);
 			if(checkHash == user.hash){
-				console.log("checkHash: "+checkHash);
-				console.log("use.hash: "+user.hash);
+				// console.log("checkHash: "+checkHash);
+				// console.log("use.hash: "+user.hash);
 				req.session.isLoggedIn = true;
 				req.session.user = email;
 				req.session.name = user.name.first+' '+user.name.last;
-				res.redirect(301, '/order');
+				res.redirect(302, '/order');
 			}
 		}
 	});
 }
 
-router.get("/login",signup);
+router.get("/login",login);
 router.post("/login", loginUser);
 
+router.get("/logout", logout);
 module.exports = router;

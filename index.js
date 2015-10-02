@@ -17,7 +17,7 @@ app.use(require('cookie-parser')(credentials.cookieSecret));
 app.use(session({
 	            store: new MongoStore({ mongooseConnection: db.connection}),
 	            secret:credentials.cookieSecret,
-	            cookie: { maxAge: new Date(Date.now() + 360000)},
+	            cookie: { maxAge: new Date(Date.now() + 3600000)},
 	            resave:false,
 	            saveUninitialized:true
 
@@ -55,6 +55,7 @@ app.use(require("./signup/router"));
 app.use(require("./pwdreset/router"));
 app.use(require("./login/router"));
 app.use(require("./order/router"));
+app.use(require("./profile/router"));
 app.use("/api/autocomplete", require('./api/autocomplete/router'));
 //app.use("/api/customer", require("api/customer/router"));
 // Repeat the above line for additional model areas ("deals", "vehicles", etc)
