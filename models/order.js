@@ -2,12 +2,28 @@ var mongoose = require('mongoose');
 
 var orderSchema= mongoose.Schema({
 	ord_status: {type: String},
-        deliver_to: {type: mongoose.Schema.Types.ObjectId, ref: 'address'},
         comments: {type: String},
-        ord_lines: [{type: mongoose.Schema.Types.ObjectId, ref: 'orderline'}],
-        ord_customer: {type: mongoose.Schema.Types.ObjectId, ref: 'customer'},
+        ord_lines: [{
+		line_status: {type: String},
+		comments: {type: String},
+		uom: {type: String},
+		orderItem: {type: mongoose.Schema.Types.ObjectId, ref: 'item'},
+		qty: {type: Number}
+	}],
+        customer: {
+		name: {first: String, last: String},
+		primary_phone: {type: String},
+		payment_method: {type: String},
+    		address:{
+			adr_type: {type: String},
+			adr_line1: {type: String},
+			adr_line2: {type: String},
+			city: {type: String},
+			state: {type: String},
+			zip : {type: Number},
+		}
+	}
 });
-
 
 var Order= mongoose.model('Order', orderSchema);
 module.exports=Order;

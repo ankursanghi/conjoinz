@@ -8,8 +8,17 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var layouts = require('handlebars-layouts');
 var async = require('async');
+var https = require('https');
+var http = require('http');
 var db = require('./models/db.js');
 var credentials = require('./models/credentials.js'); 
+
+var privateKey  = fs.readFileSync('https/serverkey.pem', 'utf8');
+var certificate = fs.readFileSync('https/servercert.pem', 'utf8');
+var httpscredentials = {key: privateKey, cert: certificate};
+
+var httpsServer = https.createServer(httpscredentials, app);
+var httpServer = http.createServer(app);
 // use cookie parser for cookie secret
 app.use(require('cookie-parser')(credentials.cookieSecret));
 // use the express session as the memory store. Using persistent db is a better way. This is just to learn the topic
@@ -17,6 +26,7 @@ app.use(require('cookie-parser')(credentials.cookieSecret));
 app.use(session({
 	            store: new MongoStore({ mongooseConnection: db.connection}),
 	            secret:credentials.cookieSecret,
+		    key: 'just.checking.if.this.works',
 	            cookie: { maxAge: new Date(Date.now() + 3600000)},
 	            resave:false,
 	            saveUninitialized:true
@@ -64,5 +74,5 @@ app.use("/api/autocomplete", require('./api/autocomplete/router'));
 // app.use(require("app/errors/notFound"));
 
 // Export the app instance for unit testing via supertest
-module.exports = app;
-
+module.exports.httpServer = httpServer;
+module.exports.httpsServer = httpsServer;

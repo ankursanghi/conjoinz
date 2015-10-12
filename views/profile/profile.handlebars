@@ -2,7 +2,7 @@
 {{#content "head" mode="append"}}
 <!-- SWIPER SLIDER -->
 <link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/css/layout-datatable.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/layout-datatables.css" rel="stylesheet" type="text/css" />
 
 <link href="https://code.jquery.com/ui/1.11.4/themes/ui-darkness/jquery-ui.css" rel="stylesheet" type="text/css" />
 {{/content}}
@@ -17,7 +17,7 @@
 	<div class="col-lg-9 col-md-9 col-sm-8 col-lg-push-3 col-md-push-3 col-sm-push-4 margin-bottom-80">
 		
 		<ul class="nav nav-tabs nav-top-border">
-			<li class="active"><a href="#info" data-toggle="tab">Personal Info</a></li>
+			<li class="active"><a href="#preferences" data-toggle="tab">Personal Info</a></li>
 			<li><a href="#avatar" data-toggle="tab">Avatar</a></li>
 			<li><a href="#password" data-toggle="tab">Password</a></li>
 			<li><a href="#privacy" data-toggle="tab">Privacy</a></li>
@@ -26,39 +26,56 @@
 		<div class="tab-content margin-top-20">
 			
 			<!-- PERSONAL INFO TAB -->
-			<div class="tab-pane fade in active" id="info">
-				<form role="form" action="#" method="post">
+			<div class="tab-pane fade in active" id="preferences">
+				<form class="clearfix" action="#" method="post" enctype="multipart/form-data">
 					<div class="form-group">
-						<label class="control-label">First Name</label>
-						<input type="text" placeholder="Felicia" class="form-control">
-					</div>
-					<div class="form-group">
-						<label class="control-label">Last Name</label>
-						<input type="text" placeholder="Doe" class="form-control">
-					</div>
-					<div class="form-group">
-						<label class="control-label">Mobile Number</label>
-						<input type="text" placeholder="+1800-1234-657" class="form-control">
-					</div>
-					<div class="form-group">
-						<label class="control-label">Interests</label>
-						<input type="text" placeholder="Development, C++, etc." class="form-control">
-					</div>
-					<div class="form-group">
-						<label class="control-label">Occupation</label>
-						<input type="text" placeholder="Webdeveloper" class="form-control">
-					</div>
-					<div class="form-group">
-						<label class="control-label">About</label>
-						<textarea class="form-control" rows="3" placeholder="About Me..."></textarea>
-					</div>
-					<div class="form-group">
-						<label class="control-label">Website Url</label>
-						<input type="text" placeholder="http://www.yourwebsite.com" class="form-control">
+						<div class="row">
+							<div class="col-lg-12 col-md-9 col-sm-9">
+								<label for="billing_address1">Address *</label>
+								<input id="billing_address1" name="billing[address][]" type="text" class="form-control required" placeholder="Address 1" />
+								<input id="billing_address2" name="billing[address][]" type="text" class="form-control margin-top-10" placeholder="Address 2" />
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<label for="billing_city">City *</label>
+										<input id="billing_city" name="billing[city]" type="text" class="form-control required" />
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<label for="billing_state">State/Province *</label>
+										<select id="billing_state" name="billing[state]" class="form-control pointer required">
+											<option value="">Select...</option>
+											<option value="1">Alabama</option>
+											<option value="2">Alaska</option>
+											<option value="">..............</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<label for="billing_zipcode">Zip/Postal Code *</label>
+										<input id="billing_zipcode" name="billing[zipcode]" type="text" class="form-control required" />
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<label for="billing_country">Country *</label>
+										<select id="billing_country" name="billing[country]" class="form-control pointer required">
+											<option value="">Select...</option>
+											<option value="1">united States</option>
+											<option value="2">united Kingdom</option>
+											<option value="">..............</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<label for="billing_phone">Phone *</label>
+										<input id="billing_phone" name="billing[phone]" type="text" class="form-control required" />
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="margiv-top10">
-						<a href="#" class="btn btn-primary"><i class="fa fa-check"></i> Save Changes </a>
-						<a href="#" class="btn btn-default">Cancel </a>
+						<button type="submit" class="btn btn-success">Save Changes</button>
+						<button type="button" class="btn btn-default">Cancel</button>
 					</div>
 				</form>
 			</div>
@@ -69,7 +86,6 @@
 				
 				<form class="clearfix" action="#" method="post" enctype="multipart/form-data">
 					<div class="form-group">
-						
 						<div class="row">
 							
 							<div class="col-md-3 col-sm-4">

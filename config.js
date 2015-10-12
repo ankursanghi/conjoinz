@@ -2,7 +2,8 @@ var config = module.exports;
 var PRODUCTION = process.env.NODE_ENV === "production";
 
 config.express = {
-	  port: process.env.EXPRESS_PORT || 8008,
+	  httpPort: process.env.EXPRESS_PORT || 8008,
+	  httpsPort: process.env.EXPRESS_PORT || 8009,
 	    ip: "127.0.0.1"
 };
 

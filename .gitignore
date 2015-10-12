@@ -8,3 +8,17 @@ smtp-conjoinz-secret-access-key.csv
 smtp_credentials.js
 all-logs.log
 logs/all-logs.log
+https/01.pem
+https/cacert.pem
+https/cakey.pem
+https/index.txt
+https/index.txt.attr
+https/index.txt.old
+https/openssl-ca.cnf
+https/openssl-server.cnf
+https/serial.txt
+https/serial.txt.old
+https/servercert.csr
+https/servercert.pem
+https/serverkey.pem
+https/serverkey.pem.bkp

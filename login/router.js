@@ -9,6 +9,9 @@ var router = new express.Router();
 router.use(bodyParser());
 
 function login(req, res,next) {
+	if (!(req.connection.encrypted)){
+		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
+	}
 	if (!(req.session.errmsg)){
 		res.render("login/login", {layout: false});
 	}else{
