@@ -19,17 +19,21 @@ function profile(req, res,next) {
 }
 
 function updateProfile(req, res, next){
+	// options for upsert queries
 	var options = {upsert: true, new: true};
 	console.log('req.body:'+JSON.stringify(req.body));
 	console.log('req.session:'+JSON.stringify(req.session));
 	var address = {};
 	address.adr_type = 'Primary';	
+	address.adr_nick = req.body.adrnick;
 	address.adr_line1 = req.body.billing['address'][0];
 	address.adr_line2 = req.body.billing['address'][1];
 	address.city = req.body.billing.city;
 	address.state = req.body.billing.state;
+	address.country= req.body.billing.country;
 	address.zip = req.body.billing.zipcode;
 	address.phone = req.body.billing.phone;
+	//build details for querying the address collection
 	var query = {};
 	query.adr_type = 'Primary';
 	query.adr_line1 = req.body.billing['address'][0];
@@ -42,6 +46,7 @@ function updateProfile(req, res, next){
 	userQuery.name.first = req.session.name.split(" ")[0];
 	userQuery.name.last = req.session.name.split(" ")[1];
 	var user = {};
+	//find one and update makes sure that if there is a change in the address you could save it.
 	Address.findOneAndUpdate(query,address,options,function(err, addrSaved){
 		if (err) {
 		    console.log('Error Inserting New Data');
@@ -57,7 +62,7 @@ function updateProfile(req, res, next){
 		findUserQuery.populate('delivery_addresses').exec(function(err, usr){
 			var found = false;
 			usr.delivery_addresses.forEach(function(adr){
-				if (adr.adr_line1 == address.adr_line1 && adr.city == address.city && adr.zip == address.zip){
+				if (adr.adr_nick == address.adr_nick && adr.adr_line1 == address.adr_line1 && adr.city == address.city && adr.zip == address.zip){
 					found = true;
 				}
 			});
@@ -76,7 +81,7 @@ function updateProfile(req, res, next){
 			}
 		});
 	});	
-	res.send('saved!');
+	res.send('saved!'); // change to rendering an alert
 }
 
 router.get("/profile",profile);
