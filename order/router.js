@@ -35,6 +35,7 @@ function showOrderForm(req, res,next) {
 	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
+	console.log('req.session here:'+JSON.stringify(req.session));
 	if (req.session.isLoggedIn){
 		console.log('show the order form...');
 		res.render("orders/orderform", {layout: false, name: req.session.name});
