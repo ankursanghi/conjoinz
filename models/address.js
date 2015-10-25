@@ -7,6 +7,7 @@ var addressSchema = mongoose.Schema({
         adr_line2: {type: String},
         city: {type: String},
         state: {type: String},
+        country: {type: String},
         zip : {type: Number},
     	phone: {type: String},
 });

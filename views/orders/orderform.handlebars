@@ -10,8 +10,33 @@
 {{#content "mainbody"}}
 <section style="background:url('assets/images/demo/wall2.jpg')">
 <div class="container">
+	{{#if ordernumber}}
+	<div class="alert alert-success margin-bottom-30"><!-- SUCCESS -->
+		<button type="button" class="close" data-dismiss="alert">
+			<span aria-hidden="true">×</span>
+			<span class="sr-only">Close</span>
+		</button>
+		<strong>Well done!</strong> You successfully placed order {{ordernumber}}. Please make further updates to order by calling 888-888-8888.
+	</div>
+	{{/if}}
 	<form id="orderform" method="post" class="validate" action="/order" data-success="Sent! Thank you!" data-toastr-position="top-right">
 		<fieldset>
+			<div class="row">
+				<div class="col-md-6">
+					<label for="address">Choose an address nick as Delivery Address</label>
+					<select id="address" name="address" class="form-control" required title="Please select a Delivery address">
+						<option value=""></option>
+					</select>
+				</div>
+				<div class="col-md-6">
+					<label for="store">Choose a Store for this Order</label>
+					<select id="store" name="store" class="form-control" required title="Please select a store">
+						<option value=""></option>
+						<option value="store1">Trader Joes Morrisville</option>
+						<option value="store2">Whole Foods Waverly Place</option>
+					</select>
+				</div>
+			</div>	
 			<!-- HTML DATATABLE -->
 			<table class="table table-striped table-hover table-bordered" id="orderTable">
 				<thead>
@@ -27,7 +52,7 @@
 				<tbody>
 					<tr id="2">
 						<td>
-							<input type="text" class="autoCompItem itembox form-control input-small" id="item1" name="item" placeholder="Eggs">
+							<input type="text" class="autoCompItem itembox form-control input-small" id="item1" name="item" placeholder="Eggs" required>
 						</td>
 						<td>
 							<input type="text" class="form-control qty input-small" id="quantity1" name="quantity" placeholder="24" >
@@ -48,7 +73,7 @@
 						<td>
 							<input type="text" class="form-control input-small" id="comment1" name="comments" placeholder="Choose fresh">
 						</td>
-					</tr> <tr id="3">
+						</tr> <tr id="3">
 						<td>
 							<input type="text" class="autoCompItem itembox form-control input-small" id="item2" name="item" placeholder="Eggs">
 						</td>
@@ -193,6 +218,17 @@
 <script type="text/javascript" src="assets/plugins/form.validate/jquery.form.min.js"></script>
 <script>
 	$(document).ready(function(){
+		var dataURL = '/api';
+		$.ajax({
+			dataType: "json",
+			url: dataURL+'/getaddrs',
+			success: function(data){
+				$.each(data, function(arrayID, adrObj){
+					var divData = '<option value='+'"'+adrObj.adr_nick+'">'+adrObj.adr_nick+'</option>';
+					$(divData).appendTo("#address");
+				});
+			}
+		});
 		$(".autoCompItem").each(function(){
 			$(this).autocomplete({
 				source: function(request, response){
@@ -223,28 +259,28 @@
 		$("#addmore").on("click", function(){
 			var rownum = $('#orderTable tr:last').attr('id')*1+1;
 			var rowhtml =' <tr id="' + rownum +'"> '+
-'						<td> '+
-'							<input type="text" class="autoCompItem itembox form-control input-small" name="item" placeholder="Eggs" > '+
-'						</td>  '+
-'						<td> '+ 
-'							<input type="text" class="form-control qty input-small" name="quantity" placeholder="24"> '+ 
-'						</td> '+ 
-'						<td> '+ 
-'							<select class="form-control "> '+
-'								<option value="">Units</option> '+
-'								<option value="lbs">lbs</option> '+
-'								<option value="packs">Packs</option> '+ 
-'								<option value="cartons">Cartons</option> '+ 
-'								<option value="gallons">Gallons</option> '+ 
-'							</select> '+
-'						</td> '+
-'						<td> '+
-'							<input type="text" class="form-control input-small" name="brand" placeholder="Eggland"> '+
-'						</td> '+
-'						<td> '+
-'							<input type="text" class="form-control input-small" name="comments" placeholder="Choose fresh"> '+
-'						</td> '+
-'					</tr>';
+				'						<td> '+
+					'							<input type="text" class="autoCompItem itembox form-control input-small" name="item" placeholder="Eggs" > '+
+					'						</td>  '+
+				'						<td> '+ 
+					'							<input type="text" class="form-control qty input-small" name="quantity" placeholder="24"> '+ 
+					'						</td> '+ 
+				'						<td> '+ 
+					'							<select class="form-control "> '+
+						'								<option value="">Units</option> '+
+						'								<option value="lbs">lbs</option> '+
+						'								<option value="packs">Packs</option> '+ 
+						'								<option value="cartons">Cartons</option> '+ 
+						'								<option value="gallons">Gallons</option> '+ 
+						'							</select> '+
+					'						</td> '+
+				'						<td> '+
+					'							<input type="text" class="form-control input-small" name="brand" placeholder="Eggland"> '+
+					'						</td> '+
+				'						<td> '+
+					'							<input type="text" class="form-control input-small" name="comments" placeholder="Choose fresh"> '+
+					'						</td> '+
+				'					</tr>';
 			$(rowhtml).appendTo("#orderTable");
 			var ipt = $(".autoCompItem");
 			$("#orderTable").find(ipt).each(function(){
@@ -267,7 +303,7 @@
 						$(this).val(ui.item.name);
 						return false;
 					}
-				}).data("ui-autocomplete")._renderItem = function(ul, item) {
+					}).data("ui-autocomplete")._renderItem = function(ul, item) {
 					return $( "<li>")
 					.data( "ui-autocomplete-item", item )
 					.append( item.name)
@@ -291,8 +327,17 @@
 	}, "please add both item and quantity");
 	jQuery().ready(function(){
 		jQuery("#orderform").validate({
+			rules:{
+				address: "required",
+				store: "required",
+			},
 			highlight: function(element, errorClass){
-				jQuery(element).closest('tr').find(".itembox").addClass(errorClass);
+				if (jQuery(element).is("input")){
+					jQuery(element).closest('tr').find(".itembox").addClass(errorClass);
+					}else{
+					alert(jQuery(element).get(0).tagName);
+					jQuery(element).addClass(errorClass);	
+				}
 			}
 		});
 	});

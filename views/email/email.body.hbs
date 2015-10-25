@@ -1,0 +1,29 @@
+<section class="page-header page-header-lg parallax parallax-3" style="background-image:url('assets/images/imgpattern2.jpg')">
+<div class="overlay dark-2"><!-- dark overlay [1 to 9 opacity] --></div>
+<div class="container">
+	<h1>ValetBasket</h1>
+	<span class="font-lato size-18 weight-300 hidden-xs"><h4>Order has been placed to {{order.store}} </h4></span>
+</div>
+</section>
+
+<h5>Delivery address:</h5>
+
+<p>
+<span style="display:block">	{{order.customer.address.adr_line1}}</span>
+<span style="display:block"> 	{{order.customer.address.adr_line2}}</span>
+<span style="display:block">	{{order.customer.address.city}}</span>
+<span style="display:block">	{{order.customer.address.state}}</span>
+<span style="display:block">	{{order.customer.address.zip}}</span>
+<span style="display:block">	Phone: {{order.customer.primary_phone}}</span>
+</p>
+<br/>
+Order Details below:
+<br/>
+<table>
+	<th> Item</th><th>Quantity</th><th>Units</th><th>Brand</th><th>Comments</th>
+	{{#each order.ord_lines}}
+	<tr>
+		<td>{{this.item}}</td><td>{{this.qty}}</td><td>{{this.uom}}</td><td>{{this.brand}}</td><td>{{this.comments}}</td>
+	</tr>
+	{{/each}}
+</table>

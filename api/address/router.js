@@ -6,16 +6,12 @@ var router = new express.Router();
 
 function findAddresses(req, res, next) {
 
-	console.log('get me addresses for the user...');
-	console.log('query from param:'+JSON.stringify(req.param));
-	console.log('query:'+JSON.stringify(req.query));
 	var userQuery = {};
 	userQuery.name = {};
 	userQuery.name.first = req.session.name.split(" ")[0];
 	userQuery.name.last = req.session.name.split(" ")[1];
 	var addresses = [];
 	var queryAddress ={};
-	console.log('user Query details:'+JSON.stringify(userQuery));
 	User.findOne(userQuery).populate('delivery_addresses').exec(function(err, usr){
 		if (err) {
 			console.log('Error Inserting New Data');
@@ -26,7 +22,6 @@ function findAddresses(req, res, next) {
 			}
 		}
 		usr.delivery_addresses.forEach(function(adr){
-			console.log('adr is:'+JSON.stringify(adr));
 			addresses.push(adr);
 			if (adr.adr_nick == req.query.adrnick){
 				queryAddress = adr;

@@ -1,7 +1,10 @@
 var mongoose = require('mongoose');
+var autoIncrement = require('mongoose-auto-increment');
+var dbConn = require('./db.js');
 
 var orderSchema= mongoose.Schema({
 	ord_status: {type: String},
+    	ord_number: {type: Number},
         comments: {type: String},
         ord_lines: [{
 		line_status: {type: String},
@@ -20,11 +23,15 @@ var orderSchema= mongoose.Schema({
 			adr_line2: {type: String},
 			city: {type: String},
 			state: {type: String},
+			country: {type: String},
 			zip : {type: Number},
 		}
-	}
+	},
+	store: {type: String},
 });
 
+autoIncrement.initialize(dbConn.connection);
+orderSchema.plugin(autoIncrement.plugin, {model: 'Order', field: 'ord_number'});
 var Order= mongoose.model('Order', orderSchema);
 module.exports=Order;
 
