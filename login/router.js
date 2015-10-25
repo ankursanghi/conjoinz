@@ -13,7 +13,11 @@ function login(req, res,next) {
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
 	if (!(req.session.errmsg)){
-		res.render("login/login", {layout: false});
+		req.session.regenerate(function(err){
+			console.log('regenerating a session here...');
+			if (err) next; 
+			res.render("login/login", {layout: false});
+		});
 	}else{
 		res.render("login/login", {layout: false, invalid: true, message: req.session.errmsg});
 	}
@@ -52,10 +56,14 @@ function loginUser (req, res, next){
 			if(checkHash == user.hash){
 				// console.log("checkHash: "+checkHash);
 				// console.log("use.hash: "+user.hash);
-				req.session.isLoggedIn = true;
-				req.session.user = email;
-				req.session.name = user.name.first+' '+user.name.last;
-				res.redirect(302, '/order');
+				req.session.reload(function(err){
+					console.log('setting my session variables here...');
+					req.session.touch();
+					req.session.isLoggedIn = true;
+					req.session.user = email;
+					req.session.name = user.name.first+' '+user.name.last;
+					res.redirect(302, '/order');
+				});
 			}
 		}
 	});
