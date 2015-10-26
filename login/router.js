@@ -33,6 +33,7 @@ function logout(req, res, next){
 	res.render('home/home', {layout:false});
 
 }
+// api - loginUserApi
 function loginUser (req, res, next){
 	var email = req.body.email;
 	var passwd = req.body.password;
