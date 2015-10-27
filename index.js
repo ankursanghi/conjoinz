@@ -13,11 +13,11 @@ var http = require('http');
 var db = require('./models/db.js');
 var credentials = require('./models/credentials.js'); 
 
-// var privateKey  = fs.readFileSync('https/serverkey.pem', 'utf8');
-// var certificate = fs.readFileSync('https/servercert.pem', 'utf8');
-// var httpscredentials = {key: privateKey, cert: certificate};
+var privateKey  = fs.readFileSync('https/newserverkey.pem', 'utf8');
+var certificate = fs.readFileSync('https/servercert.pem', 'utf8');
+var httpscredentials = {key: privateKey, cert: certificate};
 
-// var httpsServer = https.createServer(httpscredentials, app);
+var httpsServer = https.createServer(httpscredentials, app);
 var httpServer = http.createServer(app);
 // use cookie parser for cookie secret
 app.use(require('cookie-parser')(credentials.cookieSecret));
@@ -27,7 +27,7 @@ app.use(session({
 	            store: new MongoStore({ mongooseConnection: db.connection}),
 	            secret:credentials.cookieSecret,
 		    key: 'just.checking.if.this.works',
-	            cookie: { maxAge: new Date(Date.now() + 3600000)},
+	            cookie: { maxAge: 18000}, // set the cookie time out to be 30 minutes, after which the login is required again
 	            resave:false,
 	            saveUninitialized:true
 
@@ -67,9 +67,9 @@ app.use(require("./pwdreset/router"));
 app.use(require("./login/router"));
 app.use(require("./order/router"));
 app.use(require("./profile/router"));
-
+app.use(require("./faqs/router"));
 app.use("/api/autocomplete", require('./api/autocomplete/router'));
-
+app.use("/api/getaddrs", require('./api/address/router'));
 //app.use("/api/customer", require("api/customer/router"));
 // Repeat the above line for additional model areas ("deals", "vehicles", etc)
 
@@ -78,4 +78,4 @@ app.use("/api/autocomplete", require('./api/autocomplete/router'));
 
 // Export the app instance for unit testing via supertest
 module.exports.httpServer = httpServer;
-// module.exports.httpsServer = httpsServer;
+module.exports.httpsServer = httpsServer;
