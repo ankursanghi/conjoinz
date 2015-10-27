@@ -1,0 +1,596 @@
+2015-10-19T19:08:49.742-0700 I CONTROL  ***** SERVER RESTARTED *****
+2015-10-19T19:08:49.764-0700 W -        [initandlisten] Detected unclean shutdown - D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\mongod.lock is not empty.
+2015-10-19T19:08:49.774-0700 I JOURNAL  [initandlisten] journal dir=D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\journal
+2015-10-19T19:08:49.774-0700 I JOURNAL  [initandlisten] recover begin
+2015-10-19T19:08:49.774-0700 I JOURNAL  [initandlisten] info no lsn file in journal/ directory
+2015-10-19T19:08:49.775-0700 I JOURNAL  [initandlisten] recover lsn: 0
+2015-10-19T19:08:49.775-0700 I JOURNAL  [initandlisten] recover D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\journal\j._0
+2015-10-19T19:08:49.780-0700 I STORAGE  [initandlisten] recover create file D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\local.ns 16MB
+2015-10-19T19:08:49.875-0700 I STORAGE  [initandlisten] recover create file D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\local.0 64MB
+2015-10-19T19:08:50.231-0700 I JOURNAL  [initandlisten] recover cleaning up
+2015-10-19T19:08:50.231-0700 I JOURNAL  [initandlisten] removeJournalFiles
+2015-10-19T19:08:50.232-0700 I JOURNAL  [initandlisten] recover done
+2015-10-19T19:08:50.292-0700 I JOURNAL  [durability] Durability thread started
+2015-10-19T19:08:50.293-0700 I CONTROL  [initandlisten] MongoDB starting : pid=5516 port=27017 dbpath=D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket 64-bit host=Diganta
+2015-10-19T19:08:50.294-0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-10-19T19:08:50.294-0700 I CONTROL  [initandlisten] db version v3.0.7
+2015-10-19T19:08:50.294-0700 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-10-19T19:08:50.294-0700 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-10-19T19:08:50.294-0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-10-19T19:08:50.294-0700 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-10-19T19:08:50.295-0700 I JOURNAL  [journal writer] Journal writer thread started
+2015-10-19T19:08:50.355-0700 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-10-19T19:09:44.530-0700 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:12526 #1 (1 connection now open)
+2015-10-19T19:09:44.532-0700 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:12527 #2 (2 connections now open)
+2015-10-19T19:09:44.533-0700 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:12528 #3 (3 connections now open)
+2015-10-19T19:09:44.533-0700 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:12529 #4 (4 connections now open)
+2015-10-19T19:09:44.533-0700 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:12530 #5 (5 connections now open)
+2015-10-19T19:09:44.556-0700 I INDEX    [conn3] allocating new ns file D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\valetbasket.ns, filling with zeroes...
+2015-10-19T19:09:44.617-0700 I STORAGE  [FileAllocator] allocating new datafile D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\valetbasket.0, filling with zeroes...
+2015-10-19T19:09:44.617-0700 I STORAGE  [FileAllocator] creating directory D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\_tmp
+2015-10-19T19:09:44.626-0700 I STORAGE  [FileAllocator] done allocating datafile D:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\valetbasket.0, size: 64MB,  took 0.007 secs
+2015-10-19T19:09:44.645-0700 I INDEX    [conn3] build index on: valetbasket.sessions properties: { v: 1, key: { expires: 1 }, name: "expires_1", ns: "valetbasket.sessions", expireAfterSeconds: 0 }
+2015-10-19T19:09:44.645-0700 I INDEX    [conn3] 	 building index using bulk method
+2015-10-19T19:09:44.646-0700 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+2015-10-19T19:33:29.867-0700 I NETWORK  [conn2] end connection 127.0.0.1:12527 (4 connections now open)
+2015-10-19T19:33:29.868-0700 I NETWORK  [conn1] end connection 127.0.0.1:12526 (4 connections now open)
+2015-10-19T19:33:29.868-0700 I NETWORK  [conn4] end connection 127.0.0.1:12529 (4 connections now open)
+2015-10-19T19:33:29.868-0700 I NETWORK  [conn3] end connection 127.0.0.1:12528 (4 connections now open)
+2015-10-19T19:33:29.878-0700 I NETWORK  [conn5] end connection 127.0.0.1:12530 (4 connections now open)
+2015-10-19T19:33:35.345-0700 I CONTROL  Ctrl-C signal
+2015-10-19T19:33:35.346-0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2015-10-19T19:33:35.348-0700 I CONTROL  [consoleTerminate] now exiting
+2015-10-19T19:33:35.349-0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-10-19T19:33:35.349-0700 I NETWORK  [consoleTerminate] closing listening socket: 448
+2015-10-19T19:33:35.349-0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-10-19T19:33:35.350-0700 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-10-19T19:33:35.350-0700 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-10-19T19:33:35.350-0700 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-10-19T19:33:35.360-0700 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-10-19T19:33:35.360-0700 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-10-19T19:33:35.364-0700 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-10-19T19:33:35.453-0700 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-10-19T19:33:35.454-0700 I JOURNAL  [durability] Durability thread stopped
+2015-10-19T19:33:35.454-0700 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-10-19T19:33:35.465-0700 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-10-19T19:33:35.465-0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-10-19T19:33:35.466-0700 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-10-21T10:34:38.670+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-10-21T10:34:38.680+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\journal
+2015-10-21T10:34:38.680+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-10-21T10:34:38.701+0530 I JOURNAL  [durability] Durability thread started
+2015-10-21T10:34:38.701+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-10-21T10:34:38.815+0530 I CONTROL  [initandlisten] MongoDB starting : pid=3716 port=27017 dbpath=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-10-21T10:34:38.815+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-10-21T10:34:38.815+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-10-21T10:34:38.815+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-10-21T10:34:38.815+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-10-21T10:34:38.815+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-10-21T10:34:38.815+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-10-21T10:34:38.842+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-10-21T20:26:58.522+0530 I NETWORK  [initandlisten] connection accepted from 192.168.1.17:54052 #1 (1 connection now open)
+2015-10-21T20:26:58.523+0530 I NETWORK  [initandlisten] connection accepted from 192.168.1.17:54053 #2 (2 connections now open)
+2015-10-21T20:26:58.523+0530 I NETWORK  [initandlisten] connection accepted from 192.168.1.17:54054 #3 (3 connections now open)
+2015-10-21T20:26:58.523+0530 I NETWORK  [initandlisten] connection accepted from 192.168.1.17:54055 #4 (4 connections now open)
+2015-10-21T20:26:58.523+0530 I NETWORK  [initandlisten] connection accepted from 192.168.1.17:54056 #5 (5 connections now open)
+2015-10-21T20:27:31.073+0530 I QUERY    [conn4] query valetbasket.sessions query: { _id: "ffrvQ-q_VdFVKfOOFRw4gYalpkTgnZwI", $or: [ { expires: { $exists: false } }, { expires: { $gt: new Date(1445439450926) } } ] } planSummary: IXSCAN { _id: 1 } ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:20 locks:{ Global: { acquireCount: { r: 4 } }, MMAPV1Journal: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { R: 2 } } } 105ms
+2015-10-21T20:27:31.167+0530 I WRITE    [conn3] update valetbasket.sessions query: { _id: "ffrvQ-q_VdFVKfOOFRw4gYalpkTgnZwI" } update: { _id: "ffrvQ-q_VdFVKfOOFRw4gYalpkTgnZwI", session: "{"cookie":{"originalMaxAge":3567311,"expires":"2015-10-21T15:56:58.217Z","httpOnly":true,"path":"/"}}", expires: new Date(1445443018217) } nscanned:0 nscannedObjects:0 nMatched:1 nModified:1 upsert:1 keyUpdates:0 writeConflicts:0 numYields:1 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, MMAPV1Journal: { acquireCount: { w: 4 } }, Database: { acquireCount: { w: 2 } }, Collection: { acquireCount: { W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 6533 } } } 105ms
+2015-10-21T20:27:31.167+0530 I COMMAND  [conn3] command valetbasket.$cmd command: update { update: "sessions", updates: [ { q: { _id: "ffrvQ-q_VdFVKfOOFRw4gYalpkTgnZwI" }, u: { _id: "ffrvQ-q_VdFVKfOOFRw4gYalpkTgnZwI", session: "{"cookie":{"originalMaxAge":3567311,"expires":"2015-10-21T15:56:58.217Z","httpOnly":true,"path":"/"}}", expires: new Date(1445443018217) }, upsert: true, multi: false } ], ordered: true, writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:131 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, MMAPV1Journal: { acquireCount: { w: 4 } }, Database: { acquireCount: { w: 2 } }, Collection: { acquireCount: { W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 6533 } } } 258ms
+2015-10-21T20:38:20.583+0530 I NETWORK  [conn4] end connection 192.168.1.17:54055 (4 connections now open)
+2015-10-21T20:38:20.583+0530 I NETWORK  [conn1] end connection 192.168.1.17:54052 (4 connections now open)
+2015-10-21T20:38:20.583+0530 I NETWORK  [conn3] end connection 192.168.1.17:54054 (4 connections now open)
+2015-10-21T20:38:20.583+0530 I NETWORK  [conn2] end connection 192.168.1.17:54053 (4 connections now open)
+2015-10-21T20:38:20.583+0530 I NETWORK  [conn5] end connection 192.168.1.17:54056 (4 connections now open)
+2015-10-21T20:38:26.969+0530 I CONTROL  CTRL_CLOSE_EVENT signal
+2015-10-21T20:38:26.969+0530 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2015-10-21T20:38:26.969+0530 I CONTROL  [consoleTerminate] now exiting
+2015-10-21T20:38:26.969+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-10-21T20:38:26.969+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-10-21T20:38:26.969+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-10-21T20:38:26.969+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-10-21T20:38:26.969+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-10-21T20:38:26.969+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-10-21T20:38:27.057+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-10-21T20:38:27.057+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-10-21T20:38:27.059+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-10-21T20:38:27.073+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-10-21T20:38:27.073+0530 I JOURNAL  [durability] Durability thread stopped
+2015-10-21T20:38:27.073+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-10-21T20:38:27.083+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-10-21T20:38:27.083+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-10-21T20:38:27.083+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-10-23T09:38:31.412+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-10-23T09:38:31.441+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\journal
+2015-10-23T09:38:31.441+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-10-23T09:38:31.485+0530 I JOURNAL  [durability] Durability thread started
+2015-10-23T09:38:31.486+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-10-23T09:38:31.546+0530 I CONTROL  [initandlisten] MongoDB starting : pid=4024 port=27017 dbpath=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-10-23T09:38:31.546+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-10-23T09:38:31.546+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-10-23T09:38:31.546+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-10-23T09:38:31.546+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-10-23T09:38:31.546+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-10-23T09:38:31.546+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-10-23T09:38:31.571+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-10-23T09:44:09.756+0530 I CONTROL  CTRL_CLOSE_EVENT signal
+2015-10-23T09:44:09.756+0530 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2015-10-23T09:44:09.756+0530 I CONTROL  [consoleTerminate] now exiting
+2015-10-23T09:44:09.756+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-10-23T09:44:09.756+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-10-23T09:44:09.756+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-10-23T09:44:09.756+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-10-23T09:44:09.756+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-10-23T09:44:09.756+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-10-23T09:44:09.761+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-10-23T09:44:09.761+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-10-23T09:44:09.762+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-10-23T09:44:09.859+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-10-23T09:44:09.859+0530 I JOURNAL  [durability] Durability thread stopped
+2015-10-23T09:44:09.859+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-10-23T09:44:09.862+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-10-23T09:44:09.862+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-10-23T09:44:09.862+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-10-23T09:45:29.025+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-10-23T09:45:29.034+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\journal
+2015-10-23T09:45:29.035+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-10-23T09:45:29.121+0530 I JOURNAL  [durability] Durability thread started
+2015-10-23T09:45:29.123+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-10-23T09:45:29.181+0530 I CONTROL  [initandlisten] MongoDB starting : pid=3812 port=27017 dbpath=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-10-23T09:45:29.181+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-10-23T09:45:29.181+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-10-23T09:45:29.181+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-10-23T09:45:29.181+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-10-23T09:45:29.181+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-10-23T09:45:29.181+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-10-23T09:45:29.207+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-10-23T09:59:40.751+0530 I CONTROL  CTRL_CLOSE_EVENT signal
+2015-10-23T09:59:40.751+0530 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2015-10-23T09:59:40.751+0530 I CONTROL  [consoleTerminate] now exiting
+2015-10-23T09:59:40.751+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-10-23T09:59:40.751+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-10-23T09:59:40.751+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-10-23T09:59:40.751+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-10-23T09:59:40.751+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-10-23T09:59:40.751+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-10-23T09:59:40.756+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-10-23T09:59:40.756+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-10-23T09:59:40.757+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-10-23T09:59:40.854+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-10-23T09:59:40.854+0530 I JOURNAL  [durability] Durability thread stopped
+2015-10-23T09:59:40.854+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-10-23T09:59:40.864+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-10-23T09:59:40.864+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-10-23T09:59:40.864+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-10-23T10:03:10.958+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-10-23T10:03:11.006+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\journal
+2015-10-23T10:03:11.006+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-10-23T10:03:11.067+0530 I JOURNAL  [durability] Durability thread started
+2015-10-23T10:03:11.068+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-10-23T10:03:11.133+0530 I CONTROL  [initandlisten] MongoDB starting : pid=2004 port=27017 dbpath=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-10-23T10:03:11.133+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-10-23T10:03:11.133+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-10-23T10:03:11.133+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-10-23T10:03:11.133+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-10-23T10:03:11.133+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-10-23T10:03:11.133+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-10-23T10:03:11.160+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-10-23T10:15:59.794+0530 I CONTROL  Ctrl-C signal
+2015-10-23T10:15:59.794+0530 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2015-10-23T10:15:59.794+0530 I CONTROL  [consoleTerminate] now exiting
+2015-10-23T10:15:59.794+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-10-23T10:15:59.794+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-10-23T10:15:59.794+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-10-23T10:15:59.794+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-10-23T10:15:59.795+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-10-23T10:15:59.795+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-10-23T10:15:59.800+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-10-23T10:15:59.800+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-10-23T10:15:59.801+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-10-23T10:15:59.898+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-10-23T10:15:59.898+0530 I JOURNAL  [durability] Durability thread stopped
+2015-10-23T10:15:59.898+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-10-23T10:15:59.908+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-10-23T10:15:59.908+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-10-23T10:15:59.908+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-10-23T10:36:39.270+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-10-23T10:36:39.284+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\journal
+2015-10-23T10:36:39.284+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-10-23T10:36:39.312+0530 I JOURNAL  [durability] Durability thread started
+2015-10-23T10:36:39.312+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-10-23T10:36:39.385+0530 I CONTROL  [initandlisten] MongoDB starting : pid=4840 port=27017 dbpath=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-10-23T10:36:39.385+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-10-23T10:36:39.385+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-10-23T10:36:39.385+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-10-23T10:36:39.385+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-10-23T10:36:39.385+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-10-23T10:36:39.385+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-10-23T10:36:39.406+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-10-23T10:58:44.385+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50652 #1 (1 connection now open)
+2015-10-23T10:58:44.385+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50653 #2 (2 connections now open)
+2015-10-23T10:58:44.385+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50654 #3 (3 connections now open)
+2015-10-23T10:58:44.385+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50655 #4 (4 connections now open)
+2015-10-23T10:58:44.386+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50656 #5 (5 connections now open)
+2015-10-23T10:59:00.663+0530 I QUERY    [conn3] query valetbasket.sessions query: { _id: "H-JDs20G0AdNcl3ZL8yTPVkVDWbIOJnx", $or: [ { expires: { $exists: false } }, { expires: { $gt: new Date(1445578140495) } } ] } planSummary: IXSCAN { _id: 1 } ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:20 locks:{ Global: { acquireCount: { r: 4 } }, MMAPV1Journal: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { R: 2 } } } 138ms
+2015-10-23T10:59:00.891+0530 I WRITE    [conn4] update valetbasket.sessions query: { _id: "zfHkc7x7UcB-5GufhHwtrSuLu808_VM1" } update: { _id: "zfHkc7x7UcB-5GufhHwtrSuLu808_VM1", session: "{"cookie":{"originalMaxAge":3583463,"expires":"2015-10-23T06:28:44.212Z","httpOnly":true,"path":"/"}}", expires: new Date(1445581724212) } nscanned:0 nscannedObjects:0 nMatched:1 nModified:1 upsert:1 keyUpdates:0 writeConflicts:0 numYields:0 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, MMAPV1Journal: { acquireCount: { w: 3 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { W: 1 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 37091 } } } 125ms
+2015-10-23T10:59:00.900+0530 I COMMAND  [conn4] command valetbasket.$cmd command: update { update: "sessions", updates: [ { q: { _id: "zfHkc7x7UcB-5GufhHwtrSuLu808_VM1" }, u: { _id: "zfHkc7x7UcB-5GufhHwtrSuLu808_VM1", session: "{"cookie":{"originalMaxAge":3583463,"expires":"2015-10-23T06:28:44.212Z","httpOnly":true,"path":"/"}}", expires: new Date(1445581724212) }, upsert: true, multi: false } ], ordered: true, writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:131 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, MMAPV1Journal: { acquireCount: { w: 3 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { W: 1 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 37091 } } } 149ms
+2015-10-23T14:56:19.489+0530 I NETWORK  [conn3] end connection 192.168.56.1:50654 (4 connections now open)
+2015-10-23T14:56:19.489+0530 I NETWORK  [conn2] end connection 192.168.56.1:50653 (4 connections now open)
+2015-10-23T14:56:19.489+0530 I NETWORK  [conn4] end connection 192.168.56.1:50655 (4 connections now open)
+2015-10-23T14:56:19.489+0530 I NETWORK  [conn1] end connection 192.168.56.1:50652 (4 connections now open)
+2015-10-23T14:56:19.489+0530 I NETWORK  [conn5] end connection 192.168.56.1:50656 (4 connections now open)
+2015-10-23T14:57:12.470+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57072 #6 (1 connection now open)
+2015-10-23T14:57:12.471+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57073 #7 (2 connections now open)
+2015-10-23T14:57:12.471+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57074 #8 (3 connections now open)
+2015-10-23T14:57:12.471+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57075 #9 (4 connections now open)
+2015-10-23T14:57:12.471+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57076 #10 (5 connections now open)
+2015-10-23T15:26:21.075+0530 I NETWORK  [conn6] end connection 192.168.56.1:57072 (4 connections now open)
+2015-10-23T15:26:21.076+0530 I NETWORK  [conn9] end connection 192.168.56.1:57075 (4 connections now open)
+2015-10-23T15:26:21.075+0530 I NETWORK  [conn7] end connection 192.168.56.1:57073 (4 connections now open)
+2015-10-23T15:26:21.076+0530 I NETWORK  [conn10] end connection 192.168.56.1:57076 (2 connections now open)
+2015-10-23T15:26:21.075+0530 I NETWORK  [conn8] end connection 192.168.56.1:57074 (4 connections now open)
+2015-10-23T15:26:33.363+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57236 #11 (1 connection now open)
+2015-10-23T15:26:33.363+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57237 #12 (2 connections now open)
+2015-10-23T15:26:33.363+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57238 #13 (3 connections now open)
+2015-10-23T15:26:33.364+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57239 #14 (4 connections now open)
+2015-10-23T15:26:33.364+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57240 #15 (5 connections now open)
+2015-10-23T16:47:04.022+0530 I NETWORK  [conn11] end connection 192.168.56.1:57236 (4 connections now open)
+2015-10-23T16:47:04.022+0530 I NETWORK  [conn12] end connection 192.168.56.1:57237 (4 connections now open)
+2015-10-23T16:47:04.023+0530 I NETWORK  [conn13] end connection 192.168.56.1:57238 (2 connections now open)
+2015-10-23T16:47:04.023+0530 I NETWORK  [conn14] end connection 192.168.56.1:57239 (2 connections now open)
+2015-10-23T16:47:04.024+0530 I NETWORK  [conn15] end connection 192.168.56.1:57240 (1 connection now open)
+2015-10-23T16:47:11.811+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58079 #16 (1 connection now open)
+2015-10-23T16:47:11.812+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58080 #17 (2 connections now open)
+2015-10-23T16:47:11.812+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58081 #18 (3 connections now open)
+2015-10-23T16:47:11.812+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58082 #19 (4 connections now open)
+2015-10-23T16:47:11.812+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58083 #20 (5 connections now open)
+2015-10-23T16:48:44.781+0530 I NETWORK  [conn16] end connection 192.168.56.1:58079 (4 connections now open)
+2015-10-23T16:48:44.782+0530 I NETWORK  [conn17] end connection 192.168.56.1:58080 (3 connections now open)
+2015-10-23T16:48:44.782+0530 I NETWORK  [conn18] end connection 192.168.56.1:58081 (3 connections now open)
+2015-10-23T16:48:44.782+0530 I NETWORK  [conn19] end connection 192.168.56.1:58082 (1 connection now open)
+2015-10-23T16:48:44.782+0530 I NETWORK  [conn20] end connection 192.168.56.1:58083 (1 connection now open)
+2015-10-23T16:48:53.727+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58104 #21 (1 connection now open)
+2015-10-23T16:48:53.728+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58105 #22 (2 connections now open)
+2015-10-23T16:48:53.728+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58106 #23 (3 connections now open)
+2015-10-23T16:48:53.728+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58107 #24 (4 connections now open)
+2015-10-23T16:48:53.728+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58108 #25 (5 connections now open)
+2015-10-23T16:50:15.006+0530 I NETWORK  [conn21] end connection 192.168.56.1:58104 (4 connections now open)
+2015-10-23T16:50:15.006+0530 I NETWORK  [conn22] end connection 192.168.56.1:58105 (4 connections now open)
+2015-10-23T16:50:15.007+0530 I NETWORK  [conn23] end connection 192.168.56.1:58106 (2 connections now open)
+2015-10-23T16:50:15.007+0530 I NETWORK  [conn25] end connection 192.168.56.1:58108 (2 connections now open)
+2015-10-23T16:50:15.007+0530 I NETWORK  [conn24] end connection 192.168.56.1:58107 (2 connections now open)
+2015-10-23T16:50:23.052+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58129 #26 (1 connection now open)
+2015-10-23T16:50:23.053+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58130 #27 (2 connections now open)
+2015-10-23T16:50:23.053+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58131 #28 (3 connections now open)
+2015-10-23T16:50:23.053+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58132 #29 (4 connections now open)
+2015-10-23T16:50:23.053+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58133 #30 (5 connections now open)
+2015-10-23T16:53:22.499+0530 I NETWORK  [conn26] end connection 192.168.56.1:58129 (4 connections now open)
+2015-10-23T16:53:22.499+0530 I NETWORK  [conn28] end connection 192.168.56.1:58131 (4 connections now open)
+2015-10-23T16:53:22.499+0530 I NETWORK  [conn27] end connection 192.168.56.1:58130 (4 connections now open)
+2015-10-23T16:53:22.500+0530 I NETWORK  [conn29] end connection 192.168.56.1:58132 (2 connections now open)
+2015-10-23T16:53:22.500+0530 I NETWORK  [conn30] end connection 192.168.56.1:58133 (0 connections now open)
+2015-10-23T16:53:28.820+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58149 #31 (1 connection now open)
+2015-10-23T16:53:28.820+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58150 #32 (2 connections now open)
+2015-10-23T16:53:28.820+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58151 #33 (3 connections now open)
+2015-10-23T16:53:28.820+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58152 #34 (4 connections now open)
+2015-10-23T16:53:28.821+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58153 #35 (5 connections now open)
+2015-10-23T16:55:23.308+0530 I NETWORK  [conn31] end connection 192.168.56.1:58149 (4 connections now open)
+2015-10-23T16:55:23.309+0530 I NETWORK  [conn32] end connection 192.168.56.1:58150 (3 connections now open)
+2015-10-23T16:55:23.310+0530 I NETWORK  [conn33] end connection 192.168.56.1:58151 (3 connections now open)
+2015-10-23T16:55:23.310+0530 I NETWORK  [conn34] end connection 192.168.56.1:58152 (2 connections now open)
+2015-10-23T16:55:23.310+0530 I NETWORK  [conn35] end connection 192.168.56.1:58153 (1 connection now open)
+2015-10-23T16:55:29.888+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58170 #36 (1 connection now open)
+2015-10-23T16:55:29.888+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58171 #37 (2 connections now open)
+2015-10-23T16:55:29.889+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58172 #38 (3 connections now open)
+2015-10-23T16:55:29.889+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58173 #39 (4 connections now open)
+2015-10-23T16:55:29.889+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58174 #40 (5 connections now open)
+2015-10-23T16:58:34.186+0530 I NETWORK  [conn36] end connection 192.168.56.1:58170 (4 connections now open)
+2015-10-23T16:58:34.186+0530 I NETWORK  [conn37] end connection 192.168.56.1:58171 (4 connections now open)
+2015-10-23T16:58:34.187+0530 I NETWORK  [conn38] end connection 192.168.56.1:58172 (2 connections now open)
+2015-10-23T16:58:34.187+0530 I NETWORK  [conn40] end connection 192.168.56.1:58174 (2 connections now open)
+2015-10-23T16:58:34.187+0530 I NETWORK  [conn39] end connection 192.168.56.1:58173 (2 connections now open)
+2015-10-23T16:58:43.927+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58196 #41 (1 connection now open)
+2015-10-23T16:58:43.928+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58197 #42 (2 connections now open)
+2015-10-23T16:58:43.928+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58198 #43 (3 connections now open)
+2015-10-23T16:58:43.928+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58199 #44 (4 connections now open)
+2015-10-23T16:58:43.928+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58200 #45 (5 connections now open)
+2015-10-23T17:00:33.083+0530 I NETWORK  [conn41] end connection 192.168.56.1:58196 (4 connections now open)
+2015-10-23T17:00:33.083+0530 I NETWORK  [conn42] end connection 192.168.56.1:58197 (3 connections now open)
+2015-10-23T17:00:33.083+0530 I NETWORK  [conn43] end connection 192.168.56.1:58198 (2 connections now open)
+2015-10-23T17:00:33.084+0530 I NETWORK  [conn44] end connection 192.168.56.1:58199 (2 connections now open)
+2015-10-23T17:00:33.084+0530 I NETWORK  [conn45] end connection 192.168.56.1:58200 (1 connection now open)
+2015-10-23T17:03:42.197+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58296 #46 (1 connection now open)
+2015-10-23T17:03:42.198+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58297 #47 (2 connections now open)
+2015-10-23T17:03:42.198+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58298 #48 (3 connections now open)
+2015-10-23T17:03:42.198+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58299 #49 (4 connections now open)
+2015-10-23T17:03:42.198+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58300 #50 (5 connections now open)
+2015-10-23T17:04:31.928+0530 I NETWORK  [conn46] end connection 192.168.56.1:58296 (4 connections now open)
+2015-10-23T17:04:31.928+0530 I NETWORK  [conn47] end connection 192.168.56.1:58297 (3 connections now open)
+2015-10-23T17:04:31.929+0530 I NETWORK  [conn48] end connection 192.168.56.1:58298 (2 connections now open)
+2015-10-23T17:04:31.929+0530 I NETWORK  [conn49] end connection 192.168.56.1:58299 (2 connections now open)
+2015-10-23T17:04:31.929+0530 I NETWORK  [conn50] end connection 192.168.56.1:58300 (0 connections now open)
+2015-10-23T17:05:42.605+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58315 #51 (1 connection now open)
+2015-10-23T17:05:42.605+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58316 #52 (2 connections now open)
+2015-10-23T17:05:42.606+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58317 #53 (3 connections now open)
+2015-10-23T17:05:42.606+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58318 #54 (4 connections now open)
+2015-10-23T17:05:42.606+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58319 #55 (5 connections now open)
+2015-10-23T17:06:48.736+0530 I NETWORK  [conn51] end connection 192.168.56.1:58315 (4 connections now open)
+2015-10-23T17:06:48.738+0530 I NETWORK  [conn52] end connection 192.168.56.1:58316 (3 connections now open)
+2015-10-23T17:06:48.738+0530 I NETWORK  [conn53] end connection 192.168.56.1:58317 (3 connections now open)
+2015-10-23T17:06:48.738+0530 I NETWORK  [conn54] end connection 192.168.56.1:58318 (2 connections now open)
+2015-10-23T17:06:48.738+0530 I NETWORK  [conn55] end connection 192.168.56.1:58319 (1 connection now open)
+2015-10-23T17:07:00.112+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58335 #56 (1 connection now open)
+2015-10-23T17:07:00.113+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58336 #57 (2 connections now open)
+2015-10-23T17:07:00.113+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58337 #58 (3 connections now open)
+2015-10-23T17:07:00.113+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58338 #59 (4 connections now open)
+2015-10-23T17:07:00.113+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58339 #60 (5 connections now open)
+2015-10-23T17:08:26.087+0530 I NETWORK  [conn56] end connection 192.168.56.1:58335 (4 connections now open)
+2015-10-23T17:08:26.088+0530 I NETWORK  [conn57] end connection 192.168.56.1:58336 (3 connections now open)
+2015-10-23T17:08:26.089+0530 I NETWORK  [conn58] end connection 192.168.56.1:58337 (3 connections now open)
+2015-10-23T17:08:26.089+0530 I NETWORK  [conn59] end connection 192.168.56.1:58338 (2 connections now open)
+2015-10-23T17:08:26.089+0530 I NETWORK  [conn60] end connection 192.168.56.1:58339 (1 connection now open)
+2015-10-23T17:08:46.519+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58363 #61 (1 connection now open)
+2015-10-23T17:08:46.519+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58364 #62 (2 connections now open)
+2015-10-23T17:08:46.519+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58365 #63 (3 connections now open)
+2015-10-23T17:08:46.519+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58366 #64 (4 connections now open)
+2015-10-23T17:08:46.520+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:58367 #65 (5 connections now open)
+2015-10-23T17:56:41.590+0530 I NETWORK  [conn61] end connection 192.168.56.1:58363 (4 connections now open)
+2015-10-23T17:56:41.590+0530 I NETWORK  [conn64] end connection 192.168.56.1:58366 (4 connections now open)
+2015-10-23T17:56:41.590+0530 I NETWORK  [conn65] end connection 192.168.56.1:58367 (3 connections now open)
+2015-10-23T17:56:41.590+0530 I NETWORK  [conn63] end connection 192.168.56.1:58365 (4 connections now open)
+2015-10-23T17:56:41.590+0530 I NETWORK  [conn62] end connection 192.168.56.1:58364 (4 connections now open)
+2015-10-23T17:56:49.105+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59414 #66 (1 connection now open)
+2015-10-23T17:56:49.105+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59415 #67 (2 connections now open)
+2015-10-23T17:56:49.105+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59416 #68 (3 connections now open)
+2015-10-23T17:56:49.105+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59417 #69 (4 connections now open)
+2015-10-23T17:56:49.106+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59418 #70 (5 connections now open)
+2015-10-23T17:58:52.645+0530 I NETWORK  [conn66] end connection 192.168.56.1:59414 (4 connections now open)
+2015-10-23T17:58:52.646+0530 I NETWORK  [conn67] end connection 192.168.56.1:59415 (3 connections now open)
+2015-10-23T17:58:52.646+0530 I NETWORK  [conn68] end connection 192.168.56.1:59416 (3 connections now open)
+2015-10-23T17:58:52.646+0530 I NETWORK  [conn69] end connection 192.168.56.1:59417 (2 connections now open)
+2015-10-23T17:58:52.647+0530 I NETWORK  [conn70] end connection 192.168.56.1:59418 (0 connections now open)
+2015-10-23T18:02:51.555+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59630 #71 (1 connection now open)
+2015-10-23T18:02:51.555+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59631 #72 (2 connections now open)
+2015-10-23T18:02:51.556+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59632 #73 (3 connections now open)
+2015-10-23T18:02:51.556+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59633 #74 (4 connections now open)
+2015-10-23T18:02:51.556+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59634 #75 (5 connections now open)
+2015-10-23T18:03:49.436+0530 I NETWORK  [conn71] end connection 192.168.56.1:59630 (4 connections now open)
+2015-10-23T18:03:49.437+0530 I NETWORK  [conn72] end connection 192.168.56.1:59631 (3 connections now open)
+2015-10-23T18:03:49.437+0530 I NETWORK  [conn73] end connection 192.168.56.1:59632 (3 connections now open)
+2015-10-23T18:03:49.438+0530 I NETWORK  [conn74] end connection 192.168.56.1:59633 (2 connections now open)
+2015-10-23T18:03:49.438+0530 I NETWORK  [conn75] end connection 192.168.56.1:59634 (0 connections now open)
+2015-10-23T18:04:39.001+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59648 #76 (1 connection now open)
+2015-10-23T18:04:39.002+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59649 #77 (2 connections now open)
+2015-10-23T18:04:39.002+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59650 #78 (3 connections now open)
+2015-10-23T18:04:39.002+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59651 #79 (4 connections now open)
+2015-10-23T18:04:39.002+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59652 #80 (5 connections now open)
+2015-10-23T18:18:13.791+0530 I NETWORK  [conn76] end connection 192.168.56.1:59648 (4 connections now open)
+2015-10-23T18:18:13.791+0530 I NETWORK  [conn77] end connection 192.168.56.1:59649 (4 connections now open)
+2015-10-23T18:18:13.792+0530 I NETWORK  [conn78] end connection 192.168.56.1:59650 (2 connections now open)
+2015-10-23T18:18:13.792+0530 I NETWORK  [conn79] end connection 192.168.56.1:59651 (1 connection now open)
+2015-10-23T18:18:13.793+0530 I NETWORK  [conn80] end connection 192.168.56.1:59652 (0 connections now open)
+2015-10-23T18:18:37.519+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59704 #81 (1 connection now open)
+2015-10-23T18:18:37.520+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59705 #82 (2 connections now open)
+2015-10-23T18:18:37.520+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59706 #83 (3 connections now open)
+2015-10-23T18:18:37.520+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59707 #84 (4 connections now open)
+2015-10-23T18:18:37.520+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:59708 #85 (5 connections now open)
+2015-10-23T19:03:46.511+0530 I NETWORK  [conn81] end connection 192.168.56.1:59704 (4 connections now open)
+2015-10-23T19:03:46.512+0530 I NETWORK  [conn82] end connection 192.168.56.1:59705 (4 connections now open)
+2015-10-23T19:03:46.512+0530 I NETWORK  [conn83] end connection 192.168.56.1:59706 (2 connections now open)
+2015-10-23T19:03:46.512+0530 I NETWORK  [conn84] end connection 192.168.56.1:59707 (2 connections now open)
+2015-10-23T19:03:46.513+0530 I NETWORK  [conn85] end connection 192.168.56.1:59708 (0 connections now open)
+2015-10-23T19:05:23.461+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60217 #86 (1 connection now open)
+2015-10-23T19:05:23.462+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60218 #87 (2 connections now open)
+2015-10-23T19:05:23.462+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60219 #88 (3 connections now open)
+2015-10-23T19:05:23.462+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60220 #89 (4 connections now open)
+2015-10-23T19:05:23.462+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60221 #90 (5 connections now open)
+2015-10-23T19:05:57.262+0530 I NETWORK  [conn86] end connection 192.168.56.1:60217 (4 connections now open)
+2015-10-23T19:05:57.262+0530 I NETWORK  [conn87] end connection 192.168.56.1:60218 (3 connections now open)
+2015-10-23T19:05:57.262+0530 I NETWORK  [conn88] end connection 192.168.56.1:60219 (2 connections now open)
+2015-10-23T19:05:57.263+0530 I NETWORK  [conn90] end connection 192.168.56.1:60221 (2 connections now open)
+2015-10-23T19:05:57.263+0530 I NETWORK  [conn89] end connection 192.168.56.1:60220 (2 connections now open)
+2015-10-23T19:10:58.985+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60250 #91 (1 connection now open)
+2015-10-23T19:10:58.985+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60251 #92 (2 connections now open)
+2015-10-23T19:10:58.985+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60252 #93 (3 connections now open)
+2015-10-23T19:10:58.986+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60253 #94 (4 connections now open)
+2015-10-23T19:10:58.986+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60254 #95 (5 connections now open)
+2015-10-23T19:17:49.060+0530 I WRITE    [conn91] insert valetbasket.users query: { email: "s.rajasekar.it@gmail.com", salt: "�/6c|V��Af��l	C�", hash: "K871dIxv3yqYRzEfVQvFp6K6ZAPcyFTh+p45AyCdORRS3jg4ZrpuaSi8AdPPglG386ZBS4ggfKmKa/8RBXjyYw==", _id: ObjectId('562a3a848d1fbe541a5401ba'), delivery_addresses: [], name: { first: "qw", last: "32" }, __v: 0 } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, MMAPV1Journal: { acquireCount: { w: 4 }, acquireWaitCount: { w: 1 }, timeAcquiringMicros: { w: 22832 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { W: 2 } }, Metadata: { acquireCount: { W: 2 } } } 123ms
+2015-10-23T19:17:49.061+0530 I COMMAND  [conn91] command valetbasket.$cmd command: insert { insert: "users", documents: [ { email: "s.rajasekar.it@gmail.com", salt: "�/6c|V��Af��l	C�", hash: "K871dIxv3yqYRzEfVQvFp6K6ZAPcyFTh+p45AyCdORRS3jg4ZrpuaSi8AdPPglG386ZBS4ggfKmKa/8RBXjyYw==", _id: ObjectId('562a3a848d1fbe541a5401ba'), delivery_addresses: [], name: { first: "qw", last: "32" }, __v: 0 } ], ordered: false, writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:40 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, MMAPV1Journal: { acquireCount: { w: 4 }, acquireWaitCount: { w: 1 }, timeAcquiringMicros: { w: 22832 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { W: 2 } }, Metadata: { acquireCount: { W: 2 } } } 146ms
+2015-10-23T20:16:21.365+0530 I NETWORK  [conn91] end connection 192.168.56.1:60250 (4 connections now open)
+2015-10-23T20:16:21.366+0530 I NETWORK  [conn93] end connection 192.168.56.1:60252 (4 connections now open)
+2015-10-23T20:16:21.366+0530 I NETWORK  [conn92] end connection 192.168.56.1:60251 (4 connections now open)
+2015-10-23T20:16:21.366+0530 I NETWORK  [conn94] end connection 192.168.56.1:60253 (2 connections now open)
+2015-10-23T20:16:21.367+0530 I NETWORK  [conn95] end connection 192.168.56.1:60254 (0 connections now open)
+2015-10-23T20:16:37.786+0530 I CONTROL  CTRL_CLOSE_EVENT signal
+2015-10-23T20:16:37.786+0530 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2015-10-23T20:16:37.786+0530 I CONTROL  [consoleTerminate] now exiting
+2015-10-23T20:16:37.786+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-10-23T20:16:37.786+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-10-23T20:16:37.786+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-10-23T20:16:37.787+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-10-23T20:16:37.787+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-10-23T20:16:37.787+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-10-23T20:16:37.820+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-10-23T20:16:37.820+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-10-23T20:16:37.833+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-10-23T20:16:37.889+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-10-23T20:16:37.889+0530 I JOURNAL  [durability] Durability thread stopped
+2015-10-23T20:16:37.896+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-10-23T20:16:37.906+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-10-23T20:16:37.906+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-10-23T20:16:37.906+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-10-24T15:53:22.822+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-10-24T15:53:22.848+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\journal
+2015-10-24T15:53:22.849+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-10-24T15:53:22.879+0530 I JOURNAL  [durability] Durability thread started
+2015-10-24T15:53:22.879+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-10-24T15:53:22.949+0530 I CONTROL  [initandlisten] MongoDB starting : pid=6748 port=27017 dbpath=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-10-24T15:53:22.950+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-10-24T15:53:22.950+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-10-24T15:53:22.950+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-10-24T15:53:22.950+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-10-24T15:53:22.950+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-10-24T15:53:22.950+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-10-24T15:53:22.975+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-10-24T15:55:55.452+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61981 #1 (1 connection now open)
+2015-10-24T15:55:55.452+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61982 #2 (2 connections now open)
+2015-10-24T15:55:55.452+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61983 #3 (3 connections now open)
+2015-10-24T15:55:55.452+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61984 #4 (4 connections now open)
+2015-10-24T15:55:55.453+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61985 #5 (5 connections now open)
+2015-10-24T16:53:08.282+0530 I NETWORK  [conn1] end connection 192.168.56.1:61981 (4 connections now open)
+2015-10-24T16:53:08.282+0530 I NETWORK  [conn4] end connection 192.168.56.1:61984 (4 connections now open)
+2015-10-24T16:53:08.282+0530 I NETWORK  [conn2] end connection 192.168.56.1:61982 (4 connections now open)
+2015-10-24T16:53:08.282+0530 I NETWORK  [conn5] end connection 192.168.56.1:61985 (2 connections now open)
+2015-10-24T16:53:08.282+0530 I NETWORK  [conn3] end connection 192.168.56.1:61983 (4 connections now open)
+2015-10-24T16:53:14.413+0530 I CONTROL  CTRL_CLOSE_EVENT signal
+2015-10-24T16:53:14.413+0530 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2015-10-24T16:53:14.413+0530 I CONTROL  [consoleTerminate] now exiting
+2015-10-24T16:53:14.413+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-10-24T16:53:14.413+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-10-24T16:53:14.413+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-10-24T16:53:14.413+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-10-24T16:53:14.413+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-10-24T16:53:14.413+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-10-24T16:53:14.415+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-10-24T16:53:14.415+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-10-24T16:53:14.415+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-10-24T16:53:14.517+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-10-24T16:53:14.517+0530 I JOURNAL  [durability] Durability thread stopped
+2015-10-24T16:53:14.517+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-10-24T16:53:14.527+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-10-24T16:53:14.527+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-10-24T16:53:14.528+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-10-26T10:48:16.542+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-10-26T10:48:16.611+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\journal
+2015-10-26T10:48:16.611+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-10-26T10:48:16.636+0530 I JOURNAL  [durability] Durability thread started
+2015-10-26T10:48:16.636+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-10-26T10:48:16.702+0530 I CONTROL  [initandlisten] MongoDB starting : pid=6944 port=27017 dbpath=G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-10-26T10:48:16.702+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-10-26T10:48:16.702+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-10-26T10:48:16.702+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-10-26T10:48:16.702+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-10-26T10:48:16.702+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-10-26T10:48:16.702+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf\Conjoinz\code\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-10-26T10:48:17.148+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-10-26T10:49:04.047+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52656 #1 (1 connection now open)
+2015-10-26T10:49:04.048+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52657 #2 (2 connections now open)
+2015-10-26T10:49:04.048+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52658 #3 (3 connections now open)
+2015-10-26T10:49:04.048+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52659 #4 (4 connections now open)
+2015-10-26T10:49:04.048+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52660 #5 (5 connections now open)
+2015-10-26T13:32:30.428+0530 I NETWORK  [conn1] end connection 192.168.56.1:52656 (4 connections now open)
+2015-10-26T13:32:30.428+0530 I NETWORK  [conn3] end connection 192.168.56.1:52658 (4 connections now open)
+2015-10-26T13:32:30.428+0530 I NETWORK  [conn2] end connection 192.168.56.1:52657 (4 connections now open)
+2015-10-26T13:32:30.428+0530 I NETWORK  [conn4] end connection 192.168.56.1:52659 (4 connections now open)
+2015-10-26T13:32:30.428+0530 I NETWORK  [conn5] end connection 192.168.56.1:52660 (3 connections now open)
+2015-10-26T13:32:35.931+0530 I CONTROL  CTRL_CLOSE_EVENT signal
+2015-10-26T13:32:35.931+0530 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2015-10-26T13:32:35.931+0530 I CONTROL  [consoleTerminate] now exiting
+2015-10-26T13:32:35.931+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-10-26T13:32:35.931+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-10-26T13:32:35.931+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-10-26T13:32:35.931+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-10-26T13:32:35.931+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-10-26T13:32:35.931+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-10-26T13:32:35.985+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-10-26T13:32:35.985+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-10-26T13:32:35.985+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-10-26T13:32:36.034+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-10-26T13:32:36.034+0530 I JOURNAL  [durability] Durability thread stopped
+2015-10-26T13:32:36.034+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-10-26T13:32:36.044+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-10-26T13:32:36.044+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-10-26T13:32:36.044+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-10-26T17:00:30.986+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-10-26T17:00:31.098+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf_Conjoinz\conjoinz\database\valetbasket\journal
+2015-10-26T17:00:31.098+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-10-26T17:00:31.140+0530 I JOURNAL  [durability] Durability thread started
+2015-10-26T17:00:31.141+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-10-26T17:00:31.219+0530 I CONTROL  [initandlisten] MongoDB starting : pid=1236 port=27017 dbpath=G:\Kenturf_Conjoinz\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-10-26T17:00:31.219+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-10-26T17:00:31.219+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-10-26T17:00:31.219+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-10-26T17:00:31.219+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-10-26T17:00:31.219+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-10-26T17:00:31.219+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf_Conjoinz\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf_Conjoinz\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-10-26T17:00:31.294+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-10-26T17:01:21.970+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49189 #1 (1 connection now open)
+2015-10-26T17:01:21.971+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49190 #2 (2 connections now open)
+2015-10-26T17:01:21.971+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49191 #3 (3 connections now open)
+2015-10-26T17:01:21.971+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49192 #4 (4 connections now open)
+2015-10-26T17:01:21.971+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49193 #5 (5 connections now open)
+2015-10-26T17:01:49.462+0530 I NETWORK  [conn1] end connection 192.168.56.1:49189 (4 connections now open)
+2015-10-26T17:01:49.462+0530 I NETWORK  [conn2] end connection 192.168.56.1:49190 (3 connections now open)
+2015-10-26T17:01:49.462+0530 I NETWORK  [conn3] end connection 192.168.56.1:49191 (2 connections now open)
+2015-10-26T17:01:49.462+0530 I NETWORK  [conn4] end connection 192.168.56.1:49192 (2 connections now open)
+2015-10-26T17:01:49.462+0530 I NETWORK  [conn5] end connection 192.168.56.1:49193 (0 connections now open)
+2015-10-26T17:17:52.038+0530 I CONTROL  Ctrl-C signal
+2015-10-26T17:17:52.039+0530 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2015-10-26T17:17:52.039+0530 I CONTROL  [consoleTerminate] now exiting
+2015-10-26T17:17:52.039+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-10-26T17:17:52.039+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-10-26T17:17:52.039+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-10-26T17:17:52.039+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-10-26T17:17:52.039+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-10-26T17:17:52.039+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-10-26T17:17:52.050+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-10-26T17:17:52.050+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-10-26T17:17:52.051+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-10-26T17:17:52.141+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-10-26T17:17:52.141+0530 I JOURNAL  [durability] Durability thread stopped
+2015-10-26T17:17:52.141+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-10-26T17:17:52.151+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-10-26T17:17:52.151+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-10-26T17:17:52.151+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-10-26T17:19:01.369+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-10-26T17:19:01.385+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf_Conjoinz\conjoinz\database\valetbasket\journal
+2015-10-26T17:19:01.385+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-10-26T17:19:02.133+0530 I JOURNAL  [initandlisten] preallocateIsFaster=true 13.94
+2015-10-26T17:19:02.194+0530 I JOURNAL  [durability] Durability thread started
+2015-10-26T17:19:02.195+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-10-26T17:19:02.256+0530 I CONTROL  [initandlisten] MongoDB starting : pid=772 port=27017 dbpath=G:\Kenturf_Conjoinz\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-10-26T17:19:02.256+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-10-26T17:19:02.256+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-10-26T17:19:02.256+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-10-26T17:19:02.256+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-10-26T17:19:02.256+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-10-26T17:19:02.256+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf_Conjoinz\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf_Conjoinz\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-10-26T17:19:02.278+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-10-26T17:39:19.705+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49661 #1 (1 connection now open)
+2015-10-26T17:39:19.706+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49662 #2 (2 connections now open)
+2015-10-26T17:39:19.706+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49663 #3 (3 connections now open)
+2015-10-26T17:39:19.706+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49664 #4 (4 connections now open)
+2015-10-26T17:39:19.706+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49665 #5 (5 connections now open)
+2015-10-26T17:39:19.724+0530 I INDEX    [conn1] build index on: valetbasket.identitycounters properties: { v: 1, unique: true, key: { field: 1, model: 1 }, name: "field_1_model_1", ns: "valetbasket.identitycounters", required: true, index: -1, background: true }
+2015-10-26T17:39:19.724+0530 I INDEX    [conn2] build index on: valetbasket.orders properties: { v: 1, unique: true, key: { ord_number: 1 }, name: "ord_number_1", ns: "valetbasket.orders", background: true }
+2015-10-26T17:39:19.724+0530 I INDEX    [conn2] build index done.  scanned 0 total records. 0 secs
+2015-10-26T17:39:19.724+0530 I INDEX    [conn1] build index done.  scanned 0 total records. 0 secs
+2015-10-26T17:51:12.715+0530 I NETWORK  [conn1] end connection 192.168.56.1:49661 (4 connections now open)
+2015-10-26T17:51:12.715+0530 I NETWORK  [conn2] end connection 192.168.56.1:49662 (4 connections now open)
+2015-10-26T17:51:12.716+0530 I NETWORK  [conn3] end connection 192.168.56.1:49663 (2 connections now open)
+2015-10-26T17:51:12.716+0530 I NETWORK  [conn5] end connection 192.168.56.1:49665 (2 connections now open)
+2015-10-26T17:51:12.716+0530 I NETWORK  [conn4] end connection 192.168.56.1:49664 (2 connections now open)
+2015-10-26T17:51:17.921+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49718 #6 (1 connection now open)
+2015-10-26T17:51:17.922+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49719 #7 (2 connections now open)
+2015-10-26T17:51:17.922+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49720 #8 (3 connections now open)
+2015-10-26T17:51:17.922+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49721 #9 (4 connections now open)
+2015-10-26T17:51:17.922+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49722 #10 (5 connections now open)
+2015-10-26T17:54:22.938+0530 I NETWORK  [conn6] end connection 192.168.56.1:49718 (4 connections now open)
+2015-10-26T17:54:22.938+0530 I NETWORK  [conn8] end connection 192.168.56.1:49720 (4 connections now open)
+2015-10-26T17:54:22.938+0530 I NETWORK  [conn7] end connection 192.168.56.1:49719 (4 connections now open)
+2015-10-26T17:54:22.939+0530 I NETWORK  [conn9] end connection 192.168.56.1:49721 (2 connections now open)
+2015-10-26T17:54:22.939+0530 I NETWORK  [conn10] end connection 192.168.56.1:49722 (1 connection now open)
+2015-10-26T17:54:29.935+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49744 #11 (1 connection now open)
+2015-10-26T17:54:29.935+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49745 #12 (2 connections now open)
+2015-10-26T17:54:29.936+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49746 #13 (3 connections now open)
+2015-10-26T17:54:29.936+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49747 #14 (4 connections now open)
+2015-10-26T17:54:29.936+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49748 #15 (5 connections now open)
+2015-10-26T17:55:25.610+0530 I NETWORK  [conn11] end connection 192.168.56.1:49744 (4 connections now open)
+2015-10-26T17:55:25.610+0530 I NETWORK  [conn12] end connection 192.168.56.1:49745 (3 connections now open)
+2015-10-26T17:55:25.611+0530 I NETWORK  [conn13] end connection 192.168.56.1:49746 (3 connections now open)
+2015-10-26T17:55:25.611+0530 I NETWORK  [conn14] end connection 192.168.56.1:49747 (2 connections now open)
+2015-10-26T17:55:25.611+0530 I NETWORK  [conn15] end connection 192.168.56.1:49748 (1 connection now open)
+2015-10-26T17:55:32.325+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49799 #16 (1 connection now open)
+2015-10-26T17:55:32.325+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49800 #17 (2 connections now open)
+2015-10-26T17:55:32.325+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49801 #18 (3 connections now open)
+2015-10-26T17:55:32.325+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49802 #19 (4 connections now open)
+2015-10-26T17:55:32.325+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49803 #20 (5 connections now open)

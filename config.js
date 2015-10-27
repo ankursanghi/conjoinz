@@ -1,4 +1,5 @@
 var config = module.exports;
+process.env.NODE_ENV = "development";
 var PRODUCTION = process.env.NODE_ENV === "production";
 
 config.express = {

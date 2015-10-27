@@ -32,7 +32,7 @@ transport.use('compile', hbs(options));
 router.use(bodyParser());
 
 function showOrderForm(req, res,next) {
-	if (!(req.connection.encrypted)){
+	if ((req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
 	console.log('req.session here:'+JSON.stringify(req.session));
@@ -56,7 +56,7 @@ function placeOrder (req, res, next){
 	findUserQuery.populate('delivery_addresses').exec(function(err, usr){
 		usr.delivery_addresses.forEach(function(adr){
 			console.log('adr_nick from user:'+adr.adr_nick);
-			if (adr.adr_nick == req.body.address){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
+			if (!(adr.adr_nick == req.body.address)){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
 				var order = {};
 				var options = {upsert: true, new: true};
 				order.ord_status = 'submitted';
@@ -66,6 +66,14 @@ function placeOrder (req, res, next){
 				order.customer.name = {};
 				order.customer.name.first = req.session.name.split(" ")[0];
 				order.customer.name.last = req.session.name.split(" ")[1];	
+				/*order.customer.primary_phone = '111-111-1111';
+				order.customer.address = {};
+				order.customer.address.adr_type= 'home';
+				order.customer.address.adr_line1= 'get line 1 from customer profile';
+				order.customer.address.adr_line2= 'get line 2 from customer profile or order selection';
+				order.customer.address.city= 'city from profile or selection';
+				order.customer.address.state= 'state from address selection';
+				order.customer.address.zip= 11111;*/
 				order.customer.primary_phone = adr.phone;
 				order.customer.address = {};
 				order.customer.address.adr_type= adr.adr_type;
@@ -142,6 +150,28 @@ function sendEmail(newOrder){
 	});
 	transport.close();
 }
+/*function sendEmail(newOrder){
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'ankur.sanghi@gmail.com',
+        pass: 'password'
+    }
+});
+transporter.sendMail({
+    from: 'ankur.sanghi@gmail.com',
+    to: newOrder.userEmail,
+    subject: 'conjoinz',
+    template: 'email.body',
+    text: 'Test',
+	 context: {
+	      order : newOrder,
+		 }
+    
+});
+}*/
+
 router.get("/order",showOrderForm);
 router.post("/order", placeOrder);
 

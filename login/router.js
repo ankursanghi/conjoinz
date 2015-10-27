@@ -8,11 +8,12 @@ var router = new express.Router();
 
 router.use(bodyParser());
 
+
 function login(req, res,next) {
-	if (!(req.connection.encrypted)){
+	if ((req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
-	if (!(req.session.errmsg)){
+	if ((req.session.errmsg)){
 		req.session.regenerate(function(err){
 			console.log('regenerating a session here...');
 			if (err) next; 
@@ -33,6 +34,7 @@ function logout(req, res, next){
 	res.render('home/home', {layout:false});
 
 }
+// api - loginUserApi
 function loginUser (req, res, next){
 	var email = req.body.email;
 	var passwd = req.body.password;

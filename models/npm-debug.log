@@ -1,0 +1,44 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@3.3.8
+3 info using node@v4.2.1
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle valetbasket@0.0.1~prestart: valetbasket@0.0.1
+6 silly lifecycle valetbasket@0.0.1~prestart: no script for prestart, continuing
+7 info lifecycle valetbasket@0.0.1~start: valetbasket@0.0.1
+8 verbose lifecycle valetbasket@0.0.1~start: unsafe-perm in lifecycle true
+9 verbose lifecycle valetbasket@0.0.1~start: PATH: C:\Users\DELL\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;G:\Kenturf_Conjoinz\conjoinz\node_modules\.bin;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\nodejs\;C:\Program Files\MongoDB\Server\3.0\bin;C:\Users\DELL\AppData\Roaming\npm
+10 verbose lifecycle valetbasket@0.0.1~start: CWD: G:\Kenturf_Conjoinz\conjoinz
+11 silly lifecycle valetbasket@0.0.1~start: Args: [ '/d /s /c', 'node server.js' ]
+12 silly lifecycle valetbasket@0.0.1~start: Returned: code: 1  signal: null
+13 info lifecycle valetbasket@0.0.1~start: Failed to exec start script
+14 verbose stack Error: valetbasket@0.0.1 start: `node server.js`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (C:\Users\DELL\AppData\Roaming\npm\node_modules\npm\lib\utils\lifecycle.js:233:16)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at EventEmitter.emit (events.js:172:7)
+14 verbose stack     at ChildProcess.<anonymous> (C:\Users\DELL\AppData\Roaming\npm\node_modules\npm\lib\utils\spawn.js:24:14)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at ChildProcess.emit (events.js:172:7)
+14 verbose stack     at maybeClose (internal/child_process.js:818:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+15 verbose pkgid valetbasket@0.0.1
+16 verbose cwd G:\Kenturf_Conjoinz\conjoinz\models
+17 error Windows_NT 6.3.9600
+18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "start"
+19 error node v4.2.1
+20 error npm  v3.3.8
+21 error code ELIFECYCLE
+22 error valetbasket@0.0.1 start: `node server.js`
+22 error Exit status 1
+23 error Failed at the valetbasket@0.0.1 start script 'node server.js'.
+23 error This is most likely a problem with the valetbasket package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     node server.js
+23 error You can get their info via:
+23 error     npm owner ls valetbasket
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]

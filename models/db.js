@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var credentials = require('./credentials.js'); 
+var config = require('../config.js'); 
 
 var connectString;
 

@@ -7,7 +7,7 @@ var router = new express.Router();
 router.use(bodyParser());
 
 function profile(req, res,next) {
-	if (!(req.connection.encrypted)){
+	if ((req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
 	if (req.session.isLoggedIn){
