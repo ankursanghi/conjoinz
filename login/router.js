@@ -10,7 +10,7 @@ router.use(bodyParser());
 
 
 function login(req, res,next) {
-	if ((req.connection.encrypted)){
+	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
 	if ((req.session.errmsg)){
@@ -73,6 +73,5 @@ function loginUser (req, res, next){
 
 router.get("/login",login);
 router.post("/login", loginUser);
-
 router.get("/logout", logout);
 module.exports = router;

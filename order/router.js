@@ -28,6 +28,7 @@ viewEngine: {
 	viewPath: 'views/email/',
 	extName: '.hbs'
 };
+ 
 transport.use('compile', hbs(options));
 router.use(bodyParser());
 
@@ -138,9 +139,9 @@ function placeOrder (req, res, next){
 	});
 }
 
-function sendEmail(newOrder){
-	transport.sendMail({
-	 from: 'ankur.sanghi@gmail.com',
+/*function sendEmail(newOrder){
+	mailer.sendMail({
+	 from: 'valetbasket@gmail.com',
 	 to: newOrder.userEmail,
 	 subject: 'Any Subject',
 	 template: 'email.body',
@@ -148,29 +149,30 @@ function sendEmail(newOrder){
 	      order : newOrder,
 		 }
 	});
-	transport.close();
-}
-/*function sendEmail(newOrder){
+	mailer.close();
+}*/
+function sendEmail(newOrder){
 var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'ankur.sanghi@gmail.com',
-        pass: 'password'
+        user: 'valetbasket@gmail.com',
+        pass: '123456@vb'
     }
 });
 transporter.sendMail({
-    from: 'ankur.sanghi@gmail.com',
+    from: 'valetbasket@gmail.com',
     to: newOrder.userEmail,
-    subject: 'conjoinz',
+    subject: 'Order Details',
     template: 'email.body',
-    text: 'Test',
+    text: 'Your order has been delivered within two hours. Thank you for purchage.' ,
 	 context: {
 	      order : newOrder,
 		 }
-    
 });
-}*/
+}
+
+
 
 router.get("/order",showOrderForm);
 router.post("/order", placeOrder);
