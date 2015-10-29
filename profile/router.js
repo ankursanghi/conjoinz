@@ -7,7 +7,7 @@ var router = new express.Router();
 router.use(bodyParser());
 
 function profile(req, res,next) {
-	if ((req.connection.encrypted)){
+	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
 	if (req.session.isLoggedIn){
@@ -43,7 +43,7 @@ function updateProfile(req, res, next){
 	query.adr_nick = req.body.adrnick || req.body.address; // req.body.address is the selection from the dropdown
 	console.log('query adr_nick is:'+query.adr_nick);
 	var userQuery = {};
-	userQuery.name = {};
+	userQuery.name = {}; console.log('req.session.name: ' +JSON	.stringify(req.session))
 	userQuery.name.first = req.session.name.split(" ")[0];
 	userQuery.name.last = req.session.name.split(" ")[1];
 	var user = {};

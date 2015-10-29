@@ -33,7 +33,7 @@ transport.use('compile', hbs(options));
 router.use(bodyParser());
 
 function showOrderForm(req, res,next) {
-	if ((req.connection.encrypted)){
+	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
 	console.log('req.session here:'+JSON.stringify(req.session));
@@ -57,7 +57,7 @@ function placeOrder (req, res, next){
 	findUserQuery.populate('delivery_addresses').exec(function(err, usr){
 		usr.delivery_addresses.forEach(function(adr){
 			console.log('adr_nick from user:'+adr.adr_nick);
-			if (!(adr.adr_nick == req.body.address)){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
+			if ((adr.adr_nick == req.body.address)){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
 				var order = {};
 				var options = {upsert: true, new: true};
 				order.ord_status = 'submitted';
@@ -165,7 +165,7 @@ transporter.sendMail({
     to: newOrder.userEmail,
     subject: 'Order Details',
     template: 'email.body',
-    text: 'Your order has been delivered within two hours. Thank you for purchage.' ,
+    text: 'Your order has been deliver within two hours. Thank you for your purchase.' ,
 	 context: {
 	      order : newOrder,
 		 }
