@@ -2,6 +2,7 @@ var express = require("express");
 var crypto = require('crypto');
 var User = require('../models/user.js');
 var hash = require('../utils/hash.js');
+var saveUsers = require("../api/signup/router.js")
 var bodyParser = require('body-parser');
 var router = new express.Router();
 var multer = require('multer');
@@ -10,6 +11,10 @@ var upload = multer({dest: './public/img/'});
 
 router.use(bodyParser());
 router.use(upload.array());
+
+function invalid (msg){ 
+		res.render('login/login', {layout:false, invalid: true, message: msg});
+	}
 
 function signup(req, res,next) {
 	res.render("signup/signup", {layout: false});
@@ -26,7 +31,16 @@ function createUser (req, res, next){
 		user.hash = hash(req.body.pwd, user.salt);
 		user.name["first"] = req.body.firstname;
 		user.name["last"] = req.body.lastname;
-		User.findOne({email: req.body.email}, function(err, foundUser){
+		saveUsers.saveUser(user,req,function(err,save){
+			if(err){
+				invalid('User already exists! Send an email to support@conjoinz.com');
+			}else{
+				res.render("orders/login", {layout: false});
+			}
+
+
+		});
+		/*User.findOne({email: req.body.email}, function(err, foundUser){
 			if (foundUser){
 				res.render("signup/signup", {layout: false, msg: "User already exists! Send an email to support@conjoinz.com"});
 			}else{
@@ -45,7 +59,9 @@ function createUser (req, res, next){
 					res.redirect(301, '/order');
 				}); 
 			}
-		});
+		});*/
+
+	res.redirect(301, '/login');
 	}); 
 }
 

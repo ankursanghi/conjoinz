@@ -1,8 +1,6 @@
 var express = require("express");
-var crypto = require('crypto');
-var User = require('../models/user.js');
-var hash = require('../utils/hash.js');
 var bodyParser = require('body-parser');
+var loginapi = require("../api/login/router.js")
 var router = new express.Router();
 
 
@@ -38,35 +36,30 @@ function logout(req, res, next){
 function loginUser (req, res, next){
 	var email = req.body.email;
 	var passwd = req.body.password;
-	var salt;
-	var checkHash;
+	
 	function invalid (msg){ 
 		res.render('login/login', {layout:false, invalid: true, message: msg});
-	}   
+	} 
+
 	console.log("email:"+email);
 	if (!(email && passwd)) return invalid();
-	User.findOne({email: email}, function(err, user){
+
+	loginapi.findUser(email, passwd, function(err, user){
 		if(err){
-			console.log('error in data retrieval:'+err);
 			return invalid(err);
-		}   
-		if(!user){
-			return invalid('We are so happy to have you, but could not find a login! Please make one through Register link');
+		} 
+
+		if(user){
+			req.session.reload(function(err){
+				console.log('setting my session variables here...');
+				req.session.touch();
+				req.session.isLoggedIn = true;
+				req.session.user = email;
+				req.session.name = user.name.first+' '+user.name.last;
+				res.redirect(302, '/order');
+			});			
 		}else{
-			salt=user.salt;
-			checkHash = hash(passwd, user.salt);
-			if(checkHash == user.hash){
-				// console.log("checkHash: "+checkHash);
-				// console.log("use.hash: "+user.hash);
-				req.session.reload(function(err){
-					console.log('setting my session variables here...');
-					req.session.touch();
-					req.session.isLoggedIn = true;
-					req.session.user = email;
-					req.session.name = user.name.first+' '+user.name.last;
-					res.redirect(302, '/order');
-				});
-			}
+			return invalid('We are so happy to have you, but could not find a login! Please make one through Register link');
 		}
 	});
 }

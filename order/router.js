@@ -7,6 +7,9 @@ var User = require('../models/user.js');
 var hash = require('../utils/hash.js');
 var bodyParser = require('body-parser');
 var router = new express.Router();
+
+//var mailapi = require("../api/order/router.js")
+var orderApi = require("../api/order/router.js");
 // add these to send order confirmation emails
 var nodemailer = require('nodemailer');
 var sesTransport = require('nodemailer-ses-transport'); // this is to use the Amazon SES service
@@ -46,6 +49,7 @@ function showOrderForm(req, res,next) {
 	}
 }
 
+
 function placeOrder (req, res, next){
 	console.log('req.body:'+JSON.stringify(req.body));
 	console.log('req.session:'+JSON.stringify(req.session));
@@ -67,14 +71,7 @@ function placeOrder (req, res, next){
 				order.customer.name = {};
 				order.customer.name.first = req.session.name.split(" ")[0];
 				order.customer.name.last = req.session.name.split(" ")[1];	
-				/*order.customer.primary_phone = '111-111-1111';
-				order.customer.address = {};
-				order.customer.address.adr_type= 'home';
-				order.customer.address.adr_line1= 'get line 1 from customer profile';
-				order.customer.address.adr_line2= 'get line 2 from customer profile or order selection';
-				order.customer.address.city= 'city from profile or selection';
-				order.customer.address.state= 'state from address selection';
-				order.customer.address.zip= 11111;*/
+				
 				order.customer.primary_phone = adr.phone;
 				order.customer.address = {};
 				order.customer.address.adr_type= adr.adr_type;
@@ -106,70 +103,20 @@ function placeOrder (req, res, next){
 							newOrder.ord_lines[index] = _.cloneDeep(ordLine);
 							newOrder.ord_lines[index]['item'] = itm;
 							newOrder.userEmail = req.session.user;
-							Item.findOneAndUpdate({name: itm},item, options, function(err, itemSaved){
-								if (err) {
-								    console.log('Error Inserting New Data');
-								    if (err.name == 'ValidationError') {
-									    for (field in err.errors) {
-										    console.log(err.errors[field].message); 
-									    }
-								    }
-								}
-								console.log('itemSaved is:'+itemSaved);
-								ordLine.orderItem = itemSaved._id;
-								Order.findOneAndUpdate({_id: newOrder._id}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
-									if (err) {
-									    console.log('Error Inserting New Data');
-									    if (err.name == 'ValidationError') {
-										    for (field in err.errors) {
-											    console.log(err.errors[field].message); 
-										    }
-									    }
-									}
-									console.log('saved the line #'+index);
-								});
-							});	
+                            
+  						    orderApi.saveItem(newOrder,itm,item,options,ordLine,index,function(err,itemSaved){ 
+								        if(err){
+								        	console.log('Values notRegister')
+								        }else{
+								        	res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: newOrder.ord_number});
+								        }
+	                        });  
 						}
-					});
-					sendEmail(newOrder);
-					res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: newOrder.ord_number});
+					}); 
 				});
 			}
 		});
 	});
-}
-
-/*function sendEmail(newOrder){
-	mailer.sendMail({
-	 from: 'valetbasket@gmail.com',
-	 to: newOrder.userEmail,
-	 subject: 'Any Subject',
-	 template: 'email.body',
-	 context: {
-	      order : newOrder,
-		 }
-	});
-	mailer.close();
-}*/
-function sendEmail(newOrder){
-var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'valetbasket@gmail.com',
-        pass: '123456@vb'
-    }
-});
-transporter.sendMail({
-    from: 'valetbasket@gmail.com',
-    to: newOrder.userEmail,
-    subject: 'Order Details',
-    template: 'email.body',
-    text: 'Your order has been deliver within two hours. Thank you for your purchase.' ,
-	 context: {
-	      order : newOrder,
-		 }
-});
 }
 
 
