@@ -10,6 +10,7 @@ var router = new express.Router();
 
 //var mailapi = require("../api/order/router.js")
 var orderApi = require("../api/order/router.js");
+var mailapi = require("../api/mail/router.js");
 // add these to send order confirmation emails
 var nodemailer = require('nodemailer');
 var sesTransport = require('nodemailer-ses-transport'); // this is to use the Amazon SES service
@@ -53,35 +54,35 @@ function showOrderForm(req, res,next) {
 function placeOrder (req, res, next){
 	console.log('req.body:'+JSON.stringify(req.body));
 	console.log('req.session:'+JSON.stringify(req.session));
-	var userQuery = {};
-	userQuery.name = {};
-	userQuery.name.first = req.session.name.split(" ")[0];
-	userQuery.name.last = req.session.name.split(" ")[1];
-	var findUserQuery = User.findOne(userQuery);
-	findUserQuery.populate('delivery_addresses').exec(function(err, usr){
-		usr.delivery_addresses.forEach(function(adr){
-			console.log('adr_nick from user:'+adr.adr_nick);
-			if ((adr.adr_nick == req.body.address)){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
-				var order = {};
-				var options = {upsert: true, new: true};
-				order.ord_status = 'submitted';
-				order.comments = req.body.ordercomments;
-				order.store = req.body.store;
-				order.customer = {};
-				order.customer.name = {};
-				order.customer.name.first = req.session.name.split(" ")[0];
-				order.customer.name.last = req.session.name.split(" ")[1];	
-				
-				order.customer.primary_phone = adr.phone;
-				order.customer.address = {};
-				order.customer.address.adr_type= adr.adr_type;
-				order.customer.address.adr_line1= adr.adr_line1;
-				order.customer.address.adr_line2= adr.adr_line2;
-				order.customer.address.city= adr.city;
-				order.customer.address.state= adr.state;
-				order.customer.address.country = adr.country;
-				order.customer.address.zip= adr.zip;
-				Order.create(order, function(err, newOrder){
+	
+	var first = req.session.name.split(" ")[0];
+	var last = req.session.name.split(" ")[1];
+	var address = req.body.address;
+	var store = req.body.store;
+	var comments = req.body.ordercomments;
+	var email = req.session.user;
+
+	orderApi.createOrderHeader(first, last, address, store, comments, email, function(err, order){
+		if (err) {
+		    console.log('Error Inserting New Data');
+		    if (err.name == 'ValidationError') {
+			    for (field in err.errors) {
+				    console.log(err.errors[field].message); 
+			    }
+		    }
+
+		    return;
+		}
+
+		req.body.item.forEach(function(name, index){
+			var uom = req.body.uom[index];
+			var comment = req.body.comments[index];
+			var quantity = req.body.quantity[index];
+			var itemName = name;			
+
+			//if item name is not empty save the line item
+			if(/\S/.test(itemName)){
+				orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, function(err, savedOrder){
 					if (err) {
 					    console.log('Error Inserting New Data');
 					    if (err.name == 'ValidationError') {
@@ -90,38 +91,45 @@ function placeOrder (req, res, next){
 						    }
 					    }
 					}
-					req.body.item.forEach(function(itm,index){
-						if (itm != ''){
-							var item = {};
-							item.name = itm;
-							item.uom = req.body.uom[index];	
-							var ordLine = {};
-							ordLine.line_status = 'submitted';
-							ordLine.comments = req.body.comments[index];
-							ordLine.uom = req.body.uom[index];
-							ordLine.qty = req.body.quantity[index];
-							newOrder.ord_lines[index] = _.cloneDeep(ordLine);
-							newOrder.ord_lines[index]['item'] = itm;
-							newOrder.userEmail = req.session.user;
-                            
-  						    orderApi.saveItem(newOrder,itm,item,options,ordLine,index,function(err,itemSaved){ 
-								        if(err){
-								        	console.log('Values notRegister')
-								        }else{
-								        	res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: newOrder.ord_number});
-								        }
-	                        });  
-						}
-					}); 
+
+					order = savedOrder;
+					console.log('Order num: ' + order.ord_number + 'Orderid ' + order._id + 'saved the line #'+index);
 				});
-			}
+			}			
 		});
-	});
+
+		mailapi.sendEmail(email);
+		//console.log('user Mail '+order.userEmail)
+		res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number});
+		
+	});	
 }
 
+
+/*function sendEmail(email){
+	console.log('method calling inside mail' +email);
+	var nodemailer = require('nodemailer');
+	var transporter = nodemailer.createTransport({
+	    service: 'gmail',
+	    auth: {
+	        user: 'valetbasket@gmail.com',
+	        pass: '123456@vb'
+	    }
+	});
+	transporter.sendMail({
+	    from: 'valetbasket@gmail.com',
+	    to: email,
+	    subject: 'Order Details',
+	    template: 'email.body',
+	    text: 'Your order has been deliver within two hours. Thank you for your purchase.' ,
+		
+	});
+}*/
 
 
 router.get("/order",showOrderForm);
 router.post("/order", placeOrder);
 
 module.exports = router;
+
+
