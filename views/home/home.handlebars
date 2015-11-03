@@ -5,7 +5,7 @@
 {{/content}}
 {{#content "loggedIn"}}
 {{#if name}}
-	<li class="text-welcome hidden-xs">Welcome to ValetBasket, <strong>{{name}}</strong></li>
+	<li class="text-welcome hidden-xs">Welcome to ValetBasket ! We shop and deliver for you ! <strong>{{name}}</strong></li>
 	<li>
 		<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i class="fa fa-user hidden-xs"></i> MY ACCOUNT</a>
 		<ul class="dropdown-menu pull-right">
@@ -39,11 +39,12 @@
 					data-effect="slide|fade|coverflow"
 					data-autoplay="2500|false"
 				-->
+				
 				<div class="swiper-container has-fixed-footer" data-effect="slide" data-autoplay="false">
 					<div class="swiper-wrapper">
 
 						<!-- SLIDE 1 -->
-						<div class="swiper-slide" style="background-image: url('assets/images/demo/shop/home/slide_2.jpg');">
+						<div class="swiper-slide" style="background-image: url('assets/images/demo/shop/home/home_slide_1.jpg');">
 							<div class="overlay dark-1"><!-- dark overlay [0 to 9 opacity] --></div>
 							
 							<div class="display-table">
@@ -51,11 +52,11 @@
 									<div class="container">
 
 										<div class="slider-featured-text absolute bottom-right text-right">
-											<h1 class="text-white wow fadeInUp" data-wow-delay="0.4s">
-												<em class="weight-300">We shop for you! </em> 
-											</h1>
-											<h2 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s">Refer friends and get free trips on us!</h2>
-											<a class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="1s" href="#">Place an Order Now&raquo;</a>
+											<h2 class="text-white wow fadeInUp" data-wow-delay="0.4s">
+												<em class="weight-300">We shop and deliver for you! </em> 
+											</h2>
+											<h3 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s"> Valet Basket is a grocery shopping and delivery service to your door !</h3>
+											<a class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="1s" href="/order">Place an Order Now&raquo;</a>
 										</div>
 							
 									</div>
@@ -65,9 +66,8 @@
 						</div>
 						<!-- /SLIDE 1 -->
 
-
 						<!-- SLIDE 2 -->
-						<div class="swiper-slide" style="background-image: url('assets/images/demo/shop/home/slide_1.jpg');">
+						<div class="swiper-slide" style="background-image: url('assets/images/demo/shop/home/home_slide_2.jpg');">
 							<div class="overlay dark-1"><!-- dark overlay [0 to 9 opacity] --></div>
 							
 							<div class="display-table">
@@ -76,9 +76,9 @@
 
 										<div class="slider-featured-text absolute bottom-left text-left">
 											<h1 class="text-white wow fadeInUp" data-wow-delay="0.4s">
-												<em class="weight-300 text-white">And bring it to you!</em>
+												<em class="weight-300 text-white">What can we do for you ? </em>
 											</h1>
-											<h2 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s">Let us make a friend of yours happy too!</h2>
+											<h2 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s">We can save you time on your daily chores !</h2>
 											<a class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="1s" href="#">Place an Order Now&raquo;</a>
 										</div>
 							
@@ -89,6 +89,51 @@
 						</div>
 						<!-- /SLIDE 2 -->
 
+						<!-- SLIDE 3 -->
+						<div class="swiper-slide" style="background-image: url('assets/images/demo/shop/home/home_slide_3.jpg');">
+							<div class="overlay dark-1"><!-- dark overlay [0 to 9 opacity] --></div>
+							
+							<div class="display-table">
+								<div class="display-table-cell vertical-align-middle">
+									<div class="container">
+
+										<div class="slider-featured-text absolute bottom-left text-left">
+											<h1 class="text-white wow fadeInUp" data-wow-delay="0.4s">
+												<em class="weight-300 text-white">How does it work ? </em>
+											</h1>
+											<h2 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s">Create an account with us first !</h2>
+											<a class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="1s" href="#">Place an Order Now&raquo;</a>
+										</div>
+							
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!-- /SLIDE 3 -->
+						
+						<!-- SLIDE 4 -->
+						<div class="swiper-slide" style="background-image: url('assets/images/demo/shop/home/home_slide_5.jpg');">
+							<div class="overlay dark-1"><!-- dark overlay [0 to 9 opacity] --></div>
+							
+							<div class="display-table">
+								<div class="display-table-cell vertical-align-middle">
+									<div class="container">
+
+										<div class="slider-featured-text absolute bottom-left text-left">
+											<h1 class="text-white wow fadeInUp" data-wow-delay="0.4s">
+												<em class="weight-300 text-white">How does it work ? </em>
+											</h1>
+											<h2 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s">Create your shopping list ! And ... </h2>
+											<a class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="1s" href="#">Place an Order Now&raquo;</a>
+										</div>
+							
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!-- /SLIDE 4 -->
 					</div>
 
 					<!-- Swiper Pagination -->
@@ -104,11 +149,11 @@
 
 	{{/content}}
 
-	{{#block "scripts" mode="append"}}
+	{{#content "scripts" mode="append"}}
 		<!-- SWIPER SLIDER -->
 		<script type="text/javascript" src="assets/plugins/slider.swiper/dist/js/swiper.min.js"></script>
 		<script type="text/javascript" src="assets/js/view/demo.swiper_slider.js"></script>
-	{{/block}}
+	{{/content}}
 
 	</body>
 </html>
