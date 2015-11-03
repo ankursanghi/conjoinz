@@ -106,29 +106,67 @@ function placeOrder (req, res, next){
 }
 
 
-/*function sendEmail(email){
-	console.log('method calling inside mail' +email);
-	var nodemailer = require('nodemailer');
-	var transporter = nodemailer.createTransport({
-	    service: 'gmail',
-	    auth: {
-	        user: 'valetbasket@gmail.com',
-	        pass: '123456@vb'
-	    }
-	});
-	transporter.sendMail({
-	    from: 'valetbasket@gmail.com',
-	    to: email,
-	    subject: 'Order Details',
-	    template: 'email.body',
-	    text: 'Your order has been deliver within two hours. Thank you for your purchase.' ,
-		
-	});
-}*/
+function mobileOrder(req,res,next){
+console.log('adderess' +req.body.address+','+req.body.store);
+	var first = req.session.name.split(" ")[0];
+	var last = req.session.name.split(" ")[1];
+	var address = req.body.address;
+	var store = req.body.store;
+	var comments = req.body.ordercomments;
+	var email =req.session.user;
 
+orderApi.createOrderHeader(first, last, address, store, comments, email, function(err, order){
+		if (err) {
+		    console.log('Error Inserting New Data');
+		    next(err);
+			res.json({error: err, user: null});
+		    if (err.name == 'ValidationError') {
+			    for (field in err.errors) {
+				    console.log(err.errors[field].message); 
+			    }
+		    }
+
+		    return;
+		}
+
+		req.body.item.forEach(function(name, index){
+			console.log('unit of amount'+req.body.uom)
+			var uom = req.body.uom[index];
+			var comment = req.body.comments[index];
+			var quantity = req.body.quantity[index];
+			var itemName = name;			
+
+			//if item name is not empty save the line item
+			if(/\S/.test(itemName)){
+				orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, function(err, savedOrder){
+					if (err) {
+					    console.log('Error Inserting New Data');
+					    	next(err);
+							res.json({error: err, user: null});
+					    if (err.name == 'ValidationError') {
+						    for (field in err.errors) {
+							    console.log(err.errors[field].message); 
+
+						    }
+					    }
+					}
+
+					order = savedOrder;
+					console.log('Order num: ' + order.ord_number + 'Orderid ' + order._id + 'saved the line #'+index);
+				});
+			}			
+		});
+
+		mailapi.sendEmail(email);
+		res.json({error: null, user: {email: email, name: first + ' ' + last, ordernumber:order.ord_number}});
+		
+	});	
+
+}
 
 router.get("/order",showOrderForm);
 router.post("/order", placeOrder);
+router.post("/mobileOrder", mobileOrder);
 
 module.exports = router;
 

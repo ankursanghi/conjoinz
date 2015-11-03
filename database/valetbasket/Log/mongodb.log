@@ -1325,3 +1325,992 @@
 2015-10-31T14:46:42.848+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
 2015-10-31T14:46:42.848+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
 2015-10-31T14:46:42.849+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-11-02T09:52:05.577+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-11-02T09:52:05.631+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\journal
+2015-11-02T09:52:05.631+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-11-02T09:52:05.673+0530 I JOURNAL  [durability] Durability thread started
+2015-11-02T09:52:05.673+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-11-02T09:52:05.744+0530 I CONTROL  [initandlisten] MongoDB starting : pid=5536 port=27017 dbpath=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-11-02T09:52:05.744+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-11-02T09:52:05.744+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-11-02T09:52:05.744+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-11-02T09:52:05.744+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-11-02T09:52:05.744+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-11-02T09:52:05.744+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-11-02T09:52:06.343+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-11-02T09:52:49.919+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49287 #1 (1 connection now open)
+2015-11-02T09:52:49.920+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49288 #2 (2 connections now open)
+2015-11-02T09:52:49.920+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49289 #3 (3 connections now open)
+2015-11-02T09:52:49.920+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49290 #4 (4 connections now open)
+2015-11-02T09:52:49.920+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49291 #5 (5 connections now open)
+2015-11-02T10:11:26.238+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49616 #6 (6 connections now open)
+2015-11-02T10:11:26.240+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49617 #7 (7 connections now open)
+2015-11-02T10:11:26.240+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49618 #8 (8 connections now open)
+2015-11-02T10:11:26.240+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49619 #9 (9 connections now open)
+2015-11-02T10:11:26.240+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49620 #10 (10 connections now open)
+2015-11-02T10:12:28.765+0530 I NETWORK  [conn6] end connection 192.168.56.1:49616 (9 connections now open)
+2015-11-02T10:12:28.766+0530 I NETWORK  [conn7] end connection 192.168.56.1:49617 (8 connections now open)
+2015-11-02T10:12:28.766+0530 I NETWORK  [conn8] end connection 192.168.56.1:49618 (7 connections now open)
+2015-11-02T10:12:28.766+0530 I NETWORK  [conn9] end connection 192.168.56.1:49619 (7 connections now open)
+2015-11-02T10:12:28.766+0530 I NETWORK  [conn10] end connection 192.168.56.1:49620 (6 connections now open)
+2015-11-02T10:14:53.281+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49641 #11 (6 connections now open)
+2015-11-02T10:14:53.284+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49642 #12 (7 connections now open)
+2015-11-02T10:14:53.284+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49643 #13 (8 connections now open)
+2015-11-02T10:14:53.284+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49644 #14 (9 connections now open)
+2015-11-02T10:14:53.284+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49645 #15 (10 connections now open)
+2015-11-02T10:37:35.456+0530 I NETWORK  [conn2] end connection 192.168.56.1:49288 (9 connections now open)
+2015-11-02T10:37:35.456+0530 I NETWORK  [conn1] end connection 192.168.56.1:49287 (9 connections now open)
+2015-11-02T10:37:35.457+0530 I NETWORK  [conn3] end connection 192.168.56.1:49289 (7 connections now open)
+2015-11-02T10:37:35.457+0530 I NETWORK  [conn4] end connection 192.168.56.1:49290 (7 connections now open)
+2015-11-02T10:37:35.457+0530 I NETWORK  [conn5] end connection 192.168.56.1:49291 (7 connections now open)
+2015-11-02T10:37:42.709+0530 I NETWORK  [conn11] end connection 192.168.56.1:49641 (4 connections now open)
+2015-11-02T10:37:42.709+0530 I NETWORK  [conn12] end connection 192.168.56.1:49642 (3 connections now open)
+2015-11-02T10:37:42.710+0530 I NETWORK  [conn13] end connection 192.168.56.1:49643 (2 connections now open)
+2015-11-02T10:37:42.710+0530 I NETWORK  [conn14] end connection 192.168.56.1:49644 (2 connections now open)
+2015-11-02T10:37:42.710+0530 I NETWORK  [conn15] end connection 192.168.56.1:49645 (0 connections now open)
+2015-11-02T10:38:07.607+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49937 #16 (1 connection now open)
+2015-11-02T10:38:07.608+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49938 #17 (2 connections now open)
+2015-11-02T10:38:07.608+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49939 #18 (3 connections now open)
+2015-11-02T10:38:07.608+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49940 #19 (4 connections now open)
+2015-11-02T10:38:07.608+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:49941 #20 (5 connections now open)
+2015-11-02T11:02:28.311+0530 I NETWORK  [conn16] end connection 192.168.56.1:49937 (4 connections now open)
+2015-11-02T11:02:28.311+0530 I NETWORK  [conn17] end connection 192.168.56.1:49938 (4 connections now open)
+2015-11-02T11:02:28.312+0530 I NETWORK  [conn18] end connection 192.168.56.1:49939 (2 connections now open)
+2015-11-02T11:02:28.312+0530 I NETWORK  [conn19] end connection 192.168.56.1:49940 (2 connections now open)
+2015-11-02T11:02:28.312+0530 I NETWORK  [conn20] end connection 192.168.56.1:49941 (0 connections now open)
+2015-11-02T11:03:14.483+0530 I CONTROL  Ctrl-C signal
+2015-11-02T11:03:14.483+0530 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2015-11-02T11:03:14.483+0530 I CONTROL  [consoleTerminate] now exiting
+2015-11-02T11:03:14.483+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-11-02T11:03:14.484+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-11-02T11:03:14.484+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-11-02T11:03:14.484+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-11-02T11:03:14.484+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-11-02T11:03:14.484+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-11-02T11:03:15.444+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-11-02T11:03:15.444+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-11-02T11:03:15.445+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-11-02T11:03:15.512+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-11-02T11:03:15.512+0530 I JOURNAL  [durability] Durability thread stopped
+2015-11-02T11:03:15.512+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-11-02T11:03:15.519+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-11-02T11:03:15.519+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-11-02T11:03:15.519+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-11-02T11:07:06.560+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-11-02T11:07:06.580+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\journal
+2015-11-02T11:07:06.580+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-11-02T11:07:06.601+0530 I JOURNAL  [durability] Durability thread started
+2015-11-02T11:07:06.601+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-11-02T11:07:06.708+0530 I CONTROL  [initandlisten] MongoDB starting : pid=1788 port=27017 dbpath=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-11-02T11:07:06.708+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-11-02T11:07:06.708+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-11-02T11:07:06.708+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-11-02T11:07:06.708+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-11-02T11:07:06.708+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-11-02T11:07:06.708+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-11-02T11:07:06.734+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-11-02T11:09:29.094+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50705 #1 (1 connection now open)
+2015-11-02T11:09:29.095+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50706 #2 (2 connections now open)
+2015-11-02T11:09:29.095+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50707 #3 (3 connections now open)
+2015-11-02T11:09:29.095+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50708 #4 (4 connections now open)
+2015-11-02T11:09:29.095+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50709 #5 (5 connections now open)
+2015-11-02T12:33:48.583+0530 I CONTROL  Ctrl-C signal
+2015-11-02T12:33:48.583+0530 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2015-11-02T12:33:48.584+0530 I CONTROL  [consoleTerminate] now exiting
+2015-11-02T12:33:48.584+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-11-02T12:33:48.584+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-11-02T12:33:48.584+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-11-02T12:33:48.584+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-11-02T12:33:48.584+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-11-02T12:33:48.584+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-11-02T12:33:48.585+0530 I NETWORK  [conn1] end connection 192.168.56.1:50705 (4 connections now open)
+2015-11-02T12:33:48.585+0530 I NETWORK  [conn2] end connection 192.168.56.1:50706 (4 connections now open)
+2015-11-02T12:33:48.585+0530 I NETWORK  [conn4] end connection 192.168.56.1:50708 (4 connections now open)
+2015-11-02T12:33:48.586+0530 I NETWORK  [conn3] end connection 192.168.56.1:50707 (3 connections now open)
+2015-11-02T12:33:48.585+0530 I NETWORK  [conn5] end connection 192.168.56.1:50709 (4 connections now open)
+2015-11-02T12:33:48.651+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-11-02T12:33:48.651+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-11-02T12:33:48.652+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-11-02T12:33:48.687+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-11-02T12:33:48.687+0530 I JOURNAL  [durability] Durability thread stopped
+2015-11-02T12:33:48.687+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-11-02T12:33:48.697+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-11-02T12:33:48.697+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-11-02T12:33:48.697+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-11-02T15:19:45.360+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-11-02T15:19:45.407+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\journal
+2015-11-02T15:19:45.407+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-11-02T15:19:45.440+0530 I JOURNAL  [durability] Durability thread started
+2015-11-02T15:19:45.440+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-11-02T15:19:45.521+0530 I CONTROL  [initandlisten] MongoDB starting : pid=7808 port=27017 dbpath=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-11-02T15:19:45.521+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-11-02T15:19:45.521+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-11-02T15:19:45.521+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-11-02T15:19:45.521+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-11-02T15:19:45.521+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-11-02T15:19:45.521+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-11-02T15:19:45.529+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-11-02T15:34:18.439+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53526 #1 (1 connection now open)
+2015-11-02T15:34:18.440+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53527 #2 (2 connections now open)
+2015-11-02T15:34:18.440+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53528 #3 (3 connections now open)
+2015-11-02T15:34:18.440+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53529 #4 (4 connections now open)
+2015-11-02T15:34:18.440+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53530 #5 (5 connections now open)
+2015-11-02T16:32:31.076+0530 I NETWORK  [conn1] end connection 192.168.56.1:53526 (4 connections now open)
+2015-11-02T16:32:31.077+0530 I NETWORK  [conn2] end connection 192.168.56.1:53527 (4 connections now open)
+2015-11-02T16:32:31.077+0530 I NETWORK  [conn3] end connection 192.168.56.1:53528 (2 connections now open)
+2015-11-02T16:32:31.077+0530 I NETWORK  [conn4] end connection 192.168.56.1:53529 (2 connections now open)
+2015-11-02T16:32:31.078+0530 I NETWORK  [conn5] end connection 192.168.56.1:53530 (0 connections now open)
+2015-11-02T16:36:39.270+0530 I CONTROL  CTRL_CLOSE_EVENT signal
+2015-11-02T16:36:39.270+0530 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2015-11-02T16:36:39.270+0530 I CONTROL  [consoleTerminate] now exiting
+2015-11-02T16:36:39.270+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-11-02T16:36:39.270+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-11-02T16:36:39.270+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-11-02T16:36:39.270+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-11-02T16:36:39.270+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-11-02T16:36:39.270+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-11-02T16:36:39.319+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-11-02T16:36:39.319+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-11-02T16:36:39.320+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-11-02T16:36:39.372+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-11-02T16:36:39.372+0530 I JOURNAL  [durability] Durability thread stopped
+2015-11-02T16:36:39.372+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-11-02T16:36:39.381+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-11-02T16:36:39.381+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-11-02T16:36:39.381+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-11-02T16:40:09.719+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-11-02T16:40:09.730+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\journal
+2015-11-02T16:40:09.730+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-11-02T16:40:09.752+0530 I JOURNAL  [durability] Durability thread started
+2015-11-02T16:40:09.752+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-11-02T16:40:09.902+0530 I CONTROL  [initandlisten] MongoDB starting : pid=6328 port=27017 dbpath=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-11-02T16:40:09.902+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-11-02T16:40:09.902+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-11-02T16:40:09.902+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-11-02T16:40:09.902+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-11-02T16:40:09.902+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-11-02T16:40:09.902+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-11-02T16:40:09.929+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-11-02T16:43:36.661+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:55359 #1 (1 connection now open)
+2015-11-02T16:43:36.661+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:55360 #2 (2 connections now open)
+2015-11-02T16:43:36.661+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:55361 #3 (3 connections now open)
+2015-11-02T16:43:36.661+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:55362 #4 (4 connections now open)
+2015-11-02T16:43:36.662+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:55363 #5 (5 connections now open)
+2015-11-02T16:53:58.990+0530 I NETWORK  [conn1] end connection 192.168.56.1:55359 (4 connections now open)
+2015-11-02T16:53:58.991+0530 I NETWORK  [conn3] end connection 192.168.56.1:55361 (4 connections now open)
+2015-11-02T16:53:58.991+0530 I NETWORK  [conn4] end connection 192.168.56.1:55362 (3 connections now open)
+2015-11-02T16:53:58.991+0530 I NETWORK  [conn5] end connection 192.168.56.1:55363 (2 connections now open)
+2015-11-02T16:53:58.990+0530 I NETWORK  [conn2] end connection 192.168.56.1:55360 (4 connections now open)
+2015-11-02T16:54:20.715+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:55524 #6 (1 connection now open)
+2015-11-02T16:54:20.716+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:55525 #7 (2 connections now open)
+2015-11-02T16:54:20.716+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:55526 #8 (3 connections now open)
+2015-11-02T16:54:20.716+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:55527 #9 (4 connections now open)
+2015-11-02T16:54:20.716+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:55528 #10 (5 connections now open)
+2015-11-02T17:00:25.778+0530 I NETWORK  [conn6] end connection 192.168.56.1:55524 (4 connections now open)
+2015-11-02T17:00:25.778+0530 I NETWORK  [conn7] end connection 192.168.56.1:55525 (3 connections now open)
+2015-11-02T17:00:25.778+0530 I NETWORK  [conn8] end connection 192.168.56.1:55526 (2 connections now open)
+2015-11-02T17:00:25.779+0530 I NETWORK  [conn9] end connection 192.168.56.1:55527 (1 connection now open)
+2015-11-02T17:00:25.779+0530 I NETWORK  [conn10] end connection 192.168.56.1:55528 (0 connections now open)
+2015-11-02T17:00:37.605+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56003 #11 (1 connection now open)
+2015-11-02T17:00:37.605+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56004 #12 (2 connections now open)
+2015-11-02T17:00:37.606+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56005 #13 (3 connections now open)
+2015-11-02T17:00:37.606+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56006 #14 (4 connections now open)
+2015-11-02T17:00:37.606+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56007 #15 (5 connections now open)
+2015-11-02T17:08:34.875+0530 I NETWORK  [conn11] end connection 192.168.56.1:56003 (4 connections now open)
+2015-11-02T17:08:34.875+0530 I NETWORK  [conn13] end connection 192.168.56.1:56005 (4 connections now open)
+2015-11-02T17:08:34.875+0530 I NETWORK  [conn12] end connection 192.168.56.1:56004 (4 connections now open)
+2015-11-02T17:08:34.876+0530 I NETWORK  [conn14] end connection 192.168.56.1:56006 (1 connection now open)
+2015-11-02T17:08:34.876+0530 I NETWORK  [conn15] end connection 192.168.56.1:56007 (1 connection now open)
+2015-11-02T17:08:43.204+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56124 #16 (1 connection now open)
+2015-11-02T17:08:43.205+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56125 #17 (2 connections now open)
+2015-11-02T17:08:43.205+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56126 #18 (3 connections now open)
+2015-11-02T17:08:43.205+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56127 #19 (4 connections now open)
+2015-11-02T17:08:43.205+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56128 #20 (5 connections now open)
+2015-11-02T17:10:02.195+0530 I NETWORK  [conn16] end connection 192.168.56.1:56124 (4 connections now open)
+2015-11-02T17:10:02.195+0530 I NETWORK  [conn17] end connection 192.168.56.1:56125 (4 connections now open)
+2015-11-02T17:10:02.196+0530 I NETWORK  [conn18] end connection 192.168.56.1:56126 (2 connections now open)
+2015-11-02T17:10:02.196+0530 I NETWORK  [conn19] end connection 192.168.56.1:56127 (2 connections now open)
+2015-11-02T17:10:02.196+0530 I NETWORK  [conn20] end connection 192.168.56.1:56128 (0 connections now open)
+2015-11-02T17:10:11.210+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56147 #21 (1 connection now open)
+2015-11-02T17:10:11.211+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56148 #22 (2 connections now open)
+2015-11-02T17:10:11.211+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56149 #23 (3 connections now open)
+2015-11-02T17:10:11.211+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56150 #24 (4 connections now open)
+2015-11-02T17:10:11.211+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56151 #25 (5 connections now open)
+2015-11-02T17:12:03.108+0530 I NETWORK  [conn21] end connection 192.168.56.1:56147 (4 connections now open)
+2015-11-02T17:12:03.108+0530 I NETWORK  [conn22] end connection 192.168.56.1:56148 (4 connections now open)
+2015-11-02T17:12:03.108+0530 I NETWORK  [conn23] end connection 192.168.56.1:56149 (2 connections now open)
+2015-11-02T17:12:03.109+0530 I NETWORK  [conn24] end connection 192.168.56.1:56150 (2 connections now open)
+2015-11-02T17:12:03.109+0530 I NETWORK  [conn25] end connection 192.168.56.1:56151 (0 connections now open)
+2015-11-02T17:12:12.673+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56174 #26 (1 connection now open)
+2015-11-02T17:12:12.673+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56175 #27 (2 connections now open)
+2015-11-02T17:12:12.673+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56176 #28 (3 connections now open)
+2015-11-02T17:12:12.674+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56177 #29 (4 connections now open)
+2015-11-02T17:12:12.674+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56178 #30 (5 connections now open)
+2015-11-02T17:15:49.346+0530 I NETWORK  [conn26] end connection 192.168.56.1:56174 (4 connections now open)
+2015-11-02T17:15:49.346+0530 I NETWORK  [conn27] end connection 192.168.56.1:56175 (4 connections now open)
+2015-11-02T17:15:49.347+0530 I NETWORK  [conn28] end connection 192.168.56.1:56176 (2 connections now open)
+2015-11-02T17:15:49.347+0530 I NETWORK  [conn29] end connection 192.168.56.1:56177 (2 connections now open)
+2015-11-02T17:15:49.347+0530 I NETWORK  [conn30] end connection 192.168.56.1:56178 (0 connections now open)
+2015-11-02T17:16:01.614+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56193 #31 (1 connection now open)
+2015-11-02T17:16:01.615+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56194 #32 (2 connections now open)
+2015-11-02T17:16:01.615+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56195 #33 (3 connections now open)
+2015-11-02T17:16:01.615+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56196 #34 (4 connections now open)
+2015-11-02T17:16:01.615+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56197 #35 (5 connections now open)
+2015-11-02T17:16:46.672+0530 I NETWORK  [conn31] end connection 192.168.56.1:56193 (4 connections now open)
+2015-11-02T17:16:46.672+0530 I NETWORK  [conn32] end connection 192.168.56.1:56194 (4 connections now open)
+2015-11-02T17:16:46.673+0530 I NETWORK  [conn34] end connection 192.168.56.1:56196 (2 connections now open)
+2015-11-02T17:16:46.673+0530 I NETWORK  [conn35] end connection 192.168.56.1:56197 (2 connections now open)
+2015-11-02T17:16:46.673+0530 I NETWORK  [conn33] end connection 192.168.56.1:56195 (2 connections now open)
+2015-11-02T17:16:55.387+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56204 #36 (1 connection now open)
+2015-11-02T17:16:55.388+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56205 #37 (2 connections now open)
+2015-11-02T17:16:55.388+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56206 #38 (3 connections now open)
+2015-11-02T17:16:55.388+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56207 #39 (4 connections now open)
+2015-11-02T17:16:55.388+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56208 #40 (5 connections now open)
+2015-11-02T17:17:34.258+0530 I NETWORK  [conn36] end connection 192.168.56.1:56204 (4 connections now open)
+2015-11-02T17:17:34.258+0530 I NETWORK  [conn37] end connection 192.168.56.1:56205 (4 connections now open)
+2015-11-02T17:17:34.258+0530 I NETWORK  [conn38] end connection 192.168.56.1:56206 (2 connections now open)
+2015-11-02T17:17:34.259+0530 I NETWORK  [conn40] end connection 192.168.56.1:56208 (2 connections now open)
+2015-11-02T17:17:34.259+0530 I NETWORK  [conn39] end connection 192.168.56.1:56207 (2 connections now open)
+2015-11-02T17:17:41.837+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56215 #41 (1 connection now open)
+2015-11-02T17:17:41.838+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56216 #42 (2 connections now open)
+2015-11-02T17:17:41.838+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56217 #43 (3 connections now open)
+2015-11-02T17:17:41.838+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56218 #44 (4 connections now open)
+2015-11-02T17:17:41.838+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56219 #45 (5 connections now open)
+2015-11-02T17:18:30.713+0530 I NETWORK  [conn41] end connection 192.168.56.1:56215 (4 connections now open)
+2015-11-02T17:18:30.714+0530 I NETWORK  [conn42] end connection 192.168.56.1:56216 (3 connections now open)
+2015-11-02T17:18:30.714+0530 I NETWORK  [conn43] end connection 192.168.56.1:56217 (3 connections now open)
+2015-11-02T17:18:30.714+0530 I NETWORK  [conn44] end connection 192.168.56.1:56218 (1 connection now open)
+2015-11-02T17:18:30.714+0530 I NETWORK  [conn45] end connection 192.168.56.1:56219 (1 connection now open)
+2015-11-02T17:18:38.218+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56226 #46 (1 connection now open)
+2015-11-02T17:18:38.219+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56227 #47 (2 connections now open)
+2015-11-02T17:18:38.219+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56228 #48 (3 connections now open)
+2015-11-02T17:18:38.219+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56229 #49 (4 connections now open)
+2015-11-02T17:18:38.219+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56230 #50 (5 connections now open)
+2015-11-02T17:25:25.759+0530 I NETWORK  [conn46] end connection 192.168.56.1:56226 (4 connections now open)
+2015-11-02T17:25:25.759+0530 I NETWORK  [conn47] end connection 192.168.56.1:56227 (4 connections now open)
+2015-11-02T17:25:25.760+0530 I NETWORK  [conn48] end connection 192.168.56.1:56228 (3 connections now open)
+2015-11-02T17:25:25.760+0530 I NETWORK  [conn49] end connection 192.168.56.1:56229 (2 connections now open)
+2015-11-02T17:25:25.760+0530 I NETWORK  [conn50] end connection 192.168.56.1:56230 (1 connection now open)
+2015-11-02T17:25:31.944+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56259 #51 (1 connection now open)
+2015-11-02T17:25:31.944+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56260 #52 (2 connections now open)
+2015-11-02T17:25:31.945+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56261 #53 (3 connections now open)
+2015-11-02T17:25:31.945+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56262 #54 (4 connections now open)
+2015-11-02T17:25:31.945+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56263 #55 (5 connections now open)
+2015-11-02T17:27:43.518+0530 I NETWORK  [conn51] end connection 192.168.56.1:56259 (4 connections now open)
+2015-11-02T17:27:43.518+0530 I NETWORK  [conn52] end connection 192.168.56.1:56260 (4 connections now open)
+2015-11-02T17:27:43.519+0530 I NETWORK  [conn53] end connection 192.168.56.1:56261 (3 connections now open)
+2015-11-02T17:27:43.519+0530 I NETWORK  [conn55] end connection 192.168.56.1:56263 (2 connections now open)
+2015-11-02T17:27:43.519+0530 I NETWORK  [conn54] end connection 192.168.56.1:56262 (3 connections now open)
+2015-11-02T17:28:33.150+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56271 #56 (1 connection now open)
+2015-11-02T17:28:33.151+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56272 #57 (2 connections now open)
+2015-11-02T17:28:33.151+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56273 #58 (3 connections now open)
+2015-11-02T17:28:33.151+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56274 #59 (4 connections now open)
+2015-11-02T17:28:33.151+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56275 #60 (5 connections now open)
+2015-11-02T17:33:11.639+0530 I NETWORK  [conn56] end connection 192.168.56.1:56271 (4 connections now open)
+2015-11-02T17:33:11.639+0530 I NETWORK  [conn57] end connection 192.168.56.1:56272 (4 connections now open)
+2015-11-02T17:33:11.640+0530 I NETWORK  [conn59] end connection 192.168.56.1:56274 (2 connections now open)
+2015-11-02T17:33:11.640+0530 I NETWORK  [conn58] end connection 192.168.56.1:56273 (2 connections now open)
+2015-11-02T17:33:11.640+0530 I NETWORK  [conn60] end connection 192.168.56.1:56275 (2 connections now open)
+2015-11-02T17:33:21.793+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56337 #61 (1 connection now open)
+2015-11-02T17:33:21.793+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56338 #62 (2 connections now open)
+2015-11-02T17:33:21.793+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56339 #63 (3 connections now open)
+2015-11-02T17:33:21.794+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56340 #64 (4 connections now open)
+2015-11-02T17:33:21.794+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56341 #65 (5 connections now open)
+2015-11-02T17:37:28.757+0530 I NETWORK  [conn61] end connection 192.168.56.1:56337 (4 connections now open)
+2015-11-02T17:37:28.758+0530 I NETWORK  [conn62] end connection 192.168.56.1:56338 (4 connections now open)
+2015-11-02T17:37:28.758+0530 I NETWORK  [conn64] end connection 192.168.56.1:56340 (2 connections now open)
+2015-11-02T17:37:28.758+0530 I NETWORK  [conn63] end connection 192.168.56.1:56339 (2 connections now open)
+2015-11-02T17:37:28.758+0530 I NETWORK  [conn65] end connection 192.168.56.1:56341 (2 connections now open)
+2015-11-02T17:37:37.425+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56413 #66 (1 connection now open)
+2015-11-02T17:37:37.426+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56414 #67 (2 connections now open)
+2015-11-02T17:37:37.426+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56415 #68 (3 connections now open)
+2015-11-02T17:37:37.426+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56416 #69 (4 connections now open)
+2015-11-02T17:37:37.426+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56417 #70 (5 connections now open)
+2015-11-02T17:40:20.612+0530 I NETWORK  [conn66] end connection 192.168.56.1:56413 (4 connections now open)
+2015-11-02T17:40:20.612+0530 I NETWORK  [conn67] end connection 192.168.56.1:56414 (4 connections now open)
+2015-11-02T17:40:20.612+0530 I NETWORK  [conn68] end connection 192.168.56.1:56415 (3 connections now open)
+2015-11-02T17:40:20.612+0530 I NETWORK  [conn69] end connection 192.168.56.1:56416 (2 connections now open)
+2015-11-02T17:40:20.613+0530 I NETWORK  [conn70] end connection 192.168.56.1:56417 (1 connection now open)
+2015-11-02T17:40:26.745+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56447 #71 (1 connection now open)
+2015-11-02T17:40:26.746+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56448 #72 (2 connections now open)
+2015-11-02T17:40:26.746+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56449 #73 (3 connections now open)
+2015-11-02T17:40:26.746+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56450 #74 (4 connections now open)
+2015-11-02T17:40:26.746+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56451 #75 (5 connections now open)
+2015-11-02T17:42:21.980+0530 I NETWORK  [conn71] end connection 192.168.56.1:56447 (4 connections now open)
+2015-11-02T17:42:21.980+0530 I NETWORK  [conn72] end connection 192.168.56.1:56448 (4 connections now open)
+2015-11-02T17:42:21.981+0530 I NETWORK  [conn73] end connection 192.168.56.1:56449 (2 connections now open)
+2015-11-02T17:42:21.981+0530 I NETWORK  [conn75] end connection 192.168.56.1:56451 (2 connections now open)
+2015-11-02T17:42:21.981+0530 I NETWORK  [conn74] end connection 192.168.56.1:56450 (2 connections now open)
+2015-11-02T17:42:34.060+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56481 #76 (1 connection now open)
+2015-11-02T17:42:34.061+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56482 #77 (2 connections now open)
+2015-11-02T17:42:34.061+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56483 #78 (3 connections now open)
+2015-11-02T17:42:34.061+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56484 #79 (4 connections now open)
+2015-11-02T17:42:34.061+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:56485 #80 (5 connections now open)
+2015-11-02T18:05:39.340+0530 I CONTROL  CTRL_CLOSE_EVENT signal
+2015-11-02T18:05:39.340+0530 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2015-11-02T18:05:39.340+0530 I CONTROL  [consoleTerminate] now exiting
+2015-11-02T18:05:39.340+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-11-02T18:05:39.340+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-11-02T18:05:39.340+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-11-02T18:05:39.340+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-11-02T18:05:39.340+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-11-02T18:05:39.340+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-11-02T18:05:39.340+0530 I NETWORK  [conn76] end connection 192.168.56.1:56481 (4 connections now open)
+2015-11-02T18:05:39.340+0530 I NETWORK  [conn80] end connection 192.168.56.1:56485 (4 connections now open)
+2015-11-02T18:05:39.341+0530 I NETWORK  [conn79] end connection 192.168.56.1:56484 (4 connections now open)
+2015-11-02T18:05:39.341+0530 I NETWORK  [conn77] end connection 192.168.56.1:56482 (4 connections now open)
+2015-11-02T18:05:39.341+0530 I NETWORK  [conn78] end connection 192.168.56.1:56483 (0 connections now open)
+2015-11-02T18:05:39.404+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-11-02T18:05:39.404+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-11-02T18:05:39.404+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-11-02T18:05:39.442+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-11-02T18:05:39.442+0530 I JOURNAL  [durability] Durability thread stopped
+2015-11-02T18:05:39.442+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-11-02T18:05:39.449+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-11-02T18:05:39.449+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-11-02T18:05:39.450+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-11-03T08:52:46.788+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-11-03T08:52:46.828+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\journal
+2015-11-03T08:52:46.828+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-11-03T08:52:46.864+0530 I JOURNAL  [durability] Durability thread started
+2015-11-03T08:52:46.864+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-11-03T08:52:46.942+0530 I CONTROL  [initandlisten] MongoDB starting : pid=144 port=27017 dbpath=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-11-03T08:52:46.942+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-11-03T08:52:46.942+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-11-03T08:52:46.942+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-11-03T08:52:46.942+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-11-03T08:52:46.942+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-11-03T08:52:46.942+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-11-03T08:52:46.966+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-11-03T09:50:04.489+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60221 #1 (1 connection now open)
+2015-11-03T09:50:04.489+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60222 #2 (2 connections now open)
+2015-11-03T09:50:04.490+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60223 #3 (3 connections now open)
+2015-11-03T09:50:04.490+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60224 #4 (4 connections now open)
+2015-11-03T09:50:04.490+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:60225 #5 (5 connections now open)
+2015-11-03T10:51:10.201+0530 I NETWORK  [conn1] end connection 192.168.56.1:60221 (4 connections now open)
+2015-11-03T10:51:10.202+0530 I NETWORK  [conn4] end connection 192.168.56.1:60224 (4 connections now open)
+2015-11-03T10:51:10.201+0530 I NETWORK  [conn2] end connection 192.168.56.1:60222 (4 connections now open)
+2015-11-03T10:51:10.202+0530 I NETWORK  [conn5] end connection 192.168.56.1:60225 (2 connections now open)
+2015-11-03T10:51:10.202+0530 I NETWORK  [conn3] end connection 192.168.56.1:60223 (4 connections now open)
+2015-11-03T10:51:20.501+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61532 #6 (1 connection now open)
+2015-11-03T10:51:20.501+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61533 #7 (2 connections now open)
+2015-11-03T10:51:20.502+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61534 #8 (3 connections now open)
+2015-11-03T10:51:20.502+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61535 #9 (4 connections now open)
+2015-11-03T10:51:20.502+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61536 #10 (5 connections now open)
+2015-11-03T10:53:35.185+0530 I NETWORK  [conn6] end connection 192.168.56.1:61532 (4 connections now open)
+2015-11-03T10:53:35.185+0530 I NETWORK  [conn7] end connection 192.168.56.1:61533 (4 connections now open)
+2015-11-03T10:53:35.186+0530 I NETWORK  [conn8] end connection 192.168.56.1:61534 (2 connections now open)
+2015-11-03T10:53:35.186+0530 I NETWORK  [conn9] end connection 192.168.56.1:61535 (2 connections now open)
+2015-11-03T10:53:35.186+0530 I NETWORK  [conn10] end connection 192.168.56.1:61536 (0 connections now open)
+2015-11-03T10:53:54.618+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61579 #11 (1 connection now open)
+2015-11-03T10:53:54.619+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61580 #12 (2 connections now open)
+2015-11-03T10:53:54.619+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61581 #13 (3 connections now open)
+2015-11-03T10:53:54.619+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61582 #14 (4 connections now open)
+2015-11-03T10:53:54.619+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61583 #15 (5 connections now open)
+2015-11-03T10:54:34.111+0530 I NETWORK  [conn11] end connection 192.168.56.1:61579 (4 connections now open)
+2015-11-03T10:54:34.112+0530 I NETWORK  [conn12] end connection 192.168.56.1:61580 (4 connections now open)
+2015-11-03T10:54:34.112+0530 I NETWORK  [conn13] end connection 192.168.56.1:61581 (2 connections now open)
+2015-11-03T10:54:34.112+0530 I NETWORK  [conn14] end connection 192.168.56.1:61582 (1 connection now open)
+2015-11-03T10:54:34.112+0530 I NETWORK  [conn15] end connection 192.168.56.1:61583 (1 connection now open)
+2015-11-03T10:54:42.795+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61588 #16 (1 connection now open)
+2015-11-03T10:54:42.796+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61589 #17 (2 connections now open)
+2015-11-03T10:54:42.796+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61590 #18 (3 connections now open)
+2015-11-03T10:54:42.796+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61591 #19 (4 connections now open)
+2015-11-03T10:54:42.796+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61592 #20 (5 connections now open)
+2015-11-03T11:06:52.863+0530 I NETWORK  [conn16] end connection 192.168.56.1:61588 (4 connections now open)
+2015-11-03T11:06:52.863+0530 I NETWORK  [conn17] end connection 192.168.56.1:61589 (4 connections now open)
+2015-11-03T11:06:52.864+0530 I NETWORK  [conn18] end connection 192.168.56.1:61590 (2 connections now open)
+2015-11-03T11:06:52.864+0530 I NETWORK  [conn20] end connection 192.168.56.1:61592 (2 connections now open)
+2015-11-03T11:06:52.864+0530 I NETWORK  [conn19] end connection 192.168.56.1:61591 (2 connections now open)
+2015-11-03T11:07:06.548+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61723 #21 (1 connection now open)
+2015-11-03T11:07:06.548+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61724 #22 (2 connections now open)
+2015-11-03T11:07:06.548+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61725 #23 (3 connections now open)
+2015-11-03T11:07:06.548+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61726 #24 (4 connections now open)
+2015-11-03T11:07:06.548+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61727 #25 (5 connections now open)
+2015-11-03T11:07:50.150+0530 I NETWORK  [conn21] end connection 192.168.56.1:61723 (4 connections now open)
+2015-11-03T11:07:50.151+0530 I NETWORK  [conn22] end connection 192.168.56.1:61724 (3 connections now open)
+2015-11-03T11:07:50.151+0530 I NETWORK  [conn23] end connection 192.168.56.1:61725 (2 connections now open)
+2015-11-03T11:07:50.151+0530 I NETWORK  [conn24] end connection 192.168.56.1:61726 (2 connections now open)
+2015-11-03T11:07:50.152+0530 I NETWORK  [conn25] end connection 192.168.56.1:61727 (0 connections now open)
+2015-11-03T11:07:59.295+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61744 #26 (1 connection now open)
+2015-11-03T11:07:59.296+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61745 #27 (2 connections now open)
+2015-11-03T11:07:59.296+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61746 #28 (3 connections now open)
+2015-11-03T11:07:59.296+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61747 #29 (4 connections now open)
+2015-11-03T11:07:59.296+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61748 #30 (5 connections now open)
+2015-11-03T11:16:48.324+0530 I NETWORK  [conn26] end connection 192.168.56.1:61744 (4 connections now open)
+2015-11-03T11:16:48.325+0530 I NETWORK  [conn28] end connection 192.168.56.1:61746 (4 connections now open)
+2015-11-03T11:16:48.325+0530 I NETWORK  [conn27] end connection 192.168.56.1:61745 (4 connections now open)
+2015-11-03T11:16:48.325+0530 I NETWORK  [conn29] end connection 192.168.56.1:61747 (2 connections now open)
+2015-11-03T11:16:48.326+0530 I NETWORK  [conn30] end connection 192.168.56.1:61748 (0 connections now open)
+2015-11-03T11:16:56.248+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61813 #31 (1 connection now open)
+2015-11-03T11:16:56.249+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61814 #32 (2 connections now open)
+2015-11-03T11:16:56.249+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61815 #33 (3 connections now open)
+2015-11-03T11:16:56.249+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61816 #34 (4 connections now open)
+2015-11-03T11:16:56.249+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61817 #35 (5 connections now open)
+2015-11-03T11:25:54.682+0530 I NETWORK  [conn31] end connection 192.168.56.1:61813 (4 connections now open)
+2015-11-03T11:25:54.682+0530 I NETWORK  [conn32] end connection 192.168.56.1:61814 (4 connections now open)
+2015-11-03T11:25:54.683+0530 I NETWORK  [conn33] end connection 192.168.56.1:61815 (2 connections now open)
+2015-11-03T11:25:54.683+0530 I NETWORK  [conn35] end connection 192.168.56.1:61817 (2 connections now open)
+2015-11-03T11:25:54.683+0530 I NETWORK  [conn34] end connection 192.168.56.1:61816 (2 connections now open)
+2015-11-03T11:26:39.310+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61934 #36 (1 connection now open)
+2015-11-03T11:26:39.310+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61935 #37 (2 connections now open)
+2015-11-03T11:26:39.311+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61936 #38 (3 connections now open)
+2015-11-03T11:26:39.311+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61937 #39 (4 connections now open)
+2015-11-03T11:26:39.311+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61938 #40 (5 connections now open)
+2015-11-03T11:28:57.576+0530 I NETWORK  [conn36] end connection 192.168.56.1:61934 (4 connections now open)
+2015-11-03T11:28:57.576+0530 I NETWORK  [conn37] end connection 192.168.56.1:61935 (4 connections now open)
+2015-11-03T11:28:57.577+0530 I NETWORK  [conn38] end connection 192.168.56.1:61936 (2 connections now open)
+2015-11-03T11:28:57.577+0530 I NETWORK  [conn40] end connection 192.168.56.1:61938 (2 connections now open)
+2015-11-03T11:28:57.577+0530 I NETWORK  [conn39] end connection 192.168.56.1:61937 (2 connections now open)
+2015-11-03T11:29:05.698+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61956 #41 (1 connection now open)
+2015-11-03T11:29:05.698+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61957 #42 (2 connections now open)
+2015-11-03T11:29:05.698+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61958 #43 (3 connections now open)
+2015-11-03T11:29:05.699+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61959 #44 (4 connections now open)
+2015-11-03T11:29:05.699+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61960 #45 (5 connections now open)
+2015-11-03T11:29:34.809+0530 I NETWORK  [conn41] end connection 192.168.56.1:61956 (4 connections now open)
+2015-11-03T11:29:34.810+0530 I NETWORK  [conn42] end connection 192.168.56.1:61957 (3 connections now open)
+2015-11-03T11:29:34.810+0530 I NETWORK  [conn43] end connection 192.168.56.1:61958 (3 connections now open)
+2015-11-03T11:29:34.811+0530 I NETWORK  [conn44] end connection 192.168.56.1:61959 (2 connections now open)
+2015-11-03T11:29:34.811+0530 I NETWORK  [conn45] end connection 192.168.56.1:61960 (1 connection now open)
+2015-11-03T11:29:42.196+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61988 #46 (1 connection now open)
+2015-11-03T11:29:42.197+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61989 #47 (2 connections now open)
+2015-11-03T11:29:42.197+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61990 #48 (3 connections now open)
+2015-11-03T11:29:42.197+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61991 #49 (4 connections now open)
+2015-11-03T11:29:42.197+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:61992 #50 (5 connections now open)
+2015-11-03T11:30:25.120+0530 I NETWORK  [conn46] end connection 192.168.56.1:61988 (4 connections now open)
+2015-11-03T11:30:25.120+0530 I NETWORK  [conn47] end connection 192.168.56.1:61989 (4 connections now open)
+2015-11-03T11:30:25.121+0530 I NETWORK  [conn48] end connection 192.168.56.1:61990 (2 connections now open)
+2015-11-03T11:30:25.121+0530 I NETWORK  [conn50] end connection 192.168.56.1:61992 (2 connections now open)
+2015-11-03T11:30:25.121+0530 I NETWORK  [conn49] end connection 192.168.56.1:61991 (2 connections now open)
+2015-11-03T11:30:31.508+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62011 #51 (1 connection now open)
+2015-11-03T11:30:31.509+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62012 #52 (2 connections now open)
+2015-11-03T11:30:31.509+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62013 #53 (3 connections now open)
+2015-11-03T11:30:31.509+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62014 #54 (4 connections now open)
+2015-11-03T11:30:31.509+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62015 #55 (5 connections now open)
+2015-11-03T11:30:52.138+0530 I NETWORK  [conn51] end connection 192.168.56.1:62011 (4 connections now open)
+2015-11-03T11:30:52.138+0530 I NETWORK  [conn52] end connection 192.168.56.1:62012 (3 connections now open)
+2015-11-03T11:30:52.138+0530 I NETWORK  [conn53] end connection 192.168.56.1:62013 (3 connections now open)
+2015-11-03T11:30:52.139+0530 I NETWORK  [conn54] end connection 192.168.56.1:62014 (2 connections now open)
+2015-11-03T11:30:52.139+0530 I NETWORK  [conn55] end connection 192.168.56.1:62015 (0 connections now open)
+2015-11-03T11:31:00.480+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62033 #56 (1 connection now open)
+2015-11-03T11:31:00.481+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62034 #57 (2 connections now open)
+2015-11-03T11:31:00.481+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62035 #58 (3 connections now open)
+2015-11-03T11:31:00.481+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62036 #59 (4 connections now open)
+2015-11-03T11:31:00.481+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62037 #60 (5 connections now open)
+2015-11-03T11:32:01.880+0530 I NETWORK  [conn56] end connection 192.168.56.1:62033 (4 connections now open)
+2015-11-03T11:32:01.881+0530 I NETWORK  [conn57] end connection 192.168.56.1:62034 (3 connections now open)
+2015-11-03T11:32:01.881+0530 I NETWORK  [conn58] end connection 192.168.56.1:62035 (3 connections now open)
+2015-11-03T11:32:01.882+0530 I NETWORK  [conn59] end connection 192.168.56.1:62036 (2 connections now open)
+2015-11-03T11:32:01.882+0530 I NETWORK  [conn60] end connection 192.168.56.1:62037 (1 connection now open)
+2015-11-03T11:33:23.571+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62056 #61 (1 connection now open)
+2015-11-03T11:33:23.572+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62057 #62 (2 connections now open)
+2015-11-03T11:33:23.572+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62058 #63 (3 connections now open)
+2015-11-03T11:33:23.572+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62059 #64 (4 connections now open)
+2015-11-03T11:33:23.572+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62060 #65 (5 connections now open)
+2015-11-03T11:35:10.896+0530 I NETWORK  [conn61] end connection 192.168.56.1:62056 (4 connections now open)
+2015-11-03T11:35:10.896+0530 I NETWORK  [conn62] end connection 192.168.56.1:62057 (4 connections now open)
+2015-11-03T11:35:10.897+0530 I NETWORK  [conn63] end connection 192.168.56.1:62058 (3 connections now open)
+2015-11-03T11:35:10.897+0530 I NETWORK  [conn64] end connection 192.168.56.1:62059 (1 connection now open)
+2015-11-03T11:35:10.897+0530 I NETWORK  [conn65] end connection 192.168.56.1:62060 (1 connection now open)
+2015-11-03T11:35:25.442+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62100 #66 (1 connection now open)
+2015-11-03T11:35:25.443+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62101 #67 (2 connections now open)
+2015-11-03T11:35:25.443+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62102 #68 (3 connections now open)
+2015-11-03T11:35:25.443+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62103 #69 (4 connections now open)
+2015-11-03T11:35:25.443+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62104 #70 (5 connections now open)
+2015-11-03T11:37:41.415+0530 I NETWORK  [conn66] end connection 192.168.56.1:62100 (4 connections now open)
+2015-11-03T11:37:41.416+0530 I NETWORK  [conn67] end connection 192.168.56.1:62101 (4 connections now open)
+2015-11-03T11:37:41.416+0530 I NETWORK  [conn68] end connection 192.168.56.1:62102 (2 connections now open)
+2015-11-03T11:37:41.416+0530 I NETWORK  [conn70] end connection 192.168.56.1:62104 (2 connections now open)
+2015-11-03T11:37:41.416+0530 I NETWORK  [conn69] end connection 192.168.56.1:62103 (2 connections now open)
+2015-11-03T11:37:48.733+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62128 #71 (1 connection now open)
+2015-11-03T11:37:48.734+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62129 #72 (2 connections now open)
+2015-11-03T11:37:48.734+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62130 #73 (3 connections now open)
+2015-11-03T11:37:48.734+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62131 #74 (4 connections now open)
+2015-11-03T11:37:48.734+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62132 #75 (5 connections now open)
+2015-11-03T11:39:14.350+0530 I NETWORK  [conn71] end connection 192.168.56.1:62128 (4 connections now open)
+2015-11-03T11:39:14.351+0530 I NETWORK  [conn72] end connection 192.168.56.1:62129 (4 connections now open)
+2015-11-03T11:39:14.351+0530 I NETWORK  [conn73] end connection 192.168.56.1:62130 (2 connections now open)
+2015-11-03T11:39:14.351+0530 I NETWORK  [conn75] end connection 192.168.56.1:62132 (2 connections now open)
+2015-11-03T11:39:14.352+0530 I NETWORK  [conn74] end connection 192.168.56.1:62131 (0 connections now open)
+2015-11-03T11:39:22.238+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62183 #76 (1 connection now open)
+2015-11-03T11:39:22.239+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62184 #77 (2 connections now open)
+2015-11-03T11:39:22.239+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62185 #78 (3 connections now open)
+2015-11-03T11:39:22.239+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62186 #79 (4 connections now open)
+2015-11-03T11:39:22.239+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62187 #80 (5 connections now open)
+2015-11-03T11:40:16.919+0530 I NETWORK  [conn76] end connection 192.168.56.1:62183 (4 connections now open)
+2015-11-03T11:40:16.919+0530 I NETWORK  [conn77] end connection 192.168.56.1:62184 (4 connections now open)
+2015-11-03T11:40:16.920+0530 I NETWORK  [conn78] end connection 192.168.56.1:62185 (2 connections now open)
+2015-11-03T11:40:16.920+0530 I NETWORK  [conn80] end connection 192.168.56.1:62187 (2 connections now open)
+2015-11-03T11:40:16.920+0530 I NETWORK  [conn79] end connection 192.168.56.1:62186 (2 connections now open)
+2015-11-03T11:40:28.898+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62211 #81 (1 connection now open)
+2015-11-03T11:40:28.899+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62212 #82 (2 connections now open)
+2015-11-03T11:40:28.899+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62213 #83 (3 connections now open)
+2015-11-03T11:40:28.899+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62214 #84 (4 connections now open)
+2015-11-03T11:40:28.899+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62215 #85 (5 connections now open)
+2015-11-03T11:40:54.772+0530 I NETWORK  [conn81] end connection 192.168.56.1:62211 (4 connections now open)
+2015-11-03T11:40:54.772+0530 I NETWORK  [conn83] end connection 192.168.56.1:62213 (4 connections now open)
+2015-11-03T11:40:54.772+0530 I NETWORK  [conn82] end connection 192.168.56.1:62212 (4 connections now open)
+2015-11-03T11:40:54.772+0530 I NETWORK  [conn85] end connection 192.168.56.1:62215 (4 connections now open)
+2015-11-03T11:40:54.772+0530 I NETWORK  [conn84] end connection 192.168.56.1:62214 (4 connections now open)
+2015-11-03T12:05:10.921+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62728 #86 (1 connection now open)
+2015-11-03T12:05:10.922+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62729 #87 (2 connections now open)
+2015-11-03T12:05:10.922+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62730 #88 (3 connections now open)
+2015-11-03T12:05:10.922+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62731 #89 (4 connections now open)
+2015-11-03T12:05:10.922+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62732 #90 (5 connections now open)
+2015-11-03T12:09:21.392+0530 I NETWORK  [conn86] end connection 192.168.56.1:62728 (4 connections now open)
+2015-11-03T12:09:21.393+0530 I NETWORK  [conn87] end connection 192.168.56.1:62729 (4 connections now open)
+2015-11-03T12:09:21.393+0530 I NETWORK  [conn88] end connection 192.168.56.1:62730 (2 connections now open)
+2015-11-03T12:09:21.393+0530 I NETWORK  [conn89] end connection 192.168.56.1:62731 (2 connections now open)
+2015-11-03T12:09:21.393+0530 I NETWORK  [conn90] end connection 192.168.56.1:62732 (2 connections now open)
+2015-11-03T12:09:32.882+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62924 #91 (1 connection now open)
+2015-11-03T12:09:32.883+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62925 #92 (2 connections now open)
+2015-11-03T12:09:32.883+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62926 #93 (3 connections now open)
+2015-11-03T12:09:32.883+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62927 #94 (4 connections now open)
+2015-11-03T12:09:32.883+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62928 #95 (5 connections now open)
+2015-11-03T12:11:13.463+0530 I NETWORK  [conn91] end connection 192.168.56.1:62924 (4 connections now open)
+2015-11-03T12:11:13.464+0530 I NETWORK  [conn93] end connection 192.168.56.1:62926 (4 connections now open)
+2015-11-03T12:11:13.464+0530 I NETWORK  [conn92] end connection 192.168.56.1:62925 (4 connections now open)
+2015-11-03T12:11:13.464+0530 I NETWORK  [conn94] end connection 192.168.56.1:62927 (2 connections now open)
+2015-11-03T12:11:13.465+0530 I NETWORK  [conn95] end connection 192.168.56.1:62928 (1 connection now open)
+2015-11-03T12:11:22.944+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62955 #96 (1 connection now open)
+2015-11-03T12:11:22.945+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62956 #97 (2 connections now open)
+2015-11-03T12:11:22.945+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62957 #98 (3 connections now open)
+2015-11-03T12:11:22.945+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62958 #99 (4 connections now open)
+2015-11-03T12:11:22.945+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62959 #100 (5 connections now open)
+2015-11-03T12:13:15.233+0530 I NETWORK  [conn96] end connection 192.168.56.1:62955 (4 connections now open)
+2015-11-03T12:13:15.233+0530 I NETWORK  [conn97] end connection 192.168.56.1:62956 (4 connections now open)
+2015-11-03T12:13:15.233+0530 I NETWORK  [conn98] end connection 192.168.56.1:62957 (2 connections now open)
+2015-11-03T12:13:15.233+0530 I NETWORK  [conn100] end connection 192.168.56.1:62959 (2 connections now open)
+2015-11-03T12:13:15.233+0530 I NETWORK  [conn99] end connection 192.168.56.1:62958 (2 connections now open)
+2015-11-03T12:13:24.506+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62973 #101 (1 connection now open)
+2015-11-03T12:13:24.507+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62974 #102 (2 connections now open)
+2015-11-03T12:13:24.507+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62975 #103 (3 connections now open)
+2015-11-03T12:13:24.507+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62976 #104 (4 connections now open)
+2015-11-03T12:13:24.507+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:62977 #105 (5 connections now open)
+2015-11-03T12:13:56.528+0530 I NETWORK  [conn101] end connection 192.168.56.1:62973 (4 connections now open)
+2015-11-03T12:13:56.528+0530 I NETWORK  [conn102] end connection 192.168.56.1:62974 (3 connections now open)
+2015-11-03T12:13:56.529+0530 I NETWORK  [conn103] end connection 192.168.56.1:62975 (2 connections now open)
+2015-11-03T12:13:56.529+0530 I NETWORK  [conn104] end connection 192.168.56.1:62976 (2 connections now open)
+2015-11-03T12:13:56.530+0530 I NETWORK  [conn105] end connection 192.168.56.1:62977 (0 connections now open)
+2015-11-03T12:14:04.535+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63003 #106 (1 connection now open)
+2015-11-03T12:14:04.535+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63004 #107 (2 connections now open)
+2015-11-03T12:14:04.535+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63005 #108 (3 connections now open)
+2015-11-03T12:14:04.535+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63006 #109 (4 connections now open)
+2015-11-03T12:14:04.535+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63007 #110 (5 connections now open)
+2015-11-03T12:14:30.264+0530 I NETWORK  [conn106] end connection 192.168.56.1:63003 (4 connections now open)
+2015-11-03T12:14:30.264+0530 I NETWORK  [conn107] end connection 192.168.56.1:63004 (3 connections now open)
+2015-11-03T12:14:30.264+0530 I NETWORK  [conn108] end connection 192.168.56.1:63005 (3 connections now open)
+2015-11-03T12:14:30.265+0530 I NETWORK  [conn109] end connection 192.168.56.1:63006 (1 connection now open)
+2015-11-03T12:14:30.265+0530 I NETWORK  [conn110] end connection 192.168.56.1:63007 (1 connection now open)
+2015-11-03T12:14:36.953+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63015 #111 (1 connection now open)
+2015-11-03T12:14:36.954+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63016 #112 (2 connections now open)
+2015-11-03T12:14:36.954+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63017 #113 (3 connections now open)
+2015-11-03T12:14:36.954+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63018 #114 (4 connections now open)
+2015-11-03T12:14:36.954+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63019 #115 (5 connections now open)
+2015-11-03T12:40:07.361+0530 I NETWORK  [conn111] end connection 192.168.56.1:63015 (4 connections now open)
+2015-11-03T12:40:07.361+0530 I NETWORK  [conn113] end connection 192.168.56.1:63017 (4 connections now open)
+2015-11-03T12:40:07.361+0530 I NETWORK  [conn112] end connection 192.168.56.1:63016 (4 connections now open)
+2015-11-03T12:40:07.361+0530 I NETWORK  [conn114] end connection 192.168.56.1:63018 (2 connections now open)
+2015-11-03T12:40:07.361+0530 I NETWORK  [conn115] end connection 192.168.56.1:63019 (1 connection now open)
+2015-11-03T12:40:15.738+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63147 #116 (1 connection now open)
+2015-11-03T12:40:15.739+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63148 #117 (2 connections now open)
+2015-11-03T12:40:15.739+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63149 #118 (3 connections now open)
+2015-11-03T12:40:15.739+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63150 #119 (4 connections now open)
+2015-11-03T12:40:15.740+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63151 #120 (5 connections now open)
+2015-11-03T12:43:38.104+0530 I NETWORK  [conn116] end connection 192.168.56.1:63147 (4 connections now open)
+2015-11-03T12:43:38.104+0530 I NETWORK  [conn117] end connection 192.168.56.1:63148 (4 connections now open)
+2015-11-03T12:43:38.104+0530 I NETWORK  [conn118] end connection 192.168.56.1:63149 (2 connections now open)
+2015-11-03T12:43:38.104+0530 I NETWORK  [conn120] end connection 192.168.56.1:63151 (2 connections now open)
+2015-11-03T12:43:38.104+0530 I NETWORK  [conn119] end connection 192.168.56.1:63150 (2 connections now open)
+2015-11-03T12:43:44.474+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63221 #121 (1 connection now open)
+2015-11-03T12:43:44.475+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63222 #122 (2 connections now open)
+2015-11-03T12:43:44.475+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63223 #123 (3 connections now open)
+2015-11-03T12:43:44.475+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63224 #124 (4 connections now open)
+2015-11-03T12:43:44.475+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63225 #125 (5 connections now open)
+2015-11-03T12:49:03.111+0530 I NETWORK  [conn121] end connection 192.168.56.1:63221 (4 connections now open)
+2015-11-03T12:49:03.111+0530 I NETWORK  [conn122] end connection 192.168.56.1:63222 (4 connections now open)
+2015-11-03T12:49:03.111+0530 I NETWORK  [conn123] end connection 192.168.56.1:63223 (2 connections now open)
+2015-11-03T12:49:03.111+0530 I NETWORK  [conn124] end connection 192.168.56.1:63224 (2 connections now open)
+2015-11-03T12:49:03.111+0530 I NETWORK  [conn125] end connection 192.168.56.1:63225 (0 connections now open)
+2015-11-03T12:49:11.251+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63292 #126 (1 connection now open)
+2015-11-03T12:49:11.252+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63293 #127 (2 connections now open)
+2015-11-03T12:49:11.252+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63294 #128 (3 connections now open)
+2015-11-03T12:49:11.252+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63295 #129 (4 connections now open)
+2015-11-03T12:49:11.252+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63296 #130 (5 connections now open)
+2015-11-03T12:51:01.521+0530 I NETWORK  [conn126] end connection 192.168.56.1:63292 (4 connections now open)
+2015-11-03T12:51:01.522+0530 I NETWORK  [conn127] end connection 192.168.56.1:63293 (3 connections now open)
+2015-11-03T12:51:01.522+0530 I NETWORK  [conn128] end connection 192.168.56.1:63294 (2 connections now open)
+2015-11-03T12:51:01.523+0530 I NETWORK  [conn129] end connection 192.168.56.1:63295 (1 connection now open)
+2015-11-03T12:51:01.524+0530 I NETWORK  [conn130] end connection 192.168.56.1:63296 (0 connections now open)
+2015-11-03T12:51:29.970+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63318 #131 (1 connection now open)
+2015-11-03T12:51:29.971+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63319 #132 (2 connections now open)
+2015-11-03T12:51:29.971+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63320 #133 (3 connections now open)
+2015-11-03T12:51:29.971+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63321 #134 (4 connections now open)
+2015-11-03T12:51:29.971+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63322 #135 (5 connections now open)
+2015-11-03T12:52:16.704+0530 I NETWORK  [conn131] end connection 192.168.56.1:63318 (4 connections now open)
+2015-11-03T12:52:16.705+0530 I NETWORK  [conn134] end connection 192.168.56.1:63321 (3 connections now open)
+2015-11-03T12:52:16.706+0530 I NETWORK  [conn135] end connection 192.168.56.1:63322 (2 connections now open)
+2015-11-03T12:52:16.704+0530 I NETWORK  [conn132] end connection 192.168.56.1:63319 (4 connections now open)
+2015-11-03T12:52:16.704+0530 I NETWORK  [conn133] end connection 192.168.56.1:63320 (4 connections now open)
+2015-11-03T12:52:25.981+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63380 #136 (1 connection now open)
+2015-11-03T12:52:25.981+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63381 #137 (2 connections now open)
+2015-11-03T12:52:25.981+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63382 #138 (3 connections now open)
+2015-11-03T12:52:25.981+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63383 #139 (4 connections now open)
+2015-11-03T12:52:25.981+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63384 #140 (5 connections now open)
+2015-11-03T12:56:26.926+0530 I NETWORK  [conn136] end connection 192.168.56.1:63380 (4 connections now open)
+2015-11-03T12:56:26.926+0530 I NETWORK  [conn138] end connection 192.168.56.1:63382 (4 connections now open)
+2015-11-03T12:56:26.926+0530 I NETWORK  [conn137] end connection 192.168.56.1:63381 (4 connections now open)
+2015-11-03T12:56:26.926+0530 I NETWORK  [conn139] end connection 192.168.56.1:63383 (2 connections now open)
+2015-11-03T12:56:26.926+0530 I NETWORK  [conn140] end connection 192.168.56.1:63384 (0 connections now open)
+2015-11-03T12:56:36.125+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63461 #141 (1 connection now open)
+2015-11-03T12:56:36.126+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63462 #142 (2 connections now open)
+2015-11-03T12:56:36.126+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63463 #143 (3 connections now open)
+2015-11-03T12:56:36.126+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63464 #144 (4 connections now open)
+2015-11-03T12:56:36.126+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63465 #145 (5 connections now open)
+2015-11-03T12:58:37.902+0530 I NETWORK  [conn141] end connection 192.168.56.1:63461 (4 connections now open)
+2015-11-03T12:58:37.902+0530 I NETWORK  [conn142] end connection 192.168.56.1:63462 (4 connections now open)
+2015-11-03T12:58:37.902+0530 I NETWORK  [conn143] end connection 192.168.56.1:63463 (2 connections now open)
+2015-11-03T12:58:37.902+0530 I NETWORK  [conn145] end connection 192.168.56.1:63465 (2 connections now open)
+2015-11-03T12:58:37.902+0530 I NETWORK  [conn144] end connection 192.168.56.1:63464 (2 connections now open)
+2015-11-03T12:58:50.429+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63482 #146 (1 connection now open)
+2015-11-03T12:58:50.429+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63483 #147 (2 connections now open)
+2015-11-03T12:58:50.429+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63484 #148 (3 connections now open)
+2015-11-03T12:58:50.430+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63485 #149 (4 connections now open)
+2015-11-03T12:58:50.430+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63486 #150 (5 connections now open)
+2015-11-03T13:12:19.772+0530 I NETWORK  [conn146] end connection 192.168.56.1:63482 (4 connections now open)
+2015-11-03T13:12:19.772+0530 I NETWORK  [conn147] end connection 192.168.56.1:63483 (4 connections now open)
+2015-11-03T13:12:19.772+0530 I NETWORK  [conn148] end connection 192.168.56.1:63484 (2 connections now open)
+2015-11-03T13:12:19.772+0530 I NETWORK  [conn150] end connection 192.168.56.1:63486 (2 connections now open)
+2015-11-03T13:12:19.772+0530 I NETWORK  [conn149] end connection 192.168.56.1:63485 (2 connections now open)
+2015-11-03T13:12:26.349+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63555 #151 (1 connection now open)
+2015-11-03T13:12:26.350+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63556 #152 (2 connections now open)
+2015-11-03T13:12:26.350+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63557 #153 (3 connections now open)
+2015-11-03T13:12:26.350+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63558 #154 (4 connections now open)
+2015-11-03T13:12:26.350+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:63559 #155 (5 connections now open)
+2015-11-03T13:15:18.970+0530 I NETWORK  [conn151] end connection 192.168.56.1:63555 (4 connections now open)
+2015-11-03T13:15:18.971+0530 I NETWORK  [conn153] end connection 192.168.56.1:63557 (4 connections now open)
+2015-11-03T13:15:18.970+0530 I NETWORK  [conn152] end connection 192.168.56.1:63556 (4 connections now open)
+2015-11-03T13:15:18.971+0530 I NETWORK  [conn154] end connection 192.168.56.1:63558 (2 connections now open)
+2015-11-03T13:15:18.972+0530 I NETWORK  [conn155] end connection 192.168.56.1:63559 (0 connections now open)
+2015-11-03T13:15:24.623+0530 I CONTROL  Ctrl-C signal
+2015-11-03T13:15:24.623+0530 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2015-11-03T13:15:24.624+0530 I CONTROL  [consoleTerminate] now exiting
+2015-11-03T13:15:24.624+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-11-03T13:15:24.624+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-11-03T13:15:24.624+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-11-03T13:15:24.624+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-11-03T13:15:24.624+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-11-03T13:15:24.624+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-11-03T13:15:24.628+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-11-03T13:15:24.628+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-11-03T13:15:24.629+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-11-03T13:15:24.726+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-11-03T13:15:24.726+0530 I JOURNAL  [durability] Durability thread stopped
+2015-11-03T13:15:24.726+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-11-03T13:15:24.737+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-11-03T13:15:24.737+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-11-03T13:15:24.737+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-11-03T14:35:17.485+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-11-03T14:35:17.507+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\journal
+2015-11-03T14:35:17.507+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-11-03T14:35:17.543+0530 I JOURNAL  [durability] Durability thread started
+2015-11-03T14:35:17.544+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-11-03T14:35:17.587+0530 I CONTROL  [initandlisten] MongoDB starting : pid=6664 port=27017 dbpath=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-11-03T14:35:17.587+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-11-03T14:35:17.587+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-11-03T14:35:17.587+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-11-03T14:35:17.587+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-11-03T14:35:17.587+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-11-03T14:35:17.587+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-11-03T14:35:17.610+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-11-03T14:35:17.998+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50356 #1 (1 connection now open)
+2015-11-03T14:35:18.001+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50354 #2 (2 connections now open)
+2015-11-03T14:35:18.002+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50355 #3 (3 connections now open)
+2015-11-03T14:35:18.002+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50353 #4 (4 connections now open)
+2015-11-03T14:35:18.002+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50352 #5 (5 connections now open)
+2015-11-03T14:35:21.718+0530 I NETWORK  [conn5] end connection 192.168.56.1:50352 (4 connections now open)
+2015-11-03T14:35:21.719+0530 I NETWORK  [conn1] end connection 192.168.56.1:50356 (3 connections now open)
+2015-11-03T14:35:21.719+0530 I NETWORK  [conn3] end connection 192.168.56.1:50355 (3 connections now open)
+2015-11-03T14:35:21.719+0530 I NETWORK  [conn4] end connection 192.168.56.1:50353 (3 connections now open)
+2015-11-03T14:35:21.719+0530 I NETWORK  [conn2] end connection 192.168.56.1:50354 (1 connection now open)
+2015-11-03T14:35:30.924+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50357 #6 (1 connection now open)
+2015-11-03T14:35:30.925+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50358 #7 (2 connections now open)
+2015-11-03T14:35:30.925+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50359 #8 (3 connections now open)
+2015-11-03T14:35:30.925+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50360 #9 (4 connections now open)
+2015-11-03T14:35:30.925+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50361 #10 (5 connections now open)
+2015-11-03T14:36:50.570+0530 I NETWORK  [conn6] end connection 192.168.56.1:50357 (4 connections now open)
+2015-11-03T14:36:50.570+0530 I NETWORK  [conn7] end connection 192.168.56.1:50358 (3 connections now open)
+2015-11-03T14:36:50.570+0530 I NETWORK  [conn8] end connection 192.168.56.1:50359 (3 connections now open)
+2015-11-03T14:36:50.571+0530 I NETWORK  [conn9] end connection 192.168.56.1:50360 (2 connections now open)
+2015-11-03T14:36:50.571+0530 I NETWORK  [conn10] end connection 192.168.56.1:50361 (1 connection now open)
+2015-11-03T14:36:57.254+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50392 #11 (1 connection now open)
+2015-11-03T14:36:57.255+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50393 #12 (2 connections now open)
+2015-11-03T14:36:57.255+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50394 #13 (3 connections now open)
+2015-11-03T14:36:57.255+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50395 #14 (4 connections now open)
+2015-11-03T14:36:57.255+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50396 #15 (5 connections now open)
+2015-11-03T14:50:34.207+0530 I NETWORK  [conn12] end connection 192.168.56.1:50393 (4 connections now open)
+2015-11-03T14:50:34.207+0530 I NETWORK  [conn13] end connection 192.168.56.1:50394 (4 connections now open)
+2015-11-03T14:50:34.207+0530 I NETWORK  [conn11] end connection 192.168.56.1:50392 (4 connections now open)
+2015-11-03T14:50:34.208+0530 I NETWORK  [conn14] end connection 192.168.56.1:50395 (2 connections now open)
+2015-11-03T14:50:34.208+0530 I NETWORK  [conn15] end connection 192.168.56.1:50396 (2 connections now open)
+2015-11-03T14:50:42.094+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50579 #16 (1 connection now open)
+2015-11-03T14:50:42.095+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50580 #17 (2 connections now open)
+2015-11-03T14:50:42.095+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50581 #18 (3 connections now open)
+2015-11-03T14:50:42.095+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50582 #19 (4 connections now open)
+2015-11-03T14:50:42.095+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50583 #20 (5 connections now open)
+2015-11-03T15:24:38.587+0530 I CONTROL  Ctrl-C signal
+2015-11-03T15:24:38.588+0530 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2015-11-03T15:24:38.588+0530 I CONTROL  [consoleTerminate] now exiting
+2015-11-03T15:24:38.588+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-11-03T15:24:38.588+0530 I NETWORK  [consoleTerminate] closing listening socket: 432
+2015-11-03T15:24:38.588+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-11-03T15:24:38.588+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-11-03T15:24:38.588+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-11-03T15:24:38.588+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-11-03T15:24:38.589+0530 I NETWORK  [conn17] end connection 192.168.56.1:50580 (4 connections now open)
+2015-11-03T15:24:38.589+0530 I NETWORK  [conn18] end connection 192.168.56.1:50581 (4 connections now open)
+2015-11-03T15:24:38.589+0530 I NETWORK  [conn20] end connection 192.168.56.1:50583 (4 connections now open)
+2015-11-03T15:24:38.589+0530 I NETWORK  [conn16] end connection 192.168.56.1:50579 (4 connections now open)
+2015-11-03T15:24:38.589+0530 I NETWORK  [conn19] end connection 192.168.56.1:50582 (3 connections now open)
+2015-11-03T15:24:38.613+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-11-03T15:24:38.613+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-11-03T15:24:38.614+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-11-03T15:24:38.691+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-11-03T15:24:38.691+0530 I JOURNAL  [durability] Durability thread stopped
+2015-11-03T15:24:38.691+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-11-03T15:24:38.702+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-11-03T15:24:38.702+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-11-03T15:24:38.702+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12
+2015-11-03T15:24:43.311+0530 I CONTROL  ***** SERVER RESTARTED *****
+2015-11-03T15:24:43.323+0530 I JOURNAL  [initandlisten] journal dir=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\journal
+2015-11-03T15:24:43.323+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-11-03T15:24:43.359+0530 I JOURNAL  [durability] Durability thread started
+2015-11-03T15:24:43.359+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-11-03T15:24:43.426+0530 I CONTROL  [initandlisten] MongoDB starting : pid=4080 port=27017 dbpath=G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket 64-bit host=VOSTRO
+2015-11-03T15:24:43.426+0530 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-11-03T15:24:43.426+0530 I CONTROL  [initandlisten] db version v3.0.7
+2015-11-03T15:24:43.426+0530 I CONTROL  [initandlisten] git version: 6ce7cbe8c6b899552dadd907604559806aa2e9bd
+2015-11-03T15:24:43.427+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-11-03T15:24:43.427+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-11-03T15:24:43.427+0530 I CONTROL  [initandlisten] options: { config: "mongodb.conf", storage: { dbPath: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket" }, systemLog: { destination: "file", logAppend: true, path: "G:\Kenturf_Conjoinz\Conjoinz_master\conjoinz\database\valetbasket\Log\mongodb.log" } }
+2015-11-03T15:24:43.454+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-11-03T15:24:43.622+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50772 #1 (1 connection now open)
+2015-11-03T15:24:43.625+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50773 #2 (2 connections now open)
+2015-11-03T15:24:43.625+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50774 #3 (3 connections now open)
+2015-11-03T15:24:43.628+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50775 #4 (4 connections now open)
+2015-11-03T15:24:43.628+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50776 #5 (5 connections now open)
+2015-11-03T15:25:27.159+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50778 #6 (6 connections now open)
+2015-11-03T15:32:45.206+0530 I NETWORK  [conn2] end connection 192.168.56.1:50773 (5 connections now open)
+2015-11-03T15:32:45.206+0530 I NETWORK  [conn3] end connection 192.168.56.1:50774 (5 connections now open)
+2015-11-03T15:32:45.206+0530 I NETWORK  [conn1] end connection 192.168.56.1:50772 (5 connections now open)
+2015-11-03T15:32:45.207+0530 I NETWORK  [conn4] end connection 192.168.56.1:50775 (2 connections now open)
+2015-11-03T15:32:45.208+0530 I NETWORK  [conn5] end connection 192.168.56.1:50776 (1 connection now open)
+2015-11-03T15:33:56.711+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50795 #7 (2 connections now open)
+2015-11-03T15:33:56.711+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50796 #8 (3 connections now open)
+2015-11-03T15:33:56.712+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50797 #9 (4 connections now open)
+2015-11-03T15:33:56.712+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50798 #10 (5 connections now open)
+2015-11-03T15:33:56.712+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50799 #11 (6 connections now open)
+2015-11-03T15:50:52.370+0530 I NETWORK  [conn7] end connection 192.168.56.1:50795 (5 connections now open)
+2015-11-03T15:50:52.370+0530 I NETWORK  [conn8] end connection 192.168.56.1:50796 (5 connections now open)
+2015-11-03T15:50:52.370+0530 I NETWORK  [conn9] end connection 192.168.56.1:50797 (5 connections now open)
+2015-11-03T15:50:52.370+0530 I NETWORK  [conn10] end connection 192.168.56.1:50798 (5 connections now open)
+2015-11-03T15:50:52.370+0530 I NETWORK  [conn11] end connection 192.168.56.1:50799 (5 connections now open)
+2015-11-03T15:51:04.508+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50918 #12 (2 connections now open)
+2015-11-03T15:51:04.509+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50919 #13 (3 connections now open)
+2015-11-03T15:51:04.509+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50920 #14 (4 connections now open)
+2015-11-03T15:51:04.509+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50921 #15 (5 connections now open)
+2015-11-03T15:51:04.509+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50922 #16 (6 connections now open)
+2015-11-03T15:53:07.498+0530 I NETWORK  [conn12] end connection 192.168.56.1:50918 (5 connections now open)
+2015-11-03T15:53:07.499+0530 I NETWORK  [conn13] end connection 192.168.56.1:50919 (5 connections now open)
+2015-11-03T15:53:07.499+0530 I NETWORK  [conn14] end connection 192.168.56.1:50920 (3 connections now open)
+2015-11-03T15:53:07.499+0530 I NETWORK  [conn16] end connection 192.168.56.1:50922 (3 connections now open)
+2015-11-03T15:53:07.499+0530 I NETWORK  [conn15] end connection 192.168.56.1:50921 (3 connections now open)
+2015-11-03T15:54:18.997+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50940 #17 (2 connections now open)
+2015-11-03T15:54:18.998+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50941 #18 (3 connections now open)
+2015-11-03T15:54:18.998+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50942 #19 (4 connections now open)
+2015-11-03T15:54:18.998+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50943 #20 (5 connections now open)
+2015-11-03T15:54:18.998+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:50944 #21 (6 connections now open)
+2015-11-03T15:54:46.774+0530 I NETWORK  [conn19] end connection 192.168.56.1:50942 (5 connections now open)
+2015-11-03T15:54:46.774+0530 I NETWORK  [conn17] end connection 192.168.56.1:50940 (5 connections now open)
+2015-11-03T15:54:46.774+0530 I NETWORK  [conn18] end connection 192.168.56.1:50941 (5 connections now open)
+2015-11-03T15:54:46.774+0530 I NETWORK  [conn20] end connection 192.168.56.1:50943 (5 connections now open)
+2015-11-03T15:54:46.774+0530 I NETWORK  [conn21] end connection 192.168.56.1:50944 (5 connections now open)
+2015-11-03T16:08:29.383+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52152 #22 (2 connections now open)
+2015-11-03T16:08:29.383+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52153 #23 (3 connections now open)
+2015-11-03T16:08:29.384+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52154 #24 (4 connections now open)
+2015-11-03T16:08:29.384+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52155 #25 (5 connections now open)
+2015-11-03T16:08:29.384+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52156 #26 (6 connections now open)
+2015-11-03T16:09:16.007+0530 I NETWORK  [conn22] end connection 192.168.56.1:52152 (5 connections now open)
+2015-11-03T16:09:16.007+0530 I NETWORK  [conn23] end connection 192.168.56.1:52153 (4 connections now open)
+2015-11-03T16:09:16.008+0530 I NETWORK  [conn24] end connection 192.168.56.1:52154 (4 connections now open)
+2015-11-03T16:09:16.008+0530 I NETWORK  [conn25] end connection 192.168.56.1:52155 (2 connections now open)
+2015-11-03T16:09:16.008+0530 I NETWORK  [conn26] end connection 192.168.56.1:52156 (2 connections now open)
+2015-11-03T16:09:41.895+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52157 #27 (2 connections now open)
+2015-11-03T16:09:41.896+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52158 #28 (3 connections now open)
+2015-11-03T16:09:41.896+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52159 #29 (4 connections now open)
+2015-11-03T16:09:41.896+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52160 #30 (5 connections now open)
+2015-11-03T16:09:41.896+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52161 #31 (6 connections now open)
+2015-11-03T16:12:01.822+0530 I NETWORK  [conn27] end connection 192.168.56.1:52157 (5 connections now open)
+2015-11-03T16:12:01.822+0530 I NETWORK  [conn28] end connection 192.168.56.1:52158 (5 connections now open)
+2015-11-03T16:12:01.823+0530 I NETWORK  [conn30] end connection 192.168.56.1:52160 (3 connections now open)
+2015-11-03T16:12:01.823+0530 I NETWORK  [conn31] end connection 192.168.56.1:52161 (3 connections now open)
+2015-11-03T16:12:01.823+0530 I NETWORK  [conn29] end connection 192.168.56.1:52159 (3 connections now open)
+2015-11-03T16:13:19.797+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52178 #32 (2 connections now open)
+2015-11-03T16:13:19.798+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52179 #33 (3 connections now open)
+2015-11-03T16:13:19.798+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52180 #34 (4 connections now open)
+2015-11-03T16:13:19.798+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52181 #35 (5 connections now open)
+2015-11-03T16:13:19.798+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52182 #36 (6 connections now open)
+2015-11-03T16:14:29.612+0530 I NETWORK  [conn32] end connection 192.168.56.1:52178 (5 connections now open)
+2015-11-03T16:14:29.612+0530 I NETWORK  [conn33] end connection 192.168.56.1:52179 (5 connections now open)
+2015-11-03T16:14:29.613+0530 I NETWORK  [conn34] end connection 192.168.56.1:52180 (4 connections now open)
+2015-11-03T16:14:29.613+0530 I NETWORK  [conn36] end connection 192.168.56.1:52182 (3 connections now open)
+2015-11-03T16:14:29.613+0530 I NETWORK  [conn35] end connection 192.168.56.1:52181 (4 connections now open)
+2015-11-03T16:14:37.344+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52190 #37 (2 connections now open)
+2015-11-03T16:14:37.345+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52191 #38 (3 connections now open)
+2015-11-03T16:14:37.345+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52192 #39 (4 connections now open)
+2015-11-03T16:14:37.345+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52193 #40 (5 connections now open)
+2015-11-03T16:14:37.345+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52194 #41 (6 connections now open)
+2015-11-03T16:15:30.101+0530 I NETWORK  [conn37] end connection 192.168.56.1:52190 (5 connections now open)
+2015-11-03T16:15:30.102+0530 I NETWORK  [conn38] end connection 192.168.56.1:52191 (4 connections now open)
+2015-11-03T16:15:30.102+0530 I NETWORK  [conn39] end connection 192.168.56.1:52192 (3 connections now open)
+2015-11-03T16:15:30.102+0530 I NETWORK  [conn40] end connection 192.168.56.1:52193 (2 connections now open)
+2015-11-03T16:15:30.103+0530 I NETWORK  [conn41] end connection 192.168.56.1:52194 (1 connection now open)
+2015-11-03T16:16:17.862+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52195 #42 (2 connections now open)
+2015-11-03T16:16:17.862+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52196 #43 (3 connections now open)
+2015-11-03T16:16:17.862+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52197 #44 (4 connections now open)
+2015-11-03T16:16:17.862+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52198 #45 (5 connections now open)
+2015-11-03T16:16:17.862+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52199 #46 (6 connections now open)
+2015-11-03T16:22:50.581+0530 I NETWORK  [conn42] end connection 192.168.56.1:52195 (5 connections now open)
+2015-11-03T16:22:50.581+0530 I NETWORK  [conn43] end connection 192.168.56.1:52196 (4 connections now open)
+2015-11-03T16:22:50.582+0530 I NETWORK  [conn44] end connection 192.168.56.1:52197 (4 connections now open)
+2015-11-03T16:22:50.582+0530 I NETWORK  [conn45] end connection 192.168.56.1:52198 (2 connections now open)
+2015-11-03T16:22:50.582+0530 I NETWORK  [conn46] end connection 192.168.56.1:52199 (2 connections now open)
+2015-11-03T16:22:57.932+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52211 #47 (2 connections now open)
+2015-11-03T16:22:57.933+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52212 #48 (3 connections now open)
+2015-11-03T16:22:57.933+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52213 #49 (4 connections now open)
+2015-11-03T16:22:57.933+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52214 #50 (5 connections now open)
+2015-11-03T16:22:57.933+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52215 #51 (6 connections now open)
+2015-11-03T16:24:33.650+0530 I NETWORK  [conn47] end connection 192.168.56.1:52211 (5 connections now open)
+2015-11-03T16:24:33.651+0530 I NETWORK  [conn48] end connection 192.168.56.1:52212 (5 connections now open)
+2015-11-03T16:24:33.651+0530 I NETWORK  [conn49] end connection 192.168.56.1:52213 (4 connections now open)
+2015-11-03T16:24:33.651+0530 I NETWORK  [conn50] end connection 192.168.56.1:52214 (3 connections now open)
+2015-11-03T16:24:33.652+0530 I NETWORK  [conn51] end connection 192.168.56.1:52215 (1 connection now open)
+2015-11-03T16:30:51.802+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52249 #52 (2 connections now open)
+2015-11-03T16:30:51.803+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52250 #53 (3 connections now open)
+2015-11-03T16:30:51.803+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52251 #54 (4 connections now open)
+2015-11-03T16:30:51.803+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52252 #55 (5 connections now open)
+2015-11-03T16:30:51.803+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52253 #56 (6 connections now open)
+2015-11-03T17:07:17.619+0530 I NETWORK  [conn52] end connection 192.168.56.1:52249 (5 connections now open)
+2015-11-03T17:07:17.620+0530 I NETWORK  [conn53] end connection 192.168.56.1:52250 (5 connections now open)
+2015-11-03T17:07:17.620+0530 I NETWORK  [conn54] end connection 192.168.56.1:52251 (3 connections now open)
+2015-11-03T17:07:17.620+0530 I NETWORK  [conn55] end connection 192.168.56.1:52252 (3 connections now open)
+2015-11-03T17:07:17.621+0530 I NETWORK  [conn56] end connection 192.168.56.1:52253 (2 connections now open)
+2015-11-03T17:07:25.026+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52902 #57 (2 connections now open)
+2015-11-03T17:07:25.027+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52903 #58 (3 connections now open)
+2015-11-03T17:07:25.027+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52904 #59 (4 connections now open)
+2015-11-03T17:07:25.027+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52905 #60 (5 connections now open)
+2015-11-03T17:07:25.027+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52906 #61 (6 connections now open)
+2015-11-03T17:08:43.409+0530 I NETWORK  [conn57] end connection 192.168.56.1:52902 (5 connections now open)
+2015-11-03T17:08:43.409+0530 I NETWORK  [conn58] end connection 192.168.56.1:52903 (5 connections now open)
+2015-11-03T17:08:43.410+0530 I NETWORK  [conn59] end connection 192.168.56.1:52904 (3 connections now open)
+2015-11-03T17:08:43.410+0530 I NETWORK  [conn60] end connection 192.168.56.1:52905 (3 connections now open)
+2015-11-03T17:08:43.410+0530 I NETWORK  [conn61] end connection 192.168.56.1:52906 (1 connection now open)
+2015-11-03T17:08:48.051+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52928 #62 (2 connections now open)
+2015-11-03T17:08:48.052+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52929 #63 (3 connections now open)
+2015-11-03T17:08:48.052+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52930 #64 (4 connections now open)
+2015-11-03T17:08:48.052+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52931 #65 (5 connections now open)
+2015-11-03T17:08:48.052+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:52932 #66 (6 connections now open)
+2015-11-03T17:15:10.777+0530 I NETWORK  [conn62] end connection 192.168.56.1:52928 (5 connections now open)
+2015-11-03T17:15:10.777+0530 I NETWORK  [conn63] end connection 192.168.56.1:52929 (5 connections now open)
+2015-11-03T17:15:10.778+0530 I NETWORK  [conn64] end connection 192.168.56.1:52930 (3 connections now open)
+2015-11-03T17:15:10.778+0530 I NETWORK  [conn66] end connection 192.168.56.1:52932 (3 connections now open)
+2015-11-03T17:15:10.778+0530 I NETWORK  [conn65] end connection 192.168.56.1:52931 (3 connections now open)
+2015-11-03T17:15:30.257+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53112 #67 (2 connections now open)
+2015-11-03T17:15:30.258+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53113 #68 (3 connections now open)
+2015-11-03T17:15:30.258+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53114 #69 (4 connections now open)
+2015-11-03T17:15:30.258+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53115 #70 (5 connections now open)
+2015-11-03T17:15:30.258+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53116 #71 (6 connections now open)
+2015-11-03T17:17:10.519+0530 I NETWORK  [conn67] end connection 192.168.56.1:53112 (5 connections now open)
+2015-11-03T17:17:10.520+0530 I NETWORK  [conn68] end connection 192.168.56.1:53113 (5 connections now open)
+2015-11-03T17:17:10.520+0530 I NETWORK  [conn69] end connection 192.168.56.1:53114 (3 connections now open)
+2015-11-03T17:17:10.520+0530 I NETWORK  [conn70] end connection 192.168.56.1:53115 (3 connections now open)
+2015-11-03T17:17:10.521+0530 I NETWORK  [conn71] end connection 192.168.56.1:53116 (2 connections now open)
+2015-11-03T17:17:44.408+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53161 #72 (2 connections now open)
+2015-11-03T17:17:44.409+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53162 #73 (3 connections now open)
+2015-11-03T17:17:44.409+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53163 #74 (4 connections now open)
+2015-11-03T17:17:44.409+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53164 #75 (5 connections now open)
+2015-11-03T17:17:44.409+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53165 #76 (6 connections now open)
+2015-11-03T17:19:41.839+0530 I NETWORK  [conn72] end connection 192.168.56.1:53161 (5 connections now open)
+2015-11-03T17:19:41.840+0530 I NETWORK  [conn74] end connection 192.168.56.1:53163 (5 connections now open)
+2015-11-03T17:19:41.840+0530 I NETWORK  [conn73] end connection 192.168.56.1:53162 (5 connections now open)
+2015-11-03T17:19:41.840+0530 I NETWORK  [conn75] end connection 192.168.56.1:53164 (3 connections now open)
+2015-11-03T17:19:41.841+0530 I NETWORK  [conn76] end connection 192.168.56.1:53165 (2 connections now open)
+2015-11-03T17:19:52.679+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53211 #77 (2 connections now open)
+2015-11-03T17:19:52.680+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53212 #78 (3 connections now open)
+2015-11-03T17:19:52.680+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53213 #79 (4 connections now open)
+2015-11-03T17:19:52.680+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53214 #80 (5 connections now open)
+2015-11-03T17:19:52.680+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53215 #81 (6 connections now open)
+2015-11-03T17:20:18.495+0530 I NETWORK  [conn77] end connection 192.168.56.1:53211 (5 connections now open)
+2015-11-03T17:20:18.495+0530 I NETWORK  [conn78] end connection 192.168.56.1:53212 (4 connections now open)
+2015-11-03T17:20:18.496+0530 I NETWORK  [conn79] end connection 192.168.56.1:53213 (4 connections now open)
+2015-11-03T17:20:18.496+0530 I NETWORK  [conn80] end connection 192.168.56.1:53214 (3 connections now open)
+2015-11-03T17:20:18.496+0530 I NETWORK  [conn81] end connection 192.168.56.1:53215 (2 connections now open)
+2015-11-03T17:20:43.494+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53234 #82 (2 connections now open)
+2015-11-03T17:20:43.495+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53235 #83 (3 connections now open)
+2015-11-03T17:20:43.495+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53236 #84 (4 connections now open)
+2015-11-03T17:20:43.495+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53237 #85 (5 connections now open)
+2015-11-03T17:20:43.495+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53238 #86 (6 connections now open)
+2015-11-03T17:22:13.015+0530 I NETWORK  [conn82] end connection 192.168.56.1:53234 (5 connections now open)
+2015-11-03T17:22:13.015+0530 I NETWORK  [conn83] end connection 192.168.56.1:53235 (5 connections now open)
+2015-11-03T17:22:13.016+0530 I NETWORK  [conn84] end connection 192.168.56.1:53236 (3 connections now open)
+2015-11-03T17:22:13.016+0530 I NETWORK  [conn85] end connection 192.168.56.1:53237 (3 connections now open)
+2015-11-03T17:22:13.016+0530 I NETWORK  [conn86] end connection 192.168.56.1:53238 (1 connection now open)
+2015-11-03T17:22:21.517+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53380 #87 (2 connections now open)
+2015-11-03T17:22:21.517+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53381 #88 (3 connections now open)
+2015-11-03T17:22:21.518+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53382 #89 (4 connections now open)
+2015-11-03T17:22:21.518+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53383 #90 (5 connections now open)
+2015-11-03T17:22:21.518+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53384 #91 (6 connections now open)
+2015-11-03T17:25:14.958+0530 I NETWORK  [conn87] end connection 192.168.56.1:53380 (5 connections now open)
+2015-11-03T17:25:14.958+0530 I NETWORK  [conn88] end connection 192.168.56.1:53381 (5 connections now open)
+2015-11-03T17:25:14.958+0530 I NETWORK  [conn89] end connection 192.168.56.1:53382 (3 connections now open)
+2015-11-03T17:25:14.959+0530 I NETWORK  [conn90] end connection 192.168.56.1:53383 (3 connections now open)
+2015-11-03T17:25:14.959+0530 I NETWORK  [conn91] end connection 192.168.56.1:53384 (2 connections now open)
+2015-11-03T17:25:20.978+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53485 #92 (2 connections now open)
+2015-11-03T17:25:20.979+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53486 #93 (3 connections now open)
+2015-11-03T17:25:20.979+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53487 #94 (4 connections now open)
+2015-11-03T17:25:20.979+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53488 #95 (5 connections now open)
+2015-11-03T17:25:20.979+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:53489 #96 (6 connections now open)
+2015-11-03T18:43:09.015+0530 I NETWORK  [conn92] end connection 192.168.56.1:53485 (5 connections now open)
+2015-11-03T18:43:09.015+0530 I NETWORK  [conn95] end connection 192.168.56.1:53488 (5 connections now open)
+2015-11-03T18:43:09.015+0530 I NETWORK  [conn93] end connection 192.168.56.1:53486 (5 connections now open)
+2015-11-03T18:43:09.016+0530 I NETWORK  [conn96] end connection 192.168.56.1:53489 (3 connections now open)
+2015-11-03T18:43:09.015+0530 I NETWORK  [conn94] end connection 192.168.56.1:53487 (5 connections now open)
+2015-11-03T18:43:17.540+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57824 #97 (2 connections now open)
+2015-11-03T18:43:17.541+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57825 #98 (3 connections now open)
+2015-11-03T18:43:17.541+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57826 #99 (4 connections now open)
+2015-11-03T18:43:17.541+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57827 #100 (5 connections now open)
+2015-11-03T18:43:17.541+0530 I NETWORK  [initandlisten] connection accepted from 192.168.56.1:57828 #101 (6 connections now open)
+2015-11-03T18:55:11.013+0530 I NETWORK  [conn97] end connection 192.168.56.1:57824 (5 connections now open)
+2015-11-03T18:55:11.013+0530 I NETWORK  [conn98] end connection 192.168.56.1:57825 (5 connections now open)
+2015-11-03T18:55:11.014+0530 I NETWORK  [conn99] end connection 192.168.56.1:57826 (3 connections now open)
+2015-11-03T18:55:11.014+0530 I NETWORK  [conn100] end connection 192.168.56.1:57827 (3 connections now open)
+2015-11-03T18:55:11.014+0530 I NETWORK  [conn101] end connection 192.168.56.1:57828 (2 connections now open)
+2015-11-03T19:10:48.595+0530 I CONTROL  Ctrl-C signal
+2015-11-03T19:10:48.596+0530 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2015-11-03T19:10:48.596+0530 I CONTROL  [consoleTerminate] now exiting
+2015-11-03T19:10:48.596+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-11-03T19:10:48.596+0530 I NETWORK  [consoleTerminate] closing listening socket: 428
+2015-11-03T19:10:48.596+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-11-03T19:10:48.596+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-11-03T19:10:48.596+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-11-03T19:10:48.596+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-11-03T19:10:48.597+0530 I NETWORK  [conn6] end connection 127.0.0.1:50778 (0 connections now open)
+2015-11-03T19:10:48.649+0530 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-11-03T19:10:48.649+0530 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-11-03T19:10:48.651+0530 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-11-03T19:10:48.700+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-11-03T19:10:48.700+0530 I JOURNAL  [durability] Durability thread stopped
+2015-11-03T19:10:48.700+0530 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-11-03T19:10:48.710+0530 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-11-03T19:10:48.710+0530 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-11-03T19:10:48.710+0530 I CONTROL  [consoleTerminate] dbexit:  rc: 12

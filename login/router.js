@@ -64,7 +64,25 @@ function loginUser (req, res, next){
 	});
 }
 
+function signinUser(req, res, next) {	
+	var email = req.body.email;
+	var passwd = req.body.password;
+console.log('signin: ' + email + ',' + passwd)
+	loginapi.findUser(email,passwd,function(err,user){
+		if (err){
+			next(err);
+			res.json({error: err, user: null});
+		}
+		else
+		{
+			next(user);
+			res.json({error: null, user: {email: user.email, name: user.name.first + ' ' + user.name.last}});
+		} 
+	});
+}
+
 router.get("/login",login);
 router.post("/login", loginUser);
+router.post("/signin", signinUser);
 router.get("/logout", logout);
 module.exports = router;

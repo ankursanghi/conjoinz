@@ -68,7 +68,6 @@ app.use(require("./pwdreset/router"));
 app.use(require("./login/router"));
 app.use(require("./order/router"));
 app.use(require("./profile/router"));
-app.use(require("./faqs/router"));
 app.use("/api/autocomplete", require('./api/autocomplete/router'));
 app.use("/api/getaddrs", require('./api/address/router'));
 //app.use("/api/customer", require("api/customer/router"));
