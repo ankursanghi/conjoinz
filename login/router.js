@@ -70,12 +70,12 @@ function signinUser(req, res, next) {
 console.log('signin: ' + email + ',' + passwd)
 	loginapi.findUser(email,passwd,function(err,user){
 		if (err){
-			next(err);
+			
 			res.json({error: err, user: null});
 		}
 		else
 		{
-			next(user);
+			
 			res.json({error: null, user: {email: user.email, name: user.name.first + ' ' + user.name.last}});
 		} 
 	});

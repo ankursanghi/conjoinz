@@ -4,7 +4,7 @@ var Item = require('../../models/item.js');
 var User = require('../../models/user.js');
 var _ = require('lodash');
 
-module.exports.createOrderHeader = function(firstName, lastName, addressName, store, comments, email, callback){
+module.exports.createOrderHeader = function(firstName, lastName, addressName, store, comments, email, saveOrder, orderDate, callback){
 	var userQuery = {};
 	userQuery.name = {
 		first: firstName,
@@ -19,18 +19,18 @@ module.exports.createOrderHeader = function(firstName, lastName, addressName, st
 
 		usr.delivery_addresses.forEach(function(adr){
 			if ((adr.adr_nick == addressName)){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
-				var order = {};				
-				order.ord_status = 'submitted';
+				var order = {};
+						
+				order.ord_status =saveOrder;
+				order.ordDate=orderDate;
 				order.comments = comments;
 				order.store = store;
 				order.userEmail = email;
-
 				order.customer = {};
 				order.customer.name = {};
 				order.customer.name.first = firstName;
 				order.customer.name.last = lastName;					
 				order.customer.primary_phone = adr.phone;
-
 				order.customer.address = {};
 				order.customer.address.adr_type= adr.adr_type;
 				order.customer.address.adr_line1= adr.adr_line1;
@@ -73,17 +73,13 @@ module.exports.createOrderItem =  function(orderId, comment, uom, quantity, item
 		}
 		//What happens when Item save fails?
 		console.log('itemSaved is:' + itemSaved);
-
-		var ordLine = {};
+        var ordLine = {};
 		ordLine.line_status = 'submitted';
 		ordLine.comments = comment;
 		ordLine.uom = uom;
 		ordLine.qty = quantity;
 		ordLine.item = itemName;
-		//order.userEmail = email;
 		ordLine.orderItem = itemSaved._id;
-		//order.ord_lines.push(_.cloneDeep(ordLine));
-
 		Order.findOneAndUpdate({_id: orderId}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
 			return callback(err, ordSaved);
 		});

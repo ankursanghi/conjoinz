@@ -26,64 +26,35 @@
 {{/content}}
 {{#content "mainbody"}}
 <section style="background:url('assets/images/demo/wall2.jpg')">
+<h3>ORDER HISTORY</h3>
 <!-- HTML DATATABLE -->
 <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 	<thead>
 		<tr>
-			<th>Item</th>
-			<th>Quantity</th>
-			<th>Brand(if any)</th>
-			<th>Comments</th>
-			<th>Edit</th>
-			<th>Delete</th>
+			<th>Date</th>
+			<th>Order Number</th>
+			<th>Status</th>
 		</tr>
 	</thead>
 
 	<tbody>
+	{{#if order}}
+		{{#each order}}
 		<tr>
-			<td>
-				alex
+		<td>
+				{{ordDate}}
+
 			</td>
 			<td>
-				Alex Nilson
+				<a href="/order"> {{ord_number}}</a>
 			</td>
 			<td>
-				1234
+				{{ord_status}}
 			</td>
-			<td class="center">
-				power user
-			</td>
-			<td>
-				<a class="edit" href="javascript:;">
-					Edit </a>
-			</td>
-			<td>
-				<a class="delete" href="javascript:;">
-					Delete </a>
-			</td>
+			
 		</tr>
-		<tr>
-			<td>
-				lisa
-			</td>
-			<td>
-				Lisa Wong
-			</td>
-			<td>
-				434
-			</td>
-			<td class="center">
-				new user
-			</td>
-			<td>
-				<a class="edit" href="javascript:;">
-					Edit </a>
-			</td>
-			<td>
-				<a class="delete" href="javascript:;">
-					Delete </a>
-			</td>
-		</tr>
+		{{/each}}
+		{{/if}}
 	</tbody>
 </table>
 

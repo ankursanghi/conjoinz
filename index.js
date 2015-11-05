@@ -21,6 +21,26 @@ var httpsServer = https.createServer(httpscredentials, app);
 var httpServer = http.createServer(app);
 // use cookie parser for cookie secret
 app.use(require('cookie-parser')(credentials.cookieSecret));
+
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8100');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
+
 // use the express session as the memory store. Using persistent db is a better way. This is just to learn the topic
 // app.use(require('express-session')());
 app.use(session({
@@ -68,6 +88,7 @@ app.use(require("./pwdreset/router"));
 app.use(require("./login/router"));
 app.use(require("./order/router"));
 app.use(require("./profile/router"));
+app.use(require("./orderHistory/router"));
 app.use("/api/autocomplete", require('./api/autocomplete/router'));
 app.use("/api/getaddrs", require('./api/address/router'));
 //app.use("/api/customer", require("api/customer/router"));

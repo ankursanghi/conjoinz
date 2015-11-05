@@ -61,8 +61,11 @@ function placeOrder (req, res, next){
 	var store = req.body.store;
 	var comments = req.body.ordercomments;
 	var email = req.session.user;
+	//var submitOrder = req.body.submitord;
+	var saveOrder = req.body.ord_status;
+	var orderDate = Date();	
 
-	orderApi.createOrderHeader(first, last, address, store, comments, email, function(err, order){
+	orderApi.createOrderHeader(first, last, address, store, comments, email,saveOrder,orderDate, function(err, order){
 		if (err) {
 		    console.log('Error Inserting New Data');
 		    if (err.name == 'ValidationError') {
@@ -78,7 +81,8 @@ function placeOrder (req, res, next){
 			var uom = req.body.uom[index];
 			var comment = req.body.comments[index];
 			var quantity = req.body.quantity[index];
-			var itemName = name;			
+			var itemName = name;
+					
 
 			//if item name is not empty save the line item
 			if(/\S/.test(itemName)){
@@ -100,20 +104,25 @@ function placeOrder (req, res, next){
 
 		mailapi.sendEmail(email);
 		//console.log('user Mail '+order.userEmail)
+		if(order.ord_status=="submitted")
+		{
 		res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number});
-		
+		}else
+		{
+			res.render("orders/orderform");
+		}
 	});	
 }
 
 
 function mobileOrder(req,res,next){
 console.log('adderess' +req.body.address+','+req.body.store);
-	var first = req.session.name.split(" ")[0];
-	var last = req.session.name.split(" ")[1];
+	var first = 'qw'/*req.session.name.split(" ")[0];*/;
+	var last = '32'/*req.session.name.split(" ")[1]*/;
 	var address = req.body.address;
 	var store = req.body.store;
 	var comments = req.body.ordercomments;
-	var email =req.session.user;
+	var email ='s.rajasekar.it@gmail.com'/*req.session.user*/;
 
 orderApi.createOrderHeader(first, last, address, store, comments, email, function(err, order){
 		if (err) {
@@ -163,6 +172,7 @@ orderApi.createOrderHeader(first, last, address, store, comments, email, functio
 	});	
 
 }
+
 
 router.get("/order",showOrderForm);
 router.post("/order", placeOrder);
