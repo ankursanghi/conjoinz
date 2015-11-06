@@ -34,6 +34,8 @@
 			<th>Date</th>
 			<th>Order Number</th>
 			<th>Status</th>
+			<th>Name</th>
+			<th>Delivery Address</th>
 		</tr>
 	</thead>
 
@@ -51,11 +53,19 @@
 			<td>
 				{{ord_status}}
 			</td>
+
+			<td>
+				{{customer.name.first}}{{customer.name.last}}
+			</td>
+
+			<td>
+				{{customer.address.adr_line1}},{{customer.address.adr_line2}}
+			</td>
 			
 		</tr>
 		{{/each}}
 		{{/if}}
-	</tbody>
+	</tbody> 
 </table>
 
 </section>
