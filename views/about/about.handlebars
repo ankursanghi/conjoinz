@@ -1,0 +1,231 @@
+{{#extend "mainLayoutPartial"}}
+{{#content "head" mode="append"}}
+	<!-- SWIPER SLIDER -->
+	<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
+{{/content}}
+{{#content "loggedIn"}}
+{{#if name}}
+	<li class="text-welcome hidden-xs">Welcome to ValetBasket ! We shop and deliver for you ! <strong>{{name}}</strong></li>
+	<li>
+		<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i class="fa fa-user hidden-xs"></i> MY ACCOUNT</a>
+		<ul class="dropdown-menu pull-right">
+			<li><a tabindex="-1" href="#"><i class="fa fa-history"></i> ORDER HISTORY</a></li>
+			<li class="divider"></li>
+  			<li><a tabindex="-1" href="#"><i class="fa fa-cog"></i> MY SETTINGS</a></li>
+			<li class="divider"></li>
+			<li><a tabindex="-1" href="#"><i class="glyphicon glyphicon-off"></i> LOGOUT</a></li>
+		</ul>
+	</li>
+{{else}}
+	<li class="hidden-xs"><a href="/login">LOGIN</a></li>
+{{/if}}
+{{/content}}
+{{#content "mainbody"}}
+                    <div class="container">
+
+			<!-- PARALLAX -->
+			<section class="parallax parallax-2" style="background-image: url('assets/images/demo/wall3-min.jpg');">
+				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+
+				<div class="container">
+
+					<div class="row">
+					
+						<!-- item -->
+						<div class="col-md-3 col-sm-6">
+
+							<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center">
+								<div class="front">
+									<div class="box1 box-default">
+										<span class="box-icon-title">
+											<img class="img-responsive" src="assets/images/demo/shop/home/nilesh.jpg" alt="" />
+											<h2>Nilesh Chordiya</h2>
+											<small>CEO</small>
+										</span>
+									</div>
+								</div>
+
+								<div class="back">
+									<div class="box2 box-default">
+										<h4 class="nomargin">Nilesh Chordiya</h4>
+										<small>CEO</small>
+
+										<hr />
+
+										<p>Nilesh is leader and strategic thinker with 16+ years of experience in business strategy, client relationship management and business development. He has proven track record of working with CxOs and global teams in leading large transformational efforts for IT organizations. Nilesh has cross-geography experience in the USA, UK, and India. He is Duke MBA  with specialization in entrepreneurship, marketing and with concentration in strategy. He is also certified international  investment analyst (CIIA). Nilesh is avid reader and enjoys the opportunity to connect with his friend and family.</p>
+
+										<hr />
+
+										<a href="#" class="social-icon social-icon-sm social-facebook">
+											<i class="fa fa-facebook"></i>
+											<i class="fa fa-facebook"></i>
+										</a>
+										<a href="#" class="social-icon social-icon-sm social-twitter">
+											<i class="fa fa-twitter"></i>
+											<i class="fa fa-twitter"></i>
+										</a>
+										<a href="#" class="social-icon social-icon-sm social-linkedin">
+											<i class="fa fa-linkedin"></i>
+											<i class="fa fa-linkedin"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- /item -->
+
+						<!-- item -->
+						<div class="col-md-3 col-sm-6">
+
+							<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center">
+								<div class="front">
+									<div class="box1 box-default">
+										<span class="box-icon-title">
+											<img class="img-responsive" src="assets/images/demo/shop/home/harshad.jpg" alt="" />
+											<h2>Harshad Kolte</h2>
+											<small>CMO</small>
+										</span>
+									</div>
+								</div>
+
+								<div class="back">
+									<div class="box2 box-default">
+										<h4 class="nomargin">Harshad Kolte</h4>
+										<small>CMO</small>
+
+										<hr />
+
+										<p>Duke MBA with over 8 years of Engineering Management experience and Leadership.Over 6 years experience as Project/Technical Lead for various projects . Over 15 years of software development and design experience with a focus on networking technologies. Currently working on web applications and ecommerce site development.</p>
+
+										<hr />
+
+										<a href="#" class="social-icon social-icon-sm social-facebook">
+											<i class="fa fa-facebook"></i>
+											<i class="fa fa-facebook"></i>
+										</a>
+										<a href="#" class="social-icon social-icon-sm social-twitter">
+											<i class="fa fa-twitter"></i>
+											<i class="fa fa-twitter"></i>
+										</a>
+										<a href="#" class="social-icon social-icon-sm social-linkedin">
+											<i class="fa fa-linkedin"></i>
+											<i class="fa fa-linkedin"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- /item -->
+
+						<!-- item -->
+						<div class="col-md-3 col-sm-6">
+
+							<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center">
+								<div class="front">
+									<div class="box1 box-default">
+										<span class="box-icon-title">
+											<img class="img-responsive" src="assets/images/demo/shop/home/raja.jpg" alt="" />
+											<h2>Raja Parthasarthy</h2>
+											<small>CTO</small>
+										</span>
+									</div>
+								</div>
+
+								<div class="back">
+									<div class="box2 box-default">
+										<h4 class="nomargin">Raja Parthasarthy</h4>
+										<small>CTO</small>
+
+										<hr />
+
+										<p>Raja is product strategist and process optimization specialist with extensive experience in the telecommunication industry. His experience includes leading cross functional and cross cultural teams,  end-to-end solutions consulting, product strategy, process optimization, sales and product management.</p>
+
+										<hr />
+
+										<a href="#" class="social-icon social-icon-sm social-facebook">
+											<i class="fa fa-facebook"></i>
+											<i class="fa fa-facebook"></i>
+										</a>
+										<a href="#" class="social-icon social-icon-sm social-twitter">
+											<i class="fa fa-twitter"></i>
+											<i class="fa fa-twitter"></i>
+										</a>
+										<a href="#" class="social-icon social-icon-sm social-linkedin">
+											<i class="fa fa-linkedin"></i>
+											<i class="fa fa-linkedin"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- /item -->
+
+						<!-- item -->
+						<div class="col-md-3 col-sm-6">
+
+							<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center">
+								<div class="front">
+									<div class="box1 box-default">
+										<span class="box-icon-title">
+											<img class="img-responsive" src="assets/images/demo/shop/home/developer.png" alt="" />
+											<h2>Ankur Sanghi</h2>
+											<small>Architect</small>
+										</span>
+									</div>
+								</div>
+
+								<div class="back">
+									<div class="box2 box-default">
+										<h4 class="nomargin">Ankur Sanghi</h4>
+										<small>Architect</small>
+
+										<hr />
+
+										<p>He is doode !</p>
+
+										<hr />
+
+										<a href="#" class="social-icon social-icon-sm social-facebook">
+											<i class="fa fa-facebook"></i>
+											<i class="fa fa-facebook"></i>
+										</a>
+										<a href="#" class="social-icon social-icon-sm social-twitter">
+											<i class="fa fa-twitter"></i>
+											<i class="fa fa-twitter"></i>
+										</a>
+										<a href="#" class="social-icon social-icon-sm social-linkedin">
+											<i class="fa fa-linkedin"></i>
+											<i class="fa fa-linkedin"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- /item -->
+
+					</div>
+
+				</div>
+
+			</section>
+			<!-- /PARALLAX -->
+
+
+
+
+                    </div>
+	{{/content}}
+
+
+
+
+	{{#content "scripts" mode="append"}}
+	{{/content}}
+
+	</body>
+</html>
+{{/extend}}
