@@ -19,6 +19,9 @@ var transport = nodemailer.createTransport(sesTransport({
 router.use(bodyParser());
 
 function forgotpwd (req, res,next) {
+	if (!(req.connection.encrypted)){
+		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
+	}
 	res.render("pwdreset/pwdreset", {layout: false});
 }
 
