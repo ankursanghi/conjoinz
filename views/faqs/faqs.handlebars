@@ -1,0 +1,374 @@
+{{#extend "mainLayoutPartial"}}
+{{#content "head" mode="append"}}
+	<!-- SWIPER SLIDER -->
+	<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
+{{/content}}
+{{#content "loggedIn"}}
+{{#if name}}
+	<li class="text-welcome hidden-xs">Welcome to ValetBasket ! We shop and deliver for you ! <strong>{{name}}</strong></li>
+	<li>
+		<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i class="fa fa-user hidden-xs"></i> MY ACCOUNT</a>
+		<ul class="dropdown-menu pull-right">
+			<li><a tabindex="-1" href="#"><i class="fa fa-history"></i> ORDER HISTORY</a></li>
+			<li class="divider"></li>
+  			<li><a tabindex="-1" href="#"><i class="fa fa-cog"></i> MY SETTINGS</a></li>
+			<li class="divider"></li>
+			<li><a tabindex="-1" href="#"><i class="glyphicon glyphicon-off"></i> LOGOUT</a></li>
+		</ul>
+	</li>
+{{else}}
+	<li class="hidden-xs"><a href="/login">LOGIN</a></li>
+{{/if}}
+{{/content}}
+{{#content "mainbody"}}
+                    <div class="container">
+						<!-- LEFT COLUMNS -->
+						<div class="col-md-12">
+
+							<p class="lead"> Valet Basket FAQ .</p>
+
+							<!-- TOGGLES -->
+							<div class="toggle toggle-transparent toggle-bordered-full margin-top-60">
+
+								<div class="toggle"><!-- toggle -->
+									<label>1. What is Valet Basket ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											<img class="hidden-sm pull-left img-responsive" src="assets/images/demo/girl_looking-min_thumb.jpg" alt="Careers" />
+												Valet Basket is a grocery shopping and delivery service to your door. We connect you with shoppers in your area, shop for your groceries and deliver them to your door..
+											<br /><br />
+											</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>2. What do you deliver ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											 Currently, Valet Basket delivers any items that are available from supported grocery stores.
+										</p>
+
+										<div class="row">
+
+											<div class="col-md-4 col-sm-6">
+
+												<ul class="list-icon check-square"><!-- block 2 -->
+													<li>Whole Foods</li>
+													<li>Trader Joe's</li>
+													<li>Fresh Market</li>
+												</ul>
+
+											</div>
+
+
+										</div>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>3. Where do you deliver ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+										</p>
+
+										<div class="row">
+
+											<div class="col-md-4 col-sm-6">
+
+												<div class="box-content thumbnail text-center">
+													<a href="assets/images/demo/1200x800/10-min.jpg" class="item-image lightbox" data-plugin-options='{"type":"image"}'>
+														<img class="img-responsive" src="assets/images/demo/451x300/10-min.jpg" alt="" />
+													</a>
+												</div>
+
+											</div>
+
+											<div class="col-md-4 col-sm-6">
+
+												<div class="box-content thumbnail text-center">
+													<a href="http://www.youtube.com/watch?v=W7Las-MJnJo" class="item-image lightbox" data-plugin-options='{"type":"iframe"}'>
+														<img class="img-responsive" src="assets/images/demo/451x300/11-min.jpg" alt="" />
+													</a>
+												</div>
+
+											</div>
+
+											<div class="col-md-4 col-sm-6">
+
+												<div class="box-content thumbnail text-center">
+													<a href="assets/images/demo/1200x800/25-min.jpg" class="item-image lightbox" data-plugin-options='{"type":"image"}'>
+														<img class="img-responsive" src="assets/images/demo/451x300/25-min.jpg" alt="" />
+													</a>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>4. What are the hours of delivery ?</label>
+									<div class="toggle-content">
+										<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque.</p>
+										<p class="clearfix">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+											<br /><br />
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>5. What stores are supported ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+											<br /><br />
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>6. How do I place an order ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+											<br /><br />
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>7. Can I place orders from multiple stores ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+											<br /><br />
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>8. What if there are items that you cannot deliver from the store ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											<img class="hidden-sm pull-left img-responsive" src="assets/images/demo/girl_looking-min_thumb.jpg" alt="">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+											<br /><br />
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>9. Can I add special instructions to my order?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+										</p>
+
+										<div class="row">
+
+											<div class="col-md-4 col-sm-6">
+
+												<ul class="list-icon check-square"><!-- block 2 -->
+													<li>Nulla lacinia iaculis nulla</li>
+													<li>Cum sociis natoque penatibus</li>
+													<li>Magnis dis parturient montes</li>
+												</ul>
+
+											</div>
+
+											<div class="col-md-4 col-sm-6">
+
+												<ul class="list-icon check-square"><!-- block 2 -->
+													<li>Nulla lacinia iaculis nulla</li>
+													<li>Cum sociis natoque penatibus</li>
+													<li>Magnis dis parturient montes</li>
+												</ul>
+
+											</div>
+
+											<div class="col-md-4 col-sm-6">
+
+												<ul class="list-icon check-square"><!-- block 2 -->
+													<li>Nulla lacinia iaculis nulla</li>
+													<li>Cum sociis natoque penatibus</li>
+													<li>Magnis dis parturient montes</li>
+												</ul>
+
+											</div>
+
+										</div>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>10. How do I check on the status of my order ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+										</p>
+
+										<div class="row">
+
+											<div class="col-md-4 col-sm-6">
+
+												<div class="box-content thumbnail text-center">
+													<a href="assets/images/demo/1200x800/10-min.jpg" class="item-image lightbox" data-plugin-options='{"type":"image"}'>
+														<img class="img-responsive" src="assets/images/demo/451x300/10-min.jpg" alt="" />
+													</a>
+												</div>
+
+											</div>
+
+											<div class="col-md-4 col-sm-6">
+
+												<div class="box-content thumbnail text-center">
+													<a href="http://www.youtube.com/watch?v=W7Las-MJnJo" class="item-image lightbox" data-plugin-options='{"type":"iframe"}'>
+														<img class="img-responsive" src="assets/images/demo/451x300/11-min.jpg" alt="" />
+													</a>
+												</div>
+
+											</div>
+
+											<div class="col-md-4 col-sm-6">
+
+												<div class="box-content thumbnail text-center">
+													<a href="assets/images/demo/1200x800/25-min.jpg" class="item-image lightbox" data-plugin-options='{"type":"image"}'>
+														<img class="img-responsive" src="assets/images/demo/451x300/25-min.jpg" alt="" />
+													</a>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>11. How can I update my order ? </label>
+									<div class="toggle-content">
+										<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque.</p>
+										<p class="clearfix">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+											<br /><br />
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>12. How much does delivery cost ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+											<br /><br />
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>13. Are prices different than in-store prices ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											.
+											<br /><br />
+											.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>14. What types of payments do you accept?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											.
+											<br /><br />
+											.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>15. Do you honor in-store  sales or coupons ?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											.
+											<br /><br />
+											.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+								<div class="toggle"><!-- toggle -->
+									<label>16. What if I am not at home to receive the order?</label>
+									<div class="toggle-content">
+										<p class="clearfix">
+											.
+											<br /><br />
+											.
+										</p>
+
+									</div>
+								</div><!-- /toggle -->
+
+							</div>
+							<!-- /TOGGLES -->
+
+							<!-- CALLOUT -->
+							<div class="callout alert alert-border margin-top-60 margin-bottom-60">
+
+								<div class="row">
+
+									<div class="col-md-9 col-sm-12"><!-- left text -->
+										<h4>Sign up now or call <strong>+919-259-6967</strong>!</h4>
+										<p class="font-lato size-17">
+											We truly care about our users and our product.
+										</p>
+									</div><!-- /left text -->
+
+									
+									<div class="col-md-3 col-sm-12 text-right"><!-- right btn -->
+										<a href="/order" rel="nofollow" target="_blank" class="btn btn-default btn-lg">Place an order now !</a>
+									</div><!-- /right btn -->
+
+								</div>
+
+							</div>
+							<!-- /CALLOUT -->
+
+						</div>
+						<!-- /LEFT COLUMNS -->
+                    </div>
+
+
+	{{/content}}
+
+	{{#content "scripts" mode="append"}}
+	{{/content}}
+
+	</body>
+</html>
+{{/extend}}
