@@ -40,13 +40,30 @@ function updateProfile(req, res, next){
 //	query.city = req.body.billing.city;
 //	query.state = req.body.billing.state;
 //	query.zip = req.body.billing.zipcode;
-	query.adr_nick = req.body.adrnick || req.body.address; // req.body.address is the selection from the dropdown
 	console.log('query adr_nick is:'+query.adr_nick);
 	var userQuery = {};
 	userQuery.name = {};
 	userQuery.name.first = req.session.name.split(" ")[0];
 	userQuery.name.last = req.session.name.split(" ")[1];
+	userQuery.email = req.session.user;
 	var user = {};
+	// query.adr_nick = req.body.adrnick || req.body.address; // req.body.address is the selection from the dropdown
+	query.adr_nick = req.body.address; // req.body.address is the selection from the dropdown
+	nickUsed = false;
+	if (req.body.address != '9new9') {
+		query.adr_nick = req.body.address;
+	}else{
+		// check if this nick has been used already	
+		User.findOne(userQuery).populate('delivery_addresses').exec(function(err, user){
+			console.log('user found in profile page logic:'+JSON.stringify(user));
+			user.delivery_addresses.forEach(function(element){
+				if (element.adr_nick == req.body.adrnick){
+					console.log('error condition about nick met');
+					nickUsed = true;
+				}
+			});
+		});
+	}
 	//find one and update makes sure that if there is a change in the address you could save it.
 	Address.findOneAndUpdate(query,address,options,function(err, addrSaved){
 		if (err) {
@@ -81,9 +98,12 @@ function updateProfile(req, res, next){
 					}
 					console.log("User updated with new address");
 				});	
+			}else{
+				addrSaved.adr_nick = false; //nulling out address nick in the addrSaved to display error on UI
 			}
+			
+			res.render("profile/profile", {layout: false, error:found, saved: addrSaved.adr_nick, name: req.session.name});
 		});
-		res.render("profile/profile", {layout: false, saved: addrSaved.adr_nick, name: req.session.name});
 	});	
 }
 

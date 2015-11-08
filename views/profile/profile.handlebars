@@ -27,15 +27,26 @@
 
 			<!-- PERSONAL INFO TAB -->
 			<div class="tab-pane fade in active" id="preferences">
-				{{#if saved}}
-				<div class="alert alert-success margin-bottom-30"><!-- SUCCESS -->
+				{{#if error}}
+				<div class="alert alert-danger margin-bottom-30"><!-- SUCCESS -->
 					<button type="button" class="close" data-dismiss="alert">
 						<span aria-hidden="true">×</span>
 						<span class="sr-only">Close</span>
 					</button>
-					<strong>Well done!</strong> You successfully saved {{saved}}. To further edit, reselect the Nickname from the dropdown.
+					<strong>Boo hoo!</strong> You have already used that Nick. Please use a different nick.
 				</div>
+				{{else}}
+					{{#if saved}}
+					<div class="alert alert-success margin-bottom-30"><!-- SUCCESS -->
+						<button type="button" class="close" data-dismiss="alert">
+							<span aria-hidden="true">×</span>
+							<span class="sr-only">Close</span>
+						</button>
+						<strong>Well done!</strong> You successfully saved {{saved}}. To further edit, reselect the Nickname from the dropdown.
+					</div>
+					{{/if}}
 				{{/if}}
+				
 				<form id="profileform" class="clearfix validate" action="#" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<div class="row">
