@@ -39,8 +39,8 @@ function createUser (req, res, next){
 					}   
 					console.log("new user added:"+JSON.stringify(newUser));
 					req.session.isLoggedIn = true;
-					req.session.user = req.body.email;
-					req.session.name = req.body.firstName+' '+req.body.lastName;
+					req.session.user = newUser.email;
+					req.session.name = newUser.name["first"]+' '+newUser.name["last"];
 					//res.render("orders/orderform", {layout: false});
 					res.redirect(301, '/order');
 				}); 
