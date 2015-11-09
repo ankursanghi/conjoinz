@@ -35,9 +35,9 @@ function showOrderForm(req, res,next) {
 	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
-	console.log('req.session here:'+JSON.stringify(req.session));
+	 // console.log('req.session here:'+JSON.stringify(req.session));
 	if (req.session.isLoggedIn){
-		console.log('show the order form...');
+		// console.log('show the order form...');
 		res.render("orders/orderform", {layout: false, name: req.session.name});
 	}else{
 		req.session.errmsg = 'Please login with your credentials to access order page';
@@ -46,8 +46,8 @@ function showOrderForm(req, res,next) {
 }
 
 function placeOrder (req, res, next){
-	console.log('req.body:'+JSON.stringify(req.body));
-	console.log('req.session:'+JSON.stringify(req.session));
+	// console.log('req.body:'+JSON.stringify(req.body));
+	// console.log('req.session:'+JSON.stringify(req.session));
 	var userQuery = {};
 	userQuery.name = {};
 	userQuery.name.first = req.session.name.split(" ")[0];
@@ -55,7 +55,7 @@ function placeOrder (req, res, next){
 	var findUserQuery = User.findOne(userQuery);
 	findUserQuery.populate('delivery_addresses').exec(function(err, usr){
 		usr.delivery_addresses.forEach(function(adr){
-			console.log('adr_nick from user:'+adr.adr_nick);
+			// console.log('adr_nick from user:'+adr.adr_nick);
 			if (adr.adr_nick == req.body.address){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
 				var order = {};
 				var options = {upsert: true, new: true};
@@ -77,7 +77,7 @@ function placeOrder (req, res, next){
 				order.customer.address.zip= adr.zip;
 				Order.create(order, function(err, newOrder){
 					if (err) {
-					    console.log('Error Inserting New Data');
+					     console.log('Error Inserting New Data');
 					    if (err.name == 'ValidationError') {
 						    for (field in err.errors) {
 							    console.log(err.errors[field].message); 
@@ -117,7 +117,7 @@ function placeOrder (req, res, next){
 										    }
 									    }
 									}
-									console.log('saved the line #'+index);
+									// console.log('saved the line #'+index);
 								});
 							});	
 						}

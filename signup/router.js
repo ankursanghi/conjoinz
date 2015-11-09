@@ -16,7 +16,6 @@ function signup(req, res,next) {
 }
 
 function createUser (req, res, next){
-	console.log('req.body:'+JSON.stringify(req.body));
 	console.log('req.param email:'+req.param('email'));
 	crypto.randomBytes(16, function(err, bytes){
 		if (err) return next(err);
@@ -37,7 +36,6 @@ function createUser (req, res, next){
 						}   
 						return next(err);
 					}   
-					console.log("new user added:"+JSON.stringify(newUser));
 					req.session.isLoggedIn = true;
 					req.session.user = newUser.email;
 					req.session.name = newUser.name["first"]+' '+newUser.name["last"];
