@@ -52,6 +52,7 @@ function placeOrder (req, res, next){
 	userQuery.name = {};
 	userQuery.name.first = req.session.name.split(" ")[0];
 	userQuery.name.last = req.session.name.split(" ")[1];
+	userQuery.email = req.session.user;
 	var findUserQuery = User.findOne(userQuery);
 	findUserQuery.populate('delivery_addresses').exec(function(err, usr){
 		usr.delivery_addresses.forEach(function(adr){
