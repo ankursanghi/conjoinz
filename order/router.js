@@ -134,7 +134,8 @@ function sendEmail(newOrder){
 	transport.sendMail({
 	 from: 'ankur.sanghi@gmail.com',
 	 to: newOrder.userEmail,
-	 subject: 'Any Subject',
+	 cc: 'support@valetbasket.com',
+	 subject: 'Thank you for your order!',
 	 template: 'email.body',
 	 context: {
 	      order : newOrder,
