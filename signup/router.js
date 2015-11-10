@@ -22,7 +22,7 @@ function createUser (req, res, next){
 		var user = {email: req.body.email};
 		user.name = {}; 
 		user.salt = bytes.toString('utf8');
-		user.hash = hash(req.body.pwd, user.salt);
+		user.hash = hash(req.body.password, user.salt);
 		user.name["first"] = req.body.firstname;
 		user.name["last"] = req.body.lastname;
 		User.findOne({email: req.body.email}, function(err, foundUser){

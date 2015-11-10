@@ -61,7 +61,7 @@
 
 							<label class="input">
 								<i class="ico-append fa fa-lock"></i>
-								<input type="password" name="pwd" id="password" placeholder="Password">
+								<input type="password" name="password" id="password" minlength="6" required placeholder="Password">
 								<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
 							</label>
 
@@ -143,7 +143,9 @@
 	});
 	var validator = $( "#myform" ).validate({
 		rules: {
-			password: "required",
+			password: {required: true,
+				   minlength:6
+				  },
 			email: "required",
 			passwordagain: {
 				equalTo: "#password"
