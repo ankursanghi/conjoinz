@@ -133,7 +133,8 @@ function placeOrder (req, res, next){
 
 function sendEmail(newOrder){
 	transport.sendMail({
-	 from: 'ankur.sanghi@gmail.com',
+	 from: 'support@valetbasket.com',
+	 replyTo: 'support@valetbasket.com',
 	 to: newOrder.userEmail,
 	 cc: 'support@valetbasket.com',
 	 subject: 'Thank you for your order!',
