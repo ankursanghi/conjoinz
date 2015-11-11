@@ -40,7 +40,7 @@ function showOrderForm(req, res,next) {
 		// console.log('show the order form...');
 		res.render("orders/orderform", {layout: false, name: req.session.name});
 	}else{
-		req.session.errmsg = 'Please login with your credentials to access order page';
+//		req.session.errmsg = 'Please login with your credentials to access order page';
 		res.redirect(302, '/login');
 	}
 }
