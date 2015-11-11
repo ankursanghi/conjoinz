@@ -22,7 +22,7 @@ function profile(req, res,next) {
 function updateProfile(req, res, next){
 	// options for upsert queries
 	var options = {upsert: true, new: true};
-	console.log('req.body:'+JSON.stringify(req.body));
+//	console.log('req.body:'+JSON.stringify(req.body));
 	var address = {};
 	address.adr_type = 'Primary';	
 	address.adr_nick = req.body.adrnick || req.body.address; // this is done so that when there is an update, the address field is the one that contains the nick
@@ -35,7 +35,7 @@ function updateProfile(req, res, next){
 	address.phone = req.body.billing.phone;
 	//build details for querying the address collection
 	var query = {};
-	console.log('query adr_nick is:'+query.adr_nick);
+	// console.log('query adr_nick is:'+query.adr_nick);
 	var userQuery = {};
 	userQuery.name = {};
 	userQuery.name.first = req.session.name.split(" ")[0];
@@ -47,6 +47,7 @@ function updateProfile(req, res, next){
 	updateAddress = false;
 	// async waterfall here
 	async.waterfall([
+			// function 1: checks whether it is an update or a new address creation.
 		function(callback){
 			var udpateAddress = false;
 			if (req.body.address != '9new9') {
@@ -59,27 +60,28 @@ function updateProfile(req, res, next){
 					var found = false;
 					usr.delivery_addresses.forEach(function(adr){
 						// if (adr.adr_nick == address.adr_nick && adr.adr_line1 == address.adr_line1 && adr.city == address.city && adr.zip == address.zip){
-						console.log('adr_nick from user:'+adr.adr_nick);
+						// console.log('adr_nick from user:'+adr.adr_nick);
 						if (adr.adr_nick == req.body.adrnick){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
 							found = true;
 							var err = new Error('nickUsed');
+							console.log('error returned about the same nick...');
 							return callback(err, null);
 						}
 					});
+					if (!(found)) return callback(null, updateAddress);
 				});
-				return callback(null, updateAddress);
 			}
 		},
 		function (updateAddress, callback){
-			console.log('determined update address:'+updateAddress);
+			// console.log('determined update address:'+updateAddress);
 			if (updateAddress){
 				//find id of the delivery address that has a matching nick on this user	
 				// update that address with the details
 				User.findOne(userQuery).populate('delivery_addresses').exec(function(err, user){
-					console.log('user found in profile page logic:'+JSON.stringify(user));
+					// console.log('user found in profile page logic:'+JSON.stringify(user));
 					user.delivery_addresses.forEach(function(element){
 						if (element.adr_nick == req.body.address){
-							console.log('error condition about nick met');
+							// console.log('error condition about nick met');
 							query._id = element._id;
 							Address.findOneAndUpdate(query, address, options, function(err, addrSaved){
 								if (err) {
@@ -125,7 +127,8 @@ function updateProfile(req, res, next){
 			callback(null, addr.adr_nick);	
 		}
 		], function(err, result){
-			var found;
+			var found = false;
+			if (err) console.log('error received: '+JSON.stringify(err));
 			if (err && err.message == 'nickUsed'){
 				found = true;
 			}
