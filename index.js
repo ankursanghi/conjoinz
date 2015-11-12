@@ -56,6 +56,13 @@ app.use(session({
 
 var handlebars = hbs.create({ defaultLayout:'main',
 				helpers : {
+					if_eq : function(a, b, opts) {
+					    if (a == b) {
+					        return opts.fn(this);
+					    } else {
+					        return opts.inverse(this);
+					    }
+					}
 				}
 		  });
 // ------------------------ loading partials here explicity with handlebars -----------------------
@@ -73,6 +80,7 @@ filenames.forEach(function (filename) {
 });
 // This generates an object containing the layout helpers and registers them with handlebars
 layouts.register(handlebars.handlebars);
+
 // ------------------------------------- loading partials end ------------------------------------
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');

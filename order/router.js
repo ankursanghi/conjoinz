@@ -43,7 +43,35 @@ function showOrderForm(req, res,next) {
 	console.log('req.session here:'+JSON.stringify(req.session));
 	if (req.session.isLoggedIn){
 		console.log('show the order form...');
-		res.render("orders/orderform", {layout: false, name: req.session.name});
+		var order_num = req.params.num;
+		
+		if(order_num){
+
+			//res.render("orders/orderform", {layout: false, name: req.session.name});
+			//console.log('order_num: get details from db ' + order_num)
+/*
+				var findProductDetails = Order.findOne(order_num, function(err, orders){
+					if(err){
+						console.log('error'+ err);
+					}
+					//console.log('session User details:'+JSON.stringify(orders));
+					res.render("orders/orderform", {layout: false, name: req.session.name });
+
+						Order.find({"customer.name.first":usr.name.first,"customer.name.last":usr.name.last},function(err,ord){
+
+							if(err){
+		   						console.log(' inside for each error'+ err);
+		   					}else{
+		   				res.render("orders/orderHistory", {layout: false, name: req.session.name , order: ord});
+						}
+					});
+				});*/
+		}
+		else
+		{
+			res.render("orders/orderform", {layout: false, name: req.session.name});
+		}
+		
 	}else{
 		req.session.errmsg = 'Please login with your credentials to access order page';
 		res.redirect(302, '/login');
@@ -117,12 +145,12 @@ function placeOrder (req, res, next){
 
 function mobileOrder(req,res,next){
 console.log('adderess' +req.body.address+','+req.body.store);
-	var first = 'qw'/*req.session.name.split(" ")[0];*/;
-	var last = '32'/*req.session.name.split(" ")[1]*/;
+	var first =req.session.name.split(" ")[0];;
+	var last =req.session.name.split(" ")[1];
 	var address = req.body.address;
 	var store = req.body.store;
 	var comments = req.body.ordercomments;
-	var email ='s.rajasekar.it@gmail.com'/*req.session.user*/;
+	var email =req.session.user;
 
 orderApi.createOrderHeader(first, last, address, store, comments, email, function(err, order){
 		if (err) {
@@ -173,8 +201,8 @@ orderApi.createOrderHeader(first, last, address, store, comments, email, functio
 
 }
 
-
 router.get("/order",showOrderForm);
+router.get("/order/:num",showOrderForm);
 router.post("/order", placeOrder);
 router.post("/mobileOrder", mobileOrder);
 
