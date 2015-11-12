@@ -7,7 +7,7 @@ var User = require('../models/user.js');
 var hash = require('../utils/hash.js');
 var bodyParser = require('body-parser');
 var router = new express.Router();
-
+var moment = require("moment");
 //var mailapi = require("../api/order/router.js")
 var orderApi = require("../api/order/router.js");
 var mailapi = require("../api/mail/router.js");
@@ -91,7 +91,8 @@ function placeOrder (req, res, next){
 	var email = req.session.user;
 	//var submitOrder = req.body.submitord;
 	var saveOrder = req.body.ord_status;
-	var orderDate = Date();	
+	var now = moment(new Date());
+	var orderDate = now.format("YYYY MMM DD HH:mm");
 
 	orderApi.createOrderHeader(first, last, address, store, comments, email,saveOrder,orderDate, function(err, order){
 		if (err) {

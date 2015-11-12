@@ -4,7 +4,7 @@ var dbConn = require('./db.js');
 
 var orderSchema= mongoose.Schema({
 	ord_status: {type: String},
-	ordDate: {type: Date},
+	ordDate: {type: String},
 
     	ord_number: {type: Number}, // auto sequence - don't have to assign in code
         comments: {type: String},
