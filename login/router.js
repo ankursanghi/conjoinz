@@ -13,11 +13,15 @@ function login(req, res,next) {
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
 	if (!(req.session.errmsg)){
-		req.session.regenerate(function(err){
-			console.log('regenerating a session here...');
-			if (err) next; 
-			res.render("login/login", {layout: false});
-		});
+			console.log('session logged in:'+req.session.isLoggedIn);
+			console.log('session variable name:'+req.session.name);
+			console.log('session variable user:'+req.session.user);
+			res.render("login/login", {layout: false, name:req.session.name});
+//		req.session.regenerate(function(err){
+//			console.log('regenerating a session here...');
+//			if (err) next; 
+//			res.render("login/login", {layout: false, name:req.session.name});
+//		});
 	}else{
 		res.render("login/login", {layout: false, invalid: true, message: req.session.errmsg});
 	}
@@ -65,6 +69,9 @@ function loginUser (req, res, next){
 					req.session.name = user.name.first+' '+user.name.last;
 					res.redirect(302, '/order');
 				});
+			}else{
+				console.log('password does not match for user:'+user.name.first+' '+user.name.last);
+				return invalid('You seem to have entered an incorrect password. Retry or use Reset Password link');
 			}
 		}
 	});
