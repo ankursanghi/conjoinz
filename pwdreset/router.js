@@ -9,6 +9,7 @@ var nodemailer = require('nodemailer');
 var sesTransport = require('nodemailer-ses-transport');
 var activator = require('activator');
 var smtp_creds = require('../smtp_credentials.js');
+var ObjectId = require('mongoose').Types.ObjectId;
 // TBD move this access key id and secret access key to a separate file and require it in
 var transport = nodemailer.createTransport(sesTransport({
 	accessKeyId: smtp_creds.accessKeyId,
@@ -19,6 +20,9 @@ var transport = nodemailer.createTransport(sesTransport({
 router.use(bodyParser());
 
 function forgotpwd (req, res,next) {
+	if (!(req.connection.encrypted)){
+		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
+	}
 	res.render("pwdreset/pwdreset", {layout: false});
 }
 
@@ -28,10 +32,10 @@ var userModel = {
 		       if (!login) {
 			       cb("nologin");
 		       } else {
-				User.findOne({_id: login}, function(err, foundUser){
+				User.findOne({email: login}, function(err, foundUser){
 					if (err) cb(null,err);
-					found.id = foundUser._id;
-					found.email = foundUser.id;
+					found.id = foundUser.email;
+					found.email = foundUser.email;
 					found.activation_code = foundUser.activation_code;
 					found.password_reset_code = foundUser.password_reset_code;
 					found.password_reset_time = foundUser.password_reset_time;
@@ -44,7 +48,7 @@ var userModel = {
 	      },
 	save: function (id,data,cb) {
 		      if (id){
-			    var query = {"_id": id};
+			    var query = {"email": id};
 			    var saveThisData = {};
 			    if (data.password){
 				crypto.randomBytes(16, function(err, bytes){
@@ -76,12 +80,19 @@ var userModel = {
 activator.init({user:userModel,transport:transport,from: 'ankur.sanghi@gmail.com', templates: __dirname});
 
 router.get("/passwordreset",forgotpwd);
-router.post("/passwordreset", activator.createPasswordReset);
+router.post("/passwordreset", activator.createPasswordResetNext, function(req, res,next){
+	res.render('pwdreset/request_sent', {layout: false});
+});
 router.get("/resetpassword", function(req,res,next){
 	res.render('pwdreset/newpassword', {code: req.query.code, email: req.query.email, layout: false});
 });
 router.post("/resetpassword",activator.completePasswordResetNext, function(req,res,next){
-	res.render('orders/orderform', {layout:false});
+	User.findOne({email: req.query.email}, function(err, newUser){
+		req.session.isLoggedIn = true;
+		req.session.user = req.query.email;
+		req.session.name = newUser.name["first"]+' '+newUser.name["last"];
+		res.render('orders/orderform', {layout:false, name: req.session.name});
+	});
 });
 
 module.exports = router;

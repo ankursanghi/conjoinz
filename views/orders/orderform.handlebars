@@ -11,29 +11,39 @@
 <section style="background:url('assets/images/demo/wall2.jpg')">
 <div class="container">
 	{{#if ordernumber}}
+	
 	<div class="alert alert-success margin-bottom-30"><!-- SUCCESS -->
 		<button type="button" class="close" data-dismiss="alert">
 			<span aria-hidden="true">×</span>
 			<span class="sr-only">Close</span>
 		</button>
-		<strong>Well done!</strong> You successfully placed order {{ordernumber}}. Please make further updates to order by calling 888-888-8888.
+		{{#if_eq ord_status 'saved'}}
+		<strong>Well done!</strong> You successfully Saved the order {{ordernumber}}. Please make further updates to order by calling 888-888-8888.
+		{{else}}
+		<strong>Well done!</strong> You successfully Submitted the order {{ordernumber}}. Please make further updates to order by calling 888-888-8888.
+		{{/if_eq}}
 	</div>
+
 	{{/if}}
 	<form id="orderform" method="post" class="validate" action="/order" data-success="Sent! Thank you!" data-toastr-position="top-right">
 		<fieldset>
 			<div class="row">
 				<div class="col-md-6">
 					<label for="address">Choose an address nick as Delivery Address</label>
-					<select id="address" name="address" class="form-control" required title="Please select a Delivery address">
-						<option value=""></option>
+					<select id="address" name="address" class="form-control" required title="Please select a Delivery address" value={{delivery_address}}>
 					</select>
 				</div>
 				<div class="col-md-6">
 					<label for="store">Choose a Store for this Order</label>
 					<select id="store" name="store" class="form-control" required title="Please select a store">
-						<option value=""></option>
+						{{#if_eq store 'store1'}}
+						<option value="store1">Trader Joes Morrisville</option>
+						{{else}}
+						<option value="store2">Whole Foods Waverly Place</option>
+						{{/if_eq}}
 						<option value="store1">Trader Joes Morrisville</option>
 						<option value="store2">Whole Foods Waverly Place</option>
+						
 					</select>
 				</div>
 			</div>	
@@ -50,149 +60,38 @@
 				</thead>
 
 				<tbody>
+
+				
+					{{#each order.ord_lines}}				
 					<tr id="2">
 						<td>
-							<input type="text" class="autoCompItem itembox form-control input-small" id="item1" name="item" placeholder="Eggs" required>
+							<input type="text" class="autoCompItem itembox form-control input-small" id="item1" name="item" placeholder="Eggs" required value={{name}} >
 						</td>
 						<td>
-							<input type="text" class="form-control qty input-small" id="quantity1" name="quantity" placeholder="24" >
-						</td>
-						<td>
-							<select class="form-control" name='uom'>
-								<option value="">Units</option>
-								<option value="lbs">lbs</option>
-								<option value="packs">Packs</option>
-								<option value="cartons">Cartons</option>
-								<option value="gallons">Gallons</option>
-							</select>
-
-						</td>
-						<td>
-							<input type="text" class="form-control input-small" id="brand1" name="brand1" placeholder="Eggland">
-						</td>
-						<td>
-							<input type="text" class="form-control input-small" id="comment1" name="comments" placeholder="Choose fresh">
-						</td>
-						</tr> <tr id="3">
-						<td>
-							<input type="text" class="autoCompItem itembox form-control input-small" id="item2" name="item" placeholder="Eggs">
-						</td>
-						<td>
-							<input type="text" class="form-control qty input-small" id="quantity2" name="quantity" placeholder="24">
-						</td>
-						<td>
-							<select class="form-control " name='uom'>
-								<option value="">Units</option>
-								<option value="lbs">lbs</option>
-								<option value="packs">Packs</option>
-								<option value="cartons">Cartons</option>
-								<option value="gallons">Gallons</option>
-							</select>
-
-						</td>
-						<td>
-							<input type="text" class="form-control input-small" id="brand2" name="brand2" placeholder="Eggland">
-						</td>
-						<td>
-							<input type="text" class="form-control input-small" id="comment2" name="comments" placeholder="Choose fresh">
-						</td>
-					</tr>
-					<tr id="4">
-						<td>
-							<input type="text" class="autoCompItem itembox form-control input-small" id="item3" name="item" placeholder="Eggs">
-						</td>
-						<td>
-							<input type="text" class="form-control qty input-small" id="quantity3" name="quantity" placeholder="24">
-						</td>
-						<td>
-							<select class="form-control " name='uom'>
-								<option value="">Units</option>
-								<option value="lbs">lbs</option>
-								<option value="packs">Packs</option>
-								<option value="cartons">Cartons</option>
-								<option value="gallons">Gallons</option>
-							</select>
-
-						</td>
-						<td>
-							<input type="text" class="form-control input-small" id="brand3" name="brand3" placeholder="Eggland">
-						</td>
-						<td>
-							<input type="text" class="form-control input-small" id="comment3" name="comments" placeholder="Choose fresh">
-						</td>
-					</tr>
-					<tr id="5">
-						<td>
-							<input type="text" class="autoCompItem form-control itembox input-small" id="item4" name="item" placeholder="Eggs">
-						</td>
-						<td>
-							<input type="text" class="form-control qty input-small" id="quantity4" name="quantity" placeholder="24">
+							<input type="text" class="form-control qty input-small" id="quantity1" name="quantity" placeholder="24" value={{quantity}}>
 						</td>
 						<td>
 							<select class="form-control" name='uom'>
-								<option value="">Units</option>
+								<option value={{uom}}>{{uom}}</option>
+								<option value="Units">Units</option>
 								<option value="lbs">lbs</option>
 								<option value="packs">Packs</option>
 								<option value="cartons">Cartons</option>
 								<option value="gallons">Gallons</option>
+								
 							</select>
 
 						</td>
 						<td>
-							<input type="text" class="form-control input-small" id="brand4" name="brand4" placeholder="Eggland">
+							<input type="text" class="form-control input-small" id="brand1" name="brand1" placeholder="Eggland" value={{brand}}>
 						</td>
 						<td>
-							<input type="text" class="form-control input-small" id="comment4" name="comments" placeholder="Choose fresh">
+							<input type="text" class="form-control input-small" id="comment1" name="comments" placeholder="Choose fresh" value={{comments}}>
 						</td>
-					</tr>
-					<tr id="6">
-						<td>
-							<input type="text" class="autoCompItem form-control itembox input-small" id="item5" name="item" placeholder="Eggs">
-						</td>
-						<td>
-							<input type="text" class="form-control qty input-small" id="quantity5" name="quantity" placeholder="24">
-						</td>
-						<td>
-							<select class="form-control " name='uom'>
-								<option value="">Units</option>
-								<option value="lbs">lbs</option>
-								<option value="packs">Packs</option>
-								<option value="cartons">Cartons</option>
-								<option value="gallons">Gallons</option>
-							</select>
-
-						</td>
-						<td>
-							<input type="text" class="form-control input-small" id="brand5" name="brand5" placeholder="Eggland">
-						</td>
-						<td>
-							<input type="text" class="form-control input-small" id="comment5" name="comments" placeholder="Choose fresh">
-						</td>
-					</tr>
-					<tr id="7">
-						<td>
-							<input type="text" class="autoCompItem form-control itembox input-small" id="item6" name="item" placeholder="Eggs">
-						</td>
-						<td>
-							<input type="text" class="form-control qty input-small" id="quantity6" name="quantity" placeholder="24">
-						</td>
-						<td>
-							<select class="form-control ">
-								<option value="">Units</option>
-								<option value="lbs">lbs</option>
-								<option value="packs">Packs</option>
-								<option value="cartons">Cartons</option>
-								<option value="gallons">Gallons</option>
-							</select>
-
-						</td>
-						<td>
-							<input type="text" class="form-control input-small" id="brand6" name="brand6" placeholder="Eggland">
-						</td>
-						<td>
-							<input type="text" class="form-control input-small" id="comment6" name="comments" placeholder="Choose fresh">
-						</td>
-					</tr>
+					</tr>	
+			{{/each}}
+		
+					
 				</tbody>
 			</table>
 		</fieldset>

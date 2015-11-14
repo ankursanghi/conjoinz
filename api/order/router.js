@@ -51,7 +51,7 @@ module.exports.createOrderHeader = function(firstName, lastName, addressName, st
 	});
 }
 //req.body
-module.exports.createOrderItem =  function(orderId, comment, uom, quantity, itemName, callback){  	
+module.exports.createOrderItem =  function(orderId, comment, uom, quantity, itemName, brand, callback){  	
 	var options = {
 		upsert: true, 
 		new: true
@@ -71,6 +71,8 @@ module.exports.createOrderItem =  function(orderId, comment, uom, quantity, item
 			    }
 		    }
 		}
+
+		console.log("brand name"+brand);
 		//What happens when Item save fails?
 		console.log('itemSaved is:' + itemSaved);
         var ordLine = {};
@@ -79,6 +81,7 @@ module.exports.createOrderItem =  function(orderId, comment, uom, quantity, item
 		ordLine.uom = uom;
 		ordLine.qty = quantity;
 		ordLine.item = itemName;
+		ordLine.brand=brand;
 		ordLine.orderItem = itemSaved._id;
 		Order.findOneAndUpdate({_id: orderId}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
 			return callback(err, ordSaved);

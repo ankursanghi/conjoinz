@@ -16,7 +16,7 @@ module.exports.findUser =  function(email, passwd, callback){
 				callback(err, null);
 			}   
 			if(!user){
-				callback(new Error('User id or password incorrect', null));
+				callback(new Error(' UserName is incorrect', null));
 			}else{
 				var salt=user.salt;
 				var checkHash = hash(passwd, user.salt);
@@ -25,7 +25,7 @@ module.exports.findUser =  function(email, passwd, callback){
 				}
 				else
 				{
-					callback(new Error('User id or password incorrect', null));
+					callback(new Error('password incorrect', null));
 				}
 			}
 		});

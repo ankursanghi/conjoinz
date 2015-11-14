@@ -1,6 +1,7 @@
 var express = require("express");
 var crypto = require('crypto');
 var _ = require('lodash');
+var async = require('async');
 var Order = require('../models/order.js');
 var Item = require('../models/item.js');
 var User = require('../models/user.js');
@@ -42,36 +43,73 @@ function showOrderForm(req, res,next) {
 	}
 	console.log('req.session here:'+JSON.stringify(req.session));
 	if (req.session.isLoggedIn){
-		console.log('show the order form...');
+		
 		var order_num = req.params.num;
+		var displayOrder = {
+							order_num: '',
+							delivery_address: '',
+							store: '',
+							ord_lines: []
+						}
 		
 		if(order_num){
-
-			//res.render("orders/orderform", {layout: false, name: req.session.name});
-			//console.log('order_num: get details from db ' + order_num)
-/*
-				var findProductDetails = Order.findOne(order_num, function(err, orders){
+			
+			console.log('order_num: get details from db ' + order_num)
+			var findProductDetails = Order.findOne({"ord_number":order_num}, function(err, order){
 					if(err){
 						console.log('error'+ err);
 					}
-					//console.log('session User details:'+JSON.stringify(orders));
-					res.render("orders/orderform", {layout: false, name: req.session.name });
 
-						Order.find({"customer.name.first":usr.name.first,"customer.name.last":usr.name.last},function(err,ord){
+					if(!order){
+						//display no order found message
+						console.log("no order found in table")
+					}
+					else
+					{
+						displayOrder.order_num= order.order_num;
+						displayOrder.delivery_address= order.customer.address.adr_type;
+						displayOrder.store= order.store;
 
+						async.each(order.ord_lines, function(line, callback){
+							Item.findOne({"_id": line.orderItem}, function(err, item){ 										
+								displayOrder.ord_lines.push({									
+									name: item.name,
+									quantity: line.qty,
+									uom: line.uom,
+									brand: line.brand,
+									comments: line.comments
+								});
+
+								callback();
+							});
+						},
+						function(err){
 							if(err){
-		   						console.log(' inside for each error'+ err);
-		   					}else{
-		   				res.render("orders/orderHistory", {layout: false, name: req.session.name , order: ord});
-						}
-					});
-				});*/
+								//show error
+								return;
+							}
+
+							console.log(JSON.stringify(displayOrder));
+							res.render("orders/orderform", {layout: false, name: req.session.name, order:displayOrder });
+						});
+
+					}
+					
+			});
 		}
 		else
 		{
-			res.render("orders/orderform", {layout: false, name: req.session.name});
+			for (var i = 0; i < 7; i++) {
+				displayOrder.ord_lines.push({									
+							name: '',
+							quantity: '',
+							uom: '',
+							brand: '',
+							comments: ''
+						});
+			}
+			res.render("orders/orderform", {layout: false, name: req.session.name,  order:displayOrder});	
 		}
-		
 	}else{
 		req.session.errmsg = 'Please login with your credentials to access order page';
 		res.redirect(302, '/login');
@@ -91,10 +129,13 @@ function placeOrder (req, res, next){
 	var email = req.session.user;
 	//var submitOrder = req.body.submitord;
 	var saveOrder = req.body.ord_status;
+	var brand=req.body.brand1;
 	var now = moment(new Date());
 	var orderDate = now.format("YYYY MMM DD HH:mm");
 
 	orderApi.createOrderHeader(first, last, address, store, comments, email,saveOrder,orderDate, function(err, order){
+		
+
 		if (err) {
 		    console.log('Error Inserting New Data');
 		    if (err.name == 'ValidationError') {
@@ -111,11 +152,12 @@ function placeOrder (req, res, next){
 			var comment = req.body.comments[index];
 			var quantity = req.body.quantity[index];
 			var itemName = name;
+			var brand=req.body.brand1[index]
 					
 
 			//if item name is not empty save the line item
 			if(/\S/.test(itemName)){
-				orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, function(err, savedOrder){
+				orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, brand, function(err, savedOrder){
 					if (err) {
 					    console.log('Error Inserting New Data');
 					    if (err.name == 'ValidationError') {
@@ -131,14 +173,30 @@ function placeOrder (req, res, next){
 			}			
 		});
 
+		var displayOrder = {
+							order_num: '',
+							delivery_address: '',
+							store: '',
+							ord_lines: []
+						}
+
+				for (var i = 0; i < 7; i++) {
+				 displayOrder.ord_lines.push({									
+							name: '',
+							quantity: '',
+							uom: '',
+							brand: '',
+							comments: ''
+						});
+			}
 		mailapi.sendEmail(email);
 		//console.log('user Mail '+order.userEmail)
-		if(order.ord_status=="submitted")
+		if(order.ord_status=="saved")
 		{
-		res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number});
+		res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number, ord_status:"saved",order:displayOrder});
 		}else
 		{
-			res.render("orders/orderform");
+		res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number,order:displayOrder});
 		}
 	});	
 }
@@ -190,6 +248,7 @@ orderApi.createOrderHeader(first, last, address, store, comments, email, functio
 					}
 
 					order = savedOrder;
+
 					console.log('Order num: ' + order.ord_number + 'Orderid ' + order._id + 'saved the line #'+index);
 				});
 			}			

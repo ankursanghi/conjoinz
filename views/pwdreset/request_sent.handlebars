@@ -1,0 +1,50 @@
+{{#extend "mainLayoutPartial"}}
+{{#content "head" mode="append"}}
+<!-- SWIPER SLIDER -->
+<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
+{{/content}}
+{{#content "loggedIn"}}
+{{#if name}}
+	<li class="text-welcome hidden-xs">Welcome to ValetBasket ! We shop and deliver for you ! <strong>{{name}}</strong></li>
+	<li>
+		<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i class="fa fa-user hidden-xs"></i> MY ACCOUNT</a>
+		<ul class="dropdown-menu pull-right">
+			<li><a tabindex="-1" href="#"><i class="fa fa-history"></i> ORDER HISTORY</a></li>
+			<li class="divider"></li>
+			<li><a tabindex="-1" href="#"><i class="fa fa-cog"></i> MY SETTINGS</a></li>
+			<li class="divider"></li>
+			<li><a tabindex="-1" href="#"><i class="glyphicon glyphicon-off"></i> LOGOUT</a></li>
+		</ul>
+	</li>
+{{else}}
+	<li class="hidden-xs"><a href="/login">LOGIN</a></li>
+{{/if}}
+{{/content}}
+{{#content "mainbody"}}
+<section style="background:url('assets/images/demo/wall2.jpg')">
+
+<div class="display-table">
+	<div class="display-table-cell vertical-align-middle">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="container text-center">
+
+					<h1 class="margin-bottom-20 size-30">We have sent the email to reset your password. </h1>
+					<p class="size-20 font-lato text-muted"> Your email engine might think we sent a junk email. Check there, in case you did not get it! </p>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+</section>
+
+{{/content}}
+{{/extend}}

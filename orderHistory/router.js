@@ -12,7 +12,7 @@ var router = new express.Router();
 function orderHistory(req, res,next) {
 	var firstName = req.session.name.split(" ")[0];;
 	var lastName = req.session.name.split(" ")[1];
-console.log('sessions '+ firstName+','+ lastName);
+console.log('sessions ++'+ firstName+','+ lastName);
 var userQuery = {};
 	userQuery.name = {
 		first: firstName,
@@ -21,15 +21,15 @@ var userQuery = {};
 	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
-			console.log('req.session here:'+JSON.stringify(req.session));
+			//console.log('req.session here:'+JSON.stringify(req.session));
 			if (req.session.isLoggedIn){
-				console.log('show the order historyform...');
+				//console.log('show the order historyform...');
 				
 				var findUserQuery = User.findOne(userQuery, function(err, usr){
 				if(err){
 					console.log('error'+ err);
 				}
-					console.log('session User details:'+JSON.stringify(usr));
+					//console.log('session User details:'+JSON.stringify(usr));
 
 						Order.find({"customer.name.first":usr.name.first,"customer.name.last":usr.name.last},function(err,ord){
 
@@ -38,7 +38,7 @@ var userQuery = {};
 		   					}else{
 		   						
 					  	
-						res.render("orders/orderHistory", {layout: false, name: req.session.name , order: ord});
+						res.render("orderHistory/orderHistory", {layout: false, name: req.session.name , order: ord});
 						}
 					});
 				});
@@ -49,6 +49,8 @@ var userQuery = {};
 				res.redirect(302, '/login');
 			}
 }
+
 router.get("/orderHistory", orderHistory);
+
 
 module.exports = router;

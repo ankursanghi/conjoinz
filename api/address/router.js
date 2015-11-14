@@ -10,6 +10,7 @@ function findAddresses(req, res, next) {
 	userQuery.name = {};
 	userQuery.name.first = req.session.name.split(" ")[0];
 	userQuery.name.last = req.session.name.split(" ")[1];
+	userQuery.email = req.session.user;
 	var addresses = [];
 	var queryAddress ={};
 	User.findOne(userQuery).populate('delivery_addresses').exec(function(err, usr){
