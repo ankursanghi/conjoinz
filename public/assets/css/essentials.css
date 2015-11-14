@@ -135,6 +135,9 @@ select {
 	   -moz-border-radius: 3px;
 			border-radius: 3px;
 }
+.btn-size{
+	font-size: 25px;
+}
 
 label {
 	font-weight:400;

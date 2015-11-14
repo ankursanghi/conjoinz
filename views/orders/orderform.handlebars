@@ -18,7 +18,11 @@
 			<span class="sr-only">Close</span>
 		</button>
 		{{#if_eq ord_status 'saved'}}
-		<strong>Well done!</strong> You successfully Saved the order {{ordernumber}}. Please make further updates to order by calling 888-888-8888.
+
+ 
+
+
+		<strong>Yay!</strong> You have successfully saved order {{ordernumber}}. To further edit this order, please go to My Settings >> Order History and select this order.
 		{{else}}
 		<strong>Well done!</strong> You successfully Submitted the order {{ordernumber}}. Please make further updates to order by calling 888-888-8888.
 		{{/if_eq}}
@@ -72,12 +76,38 @@
 						</td>
 						<td>
 							<select class="form-control" name='uom'>
-								<option value={{uom}}>{{uom}}</option>
-								<option value="Units">Units</option>
-								<option value="lbs">lbs</option>
-								<option value="packs">Packs</option>
-								<option value="cartons">Cartons</option>
-								<option value="gallons">Gallons</option>
+							<option value={{uom}}>{{uom}}</option>
+							<option value="None">None</option>
+							<option value="Bag">Bag</option>
+							<option value="Bottle">Bottle</option>
+							<option value="Box">Box</option>
+							<option value="Bunch">Bunch</option>
+							<option value="Can">Can</option>
+							<option value="cartons">Cartons</option>
+							<option value="Case">Case</option>
+							<option value="Cup">Cup</option>
+							<option value="Dl">Dl</option>
+							<option value="Dozen">Dozen</option>
+							<option value="Each">Each</option>
+							<option value="G">G</option>
+							<option value="Gallon">Gallon</option>
+							<option value="Jar">Jar</option>
+							<option value="Kg">Kg</option>
+							<option value="L">L</option>
+							<option value="Large">Large</option>
+							<option value="Lbs">Lbs</option>
+							<option value="Ml">Ml</option>
+							<option value="Oz">Oz</option>
+							<option value="Pack">Pack</option>
+							<option value="Piece">Piece</option>
+							<option value="Pt">Pt</option>
+							<option value="Qt">Qt</option>
+							<option value="Roll">Roll</option>
+							<option value="Small">Small</option>
+							<option value="Tbsp">Tbsp</option>
+							<option value="Tsp">Tsp</option>
+							<option value="Units">Units</option>
+
 								
 							</select>
 
@@ -97,9 +127,9 @@
 		</fieldset>
 		<div class="row">
 			<div class="col-md-8">
-				<button type="submit"  name="ord_status" class="btn btn-3d btn-teal btn-lg btn-block margin-top-30" value="submitted">
+				<button type="submit"  name="ord_status" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30" value="submitted">
 					SUBMIT ORDER
-					<span class="block font-lato">We will get back to you within next 2 hours</span>
+					
 				</button>
 			</div>
 			<div class="col-md-2">
@@ -170,16 +200,42 @@
 					'							<input type="text" class="form-control qty input-small" name="quantity" placeholder="24"> '+ 
 					'						</td> '+ 
 				'						<td> '+ 
-					'							<select class="form-control "> '+
-						'								<option value="">Units</option> '+
-						'								<option value="lbs">lbs</option> '+
-						'								<option value="packs">Packs</option> '+ 
-						'								<option value="cartons">Cartons</option> '+ 
-						'								<option value="gallons">Gallons</option> '+ 
-						'							</select> '+
+					' <select class="form-control "> '+
+						'	<option value="None">None</option> '+
+						'	<option value="Bag">Bag</option> '+
+						'	<option value="Bottle">Bottle</option> '+
+						'	<option value="Box">Box</option> '+
+						'	<option value="Bunch">Bunch</option> '+
+						'	<option value="Can">Can</option> '+
+						'	<option value="cartons">Cartons</option> '+
+						'	<option value="Case">Case</option> '+
+						'	<option value="Cup">Cup</option> '+
+						'	<option value="Dl">Dl</option> '+
+						'	<option value="Dozen">Dozen</option> '+
+						'	<option value="Each">Each</option> '+
+						'	<option value="G">G</option> '+
+						'	<option value="Gallon">Gallon</option> '+
+						'	<option value="Jar">Jar</option> '+
+						'	<option value="Kg">Kg</option> '+
+						'	<option value="L">L</option> '+
+						'	<option value="Large">Large</option> '+
+						'	<option value="Lbs">Lbs</option> '+
+						'	<option value="Ml">Ml</option> '+
+						'	<option value="Oz">Oz</option> '+
+						'	<option value="Pack">Pack</option> '+
+						'	<option value="Piece">Piece</option> '+
+						'	<option value="Pt">Pt</option> '+
+						'	<option value="Qt">Qt</option> '+
+						'	<option value="Roll">Roll</option> '+
+						'	<option value="Small">Small</option> '+
+						'	<option value="Tbsp">Tbsp</option> '+
+						'	<option value="Tsp">Tsp</option> '+
+						'	<option value="Units">Units</option> '+
+						'	</select> '+
+
 					'						</td> '+
 				'						<td> '+
-					'							<input type="text" class="form-control input-small" name="brand" placeholder="Eggland"> '+
+					'							<input type="text" class="form-control input-small" name="brand1"  placeholder="Eggland"> '+
 					'						</td> '+
 				'						<td> '+
 					'							<input type="text" class="form-control input-small" name="comments" placeholder="Choose fresh"> '+

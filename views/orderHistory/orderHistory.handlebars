@@ -134,7 +134,7 @@
 					var oTable = table.dataTable({
 							"lengthMenu": [
 							[5, 15, 20, -1],
-							[5, 15, 20, "All"] // change per page values here
+							[5, 15, 20, "Records per page"] // change per page values here
 							],
 							// set the initial value
 							"pageLength": 10,
@@ -236,7 +236,7 @@ table.on('click', '.edit', function (e) {
 		nEditing = nRow;
 		}
 });
-
+$('.dataTables_filter input').attr("placeholder", "Search here to find..");
 }
 });
 });
