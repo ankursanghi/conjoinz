@@ -66,7 +66,7 @@ function showOrderForm(req, res,next) {
 					}
 					else
 					{
-						displayOrder.order_num= order.order_num;
+						displayOrder.order_num= order.ord_number;
 						displayOrder.delivery_address= order.customer.address.adr_type;
 						displayOrder.store= order.store;
 
@@ -130,10 +130,11 @@ function placeOrder (req, res, next){
 	//var submitOrder = req.body.submitord;
 	var saveOrder = req.body.ord_status;
 	var brand=req.body.brand1;
+	var order_number=parseInt(req.body.order_num);	
 	var now = moment(new Date());
 	var orderDate = now.format("YYYY MMM DD HH:mm");
 
-	orderApi.createOrderHeader(first, last, address, store, comments, email,saveOrder,orderDate, function(err, order){
+	orderApi.createOrderHeader(first, last, address, store, comments, email,saveOrder,orderDate, order_number, function(err, order){
 		
 
 		if (err) {
@@ -157,7 +158,7 @@ function placeOrder (req, res, next){
 
 			//if item name is not empty save the line item
 			if(/\S/.test(itemName)){
-				orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, brand, function(err, savedOrder){
+				orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, brand, order_number, function(err, savedOrder){
 					if (err) {
 					    console.log('Error Inserting New Data');
 					    if (err.name == 'ValidationError') {

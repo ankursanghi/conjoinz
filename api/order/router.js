@@ -4,7 +4,7 @@ var Item = require('../../models/item.js');
 var User = require('../../models/user.js');
 var _ = require('lodash');
 
-module.exports.createOrderHeader = function(firstName, lastName, addressName, store, comments, email, saveOrder, orderDate, callback){
+module.exports.createOrderHeader = function(firstName, lastName, addressName, store, comments, email, saveOrder, orderDate, order_number, callback){
 	var userQuery = {};
 	userQuery.name = {
 		first: firstName,
@@ -17,10 +17,11 @@ module.exports.createOrderHeader = function(firstName, lastName, addressName, st
 			return callback(err, null);
 		}
 
+		
+
 		usr.delivery_addresses.forEach(function(adr){
 			if ((adr.adr_nick == addressName)){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
 				var order = {};
-						
 				order.ord_status =saveOrder;
 				order.ordDate=orderDate;
 				order.comments = comments;
@@ -40,18 +41,26 @@ module.exports.createOrderHeader = function(firstName, lastName, addressName, st
 				order.customer.address.country = adr.country;
 				order.customer.address.zip= adr.zip;
 
-				Order.create(order, function(err, newOrder){
+
+			Order.findOne({"ord_number":order_number}, function( err, newOrder){
+			if(newOrder){
+			return callback(err, newOrder);
+			}else if(!newOrder){
+			Order.create(order, function(err, newOrder){
 					return callback(err, newOrder);
 				});
+					}else{
+						return callback(new Error("User address is not found", null));
+					}
+				});
+		
 			}
-			else{
-				return callback(new Error("User address is not found", null));
-			}
+
 		});
 	});
 }
 //req.body
-module.exports.createOrderItem =  function(orderId, comment, uom, quantity, itemName, brand, callback){  	
+module.exports.createOrderItem =  function(orderId, comment, uom, quantity, itemName, brand, order_number, callback){  	
 	var options = {
 		upsert: true, 
 		new: true
@@ -83,8 +92,18 @@ module.exports.createOrderItem =  function(orderId, comment, uom, quantity, item
 		ordLine.item = itemName;
 		ordLine.brand=brand;
 		ordLine.orderItem = itemSaved._id;
-		Order.findOneAndUpdate({_id: orderId}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
-			return callback(err, ordSaved);
+		
+
+Order.findAndModify({"ord_number":order_number}, {"$push": {"ord_lines": ordLine}}, function( err, saveOrder){
+			if(saveOrder){
+				return callback(err, saveOrder);
+			}else if(!saveOrder){
+				Order.findOneAndUpdate({_id: orderId}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
+					return callback(err, ordSaved);
+				});
+			}else{
+				return callback(new Error("User address is not found", null));
+			}
+				});
 		});
-	});
 }

@@ -44,31 +44,33 @@
 	{{#if order}}
 		{{#each order}}
 		<tr>
-			<td>
-				
+			<td style="width:10%; vertical-align:middle">
 				{{#if_eq ord_status 'saved'}}
-				<div class="form-tip pt-20">
-				<a class="no-text-decoration size-13 margin-top-10 block" href="/order/{{ord_number}}">
+				<div class="row">
+				<div class="col-md-1">
+				<a class="no-text-decoration size-13 margin-top-20 block" href="/order/{{ord_number}}">
 				{{ord_number}}</a>
 				</div>
-				
+				<div class="col-md-1">
+				<a href="/order/{{ord_number}}"><i class="ico-light ico-rounded ico-hover et-edit"></i></a>
+				</div>
+				</div>
 				{{else}}
 				{{ord_number}}
 				{{/if_eq}}
 				</td>
-			<td>
+			<td style="vertical-align:middle">
 				{{customer.name.first}}{{customer.name.last}}
 			</td>
-			<td>
+			<td style="vertical-align:middle">
 				{{customer.address.adr_line1}},{{customer.address.adr_line2}}
 			</td>
-			<td>
+			<td style="vertical-align:middle">
 				{{ord_status}}
 			</td>
-			<td>
+			<td style="vertical-align:middle">
 				{{ordDate}}
-
-			</td>
+            </td>
 		</tr>
 		{{/each}}
 		{{/if}}
