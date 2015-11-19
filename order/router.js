@@ -49,6 +49,7 @@ function showOrderForm(req, res,next) {
 							order_num: '',
 							delivery_address: '',
 							store: '',
+							order_status: '',
 							ord_lines: []
 						}
 		
@@ -65,10 +66,11 @@ function showOrderForm(req, res,next) {
 						console.log("no order found in table")
 					}
 					else
-					{
+					{ 
 						displayOrder.order_num= order.ord_number;
 						displayOrder.delivery_address= order.customer.address.adr_type;
 						displayOrder.store= order.store;
+						displayOrder.order_status=order.ord_status;
 
 						async.each(order.ord_lines, function(line, callback){
 							Item.findOne({"_id": line.orderItem}, function(err, item){ 										
@@ -77,6 +79,7 @@ function showOrderForm(req, res,next) {
 									quantity: line.qty,
 									uom: line.uom,
 									brand: line.brand,
+									tagitem: line.tagitem,
 									comments: line.comments
 								});
 
@@ -120,7 +123,6 @@ function showOrderForm(req, res,next) {
 function placeOrder (req, res, next){
 	console.log('req.body:'+JSON.stringify(req.body));
 	console.log('req.session:'+JSON.stringify(req.session));
-	
 	var first = req.session.name.split(" ")[0];
 	var last = req.session.name.split(" ")[1];
 	var address = req.body.address;
@@ -153,14 +155,15 @@ function placeOrder (req, res, next){
 			var comment = req.body.comments[index];
 			var quantity = req.body.quantity[index];
 			var itemName = name;
-			var brand=req.body.brand1[index]
+			var brand=req.body.brand1[index];
+			var tagitem=req.body.tagitem[index];
 					
 
 			//if item name is not empty save the line item
 			if(/\S/.test(itemName)){
-				orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, brand, order_number, function(err, savedOrder){
+				orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, brand, tagitem, order_number,order.ord_status,  function(err, savedOrder){
 					if (err) {
-					    console.log('Error Inserting New Data');
+					    console.log('Error Inserting New Data in orderlines');
 					    if (err.name == 'ValidationError') {
 						    for (field in err.errors) {
 							    console.log(err.errors[field].message); 
@@ -170,10 +173,7 @@ function placeOrder (req, res, next){
 
 					order = savedOrder;
 					console.log('Order num: ' + order.ord_number + 'Orderid ' + order._id + 'saved the line #'+index);
-				});
-			}			
-		});
-
+		
 		var displayOrder = {
 							order_num: '',
 							delivery_address: '',
@@ -190,8 +190,7 @@ function placeOrder (req, res, next){
 							comments: ''
 						});
 			}
-		mailapi.sendEmail(email);
-		//console.log('user Mail '+order.userEmail)
+
 		if(order.ord_status=="saved")
 		{
 		res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number, ord_status:"saved",order:displayOrder});
@@ -199,6 +198,14 @@ function placeOrder (req, res, next){
 		{
 		res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number,order:displayOrder});
 		}
+				});
+			}			
+		});
+
+		
+		mailapi.sendEmail(email);
+		
+		
 	});	
 }
 
@@ -227,7 +234,9 @@ orderApi.createOrderHeader(first, last, address, store, comments, email, functio
 		}
 
 		req.body.item.forEach(function(name, index){
-			console.log('unit of amount'+req.body.uom)
+
+			//console.log('unit of amount  *****'+req.body.uom)
+
 			var uom = req.body.uom[index];
 			var comment = req.body.comments[index];
 			var quantity = req.body.quantity[index];

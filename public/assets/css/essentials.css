@@ -9384,6 +9384,8 @@ input[type=color].colorpicker + .sp-replacer {
   border-bottom-right-radius: 0; }
 
 .select2-container--open .select2-dropdown--below {
+  margin-left: 405px;
+  max-width: 150px;
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
@@ -9450,7 +9452,9 @@ section.dark .select2-container--default .select2-selection--single {
       margin-top: -2px;
       position: absolute;
       top: 50%;
-      width: 0; }
+      width: 0; 
+   	  margin-left: 62px;
+}
 .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear {
   float: left; }
 .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow {
@@ -9736,8 +9740,10 @@ section.dark .select2-container--default .select2-selection--single {
 .select2-container--default .select2-selection--single,
 .select2-container--default .select2-selection--single .select2-selection__rendered,
 .select2-container--default .select2-selection--single .select2-selection__arrow {
+	float: right;
 	height:40px;
 	line-height:36px;
+	width:150px;
 
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;

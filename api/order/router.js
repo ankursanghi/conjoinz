@@ -21,12 +21,14 @@ module.exports.createOrderHeader = function(firstName, lastName, addressName, st
 
 		usr.delivery_addresses.forEach(function(adr){
 			if ((adr.adr_nick == addressName)){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
-				var order = {};
-				order.ord_status =saveOrder;
-				order.ordDate=orderDate;
-				order.comments = comments;
-				order.store = store;
-				order.userEmail = email;
+				var order = {
+					ord_status: saveOrder,
+					ordDate: orderDate,
+					comments: comments,
+					store :store,
+					userEmail :email
+				};
+				
 				order.customer = {};
 				order.customer.name = {};
 				order.customer.name.first = firstName;
@@ -41,26 +43,39 @@ module.exports.createOrderHeader = function(firstName, lastName, addressName, st
 				order.customer.address.country = adr.country;
 				order.customer.address.zip= adr.zip;
 
-
-			Order.findOne({"ord_number":order_number}, function( err, newOrder){
-			if(newOrder){
-			return callback(err, newOrder);
-			}else if(!newOrder){
-			Order.create(order, function(err, newOrder){
-					return callback(err, newOrder);
-				});
+				if(saveOrder=="submitted"){
+					if(order_number){
+						Order.findOneAndUpdate({"ord_number":order_number},order, function( err, newOrder){
+							console.log("order status +++"+newOrder.ord_status);
+							return callback(err, newOrder);	
+						});
 					}else{
+						Order.create(order, function(err, newOrder){
+						return callback(err, newOrder);
+						});
+					}
+				}else{
+					Order.findOne({"ord_number":order_number}, function( err, newOrder){
+						if(newOrder){
+							return callback(err, newOrder);
+							console.log("brand name 1st new ");
+						}else {
+							Order.create(order, function(err, newOrder){
+								console.log("brand name not new ");
+								return callback(err, newOrder);
+							});
+						}
+					});
+				}
+			}else{
 						return callback(new Error("User address is not found", null));
 					}
-				});
-		
-			}
 
 		});
 	});
 }
 //req.body
-module.exports.createOrderItem =  function(orderId, comment, uom, quantity, itemName, brand, order_number, callback){  	
+module.exports.createOrderItem =  function(orderId, comment, uom, quantity, itemName, brand, tagitem, order_number, ord_status, callback){  	
 	var options = {
 		upsert: true, 
 		new: true
@@ -91,19 +106,52 @@ module.exports.createOrderItem =  function(orderId, comment, uom, quantity, item
 		ordLine.qty = quantity;
 		ordLine.item = itemName;
 		ordLine.brand=brand;
+		ordLine.tagitem=tagitem;
 		ordLine.orderItem = itemSaved._id;
+		//console.log("order_number in update order"+order_number);
 		
+if(ord_status=='saved'){
+	
+		if(order_number){
+				Order.findOne({"ord_number":order_number}, function( err, saveOrder){
+				console.log('update order '+JSON.stringify(saveOrder));
+				Order.findOneAndUpdate({_id: orderId}, {"$unset": {"ord_lines": ordLine}}, function(err, ordSaved){
+					if(ordSaved){
+						Order.findOneAndUpdate({_id: orderId}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
+							return callback(err, ordSaved);
+						});	
+					}
+				});
+			});
+		}else{
+			Order.findOneAndUpdate({_id: orderId}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
+			return callback(err, ordSaved);
+			});
+		}
+}else if(ord_status=='submitted'){
 
-Order.findAndModify({"ord_number":order_number}, {"$push": {"ord_lines": ordLine}}, function( err, saveOrder){
-			if(saveOrder){
-				return callback(err, saveOrder);
-			}else if(!saveOrder){
-				Order.findOneAndUpdate({_id: orderId}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
-					return callback(err, ordSaved);
+
+	if(order_number){
+				Order.findOne({"ord_number":order_number}, function( err, saveOrder){
+				//console.log('update order '+JSON.stringify(saveOrder));
+				Order.findOneAndUpdate({_id: orderId}, {"$unset": {"ord_lines": ordLine}}, function(err, ordSaved){
+					if(ordSaved){
+						Order.findOneAndUpdate({_id: orderId}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
+							return callback(err, ordSaved);
+						});	
+					}
 				});
-			}else{
-				return callback(new Error("User address is not found", null));
-			}
-				});
+			});
+		}else{
+			Order.findOneAndUpdate({_id: orderId}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
+			return callback(err, ordSaved);
+			});
+		}
+}else{
+	Order.findOneAndUpdate({_id: orderId}, {"$push": {"ord_lines": ordLine}}, function(err, ordSaved){
+		return callback(err, ordSaved);
+	});
+}
 		});
 }
+ 
