@@ -22,3 +22,4 @@ https/servercert.csr
 https/servercert.pem
 https/serverkey.pem
 https/serverkey.pem.bkp
+models/dbAuth.js

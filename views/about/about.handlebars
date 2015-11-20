@@ -4,35 +4,20 @@
 	<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
 {{/content}}
 {{#content "loggedIn"}}
-{{#if name}}
-	<li class="text-welcome hidden-xs">Welcome to ValetBasket ! We shop and deliver for you ! <strong>{{name}}</strong></li>
-	<li>
-		<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i class="fa fa-user hidden-xs"></i> MY ACCOUNT</a>
-		<ul class="dropdown-menu pull-right">
-			<li><a tabindex="-1" href="#"><i class="fa fa-history"></i> ORDER HISTORY</a></li>
-			<li class="divider"></li>
-  			<li><a tabindex="-1" href="#"><i class="fa fa-cog"></i> MY SETTINGS</a></li>
-			<li class="divider"></li>
-			<li><a tabindex="-1" href="#"><i class="glyphicon glyphicon-off"></i> LOGOUT</a></li>
-		</ul>
-	</li>
-{{else}}
-	<li class="hidden-xs"><a href="/login">LOGIN</a></li>
-{{/if}}
+{{> settings_dropdown}} 
 {{/content}}
 {{#content "mainbody"}}
                     <div class="container">
 
 			<!-- PARALLAX -->
-			<section class="parallax parallax-2" style="background-image: url('assets/images/demo/wall3-min.jpg');">
-				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+			<section class="parallax parallax-2">
 
 				<div class="container">
 
 					<div class="row">
 					
 						<!-- item -->
-						<div class="col-md-3 col-sm-6">
+						<div class="col-md-3 col-sm-6 col-lg-3">
 
 							<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center">
 								<div class="front">
@@ -76,7 +61,7 @@
 						<!-- /item -->
 
 						<!-- item -->
-						<div class="col-md-3 col-sm-6">
+						<div class="col-md-3 col-sm-6 col-lg-3">
 
 							<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center">
 								<div class="front">
@@ -120,7 +105,7 @@
 						<!-- /item -->
 
 						<!-- item -->
-						<div class="col-md-3 col-sm-6">
+						<div class="col-md-3 col-lg-3 col-sm-6">
 
 							<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center">
 								<div class="front">
@@ -140,7 +125,7 @@
 
 										<hr />
 
-										<p>Raja is product strategist and process optimization specialist with extensive experience in the telecommunication industry. His experience includes leading cross functional and cross cultural teams,  end-to-end solutions consulting, product strategy, process optimization, sales and product management.</p>
+										<p>Raja is product strategist and process optimization specialist with extensive experience in the telecommunication industry. His experience includes leading cross functional and cross cultural teams,  end-to-end solutions consulting, product strategy, process optimization, sales and product management. He has led the launch of new Mobile Technologies (3G, Small Cells) with companies like Motorola and Alcatel-Lucent. Raja has a MS in Electrical Engineering and when life was too calm & peaceful, Raja decided to make it interesting and got an MBA from Duke University with specialization in Entrepreneurial Strategy. His hobbies include annoying his wife and 2 kids(has a PhD), reading books, gardening, Cricket and Tennis(in dreams).</p>
 
 										<hr />
 
@@ -164,7 +149,7 @@
 						<!-- /item -->
 
 						<!-- item -->
-						<div class="col-md-3 col-sm-6">
+						<div class="col-md-3 col-lg-3 col-sm-6">
 
 							<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center">
 								<div class="front">

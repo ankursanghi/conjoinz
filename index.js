@@ -80,7 +80,6 @@ filenames.forEach(function (filename) {
 });
 // This generates an object containing the layout helpers and registers them with handlebars
 layouts.register(handlebars.handlebars);
-
 // ------------------------------------- loading partials end ------------------------------------
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -92,11 +91,12 @@ app.use('/order', express.static(__dirname + '/public'));
 //Load the routes ("controllers" -ish)
 app.use(require("./home/router"));
 app.use(require("./signup/router"));
-app.use(require("./faqs/router"));
 app.use(require("./pwdreset/router"));
 app.use(require("./login/router"));
 app.use(require("./order/router"));
 app.use(require("./profile/router"));
+app.use(require("./faqs/router"));
+app.use(require("./about/router"));
 app.use(require("./orderHistory/router"));
 app.use("/api/autocomplete", require('./api/autocomplete/router'));
 app.use("/api/getaddrs", require('./api/address/router'));

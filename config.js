@@ -1,7 +1,6 @@
 var config = module.exports;
-
 var PRODUCTION = process.env.NODE_ENV === "production";
-console.log(process.env.NODE_ENV)
+
 config.express = {
 	  httpPort: process.env.EXPRESS_PORT || 8008,
 	  httpsPort: process.env.EXPRESS_PORT || 8009,

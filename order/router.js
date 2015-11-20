@@ -130,15 +130,14 @@ function placeOrder (req, res, next){
 	var comments = req.body.ordercomments;
 	var email = req.session.user;
 	//var submitOrder = req.body.submitord;
-	var saveOrder = req.body.ord_status;
+	var order_status = req.body.ord_status;
 	var brand=req.body.brand1;
 	var order_number=parseInt(req.body.order_num);	
 	var now = moment(new Date());
 	var orderDate = now.format("YYYY MMM DD HH:mm");
 
-	orderApi.createOrderHeader(first, last, address, store, comments, email,saveOrder,orderDate, order_number, function(err, order){
-		
-
+	orderApi.createOrderHeader(first, last, address, store, comments, email,order_status,orderDate, order_number, function(err, order){
+	
 		if (err) {
 		    console.log('Error Inserting New Data');
 		    if (err.name == 'ValidationError') {
@@ -150,7 +149,7 @@ function placeOrder (req, res, next){
 		    return;
 		}
 
-		req.body.item.forEach(function(name, index){
+		async.forEachOf(req.body.item, function(name, index, callback){
 			var uom = req.body.uom[index];
 			var comment = req.body.comments[index];
 			var quantity = req.body.quantity[index];
@@ -171,40 +170,39 @@ function placeOrder (req, res, next){
 					    }
 					}
 
-					order = savedOrder;
-					console.log('Order num: ' + order.ord_number + 'Orderid ' + order._id + 'saved the line #'+index);
-		
-		var displayOrder = {
-							order_num: '',
-							delivery_address: '',
-							store: '',
-							ord_lines: []
-						}
-
-				for (var i = 0; i < 7; i++) {
-				 displayOrder.ord_lines.push({									
-							name: '',
-							quantity: '',
-							uom: '',
-							brand: '',
-							comments: ''
-						});
+					order = savedOrder;	
+					callback();									
+				});
+			}
+			else
+			{
+				callback();
+			}	
+		},function(err){
+			//err is not handled
+			if(order.ord_status=="submitted"){
+				mailapi.sendEmail(email);
 			}
 
-		if(order.ord_status=="saved")
-		{
-		res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number, ord_status:"saved",order:displayOrder});
-		}else
-		{
-		res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number,order:displayOrder});
-		}
-				});
-			}			
-		});
+			var displayOrder = {	
+				order_num: '',
+				delivery_address: '',
+				store: '',
+				ord_lines: []
+			}
 
-		
-		mailapi.sendEmail(email);
-		
+			for (var i = 0; i < 7; i++) {
+		 		displayOrder.ord_lines.push({									
+					name: '',
+					quantity: '',
+					uom: '',
+					brand: '',
+					comments: ''
+				});
+			}
+
+			res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number, ord_status:order.ord_status,order:displayOrder});
+		});
 		
 	});	
 }

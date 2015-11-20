@@ -4,7 +4,7 @@ var router = new express.Router();
 
 function home(req, res) {
 	  delete req.session.errmsg;
-	  res.render("home/home", {layout: false});
+	  res.render("home/home", {layout: false, name:req.session.name});
 }
 
 function team(req, res) {

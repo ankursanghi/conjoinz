@@ -4,21 +4,7 @@
 	<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
 {{/content}}
 {{#content "loggedIn"}}
-{{#if name}}
-	<li class="text-welcome hidden-xs">Welcome to ValetBasket ! We shop and deliver for you ! <strong>{{name}}</strong></li>
-	<li>
-		<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i class="fa fa-user hidden-xs"></i> MY ACCOUNT</a>
-		<ul class="dropdown-menu pull-right">
-			<li><a tabindex="-1" href="#"><i class="fa fa-history"></i> ORDER HISTORY</a></li>
-			<li class="divider"></li>
-			<li><a tabindex="-1" href="#"><i class="fa fa-cog"></i> MY SETTINGS</a></li>
-			<li class="divider"></li>
-			<li><a tabindex="-1" href="#"><i class="glyphicon glyphicon-off"></i> LOGOUT</a></li>
-		</ul>
-	</li>
-{{else}}
-	<li class="hidden-xs"><a href="/login">LOGIN</a></li>
-{{/if}}
+{{> settings_dropdown}} 
 {{/content}}
 {{#content "mainbody"}}
 
@@ -41,7 +27,7 @@
 					<div class="swiper-wrapper">
 
 						<!-- SLIDE 1 -->
-						<div class="swiper-slide" style="background-image: url('assets/images/demo/shop/home/home_slide_1.jpg');">
+						<div class="swiper-slide" style="background-image: url('http://d3rtv8m6yldinp.cloudfront.net/home_slide_1.jpg');">
 							<div class="overlay dark-1"><!-- dark overlay [0 to 9 opacity] --></div>
 							
 							<div class="display-table">
@@ -64,7 +50,7 @@
 						<!-- /SLIDE 1 -->
 
 						<!-- SLIDE 2 -->
-						<div class="swiper-slide" style="background-image: url('assets/images/demo/shop/home/home_slide_2.jpg');">
+						<div class="swiper-slide" style="background-image: url('http://d3rtv8m6yldinp.cloudfront.net/home_slide_2.jpg');">
 							<div class="overlay dark-1"><!-- dark overlay [0 to 9 opacity] --></div>
 							
 							<div class="display-table">
@@ -87,7 +73,7 @@
 						<!-- /SLIDE 2 -->
 
 						<!-- SLIDE 3 -->
-						<div class="swiper-slide" style="background-image: url('assets/images/demo/shop/home/home_slide_3.jpg');">
+						<div class="swiper-slide" style="background-image: url('http://d3rtv8m6yldinp.cloudfront.net/home_slide_3.jpg');">
 							<div class="overlay dark-1"><!-- dark overlay [0 to 9 opacity] --></div>
 							
 							<div class="display-table">
@@ -110,7 +96,7 @@
 						<!-- /SLIDE 3 -->
 						
 						<!-- SLIDE 4 -->
-						<div class="swiper-slide" style="background-image: url('assets/images/demo/shop/home/home_slide_5.jpg');">
+						<div class="swiper-slide" style="background-image: url('http://d3rtv8m6yldinp.cloudfront.net/home_slide_5.jpg');">
 							<div class="overlay dark-1"><!-- dark overlay [0 to 9 opacity] --></div>
 							
 							<div class="display-table">

@@ -4,21 +4,7 @@
 	<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
 {{/content}}
 {{#content "loggedIn"}}
-{{#if name}}
-	<li class="text-welcome hidden-xs">Welcome to ValetBasket ! We shop and deliver for you ! <strong>{{name}}</strong></li>
-	<li>
-		<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i class="fa fa-user hidden-xs"></i> MY ACCOUNT</a>
-		<ul class="dropdown-menu pull-right">
-			<li><a tabindex="-1" href="#"><i class="fa fa-history"></i> ORDER HISTORY</a></li>
-			<li class="divider"></li>
-  			<li><a tabindex="-1" href="#"><i class="fa fa-cog"></i> MY SETTINGS</a></li>
-			<li class="divider"></li>
-			<li><a tabindex="-1" href="#"><i class="glyphicon glyphicon-off"></i> LOGOUT</a></li>
-		</ul>
-	</li>
-{{else}}
-	<li class="hidden-xs"><a href="/login">LOGIN</a></li>
-{{/if}}
+{{> settings_dropdown}} 
 {{/content}}
 {{#content "mainbody"}}
                     <div class="container">
