@@ -47,8 +47,8 @@ app.use(session({
 	            store: new MongoStore({ mongooseConnection: db.connection}),
 	            secret:credentials.cookieSecret,
 		    key: 'just.checking.if.this.works',
-				cookie: { maxAge: new Date(Date.now() + 3600000)},
-	           // cookie: { maxAge: 1800000}, // set the cookie time out to be 30 minutes, after which the login is required again
+		//		cookie: { maxAge: new Date(Date.now() + 3600000)},
+	            cookie: { maxAge: 1800000}, // set the cookie time out to be 30 minutes, after which the login is required again
 	            resave:false,
 	            saveUninitialized:true
 
