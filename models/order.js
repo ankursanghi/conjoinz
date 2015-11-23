@@ -4,15 +4,21 @@ var dbConn = require('./db.js');
 
 var orderSchema= mongoose.Schema({
 	ord_status: {type: String},
+	ordDate: {type: String},
+
     	ord_number: {type: Number}, // auto sequence - don't have to assign in code
         comments: {type: String},
         ord_lines: [{
 		line_status: {type: String},
 		comments: {type: String},
 		uom: {type: String},
+		brand:{type: String},
+		tagitem: {type: String},
 		orderItem: {type: mongoose.Schema.Types.ObjectId, ref: 'item'},
-		qty: {type: Number}
+		qty: {type: Number},
+		
 	}],
+
         customer: {
 		name: {first: String, last: String},
 		primary_phone: {type: String},

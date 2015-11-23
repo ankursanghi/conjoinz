@@ -13,7 +13,7 @@ var http = require('http');
 var db = require('./models/db.js');
 var credentials = require('./models/credentials.js'); 
 
-var privateKey  = fs.readFileSync('https/serverkey.pem', 'utf8');
+var privateKey  = fs.readFileSync('https/newserverkey.pem', 'utf8');
 var certificate = fs.readFileSync('https/servercert.pem', 'utf8');
 var httpscredentials = {key: privateKey, cert: certificate};
 
@@ -21,13 +21,34 @@ var httpsServer = https.createServer(httpscredentials, app);
 var httpServer = http.createServer(app);
 // use cookie parser for cookie secret
 app.use(require('cookie-parser')(credentials.cookieSecret));
+
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8100');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
+
 // use the express session as the memory store. Using persistent db is a better way. This is just to learn the topic
 // app.use(require('express-session')());
 app.use(session({
 	            store: new MongoStore({ mongooseConnection: db.connection}),
 	            secret:credentials.cookieSecret,
 		    key: 'just.checking.if.this.works',
-	            cookie: { maxAge: 1800000}, // set the cookie time out to be 30 minutes, after which the login is required again
+				cookie: { maxAge: new Date(Date.now() + 3600000)},
+	           // cookie: { maxAge: 1800000}, // set the cookie time out to be 30 minutes, after which the login is required again
 	            resave:false,
 	            saveUninitialized:true
 
@@ -35,6 +56,13 @@ app.use(session({
 
 var handlebars = hbs.create({ defaultLayout:'main',
 				helpers : {
+					if_eq : function(a, b, opts) {
+					    if (a == b) {
+					        return opts.fn(this);
+					    } else {
+					        return opts.inverse(this);
+					    }
+					}
 				}
 		  });
 // ------------------------ loading partials here explicity with handlebars -----------------------
@@ -57,6 +85,7 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set("views", __dirname+'/views');
 app.use(express.static(__dirname + '/public'));
+app.use('/order', express.static(__dirname + '/public'));
 
 //See the README about ordering of middleware
 //Load the routes ("controllers" -ish)
