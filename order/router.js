@@ -7,7 +7,7 @@ var Item = require('../models/item.js');
 var User = require('../models/user.js');
 var hash = require('../utils/hash.js');
 var bodyParser = require('body-parser');
-var router = new express.Router();
+var router = new express.Router();ma
 var moment = require("moment");
 //var mailapi = require("../api/order/router.js")
 var orderApi = require("../api/order/router.js");
@@ -181,7 +181,7 @@ function placeOrder (req, res, next){
 		},function(err){
 			//err is not handled
 			if(order.ord_status=="submitted"){
-				mailapi.sendEmail(email);
+				sendEmail(order);
 			}
 
 			var displayOrder = {	
@@ -262,11 +262,26 @@ orderApi.createOrderHeader(first, last, address, store, comments, email, functio
 			}			
 		});
 
-		mailapi.sendEmail(email);
+		sendEmail(order);
 		res.json({error: null, user: {email: email, name: first + ' ' + last, ordernumber:order.ord_number}});
 		
 	});	
 
+}
+
+function sendEmail(newOrder){
+	transport.sendMail({
+	 from: 'support@valetbasket.com',
+	 replyTo: 'support@valetbasket.com',
+	 to: newOrder.userEmail,
+	 cc: 'support@valetbasket.com',
+	 subject: 'Thank you for your order!',
+	 template: 'email.body',
+	 context: {
+	      order : newOrder,
+		 }
+	});
+	transport.close();
 }
 
 router.get("/order",showOrderForm);
