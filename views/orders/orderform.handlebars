@@ -185,11 +185,13 @@
 <script type="text/javascript" src="assets/plugins/form.validate/jquery.form.min.js"></script>
 <script>
 	$(document).ready(function(){
+		$("#address-alert").hide();
 		var dataURL = '/api';
 		$.ajax({
 			dataType: "json",
 			url: dataURL+'/getaddrs',
 			success: function(data){
+				if (data.length==0) $("#address-alert").show();
 				$.each(data, function(arrayID, adrObj){
 					var divData = '<option value='+'"'+adrObj.adr_nick+'">'+adrObj.adr_nick+'</option>';
 					$(divData).appendTo("#address");
