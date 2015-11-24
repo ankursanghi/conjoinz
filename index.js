@@ -13,8 +13,11 @@ var http = require('http');
 var db = require('./models/db.js');
 var credentials = require('./models/credentials.js'); 
 
-var privateKey  = fs.readFileSync('https/serverkey.pem', 'utf8');
-var certificate = fs.readFileSync('https/servercert.pem', 'utf8');
+// var privateKey  = fs.readFileSync('https/serverkey.pem', 'utf8');
+// var certificate = fs.readFileSync('https/servercert.pem', 'utf8');
+var privateKey  = fs.readFileSync('https/private-key.pem', 'utf8');
+var certificate = fs.readFileSync('https/d604b8c7eaac508.crt', 'utf8');
+
 var httpscredentials = {key: privateKey, cert: certificate};
 
 var httpsServer = https.createServer(httpscredentials, app);
