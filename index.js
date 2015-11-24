@@ -16,7 +16,7 @@ var credentials = require('./models/credentials.js');
 // var privateKey  = fs.readFileSync('https/serverkey.pem', 'utf8');
 // var certificate = fs.readFileSync('https/servercert.pem', 'utf8');
 var privateKey  = fs.readFileSync('https/private-key.pem', 'utf8');
-var certificate = fs.readFileSync('https/d604b8c7eaac508.crt', 'utf8');
+var certificate = fs.readFileSync('https/314cd74c21bd955f.crt', 'utf8');
 
 var httpscredentials = {key: privateKey, cert: certificate};
 
