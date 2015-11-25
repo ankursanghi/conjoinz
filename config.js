@@ -11,9 +11,16 @@ config.mongodb = {
 	port: process.env.MONGODB_PORT || 27017,
 	host: process.env.MONGODB_HOST || "localhost"
 };
+config.cert = {
+	privateKey: 'https/serverkey.pem',
+	certificate: 'https/servercert.pem',
+};
+
 if (PRODUCTION) {
 	  //for example
 	  config.express.ip = "0.0.0.0";
+	  config.cert.privateKey = 'https/private-key.pem';
+	  config.cert.certificate = 'https/314cd74c21bd955f.crt';
 }
 //config.db same deal
 //config.email etc
