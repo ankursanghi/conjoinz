@@ -126,7 +126,6 @@ function placeOrder (req, res, next){
 	var store = req.body.store;
 	var comments = req.body.ordercomments;
 	var email = req.session.user;
-	//var submitOrder = req.body.submitord;
 	var order_status = req.body.ord_status;
 	var brand=req.body.brand1;
 	var order_number=parseInt(req.body.order_num);	
@@ -145,15 +144,78 @@ function placeOrder (req, res, next){
 
 			return;
 		}
+		if (req.body.item instanceof Array){
+			async.forEachOf(req.body.item, function(name, index, callback){
+				var uom = req.body.uom[index];
+				var comment = req.body.comments[index];
+				var quantity = req.body.quantity[index];
+				var itemName = name;
+				var brand=req.body.brand1[index];
+				var tagitem=req.body.tagitem[index];
 
-		async.forEachOf(req.body.item, function(name, index, callback){
-			var uom = req.body.uom[index];
-			var comment = req.body.comments[index];
-			var quantity = req.body.quantity[index];
-			var itemName = name;
-			var brand=req.body.brand1[index];
-			var tagitem=req.body.tagitem[index];
 
+				//if item name is not empty save the line item
+				if(/\S/.test(itemName)){
+					orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, brand, tagitem, order_number,order.ord_status,  function(err, savedOrder){
+						if (err) {
+							console.log('Error Inserting New Data in orderlines');
+							if (err.name == 'ValidationError') {
+								for (field in err.errors) {
+									console.log(err.errors[field].message); 
+								}
+							}
+						}
+
+						order = savedOrder;	
+						callback();									
+					});
+				}
+				else
+				{
+					callback();
+				}	
+			},function(err){
+				//err is not handled
+				if(order.ord_status=="submitted"){
+					var opts = {path: 'ord_lines.orderItem',
+						model: 'Item'};
+					Order.findOne({"_id": order._id}, function(err, orderDoc){
+						Order.populate(orderDoc, opts, function(err, savedOrder){
+							console.log('order with populated items:'+JSON.stringify(savedOrder));
+							savedOrder.userEmail = req.session.user;
+							sendEmail(savedOrder);
+						});	
+
+					});
+				}
+
+				var displayOrder = {	
+					order_num: '',
+					delivery_address: '',
+					store: '',
+					ord_lines: []
+				}
+
+				for (var i = 0; i < 7; i++) {
+					displayOrder.ord_lines.push({									
+						name: '',
+						quantity: '',
+						uom: '',
+						brand: '',
+						comments: ''
+					});
+				}
+
+				res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number, ord_status:order.ord_status,order:displayOrder});
+			});
+
+		}else{
+			var uom = req.body.uom;
+			var comment = req.body.comments;
+			var quantity = req.body.quantity;
+			var itemName = req.body.item;
+			var brand=req.body.brand1;
+			var tagitem=req.body.tagitem;
 
 			//if item name is not empty save the line item
 			if(/\S/.test(itemName)){
@@ -165,51 +227,42 @@ function placeOrder (req, res, next){
 								console.log(err.errors[field].message); 
 							}
 						}
+					}else{
+						if(savedOrder.ord_status=="submitted"){
+							var opts = {path: 'ord_lines.orderItem',
+								model: 'Item'};
+							Order.findOne({"_id": savedOrder._id}, function(err, orderDoc){
+								Order.populate(orderDoc, opts, function(err, savedOrder){
+									console.log('order with populated items:'+JSON.stringify(savedOrder));
+									savedOrder.userEmail = req.session.user;
+									sendEmail(savedOrder);
+								});	
+
+							});
+						}
+						var displayOrder = {	
+							order_num: '',
+							delivery_address: '',
+							store: '',
+							ord_lines: []
+						}
+
+						for (var i = 0; i < 7; i++) {
+							displayOrder.ord_lines.push({									
+								name: '',
+								quantity: '',
+								uom: '',
+								brand: '',
+								comments: ''
+							});
+						}
+
+						res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: savedOrder.ord_number, ord_status:order.ord_status,order:displayOrder});
 					}
 
-					order = savedOrder;	
-					callback();									
 				});
 			}
-			else
-			{
-				callback();
-			}	
-		},function(err){
-			//err is not handled
-			if(order.ord_status=="submitted"){
-				var opts = {path: 'ord_lines.orderItem',
-					model: 'Item'};
-				Order.findOne({"_id": order._id}, function(err, orderDoc){
-					Order.populate(orderDoc, opts, function(err, savedOrder){
-						console.log('order with populated items:'+JSON.stringify(savedOrder));
-						savedOrder.userEmail = req.session.user;
-						sendEmail(savedOrder);
-					});	
-
-				});
-			}
-
-			var displayOrder = {	
-				order_num: '',
-				delivery_address: '',
-				store: '',
-				ord_lines: []
-			}
-
-			for (var i = 0; i < 7; i++) {
-				displayOrder.ord_lines.push({									
-					name: '',
-					quantity: '',
-					uom: '',
-					brand: '',
-					comments: ''
-				});
-			}
-
-			res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number, ord_status:order.ord_status,order:displayOrder});
-		});
-
+		}
 	});	
 }
 
