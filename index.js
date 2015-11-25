@@ -64,7 +64,7 @@ var handlebars = hbs.create({ defaultLayout:'main',
 					    } else {
 					        return opts.inverse(this);
 					    }
-					}
+					},
 				}
 		  });
 // ------------------------ loading partials here explicity with handlebars -----------------------
