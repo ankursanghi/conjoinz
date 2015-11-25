@@ -18,20 +18,20 @@ var smtp_creds = require('../smtp_credentials.js'); // these are the smtp creden
 // TBD move this access key id and secret access key to a separate file and require it in
 var transport = nodemailer.createTransport(sesTransport({
 	accessKeyId: smtp_creds.accessKeyId,
-        secretAccessKey: smtp_creds.secretAccessKey,
-        rateLimit: 1 // do not send more than 1 messages in a second
+    secretAccessKey: smtp_creds.secretAccessKey,
+    rateLimit: 1 // do not send more than 1 messages in a second
 }));
 var options = {
-viewEngine: {
-		extname: '.hbs',
-		layoutsDir: 'views/email/',
-		defaultLayout : 'template',
-		partialsDir : 'views/partials/'
-	  },
+	viewEngine: {
+			    extname: '.hbs',
+			    layoutsDir: 'views/email/',
+			    defaultLayout : 'template',
+			    partialsDir : 'views/partials/'
+		    },
 	viewPath: 'views/email/',
 	extName: '.hbs'
 };
- 
+
 transport.use('compile', hbs(options));
 router.use(bodyParser());
 
@@ -40,20 +40,20 @@ function showOrderForm(req, res,next) {
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
 	if (req.session.isLoggedIn){
-		
+
 		var order_num = req.params.num;
 		var displayOrder = {
-							order_num: '',
-							delivery_address: '',
-							store: '',
-							order_status: '',
-							ord_lines: []
-						}
-		
+			order_num: '',
+			delivery_address: '',
+			store: '',
+			order_status: '',
+			ord_lines: []
+		}
+
 		if(order_num){
-			
+
 			console.log('order_num: get details from db ' + order_num)
-			var findProductDetails = Order.findOne({"ord_number":order_num}, function(err, order){
+				var findProductDetails = Order.findOne({"ord_number":order_num}, function(err, order){
 					if(err){
 						console.log('error'+ err);
 					}
@@ -63,50 +63,50 @@ function showOrderForm(req, res,next) {
 						console.log("no order found in table")
 					}
 					else
-					{ 
-						displayOrder.order_num= order.ord_number;
-						displayOrder.delivery_address= order.customer.address.adr_type;
-						displayOrder.store= order.store;
-						displayOrder.order_status=order.ord_status;
+				{ 
+					displayOrder.order_num= order.ord_number;
+					displayOrder.delivery_address= order.customer.address.adr_type;
+					displayOrder.store= order.store;
+					displayOrder.order_status=order.ord_status;
 
-						async.each(order.ord_lines, function(line, callback){
-							Item.findOne({"_id": line.orderItem}, function(err, item){ 										
-								displayOrder.ord_lines.push({									
-									name: item.name,
-									quantity: line.qty,
-									uom: line.uom,
-									brand: line.brand,
-									tagitem: line.tagitem,
-									comments: line.comments
-								});
-
-								callback();
+					async.each(order.ord_lines, function(line, callback){
+						Item.findOne({"_id": line.orderItem}, function(err, item){ 										
+							displayOrder.ord_lines.push({									
+								name: item.name,
+								quantity: line.qty,
+								uom: line.uom,
+								brand: line.brand,
+								tagitem: line.tagitem,
+								comments: line.comments
 							});
-						},
-						function(err){
-							if(err){
-								//show error
-								return;
-							}
 
-							console.log(JSON.stringify(displayOrder));
-							res.render("orders/orderform", {layout: false, name: req.session.name, order:displayOrder });
+							callback();
 						});
+					},
+					function(err){
+						if(err){
+							//show error
+							return;
+						}
 
-					}
-					
-			});
+						console.log(JSON.stringify(displayOrder));
+						res.render("orders/orderform", {layout: false, name: req.session.name, order:displayOrder });
+					});
+
+				}
+
+				});
 		}
 		else
 		{
 			for (var i = 0; i < 7; i++) {
 				displayOrder.ord_lines.push({									
-							name: '',
-							quantity: '',
-							uom: '',
-							brand: '',
-							comments: ''
-						});
+					name: '',
+					quantity: '',
+					uom: '',
+					brand: '',
+					comments: ''
+				});
 			}
 			res.render("orders/orderform", {layout: false, name: req.session.name,  order:displayOrder});	
 		}
@@ -134,16 +134,16 @@ function placeOrder (req, res, next){
 	var orderDate = now.format("YYYY MMM DD HH:mm");
 
 	orderApi.createOrderHeader(first, last, address, store, comments, email,order_status,orderDate, order_number, function(err, order){
-	
-		if (err) {
-		    console.log('Error Inserting New Data');
-		    if (err.name == 'ValidationError') {
-			    for (field in err.errors) {
-				    console.log(err.errors[field].message); 
-			    }
-		    }
 
-		    return;
+		if (err) {
+			console.log('Error Inserting New Data');
+			if (err.name == 'ValidationError') {
+				for (field in err.errors) {
+					console.log(err.errors[field].message); 
+				}
+			}
+
+			return;
 		}
 
 		async.forEachOf(req.body.item, function(name, index, callback){
@@ -153,18 +153,18 @@ function placeOrder (req, res, next){
 			var itemName = name;
 			var brand=req.body.brand1[index];
 			var tagitem=req.body.tagitem[index];
-					
+
 
 			//if item name is not empty save the line item
 			if(/\S/.test(itemName)){
 				orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, brand, tagitem, order_number,order.ord_status,  function(err, savedOrder){
 					if (err) {
-					    console.log('Error Inserting New Data in orderlines');
-					    if (err.name == 'ValidationError') {
-						    for (field in err.errors) {
-							    console.log(err.errors[field].message); 
-						    }
-					    }
+						console.log('Error Inserting New Data in orderlines');
+						if (err.name == 'ValidationError') {
+							for (field in err.errors) {
+								console.log(err.errors[field].message); 
+							}
+						}
 					}
 
 					order = savedOrder;	
@@ -179,7 +179,7 @@ function placeOrder (req, res, next){
 			//err is not handled
 			if(order.ord_status=="submitted"){
 				var opts = {path: 'ord_lines.orderItem',
-					    model: 'Item'};
+					model: 'Item'};
 				Order.findOne({"_id": order._id}, function(err, orderDoc){
 					Order.populate(orderDoc, opts, function(err, savedOrder){
 						console.log('order with populated items:'+JSON.stringify(savedOrder));
@@ -198,7 +198,7 @@ function placeOrder (req, res, next){
 			}
 
 			for (var i = 0; i < 7; i++) {
-		 		displayOrder.ord_lines.push({									
+				displayOrder.ord_lines.push({									
 					name: '',
 					quantity: '',
 					uom: '',
@@ -209,13 +209,13 @@ function placeOrder (req, res, next){
 
 			res.render("orders/orderform", {layout: false, name: req.session.name, ordernumber: order.ord_number, ord_status:order.ord_status,order:displayOrder});
 		});
-		
+
 	});	
 }
 
 
 function mobileOrder(req,res,next){
-console.log('adderess' +req.body.address+','+req.body.store);
+	console.log('adderess' +req.body.address+','+req.body.store);
 	var first =req.session.name.split(" ")[0];;
 	var last =req.session.name.split(" ")[1];
 	var address = req.body.address;
@@ -223,18 +223,18 @@ console.log('adderess' +req.body.address+','+req.body.store);
 	var comments = req.body.ordercomments;
 	var email =req.session.user;
 
-orderApi.createOrderHeader(first, last, address, store, comments, email, function(err, order){
+	orderApi.createOrderHeader(first, last, address, store, comments, email, function(err, order){
 		if (err) {
-		    console.log('Error Inserting New Data');
-		    next(err);
+			console.log('Error Inserting New Data');
+			next(err);
 			res.json({error: err, user: null});
-		    if (err.name == 'ValidationError') {
-			    for (field in err.errors) {
-				    console.log(err.errors[field].message); 
-			    }
-		    }
+			if (err.name == 'ValidationError') {
+				for (field in err.errors) {
+					console.log(err.errors[field].message); 
+				}
+			}
 
-		    return;
+			return;
 		}
 
 		req.body.item.forEach(function(name, index){
@@ -250,15 +250,15 @@ orderApi.createOrderHeader(first, last, address, store, comments, email, functio
 			if(/\S/.test(itemName)){
 				orderApi.createOrderItem(order._id, comment, uom, quantity, itemName, function(err, savedOrder){
 					if (err) {
-					    console.log('Error Inserting New Data');
-					    	next(err);
-							res.json({error: err, user: null});
-					    if (err.name == 'ValidationError') {
-						    for (field in err.errors) {
-							    console.log(err.errors[field].message); 
+						console.log('Error Inserting New Data');
+						next(err);
+						res.json({error: err, user: null});
+						if (err.name == 'ValidationError') {
+							for (field in err.errors) {
+								console.log(err.errors[field].message); 
 
-						    }
-					    }
+							}
+						}
 					}
 
 					order = savedOrder;
@@ -269,7 +269,7 @@ orderApi.createOrderHeader(first, last, address, store, comments, email, functio
 		});
 		sendEmail(order);
 		res.json({error: null, user: {email: email, name: first + ' ' + last, ordernumber:order.ord_number}});
-		
+
 	});	
 
 }
@@ -277,15 +277,15 @@ orderApi.createOrderHeader(first, last, address, store, comments, email, functio
 function sendEmail(newOrder){
 	console.log('order to be emailed:'+JSON.stringify(newOrder));
 	transport.sendMail({
-	 from: 'support@valetbasket.com',
-	 replyTo: 'support@valetbasket.com',
-	 to: newOrder.userEmail,
-	 cc: 'support@valetbasket.com',
-	 subject: 'Thank you for your order!',
-	 template: 'email.body',
-	 context: {
-	      order : newOrder,
-		 }
+		from: 'support@valetbasket.com',
+		replyTo: 'support@valetbasket.com',
+		to: newOrder.userEmail,
+		cc: 'support@valetbasket.com',
+		subject: 'Thank you for your order!',
+		template: 'email.body',
+		context: {
+			order : newOrder,
+		}
 	});
 	transport.close();
 }

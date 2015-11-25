@@ -12,11 +12,10 @@ var https = require('https');
 var http = require('http');
 var db = require('./models/db.js');
 var credentials = require('./models/credentials.js'); 
+var config = require('./config.js');
 
-// var privateKey  = fs.readFileSync('https/serverkey.pem', 'utf8');
-// var certificate = fs.readFileSync('https/servercert.pem', 'utf8');
-var privateKey  = fs.readFileSync('https/private-key.pem', 'utf8');
-var certificate = fs.readFileSync('https/314cd74c21bd955f.crt', 'utf8');
+var privateKey  = fs.readFileSync(config.cert.privateKey, 'utf8');
+var certificate = fs.readFileSync(config.cert.certificate, 'utf8');
 
 var httpscredentials = {key: privateKey, cert: certificate};
 
