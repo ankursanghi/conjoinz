@@ -71,6 +71,7 @@ function showOrderForm(req, res,next) {
 
 					async.each(order.ord_lines, function(line, callback){
 						Item.findOne({"_id": line.orderItem}, function(err, item){ 										
+							console.log('comments back from db:'+line.comments);
 							displayOrder.ord_lines.push({									
 								name: item.name,
 								quantity: line.qty,
@@ -86,7 +87,7 @@ function showOrderForm(req, res,next) {
 					function(err){
 						if(err){
 							//show error
-							return;
+							return next(err);
 						}
 
 						console.log(JSON.stringify(displayOrder));
