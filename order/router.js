@@ -39,7 +39,6 @@ function showOrderForm(req, res,next) {
 	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
-	console.log('req.session here:'+JSON.stringify(req.session));
 	if (req.session.isLoggedIn){
 		
 		var order_num = req.params.num;
