@@ -6,9 +6,9 @@ var _ = require('lodash');
 
 module.exports.createOrderHeader = function(firstName, lastName, addressName, store, comments, email, saveOrder, orderDate, order_number, callback){
 	var userQuery = {};
-	userQuery.name = {
-		first: firstName,
-		last: lastName
+	console.log('first name:'+firstName+' last '+lastName+' email: '+email);
+	userQuery =  {
+		email: email,
 	};
 
 	var findUserQuery = User.findOne(userQuery);
@@ -16,10 +16,10 @@ module.exports.createOrderHeader = function(firstName, lastName, addressName, st
 		if(err){
 			return callback(err, null);
 		}
-
 		
-
+		console.log('user is:'+JSON.stringify(usr));	
 		usr.delivery_addresses.forEach(function(adr){
+			console.log('address '+JSON.stringify(adr));
 			if ((adr.adr_nick == addressName)){ // if the address nick from the form is equal to one of the addresses in the user's delivery addresses
 				var order = {
 					ord_status: saveOrder,
