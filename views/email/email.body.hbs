@@ -23,7 +23,7 @@ Order Details below:
 	<th> Item</th><th>Quantity</th><th>Units</th><th>Brand</th><th>Comments</th>
 	{{#each order.ord_lines}}
 	<tr>
-		<td>{{this.item}}</td><td>{{this.qty}}</td><td>{{this.uom}}</td><td>{{this.brand}}</td><td>{{this.comments}}</td>
+		<td>{{this.orderItem.name}}</td><td>{{this.qty}}</td><td>{{this.uom}}</td><td>{{this.brand}}</td><td>{{this.comments}}</td>
 	</tr>
 	{{/each}}
 </table>

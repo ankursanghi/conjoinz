@@ -9,9 +9,7 @@ var hash = require('../utils/hash.js');
 var bodyParser = require('body-parser');
 var router = new express.Router();
 var moment = require("moment");
-//var mailapi = require("../api/order/router.js")
 var orderApi = require("../api/order/router.js");
-var mailapi = require("../api/mail/router.js");
 // add these to send order confirmation emails
 var nodemailer = require('nodemailer');
 var sesTransport = require('nodemailer-ses-transport'); // this is to use the Amazon SES service
@@ -181,7 +179,16 @@ function placeOrder (req, res, next){
 		},function(err){
 			//err is not handled
 			if(order.ord_status=="submitted"){
-				sendEmail(order);
+				var opts = {path: 'ord_lines.orderItem',
+					    model: 'Item'};
+				Order.findOne({"_id": order._id}, function(err, orderDoc){
+					Order.populate(orderDoc, opts, function(err, savedOrder){
+						console.log('order with populated items:'+JSON.stringify(savedOrder));
+						savedOrder.userEmail = req.session.user;
+						sendEmail(savedOrder);
+					});	
+
+				});
 			}
 
 			var displayOrder = {	
@@ -261,7 +268,6 @@ orderApi.createOrderHeader(first, last, address, store, comments, email, functio
 				});
 			}			
 		});
-
 		sendEmail(order);
 		res.json({error: null, user: {email: email, name: first + ' ' + last, ordernumber:order.ord_number}});
 		
@@ -270,6 +276,7 @@ orderApi.createOrderHeader(first, last, address, store, comments, email, functio
 }
 
 function sendEmail(newOrder){
+	console.log('order to be emailed:'+JSON.stringify(newOrder));
 	transport.sendMail({
 	 from: 'support@valetbasket.com',
 	 replyTo: 'support@valetbasket.com',
@@ -290,5 +297,3 @@ router.post("/order", placeOrder);
 router.post("/mobileOrder", mobileOrder);
 
 module.exports = router;
-
-
