@@ -88,7 +88,6 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set("views", __dirname+'/views');
 app.use(express.static(__dirname + '/public'));
-app.use('/order', express.static(__dirname + '/public'));
 
 //See the README about ordering of middleware
 //Load the routes ("controllers" -ish)

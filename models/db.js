@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var credentials = require('./credentials.js'); 
-var config = require('../config.js'); 
+var dbAuth = require('./dbAuth.js');
 
 var connectString;
 
@@ -17,8 +17,11 @@ switch(process.env.NODE_ENV){
 
 var opts = {
 	server : {
-			 socketOptions:{keepAlive:1}
-		 }
+			 socketOptions:{keepAlive:1},
+			 poolSize: 6
+		 },
+	user: dbAuth.user,
+	pass: dbAuth.pwd,
 };
 
 mongoose.connect(connectString, opts);

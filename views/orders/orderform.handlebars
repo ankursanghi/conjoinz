@@ -36,19 +36,20 @@
 			<div class="row">
 				<div class="col-md-6a col-sm-6">
 					<label for="address">Choose an address nick as Delivery Address</label>
-					<select id="address" name="address" class="form-control" required title="Please select a Delivery address" value={{delivery_address}},>
+					<select id="address" name="address" class="form-control" required title="Please select a Delivery address" value={{delivery_address}}>
 					</select>
 				</div>
 				<div class="col-md-6a col-sm-6">
 					<label for="store">Choose a Store for this Order</label>
 					<select id="store" name="store" class="form-control" required title="Please select a store">
-						{{#if_eq store 'store1'}}
-						<option value="store1">Trader Joes Morrisville</option>
-						{{else}}
-						<option value="store2">Whole Foods Waverly Place</option>
+						{{#if_eq store 'Trader Joes Morrisville'}}
+							<option value="Trader Joes Morrisville">Trader Joes Morrisville</option>
 						{{/if_eq}}
-						<option value="store1">Trader Joes Morrisville</option>
-						<option value="store2">Whole Foods Waverly Place</option>
+						{{#if_eq store 'Whole Foods Waverly Place'}}
+							<option value="Whole Foods Waverly Place">Whole Foods Waverly Place</option>
+						{{/if_eq}}
+						<option value="Trader Joes Morrisville">Trader Joes Morrisville</option>
+						<option value="Whole Foods Waverly Place">Whole Foods Waverly Place</option>
 						
 					</select>
 				</div>
