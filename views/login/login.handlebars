@@ -4,7 +4,7 @@
 <link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
 {{/content}}
 {{#content "mainbody"}}
-
+<section style="background:url('assets/images/demo/wall2.jpg')">	
 			<!-- -->
 			<section>
 				<div class="container">
@@ -45,7 +45,7 @@
 								
 								<div class="row">
 									
-									<div class="col-md-6 col-sm-6 col-xs-6">
+									<div class="col-md-6a col-sm-6 col-xs-6">
 										
 										<!-- Inform Tip -->                                        
 										<div class="form-tip pt-20">
@@ -54,13 +54,13 @@
 										
 									</div>
 									
-									<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+									<div class="col-md-6a col-sm-6 col-xs-6 text-right">
 
-										<button class="btn btn-primary">OK, LOG IN</button>
+										<button class="check btn btn-primary">OK, LOG IN</button>
 
 									</div>
 									
-									<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+									<div class="col-md-6a col-sm-6 col-xs-6 text-right">
 										<a class="no-text-decoration size-13 margin-top-10 block" href="/signup">Dont have account ? Signup !</a>
 									</div>									
 								</div>
@@ -83,5 +83,24 @@
 				</div>
 			</section>
 			<!-- / -->
+{{/content}}
+{{#content "scripts" mode="append"}}
+<!-- <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+<script type="text/javascript" src="assets/plugins/jquery/jquery-ui.min.js"></script> 
+<script type="text/javascript" src="assets/plugins/form.validate/jquery.form.min.js"></script>
+<script type="text/javascript" src="assets/js/sweetalert.min.js"></script>
+<link href="assets/css/sweetalert.css" rel="stylesheet" type="text/css" />
+<script>
+
+ $(document).on('click', 'button.check', function () { 
+        var h=$(window).height(),
+            w=$(window).width();
+            if(w<700){
+              $("p").show();
+              swal("Please make sure your device is laptop/desktop")
+              return false;
+  }
+ });
+</script>
 {{/content}}
 {{/extend}}

@@ -12,9 +12,11 @@ var https = require('https');
 var http = require('http');
 var db = require('./models/db.js');
 var credentials = require('./models/credentials.js'); 
+var config = require('./config.js');
 
-var privateKey  = fs.readFileSync('https/newserverkey.pem', 'utf8');
-var certificate = fs.readFileSync('https/servercert.pem', 'utf8');
+var privateKey  = fs.readFileSync(config.cert.privateKey, 'utf8');
+var certificate = fs.readFileSync(config.cert.certificate, 'utf8');
+
 var httpscredentials = {key: privateKey, cert: certificate};
 
 var httpsServer = https.createServer(httpscredentials, app);
@@ -47,8 +49,8 @@ app.use(session({
 	            store: new MongoStore({ mongooseConnection: db.connection}),
 	            secret:credentials.cookieSecret,
 		    key: 'just.checking.if.this.works',
-				cookie: { maxAge: new Date(Date.now() + 3600000)},
-	           // cookie: { maxAge: 1800000}, // set the cookie time out to be 30 minutes, after which the login is required again
+		//		cookie: { maxAge: new Date(Date.now() + 3600000)},
+	            cookie: { maxAge: 1800000}, // set the cookie time out to be 30 minutes, after which the login is required again
 	            resave:false,
 	            saveUninitialized:true
 
@@ -62,7 +64,7 @@ var handlebars = hbs.create({ defaultLayout:'main',
 					    } else {
 					        return opts.inverse(this);
 					    }
-					}
+					},
 				}
 		  });
 // ------------------------ loading partials here explicity with handlebars -----------------------
@@ -97,6 +99,7 @@ app.use(require("./order/router"));
 app.use(require("./profile/router"));
 app.use(require("./faqs/router"));
 app.use(require("./about/router"));
+app.use(require("./howitworks/router"));
 app.use(require("./orderHistory/router"));
 app.use("/api/autocomplete", require('./api/autocomplete/router'));
 app.use("/api/getaddrs", require('./api/address/router'));

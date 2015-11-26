@@ -10,6 +10,13 @@
 {{#content "mainbody"}}
 <section style="background:url('assets/images/demo/wall2.jpg')">
 <div class="container">
+	<div class="alert alert-warning margin-bottom-30" id="address-alert" >
+		<button type="button" class="close" data-dismiss="alert">
+			<span aria-hidden="true">×</span>
+			<span class="sr-only">Close</span>
+		</button>
+		<strong>Hang on!</strong> You may want to add an Address by visiting the My Account >> My Settings page.
+	</div>
 	{{#if ordernumber}}
 	
 	<div class="alert alert-success margin-bottom-30"><!-- SUCCESS -->
@@ -29,19 +36,20 @@
 			<div class="row">
 				<div class="col-md-6a col-sm-6">
 					<label for="address">Choose an address nick as Delivery Address</label>
-					<select id="address" name="address" class="form-control" required title="Please select a Delivery address" value={{delivery_address}},>
+					<select id="address" name="address" class="form-control" required title="Please select a Delivery address" value={{delivery_address}}>
 					</select>
 				</div>
 				<div class="col-md-6a col-sm-6">
 					<label for="store">Choose a Store for this Order</label>
 					<select id="store" name="store" class="form-control" required title="Please select a store">
-						{{#if_eq store 'store1'}}
-						<option value="store1">Trader Joes Morrisville</option>
-						{{else}}
-						<option value="store2">Whole Foods Waverly Place</option>
+						{{#if_eq store 'Trader Joes Morrisville'}}
+							<option value="Trader Joes Morrisville">Trader Joes Morrisville</option>
 						{{/if_eq}}
-						<option value="store1">Trader Joes Morrisville</option>
-						<option value="store2">Whole Foods Waverly Place</option>
+						{{#if_eq store 'Whole Foods Waverly Place'}}
+							<option value="Whole Foods Waverly Place">Whole Foods Waverly Place</option>
+						{{/if_eq}}
+						<option value="Trader Joes Morrisville">Trader Joes Morrisville</option>
+						<option value="Whole Foods Waverly Place">Whole Foods Waverly Place</option>
 						
 					</select>
 				</div>
@@ -71,7 +79,7 @@
 					<tr id="2">
 					
 						<td>
-							<input type="text" class="autoCompItem itembox form-control input-small" id="item1" name="item" placeholder="Eggs" required value={{name}} >
+							<input type="text" class="autoCompItem itembox form-control input-small" id="item1" name="item" placeholder="Eggs" required value="{{{name}}}" >
 						</td>
 						<td>
 							<input type="text" class="form-control qty input-small" id="quantity1" name="quantity" placeholder="24" value={{quantity}}>
@@ -115,11 +123,11 @@
 
 						</td>
 						<td>
-							<input type="text" class="form-control input-small" id="brand1" name="brand1" placeholder="Eggland" value={{brand}}>
+							<input type="text" class="form-control input-small" id="brand1" name="brand1" placeholder="Eggland" value="{{{brand}}}">
 						</td>
 						
 						<td>
-							<input type="text" class="form-control input-small" id="comment1" name="comments" placeholder="Choose fresh" value={{comments}}>
+							<input type="text" class="form-control input-small" id="comment1" name="comments" placeholder="Choose fresh" value="{{{comments}}}">
 						</td>
 						<td>
 						<select class="form-control" name="tagitem">
@@ -178,11 +186,13 @@
 <script type="text/javascript" src="assets/plugins/form.validate/jquery.form.min.js"></script>
 <script>
 	$(document).ready(function(){
+		$("#address-alert").hide();
 		var dataURL = '/api';
 		$.ajax({
 			dataType: "json",
 			url: dataURL+'/getaddrs',
 			success: function(data){
+				if (data.length==0) $("#address-alert").show();
 				$.each(data, function(arrayID, adrObj){
 					var divData = '<option value='+'"'+adrObj.adr_nick+'">'+adrObj.adr_nick+'</option>';
 					$(divData).appendTo("#address");
@@ -228,7 +238,7 @@
 				'						<td> '+ 
 					' <select class="form-control " name="uom"> '+
 
-						'	<option value="None">None</option> '+
+						'	<option value=""></option> '+
 						'	<option value="Bag">Bag</option> '+
 						'	<option value="Bottle">Bottle</option> '+
 						'	<option value="Box">Box</option> '+
@@ -271,6 +281,7 @@
 					'						<td> '+ 
 					' <select class="form-control " name="tagitem"> '+
 
+						'	<option value=""></option> '+
 						'	<option value="BabyStuff">Baby Stuff</option> '+
 						'	<option value="Beverages">Beverages</option> '+
 						'	<option value="CannedFoods">Canned Foods</option> '+

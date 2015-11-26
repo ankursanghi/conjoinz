@@ -77,7 +77,7 @@ var userModel = {
 	      }
 }; 
 
-activator.init({user:userModel,transport:transport,from: 'ankur.sanghi@gmail.com', templates: __dirname});
+activator.init({user:userModel,transport:transport,from: 'support@valetbasket.com', templates: __dirname});
 
 router.get("/passwordreset",forgotpwd);
 router.post("/passwordreset", activator.createPasswordResetNext, function(req, res,next){
