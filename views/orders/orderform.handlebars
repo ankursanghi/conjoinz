@@ -42,12 +42,7 @@
 				<div class="col-md-6a col-sm-6">
 					<label for="store">Choose a Store for this Order</label>
 					<select id="store" name="store" class="form-control" required title="Please select a store">
-						{{#if_eq store 'Trader Joes Morrisville'}}
-							<option value="Trader Joes Morrisville">Trader Joes Morrisville</option>
-						{{/if_eq}}
-						{{#if_eq store 'Whole Foods Waverly Place'}}
-							<option value="Whole Foods Waverly Place">Whole Foods Waverly Place</option>
-						{{/if_eq}}
+						<option value="{{order.store}}">{{order.store}}</option>
 						<option value="Trader Joes Morrisville">Trader Joes Morrisville</option>
 						<option value="Whole Foods Waverly Place">Whole Foods Waverly Place</option>
 						
@@ -79,10 +74,10 @@
 					<tr id="2">
 					
 						<td>
-							<input type="text" class="autoCompItem itembox form-control input-small" id="item1" name="item" placeholder="Eggs" required value="{{{name}}}" >
+							<input type="text" class="autoCompItem itembox form-control input-small" id="item1" name="item" placeholder="Eggs" required value="{{name}}">
 						</td>
 						<td>
-							<input type="text" class="form-control qty input-small" id="quantity1" name="quantity" placeholder="24" value={{quantity}}>
+							<input type="text" class="form-control qty input-small" id="quantity1" name="quantity" placeholder="24" value="{{quantity}}">
 						</td>
 						<td>
 							<select class="form-control" name='uom'>
@@ -123,11 +118,11 @@
 
 						</td>
 						<td>
-							<input type="text" class="form-control input-small" id="brand1" name="brand1" placeholder="Eggland" value="{{{brand}}}">
+							<input type="text" class="form-control input-small" id="brand1" name="brand1" placeholder="Eggland" value="{{brand}}">
 						</td>
 						
 						<td>
-							<input type="text" class="form-control input-small" id="comment1" name="comments" placeholder="Choose fresh" value="{{{comments}}}">
+							<input type="text" class="form-control input-small" id="comment1" name="comments" placeholder="Choose fresh" value="{{comments}}">
 						</td>
 						<td>
 						<select class="form-control" name="tagitem">
