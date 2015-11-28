@@ -353,10 +353,6 @@
 				address: "required",
 				store: "required",
 			},
-			messages:{
-				address: { required: "Please select a delivery address" },
-				store: { required: "Please select a store to pick up these items from" }
-			},
 			highlight: function(element, errorClass){
 				if (jQuery(element).is("input")){
 					jQuery(element).closest('tr').find(".itembox").addClass(errorClass);
