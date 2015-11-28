@@ -15,6 +15,7 @@ var nodemailer = require('nodemailer');
 var sesTransport = require('nodemailer-ses-transport'); // this is to use the Amazon SES service
 var hbs = require('nodemailer-express-handlebars'); // this helps create html emails using handlebars templates
 var smtp_creds = require('../smtp_credentials.js'); // these are the smtp credentials for using Amazon SES service
+var config = require('../config.js');
 // TBD move this access key id and secret access key to a separate file and require it in
 var transport = nodemailer.createTransport(sesTransport({
 	accessKeyId: smtp_creds.accessKeyId,
@@ -334,7 +335,7 @@ function sendEmail(newOrder){
 		from: 'support@valetbasket.com',
 		replyTo: 'support@valetbasket.com',
 		to: newOrder.userEmail,
-		cc: 'support@valetbasket.com',
+		cc: config.mailcc,
 		subject: 'Thank you for your order!',
 		template: 'email.body',
 		context: {
