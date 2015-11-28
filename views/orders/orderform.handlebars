@@ -37,13 +37,13 @@
 			<div class="row">
 				<div class="col-md-6a col-sm-6">
 					<label for="address">Choose an address nick as Delivery Address</label>
-					<select id="address" name="address" class="form-control" required title="Please select a Delivery address" value={{delivery_address}}>
+					<select id="address" name="address" class="form-control" required data-msg="Please select a nick!" title="Please select a Delivery address" value={{delivery_address}}>
 						<option disabled>Choose a delivery address</option>
 					</select>
 				</div>
 				<div class="col-md-6a col-sm-6">
 					<label for="store">Choose a Store for this Order</label>
-					<select id="store" name="store" class="form-control" required title="Please select a store">
+					<select id="store" name="store" class="form-control" required data-msg="Please select a store!" title="Please select a store">
 						<option {{#unless order.store}} selected {{/unless}} disabled>Choose a store </option>
 						<option value="Trader Joes" {{#if_eq order.store 'Trader Joes Morrisville'}} selected {{/if_eq}}>Trader Joes Morrisville</option>
 						<option value="Whole Foods Waverly Place" {{#if_eq order.store 'Whole Foods Waverly Place'}} selected {{/if_eq}}>Whole Foods Waverly Place</option>
@@ -355,10 +355,9 @@
 			},
 			highlight: function(element, errorClass){
 				if (jQuery(element).is("input")){
-					jQuery(element).closest('tr').find(".itembox").addClass(errorClass);
-					}else{
-					alert(jQuery(element).get(0).tagName);
-					jQuery(element).addClass(errorClass);	
+						jQuery(element).closest('tr').find(".itembox").addClass(errorClass);
+				}else{
+						jQuery(element).addClass(errorClass);	
 				}
 			}
 		});
