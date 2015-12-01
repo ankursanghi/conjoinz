@@ -17,6 +17,13 @@ config.cert = {
 };
 config.mailcc = '';
 
+if (process.env.NODE_ENV == 'quality') {
+          //for example
+          config.express.ip = "0.0.0.0";
+          config.cert.privateKey = 'https/private-key.pem';
+          config.cert.certificate = 'https/314cd74c21bd955f.crt';
+}
+
 if (PRODUCTION) {
 	  //for example
 	  config.express.ip = "0.0.0.0";
