@@ -8,6 +8,9 @@ switch(process.env.NODE_ENV){
 	case 'development':
 		connectString = credentials.mongo.development.connectionString;
 		break;
+	case 'quality':
+		connectString = credentials.mongo.quality.connectionString;
+		break;
 	case 'production':
 		connectString = credentials.mongo.production.connectionString;
 		break;
