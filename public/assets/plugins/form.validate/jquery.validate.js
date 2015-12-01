@@ -1149,6 +1149,15 @@ $.extend( $.validator, {
 		return data;
 	},
 
+	// http://jqueryvalidation.org/jQuery.validator.addMethod/
+	addMethod: function( name, method, message ) {
+		$.validator.methods[ name ] = method;
+		$.validator.messages[ name ] = message !== undefined ? message : $.validator.messages[ name ];
+		if ( method.length < 3 ) {
+			$.validator.addClassRules( name, $.validator.normalizeRule( name ) );
+		}
+	},
+
 	methods: {
 
 		// http://jqueryvalidation.org/required-method/
@@ -1167,13 +1176,7 @@ $.extend( $.validator, {
 			}
 			return value.length > 0;
 		},
-		required_if: function(value, element, param){
-//				     alert ('checking '+$(element).attr("id")+' next qty field is:'+$(element).closest('tr').find(param).attr("id")+' with value '+$(element).closest('tr').find(param).val());
-				     if (typeof $(element).closest('tr').find(param).val() == 'undefined') return true;
-				     if ($(element).closest('tr').find(param).val() != '' && value == '') return false;
-				     if (value != '') return true;
-				     return true;
-			     },
+
 		// http://jqueryvalidation.org/email-method/
 		email: function( value, element ) {
 			// From https://html.spec.whatwg.org/multipage/forms.html#valid-e-mail-address
@@ -1354,21 +1357,7 @@ $.extend( $.validator, {
 			}, param ) );
 			return "pending";
 		}
-	},
-
-	// http://jqueryvalidation.org/jQuery.validator.addMethod/
-	addMethod: function( name, method, message ) {
-		$.validator.methods[ name ] = method;
-//		   if (name =='required_if'){
-//			   alert ('adding '+name+' with message:'+message);
-//			   alert ('function is present:'+ typeof $.validator.methods[ name ]);
-//		   }
-		$.validator.messages[ name ] = message !== undefined ? message : $.validator.messages[ name ];
-		if ( method.length < 3 ) {
-			$.validator.addClassRules( name, $.validator.normalizeRule( name ) );
-		}
 	}
-
 
 });
 
