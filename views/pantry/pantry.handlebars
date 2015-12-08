@@ -1,0 +1,149 @@
+ {{#extend "mainLayoutPartial"}} 
+{{#content "head" mode="append"}}
+<!-- SWIPER SLIDER -->
+<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/layout-datatable.css" rel="stylesheet" type="text/css" />
+{{/content}} 
+{{#content "loggedIn"}}
+{{> settings_dropdown}} 
+{{/content}}
+
+{{#content "mainbody"}}
+<section style="background:url('assets/images/demo/wall2.jpg')">
+<div class="container">
+<div class="row">
+<div class="col-md-6a col-sm-6">
+	<label for="address">Choose a order number</label>
+	<select id="address" name="address" class="form-control" required title="Choose a order number" value={{delivery_address}},>
+	</select>
+</div>
+<div class="col-md-6a col-sm-6">
+</div>
+</div>
+</div>
+
+
+
+<div class="container">
+<!-- HTML DATATABLE -->
+<table class="table table-striped table-hover table-bordered" id="datatable_sample">
+	<thead>
+		<tr>
+			<th class="table-checkbox">
+				Select
+			</th>
+			<th>Item Name</th>
+			<th>Brand</th>
+			<th>Delivery Address</th>
+		</tr>
+	</thead>
+	<tbody>
+     <tr id="2">
+     <td>
+		<input type="checkbox" class="checkboxes" value="1"/>
+	 </td>
+	   <td>
+			<input type="text" class="autoCompItem itembox form-control input-small" id="item1" name="item" placeholder="Eggs" required value={{name}} >
+        </td>
+        <td>
+			<input type="text" class="form-control input-small" id="brand1" name="brand1" placeholder="Eggland" value={{brand}}>
+		</td>
+		<td>
+		<input type="text" class="form-control input-small" id="address" name="address" placeholder="address" value={{delivery_address}}>
+	    </td>
+     </tr>
+     </tbody>
+     </table>
+
+     
+     </section>
+    {{/content}}
+     {{#content "scripts" mode="append"}}
+<!-- <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+<script type="text/javascript" src="assets/plugins/jquery/jquery-ui.min.js"></script> 
+<script type="text/javascript" src="assets/plugins/form.validate/jquery.form.min.js"></script>
+
+     <script type="text/javascript">
+loadScript(plugin_path + "datatables/js/jquery.dataTables.min.js", function(){
+	loadScript(plugin_path + "datatables/dataTables.bootstrap.js", function(){
+	    loadScript(plugin_path + "select2/js/select2.full.min.js", function(){
+
+
+		if (jQuery().dataTable) {
+
+			var table = jQuery('#datatable_sample');
+			table.dataTable({
+				"columns": [{
+					"orderable": false
+				}, {
+					"orderable": true
+				}, {
+					"orderable": false
+				}, {
+					"orderable": false
+				}, {
+					"orderable": true
+				}, {
+					"orderable": false
+				}],
+				"lengthMenu": [
+					[5, 15, 20, -1],
+					[5, 15, 20, "All"] // change per page values here
+				],
+				// set the initial value
+				"pageLength": 5,            
+				"pagingType": "bootstrap_full_number",
+				"language": {
+					"lengthMenu": "  _MENU_ ",
+					"sSearch": "",
+					"paginate": {
+						"previous":"Prev",
+						"next": "Next",
+						"last": "Last",
+						"first": "First"
+					}
+				},
+				"columnDefs": [{  // set default column settings
+					'orderable': false,
+					'targets': [0]
+				}, {
+					"searchable": false,
+					"targets": [0]
+				}],
+				"order": [
+					[1, "asc"]
+				] // set first column as a default sort by asc
+			});
+
+			var tableWrapper = jQuery('#datatable_sample_wrapper');
+
+			table.find('.group-checkable').change(function () {
+				var set = jQuery(this).attr("data-set");
+				var checked = jQuery(this).is(":checked");
+				jQuery(set).each(function () {
+					if (checked) {
+						jQuery(this).attr("checked", true);
+						jQuery(this).parents('tr').addClass("active");
+					} else {
+						jQuery(this).attr("checked", false);
+						jQuery(this).parents('tr').removeClass("active");
+					}
+				});
+				jQuery.uniform.update(set);
+			});
+
+			table.on('change', 'tbody tr .checkboxes', function () {
+				jQuery(this).parents('tr').toggleClass("active");
+			});
+
+			tableWrapper.find('.dataTables_length select').addClass("form-control input-xsmall input-inline"); // modify table per page dropdown
+
+           
+		}
+            $('.dataTables_filter input').attr("placeholder", "Search here to find..");
+	});
+	});
+});
+</script>
+{{/content}}
+{{/extend}}

@@ -9,7 +9,9 @@ var hash = require('../utils/hash.js');
 var bodyParser = require('body-parser');
 var router = new express.Router();
 var moment = require("moment");
+//var mailapi = require("../api/order/router.js")
 var orderApi = require("../api/order/router.js");
+var mailapi = require("../api/mail/router.js");
 // add these to send order confirmation emails
 var nodemailer = require('nodemailer');
 var sesTransport = require('nodemailer-ses-transport'); // this is to use the Amazon SES service

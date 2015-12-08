@@ -26,6 +26,12 @@ function forgotpwd (req, res,next) {
 	res.render("pwdreset/pwdreset", {layout: false});
 }
 
+function mobileforgotpwd (req, res,next) {
+	res.json({error: err, status:false});
+}
+
+
+
 var userModel = {
 	_find: function (login,cb) {
 		       var found = {};
@@ -83,6 +89,12 @@ router.get("/passwordreset",forgotpwd);
 router.post("/passwordreset", activator.createPasswordResetNext, function(req, res,next){
 	res.render('pwdreset/request_sent', {layout: false});
 });
+//mobile password reset---begin-->
+router.get("/mobilepasswordreset",mobileforgotpwd);
+router.post("/mobilepasswordreset", activator.createPasswordResetNext, function(req, res,next){
+	res.json({error: err, status:false});
+});
+//mobile password reset --end <--
 router.get("/resetpassword", function(req,res,next){
 	res.render('pwdreset/newpassword', {code: req.query.code, email: req.query.email, layout: false});
 });

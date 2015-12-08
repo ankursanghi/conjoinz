@@ -46,7 +46,44 @@ function createUser (req, res, next){
 		});
 	}); 
 }
+// mobile api register
+function RegisterUser(req, res, next){
+	console.log('req.param email:'+req.param('email'));
+	crypto.randomBytes(16, function(err, bytes){
+		if (err) return next(err);
+		var user = {email: req.body.email};
+		user.name = {}; 
+		user.salt = bytes.toString('utf8');
+		user.hash = hash(req.body.password, user.salt);
+		user.name["first"] = req.body.firstname;
+		user.name["last"] = req.body.lastname;
+		User.findOne({email: req.body.email}, function(err, foundUser){
+			if (foundUser){
+				err = new Error("User already exists! Send an email to support@conjoinz.com");
+				res.json({error: {error: 'User already exists! Send an email to support@conjoinz.com'}, user: null, status:false});
+				//res.render("signup/signup", {layout: false, msg: "User already exists! Send an email to support@conjoinz.com"});
+			}else{
+				User.create(user, function(err, newUser){
+					if (err){
+						if(err instanceof mongoose.Error.ValidationError) {
+							return invalid();
+						}   
+						return next(err);
+					}   
+					req.session.isLoggedIn = true;
+					req.session.user = newUser.email;
+					req.session.name = newUser.name["first"]+' '+newUser.name["last"];
 
+					res.json({error: null, user: {email: user.email, name: user.name.first + ' ' + user.name.last}, status:true});
+					//res.render("orders/orderform", {layout: false});
+					//res.redirect(301, '/order');
+				}); 
+			}
+		});
+	}); 
+}
+
+router.post("/mobileRegister",upload.array(), RegisterUser);
 router.get("/signup",signup);
 router.post("/signup", upload.array(), createUser);
 
