@@ -1,5 +1,6 @@
 var express = require("express");
 var Pantry = require('../../models/pantry.js');
+var Order = require('../../models/order.js');
 var bodyParser = require('body-parser');
 var router = new express.Router();
 var multer = require('multer');
@@ -59,22 +60,58 @@ function RegisterPantry(req, res, next){
 	});
 }
 
-function MyPantry(req, res, next){
+function viewPantry(req, res, next){
+	console.log("method calling");
+	var email=req.body.email;
+	Pantry.find({"email":email},function(err,pantry){
+		if(err){
+			res.json({error: err, pantry:null, status:false});
+		}
+		res.json({error: null, pantry:pantry, status:true});
+	});
+}
 
-if (!(req.connection.encrypted)){
+
+
+function MyPantry(req, res, next){
+	
+	var email=req.session.user;
+	var first = req.session.name.split(" ")[0];
+	var last = req.session.name.split(" ")[1];
+
+	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
+	console.log("method calling"+req.session.user);
+	Pantry.findOne({"email":email},function(err,pantry){
+		if(err){
+			console.log("values not avilable in database");
+		}
+		/*pantry.productsArray.push({
+			upc:pantry.upc ,
+			product_name:pantry.product_name,
+			product_description:pantry.product_description,
+			brand: pantry.brand,
+			manufacturer:pantry.manufacturer,
+			product_size: pantry.product_size
+		});*/
+			//console.log('pantry '+JSON.stringify(pantry));
+			Order.find({"customer.name":{first:first,last:last}},function(err,orders){
+		if(err){
+			console.log("values not avilable in orders dable");
+		}
+		//console.log(' order '+JSON.stringify(pantry));
+		console.log('pantry '+JSON.stringify(pantry.productsArray));
+		res.render("pantry/pantry", {layout: false, name:req.session.name , pantry:pantry ,order:orders});
+	});
+});	
 
-  
-
-	console.log("method calling");
-
-	res.render("pantry/pantry", {layout: false, name:req.session.name});
 	
 }
 
 
 router.post("/pantryRegister",upload.array(), RegisterPantry);
 router.get("/pantry", MyPantry);
+router.post("/viewPantry", viewPantry);
 
 module.exports = router;
