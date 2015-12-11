@@ -101,6 +101,7 @@ app.use(require("./faqs/router"));
 app.use(require("./about/router"));
 app.use(require("./howitworks/router"));
 app.use(require("./orderHistory/router"));
+app.use(require("./mypantry/router"));
 app.use("/api/autocomplete", require('./api/autocomplete/router'));
 app.use("/api/getaddrs", require('./api/address/router'));
 app.use(require('./api/pantry/router'));

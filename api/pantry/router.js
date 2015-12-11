@@ -1,6 +1,7 @@
 var express = require("express");
 var Pantry = require('../../models/pantry.js');
 var Order = require('../../models/order.js');
+var Item = require('../../models/item.js');
 var bodyParser = require('body-parser');
 var router = new express.Router();
 var multer = require('multer');
@@ -18,50 +19,62 @@ function RegisterPantry(req, res, next){
 	pantryDetails.manufacturer=req.body.manufacturer;
 	pantryDetails.product_size=req.body.product_size;
 	Pantry.findOne({"email": req.body.email}, function(err, foundUser){
+		var options = {
+		upsert: true, 
+		new: true
+	};
+		var item = {
+		name : req.body.product_name,
+		uom : req.body.product_size
+	};	
 		if (!foundUser){
-			Pantry.create(pantryDetails, function(err, pantry){
-				if (err){
-					if(err instanceof mongoose.Error.ValidationError) {
-						return invalid();
-					}   
-					return next(err);
-				}   
-				if(pantry){
-					console.log("updated Details"+pantry);
-					res.json({error: null, pantry: {email: pantry.email}});
+			
+			Item.findOneAndUpdate({name:pantryDetails.product_name}, item, options, function(err, itemSaved){
+				
+				if(err){
+					console.log("error to insert on items");
 				}
-			}); 
+				
+				console.log("items table"+JSON.stringify(itemSaved));
+				
+				Pantry.create(pantryDetails, function(err, pantry){
+					if (err){
+						if(err instanceof mongoose.Error.ValidationError) {
+							return invalid();
+						}   
+						return next(err);
+					}   
+					if(pantry){
+						//console.log("updated Details"+pantry);
+						res.json({error: null, pantry: {email: pantry.email}});
+					}
+				}); 
+			});
 			//res.render("signup/signup", {layout: false, msg: "regsiter successfully"});
 			// {"$push": {"ord_lines": ordLine}}
 		}else{
-			Pantry.findOneAndUpdate({email:req.body.email}, {"$push":{"productsArray" :pantryDetails}}, function(err, pantry){
-				if (err){
-					console.log("error inserting values");
-				}   
-				if(pantry){
-					console.log("updated Details"+pantry);
-					res.json({error: null, pantry: {email: pantry.email}});
+			console.log("pantry details item name;"+pantryDetails.product_name);
+			Item.findOneAndUpdate({name:pantryDetails.product_name}, item, options, function(err, itemSaved){
+				console.log("items table"+JSON.stringify(itemSaved));
+				if(err){
+					console.log("error to insert on items user not found part");
 				}
-			}); 
-			
-			/*Pantry.create(pantryDetails, function(err, pantry){
-				if (err){
-					if(err instanceof mongoose.Error.ValidationError) {
-						return invalid();
+				Pantry.findOneAndUpdate({email:req.body.email}, {"$push":{"productsArray" :pantryDetails}}, function(err, pantry){
+					if (err){
+						console.log("error inserting values");
 					}   
-					return next(err);
-				}   
-				if(pantry){
-					console.log("updated Details"+pantry);
-					res.json({error: null, pantry: {email: pantry.email}});
-				}
-			}); */
+					if(pantry){
+						//console.log("updated Details"+pantry);
+						res.json({error: null, pantry: {email: pantry.email}});
+					}
+				}); 
+			});
 		}
 	});
 }
 
 function viewPantry(req, res, next){
-	console.log("method calling");
+	//console.log("method calling");
 	var email=req.body.email;
 	Pantry.find({"email":email},function(err,pantry){
 		if(err){
@@ -82,7 +95,7 @@ function MyPantry(req, res, next){
 	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
-	console.log("method calling"+req.session.user);
+	//console.log("method calling"+req.session.user);
 	Pantry.findOne({"email":email},function(err,pantry){
 		if(err){
 			console.log("values not avilable in database");

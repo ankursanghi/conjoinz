@@ -10,74 +10,55 @@
 
 {{#content "mainbody"}}
 <section style="background:url('assets/images/demo/wall2.jpg')">
+<form method="post" id="mypantry"  action="/addtoOrder">
 <div class="container">
+{{#if value}}
+<div class="alert alert-success margin-bottom-30"><!-- SUCCESS -->
+	<button type="button" class="close" data-dismiss="alert">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span>
+	</button>
+<strong>Yay!</strong> You have successfully added the pantry in your order...
+</div>
+{{/if}}
 <div class="row">
 <div class="col-md-6b col-sm-6">
-	<label for="address">Choose a order number</label>
-	<select id="address" name="address" class="form-control" required title="Choose a order number" >
+	<label for="Order">Choose an Order(Order number / Store Name / Date)</label>
+    <select id="ord_number" name="ord_number" class="form-control" required title="Choose a order number" >
 	{{#each order}}
-	<option value={{ord_number}}>{{ord_number}}	 /	{{store}}	/ {{ordDate}}		</option>
+	<option value={{ord_number}}> {{ord_number}}	 /	{{store}}	/ {{ordDate}}		</option>
 	{{/each}}
-	
 	</select>
 </div>
 
 </div>
 </div>
-
-
 <div class="container">
 <!-- HTML DATATABLE -->
 <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 	<thead>
 		<tr>
 			<th>
-				Select
+			Select
 			</th> 
 			<th>Product Name</th>
 			<th>upc</th>
 			<th>Product Description</th>
-			<th>Brand</th>
+			<th>Brand</th>  
 			<th>Manufacturer</th>
 			<th>Product size</th>
-			
 		</tr> 
 	</thead>
+	
 	<tbody>
+	
 	{{#each pantry.productsArray}}
 	<tr id="2">
-     <!-- <td style="width:5%; vertical-align:middle">
-		<input type="checkbox" class="checkboxes" value="1"/>
-	 </td> -->
-	  <!-- <td>
-			<input type="text" class="autoCompItem itembox form-control input-small" id="item1" name="item" placeholder="Eggs" required value="{{product_name}}" >
-        </td>
-        <td>
-			<input type="text" class="form-control input-small" id="product_desc" name="product_desc" placeholder="upc" value="{{upc}}" >
-		</td>
-		<td>
-		<input type="text" class="form-control input-small" id="product_size" name="product_size" placeholder="productdesc" value="{{product_description}}" >
-	    </td>
-	    <td>
-		<input type="text" class="form-control input-small" id="upc" name="upc" placeholder="brand" value="{{brand}}" >
-	    </td>
-	    <td>
-		<input type="text" class="form-control input-small" id="brand" name="brand" placeholder="manufacturer" value={{manufacturer}}>
-	    </td>
-	    <td>
-		<input type="text" class="form-control input-small" id="address" name="Producer size" placeholder="productsize" value="{{product_size}}">
-	    </td>
-        <td>
-		<button type="button" id="del2" class="removebutton form-control input-small" style="cursor:pointer" value="Delete"><i class="fa fa-trash-o fa-2x"></i>       
-		</button>
-        </td> -->
-        
-        <td style="width:5%; vertical-align:middle">
-		<input type="checkbox" class="checkboxes" value="1"/>
+     
+       <td style="width:5%; vertical-align:middle">
+		<input type="checkbox" class="checkboxes" value={{upc}} name="upc"/>
 	    </td> 
-
-        </td>
-        <td>
+		<td>
             {{product_name}}
         </td>
         <td>
@@ -100,25 +81,17 @@
      </tr>
      {{/each}}
      </tbody>
-     
      </table>
 
       <div class="row">
-
             <div class="col-md-6">
-
-                <button type="submit"  name="ord_status" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30" value="submitted">
-					ADD TO ORDER
-				</button>
-
-            </div>
-			<div class="col-md-4">
-				<button type="submit"  name="ord_status" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30" value="submitted">
-					DELETE ITEMS
-				</button>
-			</div>
+              <button type="submit"  name="ord_status" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30">ADD TO ORDER</button>
+		    </div>
+			<div class="col-md-6">
+	        <button type="submit" name="deleteitem" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30" id="delete" value="delete">DELETE ITEMS</button>
+	        </div>
 	  </div>
-    
+    </form>
  </section>
  {{/content}}
 
@@ -178,8 +151,8 @@
 
 					var oTable = table.dataTable({
 							"lengthMenu": [
-							[5, 15, 20, -1],
-							[5, 15, 20, "Records per page"] // change per page values here
+							[ -1, 5, 15, 20],
+							["Records per page", 5, 15, 20] // change per page values here
 							],
 							// set the initial value
 							"pageLength": 10,
@@ -288,12 +261,12 @@ $('.dataTables_filter input').attr("placeholder", "Search here to find..");
 });
 });
 });
+
 </script>
 <script>
- $(document).on('click', 'button.removebutton', function () { // <-- changes
-     $(this).closest('tr').remove();
-     return false;
- });
+$("#delete").on("click", function(e) {
+$("#sample_editable_1 tr:has(td > input[type=checkbox]:checked)").remove();
+});
 </script>
 {{/content}}
 {{/extend}}
