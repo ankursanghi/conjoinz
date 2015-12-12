@@ -9,7 +9,9 @@ var hash = require('../utils/hash.js');
 var bodyParser = require('body-parser');
 var router = new express.Router();
 var moment = require("moment");
+
 var orderApi = require("../api/order/router.js");
+var mailapi = require("../api/mail/router.js");
 // add these to send order confirmation emails
 var nodemailer = require('nodemailer');
 var sesTransport = require('nodemailer-ses-transport'); // this is to use the Amazon SES service
@@ -40,6 +42,7 @@ function showOrderForm(req, res,next) {
 	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
+	//console.log('req.session here:'+JSON.stringify(req.session));
 	if (req.session.isLoggedIn){
 
 		var order_num = req.params.num;
