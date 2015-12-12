@@ -14,64 +14,43 @@
 
 					<div class="row">
 
-						<!-- LEFT TEXT -->
-						<div class="col-md-8">
+					<!-- LOGIN -->
+					<div class="col-md-4">
+					<h2 class="size-16 text-white">LOGIN</h2>
+					<!-- login form -->
+					<form method="post" action="#" autocomplete="off">
+						<div class="clearfix">
+						<!-- Email -->
+							<div class="form-group">
+							<input type="text" name="email" class="form-control" placeholder="Email" required="">
+							</div>
 
-							<div class="slider-featured-text text-center">
-								<h2 class="text-white wow fadeInUp" data-wow-delay="0.4s">We shop and deliver for you !</h2>
-								<h2 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s">Valet Basket is a grocery shopping and delivery service !</h2>
-								<h2 class="text-yellow wow fadeInUp" data-wow-delay="0.8s">Register now and place your first order for free delivery ! !</h2>
+						<!-- Password -->
+							<div class="form-group">
+							<input type="password" name="password" class="form-control" placeholder="Password" required="">
 							</div>
 
 						</div>
-		<!-- /LEFT TEXT -->
 
-
-		<!-- LOGIN -->
-		<div class="col-md-4">
-
-			<h2 class="size-16 text-white">LOGIN</h2>
-
-			<!-- login form -->
-			<form method="post" action="#" autocomplete="off">
-				<div class="clearfix">
-
-					<!-- Email -->
-					<div class="form-group">
-						<input type="text" name="email" class="form-control" placeholder="Email" required="">
-					</div>
-
-					<!-- Password -->
-					<div class="form-group">
-						<input type="password" name="password" class="form-control" placeholder="Password" required="">
-					</div>
-
-				</div>
-
-				<div class="row">
-
-					<div class="col-md-6a col-sm-6 col-xs-6">
-
+						<div class="row">
+							<div class="col-md-6a col-sm-6 col-xs-6">
 						<!-- Inform Tip -->                                        
-						<div class="form-tip pt-20">
+							<div class="form-tip pt-20">
 							<a class="no-text-decoration size-13 margin-top-10 block" href="/passwordreset">Forgot Password?</a>
+							</div>
+							</div>
+
+							<div class="col-md-6a col-sm-6 col-xs-6 text-right">
+							<button class="btn btn-primary">OK, LOG IN</button>
+							</div>
+
+							<div class="col-md-6a col-sm-6 col-xs-6 text-right">
+							<a class="no-text-decoration size-13 margin-top-10 block" href="/signup">Dont have account ? Signup !</a>
+							</div>									
 						</div>
 
-					</div>
-
-					<div class="col-md-6a col-sm-6 col-xs-6 text-right">
-
-						<button class="btn btn-primary">OK, LOG IN</button>
-
-					</div>
-
-					<div class="col-md-6a col-sm-6 col-xs-6 text-right">
-						<a class="no-text-decoration size-13 margin-top-10 block" href="/signup">Dont have account ? Signup !</a>
-					</div>									
-				</div>
-
-			</form>
-			<!-- /login form -->
+					</form>
+					<!-- /login form -->
 			{{#if invalid}}
 			<!-- ALERT -->
 			<div class="alert alert-mini alert-danger margin-bottom-30">
@@ -79,15 +58,25 @@
 			</div><!-- /ALERT -->
 			{{/if}}
 
+					</div>
+					<!-- /LOGIN -->
+					<!-- LEFT TEXT -->
+						<div class="col-md-8">
+
+							<div class="slider-featured-text text-center">
+								<h2 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s">Valet Basket is an online grocery shopping and delivery service. We shop and deliver groceries the same-day to your home. Go-ahead and place your order and use the saved time to relax or do what you love to do!</h2>
+								<h2 class="text-yellow wow fadeInUp" data-wow-delay="0.8s">Register now and place your first order for free delivery ! !</h2>
+							</div>
+
+						</div>
+					<!-- /LEFT TEXT -->
+
+					</div>
+
+
+				</div>
+			</div>
 		</div>
-		<!-- /LOGIN -->
-
-	</div>
-
-
-</div>
-</div>
-</div>
 
 </section>
 <!-- / -->
