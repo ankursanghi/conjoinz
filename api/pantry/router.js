@@ -35,9 +35,9 @@ function RegisterPantry(req, res, next){
 					console.log("error to insert on items");
 				}
 				
-				console.log("items table"+JSON.stringify(itemSaved));
+				//console.log("items table"+JSON.stringify(pantryDetails));
 				
-				Pantry.create(pantryDetails, function(err, pantry){
+				Pantry.findOneAndUpdate({email:req.body.email}, {"$push":{"productsArray" :pantryDetails}}, options,function(err, pantry){
 					if (err){
 						if(err instanceof mongoose.Error.ValidationError) {
 							return invalid();

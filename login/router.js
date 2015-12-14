@@ -3,6 +3,8 @@ var crypto = require('crypto');
 var User = require('../models/user.js');
 var hash = require('../utils/hash.js');
 var bodyParser = require('body-parser');
+var loginapi = require("../api/login/router.js");
+
 var router = new express.Router();
 
 
@@ -77,8 +79,25 @@ function loginUser (req, res, next){
 	});
 }
 
+// for mobile login
+function signinUser(req, res, next) {	
+	var email = req.body.email;
+	var passwd = req.body.password;
+	loginapi.findUser(email,passwd,function(err,user){
+		if (err){
+			//next(err);
+			res.json({error: err, status:false});
+		}
+		else
+		{
+			//next(user);
+			res.json({error: null, user: {email: user.email, firstname: user.name.first, lastname: user.name.last}, status:true});
+		} 
+	});
+}
+
 router.get("/login",login);
 router.post("/login", loginUser);
-
+router.post("/signin", signinUser);
 router.get("/logout", logout);
 module.exports = router;
