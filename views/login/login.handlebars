@@ -2,106 +2,103 @@
 {{#content "head" mode="append"}}
 <!-- SWIPER SLIDER -->
 <link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/sweetalert.css" rel="stylesheet" type="text/css" />
 {{/content}}
 {{#content "mainbody"}}
-<section style="background:url('assets/images/demo/wall2.jpg')">	
-			<!-- -->
-			<section>
+<section style="background-image:url('http://d3rtv8m6yldinp.cloudfront.net/home_slide_1.jpg');">
+	<div class="overlay dark-5"><!-- dark overlay [0 to 9 opacity] --></div>
+<!-- -->
+		<div class="display-table">
+			<div class="display-table-cell vertical-align-middle">
 				<div class="container">
-					
+
 					<div class="row">
 
-						<!-- LEFT TEXT -->
-						<div class="col-md-5 col-md-offset-1">
-							
-							<h2 class="size-16">INSTRUCTIONS</h2>
-							<p class="text-muted"> Create an account with us. </p>
-							<p class="text-muted"> In the future you willbe able to use your facebook or linked in account to login.</p>
+					<!-- LOGIN -->
+					<div class="col-md-4">
+					<h2 class="size-16 text-white">LOGIN</h2>
+					<!-- login form -->
+					<form method="post" action="#" autocomplete="off">
+						<div class="clearfix">
+						<!-- Email -->
+							<div class="form-group">
+							<input type="text" name="email" class="form-control" placeholder="Email" required="">
+							</div>
+
+						<!-- Password -->
+							<div class="form-group">
+							<input type="password" name="password" class="form-control" placeholder="Password" required="">
+							</div>
 
 						</div>
-						<!-- /LEFT TEXT -->
 
+						<div class="row">
+							<div class="col-md-6a col-sm-6 col-xs-6">
+						<!-- Inform Tip -->                                        
+							<div class="form-tip pt-20">
+							<a class="no-text-decoration size-13 margin-top-10 block" href="/passwordreset">Forgot Password?</a>
+							</div>
+							</div>
 
-						<!-- LOGIN -->
-						<div class="col-md-4">
-						
-							<h2 class="size-16">LOGIN</h2>
+							<div class="col-md-6a col-sm-6 col-xs-6 text-right">
+							<button class="btn btn-primary">OK, LOG IN</button>
+							</div>
 
-							<!-- login form -->
-							<form method="post" action="#" autocomplete="off">
-								<div class="clearfix">
-									
-									<!-- Email -->
-									<div class="form-group">
-										<input type="text" name="email" class="form-control" placeholder="Email" required="">
-									</div>
-									
-									<!-- Password -->
-									<div class="form-group">
-										<input type="password" name="password" class="form-control" placeholder="Password" required="">
-									</div>
-										
-								</div>
-								
-								<div class="row">
-									
-									<div class="col-md-6a col-sm-6 col-xs-6">
-										
-										<!-- Inform Tip -->                                        
-										<div class="form-tip pt-20">
-											<a class="no-text-decoration size-13 margin-top-10 block" href="/passwordreset">Forgot Password?</a>
-										</div>
-										
-									</div>
-									
-									<div class="col-md-6a col-sm-6 col-xs-6 text-right">
+							<div class="col-md-6a col-sm-6 col-xs-6 text-right">
+							<a class="no-text-decoration size-13 margin-top-10 block" href="/signup">Dont have account ? Signup !</a>
+							</div>									
+						</div>
 
-										<button class="check btn btn-primary">OK, LOG IN</button>
+					</form>
+					<!-- /login form -->
+			{{#if invalid}}
+			<!-- ALERT -->
+			<div class="alert alert-mini alert-danger margin-bottom-30">
+				<strong>Oh snap!</strong> {{message}}
+			</div><!-- /ALERT -->
+			{{/if}}
 
-									</div>
-									
-									<div class="col-md-6a col-sm-6 col-xs-6 text-right">
-										<a class="no-text-decoration size-13 margin-top-10 block" href="/signup">Dont have account ? Signup !</a>
-									</div>									
-								</div>
-								
-							</form>
-							<!-- /login form -->
-							{{#if invalid}}
-								<!-- ALERT -->
-								<div class="alert alert-mini alert-danger margin-bottom-30">
-									<strong>Oh snap!</strong> {{message}}
-								</div><!-- /ALERT -->
-							{{/if}}
+					</div>
+					<!-- /LOGIN -->
+					<!-- LEFT TEXT -->
+						<div class="col-md-8">
+
+							<div class="slider-featured-text text-center">
+								<h2 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s">Valet Basket is an online grocery shopping and delivery service. We shop and deliver groceries the same-day to your home. Go-ahead and place your order and use the saved time to relax or do what you love to do!</h2>
+								<h2 class="text-yellow wow fadeInUp" data-wow-delay="0.8s">Register now and place your first order for free delivery ! !</h2>
+							</div>
 
 						</div>
-						<!-- /LOGIN -->
+					<!-- /LEFT TEXT -->
 
 					</div>
 
-					
+
 				</div>
-			</section>
-			<!-- / -->
+			</div>
+		</div>
+
+</section>
+<!-- / -->
 {{/content}}
 {{#content "scripts" mode="append"}}
-<!-- <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
 <script type="text/javascript" src="assets/plugins/jquery/jquery-ui.min.js"></script> 
-<script type="text/javascript" src="assets/plugins/form.validate/jquery.form.min.js"></script>
 <script type="text/javascript" src="assets/js/sweetalert.min.js"></script>
-<link href="assets/css/sweetalert.css" rel="stylesheet" type="text/css" />
 <script>
+	$(document).ready(function () { 
+		var h=$(window).height(),
+		w=$(window).width();
+		if(w<700){
+			$("p").show();
+			swal({
+				title: "Psst...",
+				text: "ValetBasket appreciates your support! While we are working furiously on our mobile app, our website is currently supported only through a large format browser such as one on the computer. Please visit us on valetbasket.com through your computer.",
+				confirmButtonColor: "#8AB933"
+			});
+			return true;
+		}
 
- $(document).on('click', 'button.check', function () { 
-        var h=$(window).height(),
-            w=$(window).width();
-            if(w<700){
-              $("p").show();
-              swal("ValetBasket appreciates your support! While we are working furiously on our mobile app, our website is currently supported only through a large format browser such as one on the computer. Please visit us on valetbasket.com through your computer.");
-              return true;
-    }
-  
- });
+	});
 </script>
 {{/content}}
 {{/extend}}

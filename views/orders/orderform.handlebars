@@ -3,6 +3,7 @@
 <!-- SWIPER SLIDER -->
 <link href="assets/css/layout-datatables.css" rel="stylesheet" type="text/css" />
 <link href="https://code.jquery.com/ui/1.11.4/themes/ui-darkness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/sweetalert.css" rel="stylesheet" type="text/css" />
 {{/content}}
 {{#content "loggedIn"}}
 {{> settings_dropdown}} 
@@ -36,15 +37,18 @@
 			<div class="row">
 				<div class="col-md-6a col-sm-6">
 					<label for="address">Choose an address nick as Delivery Address</label>
-					<select id="address" name="address" class="form-control" required title="Please select a Delivery address" value={{delivery_address}}>
+					<select id="address" name="address" class="form-control" required data-msg="Please select a nick!" title="Please select a Delivery address" value={{delivery_address}}>
+						<option disabled>Choose a delivery address</option>
 					</select>
 				</div>
 				<div class="col-md-6a col-sm-6">
 					<label for="store">Choose a Store for this Order</label>
-					<select id="store" name="store" class="form-control" required title="Please select a store">
-						<option value="{{order.store}}">{{order.store}}</option>
-						<option value="Trader Joes Morrisville">Trader Joes Morrisville</option>
-						<option value="Whole Foods Waverly Place">Whole Foods Waverly Place</option>
+					<select id="store" name="store" class="form-control" required data-msg="Please select a store!" title="Please select a store">
+						<option {{#unless order.store}} selected {{/unless}} disabled>Choose a store </option>
+						<option value="Trader Joes" {{#if_eq order.store 'Trader Joes Morrisville'}} selected {{/if_eq}}>Trader Joes Morrisville</option>
+						<option value="Whole Foods Waverly Place" {{#if_eq order.store 'Whole Foods Waverly Place'}} selected {{/if_eq}}>Whole Foods Waverly Place</option>
+						<option value="Harris Teeter" {{#if_eq order.store 'Harris Teeter'}} selected {{/if_eq}}>Harris Teeter</option>
+						<option value="Apna Bazar" {{#if_eq order.store 'Apna Bazar'}} selected {{/if_eq}}>Apna Bazar</option>
 						
 					</select>
 				</div>
@@ -343,17 +347,17 @@
 		return false;
 	}, "please add both item and quantity");
 	jQuery().ready(function(){
-		jQuery("#orderform").validate({
+	var validator =	jQuery("#orderform").validate({
+			onclick: false, 
 			rules:{
 				address: "required",
 				store: "required",
 			},
 			highlight: function(element, errorClass){
 				if (jQuery(element).is("input")){
-					jQuery(element).closest('tr').find(".itembox").addClass(errorClass);
-					}else{
-					alert(jQuery(element).get(0).tagName);
-					jQuery(element).addClass(errorClass);	
+						jQuery(element).closest('tr').find(".itembox").addClass(errorClass);
+				}else{
+						jQuery(element).addClass(errorClass);	
 				}
 			}
 		});

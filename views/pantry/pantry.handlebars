@@ -18,13 +18,53 @@
 		<span aria-hidden="true">×</span>
 		<span class="sr-only">Close</span>
 	</button>
-<strong>Yay!</strong> You have successfully added the pantry in your order...
+You have successfully added the item(s) to your order...
+</div>
+{{/if}}
+{{#if upcstatus}}
+<div class="alert alert-success margin-bottom-30"><!-- SUCCESS -->
+	<button type="button" class="close" data-dismiss="alert">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span>
+	</button>
+     Please select the item(s) to be deleted.
+</div>
+{{/if}}
+
+{{#if addItem}}
+<div class="alert alert-success margin-bottom-30"><!-- SUCCESS -->
+	<button type="button" class="close" data-dismiss="alert">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span>
+	</button>
+     Please select the item(s) to be added to the order.
+</div>
+{{/if}}
+{{#if status}}
+<div class="alert alert-success margin-bottom-30"><!-- SUCCESS -->
+	<button type="button" class="close" data-dismiss="alert">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span>
+	</button>
+ You have successfully deleted the item(s) in your pantry list...
+</div>
+{{/if}}
+
+{{#if emptyOrderItem}}
+<div class="alert alert-success margin-bottom-30"><!-- SUCCESS -->
+	<button type="button" class="close" data-dismiss="alert">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span>
+	</button>
+Please choose an order to which the item(s) are to be added...
 </div>
 {{/if}}
 <div class="row">
 <div class="col-md-6b col-sm-6">
 	<label for="Order">Choose an Order(Order number / Store Name / Date)</label>
     <select id="ord_number" name="ord_number" class="form-control" required title="Choose a order number" >
+    <option value="empty" name="emptyOrder"></option>
+	<option value=" ">New Order</option>
 	{{#each order}}
 	<option value={{ord_number}}> {{ord_number}}	 /	{{store}}	/ {{ordDate}}		</option>
 	{{/each}}
@@ -88,7 +128,7 @@
               <button type="submit"  name="ord_status" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30">ADD TO ORDER</button>
 		    </div>
 			<div class="col-md-6">
-	        <button type="submit" name="deleteitem" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30" id="delete" value="delete">DELETE ITEMS</button>
+	        <button type="submit" name="deleteitem" class="delete btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30" id="delete" value="delete">DELETE ITEMS</button>
 	        </div>
 	  </div>
     </form>
@@ -263,10 +303,6 @@ $('.dataTables_filter input').attr("placeholder", "Search here to find..");
 });
 
 </script>
-<script>
-$("#delete").on("click", function(e) {
-$("#sample_editable_1 tr:has(td > input[type=checkbox]:checked)").remove();
-});
-</script>
+
 {{/content}}
 {{/extend}}

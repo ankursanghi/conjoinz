@@ -52,13 +52,16 @@ module.exports.createOrderHeader = function(firstName, lastName, addressName, st
 						});
 					}
 				}else{
-					Order.findOne({"ord_number":order_number}, function( err, newOrder){
+					Order.findOneAndUpdate({"ord_number":order_number}, order, function( err, newOrder){
+						console.log("order_number"+order_number);
 						if(newOrder){
+							console.log("new order"+order_number);
 							return callback(err, newOrder);
-							console.log("brand name 1st new ");
+							
 						}else {
 							Order.create(order, function(err, newOrder){
-								console.log("brand name not new ");
+
+								console.log("not a new order"+order_number);
 								return callback(err, newOrder);
 							});
 						}

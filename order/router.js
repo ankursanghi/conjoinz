@@ -9,7 +9,7 @@ var hash = require('../utils/hash.js');
 var bodyParser = require('body-parser');
 var router = new express.Router();
 var moment = require("moment");
-//var mailapi = require("../api/order/router.js")
+
 var orderApi = require("../api/order/router.js");
 var mailapi = require("../api/mail/router.js");
 // add these to send order confirmation emails
@@ -17,6 +17,7 @@ var nodemailer = require('nodemailer');
 var sesTransport = require('nodemailer-ses-transport'); // this is to use the Amazon SES service
 var hbs = require('nodemailer-express-handlebars'); // this helps create html emails using handlebars templates
 var smtp_creds = require('../smtp_credentials.js'); // these are the smtp credentials for using Amazon SES service
+var config = require('../config.js');
 // TBD move this access key id and secret access key to a separate file and require it in
 var transport = nodemailer.createTransport(sesTransport({
 	accessKeyId: smtp_creds.accessKeyId,
@@ -41,6 +42,7 @@ function showOrderForm(req, res,next) {
 	if (!(req.connection.encrypted)){
 		return res.redirect("https://" + req.headers.host.replace('8008','8009') + req.url);
 	}
+	//console.log('req.session here:'+JSON.stringify(req.session));
 	if (req.session.isLoggedIn){
 
 		var order_num = req.params.num;
@@ -336,7 +338,7 @@ function sendEmail(newOrder){
 		from: 'support@valetbasket.com',
 		replyTo: 'support@valetbasket.com',
 		to: newOrder.userEmail,
-		cc: 'support@valetbasket.com',
+		cc: config.mailcc,
 		subject: 'Thank you for your order!',
 		template: 'email.body',
 		context: {

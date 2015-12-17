@@ -46,6 +46,7 @@ function createUser (req, res, next){
 		});
 	}); 
 }
+
 // mobile api register
 function RegisterUser(req, res, next){
 	console.log('req.param email:'+req.param('email'));
@@ -75,8 +76,7 @@ function RegisterUser(req, res, next){
 					req.session.name = newUser.name["first"]+' '+newUser.name["last"];
 
 					res.json({error: null, user: {email: user.email, name: user.name.first + ' ' + user.name.last}, status:true});
-					//res.render("orders/orderform", {layout: false});
-					//res.redirect(301, '/order');
+					
 				}); 
 			}
 		});

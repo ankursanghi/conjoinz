@@ -34,41 +34,46 @@ function RegisterPantry(req, res, next){
 				if(err){
 					console.log("error to insert on items");
 				}
-				
-				console.log("items table"+JSON.stringify(itemSaved));
-				
-				Pantry.create(pantryDetails, function(err, pantry){
-					if (err){
-						if(err instanceof mongoose.Error.ValidationError) {
-							return invalid();
-						}   
-						return next(err);
-					}   
-					if(pantry){
-						//console.log("updated Details"+pantry);
-						res.json({error: null, pantry: {email: pantry.email}});
+				Pantry.findOne({email:req.body.email,"productsArray.upc":pantryDetails.upc}, function(err, pan){
+					if(pan){
+						console.log("product already available");
+					}else{	
+						Pantry.findOneAndUpdate({email:req.body.email}, {"$push":{"productsArray" :pantryDetails}}, options,function(err, pantry){
+							if (err){
+								if(err instanceof mongoose.Error.ValidationError) {
+									return invalid();
+								}   
+								return next(err);
+							}   
+							if(pantry){
+								res.json({error: null, pantry: {email: pantry.email}});
+							}
+						}); 
 					}
 				}); 
 			});
-			//res.render("signup/signup", {layout: false, msg: "regsiter successfully"});
-			// {"$push": {"ord_lines": ordLine}}
 		}else{
 			console.log("pantry details item name;"+pantryDetails.product_name);
 			Item.findOneAndUpdate({name:pantryDetails.product_name}, item, options, function(err, itemSaved){
-				console.log("items table"+JSON.stringify(itemSaved));
+				//console.log("items table"+JSON.stringify(itemSaved));
 				if(err){
 					console.log("error to insert on items user not found part");
 				}
-				Pantry.findOneAndUpdate({email:req.body.email}, {"$push":{"productsArray" :pantryDetails}}, function(err, pantry){
-					if (err){
-						console.log("error inserting values");
-					}   
-					if(pantry){
-						//console.log("updated Details"+pantry);
-						res.json({error: null, pantry: {email: pantry.email}});
+				Pantry.findOne({email:req.body.email,"productsArray.upc":pantryDetails.upc}, function(err, pan){
+					if(pan){
+						console.log("product already available");
+					}else{
+						Pantry.findOneAndUpdate({email:req.body.email}, {"$push":{"productsArray" :pantryDetails}}, function(err, pantry){
+							if (err){
+								console.log("error inserting values");
+							}   
+							if(pantry){
+								res.json({error: null, pantry: {email: pantry.email}});
+							}
+						}); 
 					}
-				}); 
-			});
+				});
+			}); 
 		}
 	});
 }
@@ -100,21 +105,12 @@ function MyPantry(req, res, next){
 		if(err){
 			console.log("values not avilable in database");
 		}
-		/*pantry.productsArray.push({
-			upc:pantry.upc ,
-			product_name:pantry.product_name,
-			product_description:pantry.product_description,
-			brand: pantry.brand,
-			manufacturer:pantry.manufacturer,
-			product_size: pantry.product_size
-		});*/
-			//console.log('pantry '+JSON.stringify(pantry));
-			Order.find({"customer.name":{first:first,last:last}},function(err,orders){
+		//console.log('pantry '+JSON.stringify(pantry));
+			Order.find({"customer.name.first":first,"customer.name.last":last,"ord_status":"saved" },function(err,orders){
 		if(err){
 			console.log("values not avilable in orders dable");
 		}
 		//console.log(' order '+JSON.stringify(pantry));
-		console.log('pantry '+JSON.stringify(pantry.productsArray));
 		res.render("pantry/pantry", {layout: false, name:req.session.name , pantry:pantry ,order:orders});
 	});
 });	

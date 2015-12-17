@@ -24,7 +24,6 @@ function login(req, res,next) {
 //			if (err) next; 
 //			res.render("login/login", {layout: false, name:req.session.name});
 //		});
-
 	}else{
 		res.render("login/login", {layout: false, invalid: true, message: req.session.errmsg});
 	}
@@ -84,7 +83,6 @@ function loginUser (req, res, next){
 function signinUser(req, res, next) {	
 	var email = req.body.email;
 	var passwd = req.body.password;
-console.log('signin: ' + email + ',' + passwd)
 	loginapi.findUser(email,passwd,function(err,user){
 		if (err){
 			//next(err);
@@ -97,7 +95,6 @@ console.log('signin: ' + email + ',' + passwd)
 		} 
 	});
 }
-
 
 router.get("/login",login);
 router.post("/login", loginUser);
