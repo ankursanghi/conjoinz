@@ -34,24 +34,24 @@ function RegisterPantry(req, res, next){
 				if(err){
 					console.log("error to insert on items");
 				}
-				
-				//console.log("items table"+JSON.stringify(pantryDetails));
-				
-				Pantry.findOneAndUpdate({email:req.body.email}, {"$push":{"productsArray" :pantryDetails}}, options,function(err, pantry){
-					if (err){
-						if(err instanceof mongoose.Error.ValidationError) {
-							return invalid();
-						}   
-						return next(err);
-					}   
-					if(pantry){
-						//console.log("updated Details"+pantry);
-						res.json({error: null, pantry: {email: pantry.email}});
+				Pantry.findOne({email:req.body.email,"productsArray.upc":pantryDetails.upc}, function(err, pan){
+					if(pan){
+						console.log("product already available");
+					}else{	
+						Pantry.findOneAndUpdate({email:req.body.email}, {"$push":{"productsArray" :pantryDetails}}, options,function(err, pantry){
+							if (err){
+								if(err instanceof mongoose.Error.ValidationError) {
+									return invalid();
+								}   
+								return next(err);
+							}   
+							if(pantry){
+								res.json({error: null, pantry: {email: pantry.email}});
+							}
+						}); 
 					}
 				}); 
 			});
-			//res.render("signup/signup", {layout: false, msg: "regsiter successfully"});
-			// {"$push": {"ord_lines": ordLine}}
 		}else{
 			console.log("pantry details item name;"+pantryDetails.product_name);
 			Item.findOneAndUpdate({name:pantryDetails.product_name}, item, options, function(err, itemSaved){
@@ -59,16 +59,21 @@ function RegisterPantry(req, res, next){
 				if(err){
 					console.log("error to insert on items user not found part");
 				}
-				Pantry.findOneAndUpdate({email:req.body.email}, {"$push":{"productsArray" :pantryDetails}}, function(err, pantry){
-					if (err){
-						console.log("error inserting values");
-					}   
-					if(pantry){
-						//console.log("updated Details"+pantry);
-						res.json({error: null, pantry: {email: pantry.email}});
+				Pantry.findOne({email:req.body.email,"productsArray.upc":pantryDetails.upc}, function(err, pan){
+					if(pan){
+						console.log("product already available");
+					}else{
+						Pantry.findOneAndUpdate({email:req.body.email}, {"$push":{"productsArray" :pantryDetails}}, function(err, pantry){
+							if (err){
+								console.log("error inserting values");
+							}   
+							if(pantry){
+								res.json({error: null, pantry: {email: pantry.email}});
+							}
+						}); 
 					}
-				}); 
-			});
+				});
+			}); 
 		}
 	});
 }
