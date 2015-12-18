@@ -43,7 +43,7 @@
 				</div>
 				<div class="col-md-6a col-sm-6">
 					<label for="store">Choose a Store for this Order</label>
-					<select id="store" name="store" class="form-control" required data-msg="Please select a store!" title="Please select a store">
+					<select id="store" name="store" class="store form-control" required data-msg="Please select a store!" title="Please select a store">
 						<option {{#unless order.store}} selected {{/unless}} disabled>Choose a store </option>
 						<option value="Trader Joes" {{#if_eq order.store 'Trader Joes Morrisville'}} selected {{/if_eq}}>Trader Joes Morrisville</option>
 						<option value="Whole Foods Waverly Place" {{#if_eq order.store 'Whole Foods Waverly Place'}} selected {{/if_eq}}>Whole Foods Waverly Place</option>
@@ -160,7 +160,7 @@
 		</fieldset>
 		<div class="row">
 			<div class="col-md-8">
-				<button type="submit"  name="ord_status" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30" value="submitted">
+				<button type="submit" id="btn-submit" name="ord_status" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30" value="submitted">
 					SUBMIT ORDER
 					
 				</button>
@@ -369,6 +369,31 @@
      $(this).closest('tr').remove();
      return false;
  });
+</script>
+<script src="assets/js/sweetalert.min.js"></script> 
+ <link rel="stylesheet" type="text/css" href="assets/css/sweetalert.css">
+<script>
+
+$('#btn-submit').on('click',function(e){
+ var storename = $('.store').val();
+     if(storename=="Apna Bazar"){
+    e.preventDefault();
+    var form = $(this).parents('#orderform');
+    swal({
+        title: "Please Confirm Return Policy",
+        text: "Fresh produce and Frozen / Refrigerated items cannot be returned "+ "Returns should be made within 15 days" +
+         "Returns will be processed as exchanges only",
+        showCancelButton: true,
+        confirmButtonColor: "#53777A",
+        cancelButtonColor:"#666",
+        confirmButtonText: "OK",
+        closeOnConfirm: false
+    }, function(isConfirm){
+        if (isConfirm) form.submit();
+    });
+    }
+});
+
 </script>
 {{/content}}
 {{/extend}}
