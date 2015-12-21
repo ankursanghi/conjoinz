@@ -7,7 +7,7 @@ function partners(req, res) {
 }
 function partnersLogin(req, res) {
 	
-	  		res.render("partners/partners", {layout: false, name:req.session.name, partners:true});
+	  		
 }
 
 router.get("/partnerlogin", partners);

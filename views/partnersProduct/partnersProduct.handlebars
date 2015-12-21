@@ -13,7 +13,7 @@
 <section style="background:url('assets/images/demo/wall2.jpg')">
 <div class="container">
 <!-- HTML DATATABLE -->
-<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+<table class="table table-striped table-hover table-bordered" id="partnerTable">
 	<thead>
 		<tr>
 			<th>Select</th>
@@ -27,89 +27,54 @@
 		</tr> 
 	</thead>
 	<tbody>
+	{{#each products.productsArray}}
 		<tr>
 			<td style="width:5%; vertical-align:middle">
 			<input type="checkbox" class="checkboxes" value={{upc}} name="upc"/>
 		    </td>
 			<td>
-	         Test
-	        </td>
-	        <td>
-	        Test
-	        </td>
-	        <td>
-	         Test
-	        </td>
-	        <td>
-	         Test
-	        </td>
-	        <td>
-	        Test
-	        </td>
-	        <td>
-	         Test
-	        </td>
-	        <td>
+         {{product_name}}
+        </td>
+        <td>
+         {{brand}}
+        </td>
+        <td>
+          {{product_size}}
+        </td>
+        <td>
+          {{extentedPrize}} 
+       </td>
+ 		<td>
+          {{MSRP}} 
+       </td>
+       <td>
+          {{promotions}}
+       </td>
+       <td>
 	        <button class="editbtn"><i class="fa fa-pencil"></i></button> 
 	        <!-- <button type="submit" id="editbtn"><i class="fa fa-pencil ico-light ico-rounded ico-hover"></i></button> -->
 	        </td>
 	    </tr>
-	    <tr>
-			<td style="width:5%; vertical-align:middle">
-			<input type="checkbox" class="checkboxes" value={{upc}} name="upc"/>
-		    </td>
-			<td>
-	         Test
-	        </td>
-	        <td>
-	        Test
-	        </td>
-	        <td>
-	         Test
-	        </td>
-	        <td>
-	         Test
-	        </td>
-	        <td>
-	        Test
-	        </td>
-	        <td>
-	         Test
-	        </td>
-	        <td>
-	        <button class="editbtn"><i class="fa fa-pencil"></i></button> 
-	        <!-- <button type="submit" id="editbtn"><i class="fa fa-pencil ico-light ico-rounded ico-hover"></i></button> -->
-	        </td>
-	    </tr>
-	    <tr>
-			<td style="width:5%; vertical-align:middle">
-			<input type="checkbox" class="checkboxes" value={{upc}} name="upc"/>
-		    </td>
-			<td>
-	         Test
-	        </td>
-	        <td>
-	        Test
-	        </td>
-	        <td>
-	         Test
-	        </td>
-	        <td>
-	         Test
-	        </td>
-	        <td>
-	        Test
-	        </td>
-	        <td>
-	         Test
-	        </td>
-	        <td>
-	        <button class="editbtn"><i class="fa fa-pencil"></i></button> 
-	        <!-- <button type="submit" id="editbtn"><i class="fa fa-pencil ico-light ico-rounded ico-hover"></i></button> -->
-	        </td>
-	    </tr>
+	    
+	    {{/each}}
      </tbody>
     </table>
+    <div class="row">
+			<div class="col-md-4">
+				<button type="submit"  name="delete" class="btn btn-3d btn-teal btn-lg btn-block margin-top-30" value="delete">
+					Delete
+				</button>
+			</div>
+			<div class="col-md-4">
+				<button type="submit" name="upload" class="btn btn-3d btn-teal btn-lg btn-block margin-top-30" value="upload">
+					Upload
+				</button>
+			</div>
+			<div class="col-md-4">
+				<button type="button" id='addmore' class="addmore btn btn-3d btn-teal btn-lg btn-block margin-top-30">Add</button>
+			</div>
+	</div>
+
     </div>
     </section>
  {{/content}}
@@ -301,6 +266,72 @@ $('.dataTables_filter input').attr("placeholder", "Search here to find..");
           });
     
       });
+
+</script>
+<script>
+$("#addmore").on("click", function(){
+			var rownum = $('#partnerTable tr:last').attr('id')*1+1;
+			var rowhtml =' <tr id="' + rownum +'"> '+
+				'						<td> '+
+					'							<input type="checkbox" class="checkboxes" value={{upc}} name="upc"/> '+
+					'						</td>  '+
+				'						<td> '+ 
+					'							<input type="text" class="form-control qty input-small" name="quantity" placeholder="Product Name"> '+ 
+					'						</td> '+ 
+				'						<td> '+ 
+					' 							<input type="text" class="form-control qty input-small" name="quantity" placeholder="Brand"> '+
+
+					'						</td> '+
+				'						<td> '+
+					'							<input type="text" class="form-control input-small" name="brand1"  placeholder="Product size"> '+
+					'						</td> '+
+					
+				'						<td> '+
+					'							<input type="text" class="form-control input-small" name="comments" placeholder="List Price"> '+
+					'						</td> '+
+					'						<td> '+ 
+					' 							<input type="text" class="form-control qty input-small" name="quantity" placeholder="MSRP"> '+
+
+					'						</td> '+ 
+
+					'						<td> '+
+				'								<input type="text" class="form-control qty input-small" name="quantity" placeholder="Promotions"> '+
+				'         </td> '+
+
+				'						<td> '+
+				'<button class="editbtn"><i class="fa fa-pencil"></i></button> '+
+				'         </td> '+
+				'					</tr>';
+			$(rowhtml).appendTo("#partnerTable");
+			var ipt = $(".autoCompItem");
+			$("#partnerTable").find(ipt).each(function(){
+				$(this).autocomplete({
+					source: function(request, response){
+						$.ajax({
+							url: '/api/autocomplete',
+							data: {'q': request.term},
+							dataType: "json",
+							success: function(data){
+								response(data);
+							}
+						});
+					},
+					focus: function(event, ui){
+						$(this).val(ui.item.name);
+						return false;
+					},
+					select: function(event, ui){
+						$(this).val(ui.item.name);
+						return false;
+					}
+					}).data("ui-autocomplete")._renderItem = function(ul, item) {
+					return $( "<li>")
+					.data( "ui-autocomplete-item", item )
+					.append( item.name)
+					.appendTo( ul );                
+				};
+			});
+		});
 
 </script>
 {{/content}}

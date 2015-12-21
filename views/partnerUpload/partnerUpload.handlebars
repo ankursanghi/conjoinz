@@ -4,119 +4,81 @@
 	<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
 
 {{/content}}
+
 {{#content "loggedIn"}}
-{{#if status}}
-<li class="hidden-xs"><a href="/partnerlogin">PARTNER LOGIN</a></li>
-{{/if}}
-{{> settings_dropdown}} 
+<li>
+	<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i class="fa fa-user hidden-xs"></i> MY ACCOUNT</a>
+	<ul class="dropdown-menu pull-right">
+		<li><a tabindex="-1" href="/EditPartnerPage"><i class="fa fa-history"></i>Product Details</a></li>
+		<li class="divider"></li>
+		<li><a tabindex="-1" href="/logout"><i class="glyphicon glyphicon-off"></i> LOGOUT</a></li>
+	</ul>
+</li>
 {{/content}}
 
 {{#content "mainbody"}}
-<form method="post" id="partners"  action="/partners">
 <section style="background:url('assets/images/demo/wall2.jpg')">
 <div class="container">
-
-{{#if email}}
-<div class="row">
-<div class="col-md-6b col-sm-6">
-	<label for="Order">Choose an Order(Order number / Store Name / Date)</label>
-    <select id="ord_number" name="ord_number" class="form-control" required title="Choose a order number" >
-    <option value="empty" name="emptyOrder"></option>
-	<option value=" ">New Order</option>
-	{{#each order}}
-	<option value={{ord_number}}> {{ord_number}}	 /	{{store}}	/ {{ordDate}}		</option>
-	{{/each}}
-	</select>
-</div>
-</div>
-{{/if}}
-
-
+<form id="partnerUpload" method="post" class="validate" action="/partnerUpload" data-success="Sent! Thank you!" data-toastr-position="top-right">
 <!-- HTML DATATABLE -->
-<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+<table class="table table-striped table-hover table-bordered" id="partnerTable">
 	<thead>
 		<tr>
-		{{#if email}}
-			<th>
-			Select
-			</th> 
-		{{/if}}
+			
 			<th>Product Name</th>
 			<th>Brand</th>
-			<th>Product Size</th>
-			<th>Extended Price</th>
+			<th>Product size</th>
+			<th>List Price</th>
+			<th>MSRP</th>
 			<th>Promotions</th>
 		</tr> 
 	</thead>
 	<tbody>
-	{{#if email}}
-	{{#each products.productsArray}}
-	<tr id="2">
-     	
-       	<td style="width:5%; vertical-align:middle">
-		<input type="checkbox" class="checkboxes" value={{upc}} name="upc"/>
-	    </td>
-	    <td>
-         {{product_name}}
-        </td>
-        <td>
-         {{brand}}
-        </td>
-        <td>
-          {{product_size}}
-        </td>
- 		<td>
-          {{extentedPrize}} 
-       </td>
-       <td>
-          {{promotions}}
-       </td>
-     </tr>
-     {{/each}}
-     {{else}}
-     {{#each products.productsArray}}
-		<td>
-         {{product_name}}
-        </td>
-        <td>
-         {{brand}}
-        </td>
-        <td>
-          {{product_size}}
-        </td>
- 		<td>
-          {{extentedPrize}} 
-       </td>
-       <td>
-          {{promotions}}
-       </td>
-     </tr>
-     {{/each}}
-
-
-     {{/if}}
+		<tr>
+			
+			<td>
+	         	<input type="text" class="autoCompItem form-control qty input-small" name="product_name" placeholder="Product Name"> 
+	        </td>
+	        <td>
+	        	<input type="text" class="form-control qty input-small" name="brand" placeholder="Brand">
+	        </td>
+	        <td>
+	         	<input type="text" class="form-control input-small" name="product_size"  placeholder="Product size">
+	        </td>
+	        <td>
+	         	<input type="text" class="form-control input-small" name="extentedPrize" placeholder="List Price">
+	        </td>
+	        <td>
+	        	<input type="text" class="form-control qty input-small" name="MSRP" placeholder="MSRP">
+	        </td>
+	        <td>
+	         	<input type="text" class="form-control qty input-small" name="promotions" placeholder="Promotions">
+	        </td>
+	        
+	    </tr>
      </tbody>
-     </table>
-     {{#if email}}
-      <div class="row">
-		    <div class="col-md-4">
-              <button type="submit" style="display: none;" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30"></button>
-		    </div>
-		    <div class="col-md-4">
-              <button type="submit"  name="ord_status" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30">ADD TO ORDER</button>
-		    </div>
-		    <div class="col-md-4">
-              <button type="submit" style="display: none;" class="btn btn-3d btn-teal btn-size btn-lg btn-block margin-top-30"></button>
-		    </div>
-	  </div>
-     {{/if}}
-     </div>
- </section>
- 
-     </form>
- {{/content}}
+    </table>
+    <div class="row">
+			<div class="col-md-4">
+				<button type="submit" style="display: none;"  name="delete" class="btn btn-3d btn-teal btn-lg btn-block margin-top-30" value="delete">
+					
+				</button>
+			</div>
+			<div class="col-md-4">
+				<button type="submit"  name="upload" class="btn btn-3d btn-teal btn-lg btn-block margin-top-30" value="upload">
+					Submit
+				</button>
+			</div>
+			<div class="col-md-4">
+				<button type="button" id='addmore' class="addmore btn btn-3d btn-teal btn-lg btn-block margin-top-30">Add More Line</button>
+			</div>
+	</div>
 
-     {{#content "scripts" mode="append"}}
+    </div>
+    </section>
+    </form>
+ {{/content}}
+  {{#content "scripts" mode="append"}}
 <script type="text/javascript">
 	loadScript(plugin_path + "datatables/js/jquery.dataTables.min.js", function(){ 
 			loadScript(plugin_path + "datatables/dataTables.bootstrap.js", function(){
@@ -281,6 +243,91 @@ $('.dataTables_filter input').attr("placeholder", "Search here to find..");
 });
 });
 });
+
+</script>
+<script>
+  
+   $(document).ready(function () {
+          $('.editbtn').click(function () {
+              var currentTD = $(this).parents('tr').eq(0).find('td');
+              if ($(this).html() == '<i class="fa fa-pencil"></i>') {
+                  currentTD = $(this).parents('tr').eq(0).find('td');
+                  $.each(currentTD, function () {
+                      $(this).prop('contenteditable', true)
+                  });
+              } else {
+                 $.each(currentTD, function () {
+                      $(this).prop('contenteditable', false)
+                  });
+              }
+    
+             $(this).html($(this).html() == '<i class="fa fa-pencil"></i>' ? '<i class="fa fa-floppy-o"></i>' : '<i class="fa fa-pencil"></i>') 
+    
+          });
+    
+      });
+
+</script>
+<script>
+$("#addmore").on("click", function(){
+			var rownum = $('#partnerTable tr:last').attr('id')*1+1;
+			var rowhtml =' <tr id="' + rownum +'"> '+
+				
+				'						<td> '+ 
+					'							<input type="text" class="form-control qty input-small" name="product_name" placeholder="Product Name"> '+ 
+					'						</td> '+ 
+				'						<td> '+ 
+					' 							<input type="text" class="form-control qty input-small" name="brand" placeholder="Brand"> '+
+
+					'						</td> '+
+				'						<td> '+
+					'							<input type="text" class="form-control input-small" name="product_size"  placeholder="Product size"> '+
+					'						</td> '+
+					
+				'						<td> '+
+					'							<input type="text" class="form-control input-small" name="extentedPrize" placeholder="List Price"> '+
+					'						</td> '+
+					'						<td> '+ 
+					' 							<input type="text" class="form-control qty input-small" name="MSRP" placeholder="MSRP"> '+
+
+					'						</td> '+ 
+
+					'						<td> '+
+				'								<input type="text" class="form-control qty input-small" name="promotions" placeholder="Promotions"> '+
+				'         </td> '+
+
+				
+				'					</tr>';
+			$(rowhtml).appendTo("#partnerTable");
+			var ipt = $(".autoCompItem");
+			$("#partnerTable").find(ipt).each(function(){
+				$(this).autocomplete({
+					source: function(request, response){
+						$.ajax({
+							url: '/api/autocomplete',
+							data: {'q': request.term},
+							dataType: "json",
+							success: function(data){
+								response(data);
+							}
+						});
+					},
+					focus: function(event, ui){
+						$(this).val(ui.item.name);
+						return false;
+					},
+					select: function(event, ui){
+						$(this).val(ui.item.name);
+						return false;
+					}
+					}).data("ui-autocomplete")._renderItem = function(ul, item) {
+					return $( "<li>")
+					.data( "ui-autocomplete-item", item )
+					.append( item.name)
+					.appendTo( ul );                
+				};
+			});
+		});
 
 </script>
 {{/content}}
