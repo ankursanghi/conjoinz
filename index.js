@@ -99,6 +99,7 @@ app.use(require("./order/router"));
 app.use(require("./profile/router"));
 app.use(require("./faqs/router"));
 app.use(require("./about/router"));
+app.use(require("./terms/router"));
 app.use(require("./howitworks/router"));
 app.use(require("./underconstruction/router"));
 app.use(require("./orderHistory/router"));
