@@ -243,7 +243,7 @@
 										<a class="dropdown-toggle" href="#"> PARTNERS</a>
 										<ul class="dropdown-menu">
 											<li class="dropdown">
-												<a href="/underconstruction">Apna Bazaar </a>
+												<a href="/ApnaBazar">Apna Bazar </a>
 											</li>
 										
 										</ul>
@@ -369,6 +369,21 @@
 		<script type="text/javascript" src="assets/js/view/demo.shop.js"></script>
 
 	{{/block}}
+		<!-- PAGE LEVEL SCRIPTS -->
+		<script type="text/javascript">
 
+			/**
+				Checkbox on "I agree" modal Clicked!
+			**/
+			jQuery("#terms-agree").click(function(){
+				jQuery('#termsModal').modal('toggle');
+
+				// Check Terms and Conditions checkbox if not already checked!
+				if(!jQuery(".checked-agree").checked) {
+					jQuery("input.checked-agree").prop('checked', true);
+				}
+				
+			});
+		</script>
 	</body>
 </html>
