@@ -27,7 +27,7 @@ function createUser (req, res, next){
 		user.name["last"] = req.body.lastname;
 		User.findOne({email: req.body.email}, function(err, foundUser){
 			if (foundUser){
-				res.render("signup/signup", {layout: false, msg: "User already exists! Send an email to support@conjoinz.com"});
+				res.render("signup/signup", {layout: false, msg: "User already exists! If you have forgotten the password please use the forgot password link to reset your password. If you still have issues please contact us at support@valetbasket.com"});
 			}else{
 				User.create(user, function(err, newUser){
 					if (err){
@@ -60,9 +60,9 @@ function RegisterUser(req, res, next){
 		user.name["last"] = req.body.lastname;
 		User.findOne({email: req.body.email}, function(err, foundUser){
 			if (foundUser){
-				err = new Error("User already exists! Send an email to support@conjoinz.com");
-				res.json({error: {error: 'User already exists! Send an email to support@conjoinz.com'}, user: null, status:false});
-				//res.render("signup/signup", {layout: false, msg: "User already exists! Send an email to support@conjoinz.com"});
+				err = new Error("User already exists! If you have forgotten the password please use the forgot password link to reset your password. If you still have issues please contact us at support@valetbasket.com");
+				res.json({error: {error: 'User already exists! If you have forgotten the password please use the forgot password link to reset your password. If you still have issues please contact us at support@valetbasket.com'}, user: null, status:false});
+				//res.render("signup/signup", {layout: false, msg: "User already exists! If you have forgotten the password please use the forgot password link to reset your password. If you still have issues please contact us at support@valetbasket.com"});
 			}else{
 				User.create(user, function(err, newUser){
 					if (err){
