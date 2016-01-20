@@ -1,47 +1,82 @@
 {{#extend "mainLayoutPartial"}}
 {{#content "head" mode="append"}}
-	<!-- SWIPER SLIDER -->
-	<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
+<!-- SWIPER SLIDER -->
+<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
 {{/content}}
 {{#content "loggedIn"}}
 {{> settings_dropdown}} 
 {{/content}}
 {{#content "mainbody"}}
+<div id="shopLoadModal" class="modal fade" data-autoload="true" data-autoload-delay="2000">
+	<div class="modal-dialog modal-full">
+		<div class="modal-content" style="background-image:url('assets/images/misc/shop/shop_modal.jpg');">
 
-			<!-- SLIDER -->
-			<section id="slider" class="fullheight" style="background-image:url('http://d3rtv8m6yldinp.cloudfront.net/home_slide_1.jpg');">
-				<div class="overlay dark-5"><!-- dark overlay [0 to 9 opacity] --></div>
+			<!-- header modal -->
+			<div class="modal-header noborder">
+				<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+			</div>
 
-				<div class="display-table">
-					<div class="display-table-cell vertical-align-middle">
-						<div class="container">
+			<!-- body modal -->
+			<div class="modal-body">
 
-							<div class="slider-featured-text text-center">
-								<h2 class="text-white wow fadeInUp" data-wow-delay="0.4s">
-									We shop and deliver for you !
-								</h2>
-								<h2 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s">Valet Basket is a grocery shopping and delivery service !</h2>
-								<h2 class="text-yellow wow fadeInUp" data-wow-delay="0.8s">Register now and place your first order for free delivery ! !</h2>
-								<a class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="1s" href="/order">Place an Order Now&raquo;</a>
-							</div>
-				
-						</div>
+				<div class="block-content">
+
+					<img src="assets/images/logo-footer-dark.png" alt="" />
+					<h2 class="size-15 margin-bottom-10 margin-top-30">Ordering from ApnaBazar?</h2>
+					<p class="size-13 margin-bottom-20"> Please visit our partner website <a href="http://apnabazar.valetbasket.com"> here </a> to place an order through ApnaBazar.
+
+					<!-- Don't show this popup again -->
+					<div class="size-11 text-left">
+						<label class="checkbox pull-left">
+							<input class="loadModalHide" type="checkbox" />
+							<i></i> <span class="weight-300">Don't show this popup again</span>
+						</label>
+
 					</div>
+					<!-- /Don't show this popup again -->
+
 				</div>
 
-			</section>
-			<!-- /SLIDER -->
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- SLIDER -->
+<section id="slider" class="fullheight" style="background-image:url('http://d3rtv8m6yldinp.cloudfront.net/home_slide_1.jpg');">
+<div class="overlay dark-5"><!-- dark overlay [0 to 9 opacity] --></div>
+
+<div class="display-table">
+	<div class="display-table-cell vertical-align-middle">
+		<div class="container">
+
+			<div class="slider-featured-text text-center">
+				<h2 class="text-white wow fadeInUp" data-wow-delay="0.4s">
+					We shop and deliver for you !
+				</h2>
+				<h2 class="weight-300 text-white wow fadeInUp" data-wow-delay="0.8s">Valet Basket is a grocery shopping and delivery service !</h2>
+				<h2 class="text-yellow wow fadeInUp" data-wow-delay="0.8s">Register now and place your first order for free delivery ! !</h2>
+				<a class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="1s" href="/order">Place an Order Now&raquo;</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</section>
+<!-- /SLIDER -->
 
 
 
 
-	{{/content}}
+{{/content}}
 
-	{{#content "scripts" mode="append"}}
-		<!-- SWIPER SLIDER -->
-		<script type="text/javascript" src="assets/plugins/slider.swiper/dist/js/swiper.min.js"></script>
-		<script type="text/javascript" src="assets/js/view/demo.swiper_slider.js"></script>
-	{{/content}}
+{{#content "scripts" mode="append"}}
+<!-- SWIPER SLIDER -->
+<script type="text/javascript" src="assets/plugins/slider.swiper/dist/js/swiper.min.js"></script>
+<script type="text/javascript" src="assets/js/view/demo.swiper_slider.js"></script>
+{{/content}}
 
 	</body>
 </html>
