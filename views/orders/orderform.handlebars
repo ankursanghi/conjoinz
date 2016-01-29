@@ -45,10 +45,11 @@
 					<label for="store">Choose a Store for this Order</label>
 					<select id="store" name="store" class="form-control" required data-msg="Please select a store!" title="Please select a store">
 						<option {{#unless order.store}} selected {{/unless}} disabled>Choose a store </option>
-						<option value="Trader Joes" {{#if_eq order.store 'Trader Joes Morrisville'}} selected {{/if_eq}}>Trader Joes Morrisville</option>
-						<option value="Whole Foods Waverly Place" {{#if_eq order.store 'Whole Foods Waverly Place'}} selected {{/if_eq}}>Whole Foods Waverly Place</option>
+						<option value="Trader Joes" {{#if_eq order.store 'Trader Joes'}} selected {{/if_eq}}>Trader Joes</option>
+						<option value="Whole Foods" {{#if_eq order.store 'Whole Foods'}} selected {{/if_eq}}>Whole Foods</option>
 						<option value="Harris Teeter" {{#if_eq order.store 'Harris Teeter'}} selected {{/if_eq}}>Harris Teeter</option>
 						<option value="Apna Bazar" {{#if_eq order.store 'Apna Bazar'}} selected {{/if_eq}}>Apna Bazar</option>
+						<option value="Food Lion" {{#if_eq order.store 'Food Lion'}} selected {{/if_eq}}>Food Lion</option>
 						
 					</select>
 				</div>
